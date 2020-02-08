@@ -367,8 +367,8 @@ body.cython { font-family: courier; font-size: 12; }
 <div class="cython"><pre class="cython line score-0">&#xA0;<span class="">1</span>: <span class="k">cdef</span> <span class="k">class</span> <span class="nf">Vec3</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre>
 <pre class="cython line score-60" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">2</span>:     <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">double</span><span class="p">):</span></pre>
 <pre class='cython code score-60 '>/* Python wrapper */
-static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_7easyvec_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_7easyvec_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_x;
   double __pyx_v_y;
   double __pyx_v_z;
@@ -427,18 +427,18 @@ static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, P
   __pyx_L5_argtuple_error:;
   <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__cinit__", 1, 3, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(1, 2, __pyx_L3_error)</span>
   __pyx_L3_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("algebra.vectors.Vec3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.vectors.Vec3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7algebra_7vectors_4Vec3___cinit__(((struct __pyx_obj_7algebra_7vectors_Vec3 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_z);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec3___cinit__(((struct __pyx_obj_7easyvec_7vectors_Vec3 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_z);
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z) {
+static int __pyx_pf_7easyvec_7vectors_4Vec3___cinit__(struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z) {
   int __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__cinit__", 0);

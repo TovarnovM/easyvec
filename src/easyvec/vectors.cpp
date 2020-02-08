@@ -4,12 +4,12 @@
 {
     "distutils": {
         "language": "c++",
-        "name": "algebra.vectors",
+        "name": "easyvec.vectors",
         "sources": [
-            "src/algebra/vectors.pyx"
+            "src/easyvec/vectors.pyx"
         ]
     },
-    "module_name": "algebra.vectors"
+    "module_name": "easyvec.vectors"
 }
 END: Cython Metadata */
 
@@ -617,8 +617,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__algebra__vectors
-#define __PYX_HAVE_API__algebra__vectors
+#define __PYX_HAVE__easyvec__vectors
+#define __PYX_HAVE_API__easyvec__vectors
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -829,17 +829,17 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "src\\algebra\\vectors.pyx",
+  "src\\easyvec\\vectors.pyx",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_7algebra_7vectors_Vec3;
+struct __pyx_obj_7easyvec_7vectors_Vec3;
 
-/* "algebra/vectors.pxd":1
+/* "easyvec/vectors.pxd":1
  * cdef class Vec3(object):             # <<<<<<<<<<<<<<
  *     cdef double x, y, z
  */
-struct __pyx_obj_7algebra_7vectors_Vec3 {
+struct __pyx_obj_7easyvec_7vectors_Vec3 {
   PyObject_HEAD
   double x;
   double y;
@@ -1077,13 +1077,13 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'algebra.vectors' */
-static PyTypeObject *__pyx_ptype_7algebra_7vectors_Vec3 = 0;
-#define __Pyx_MODULE_NAME "algebra.vectors"
-extern int __pyx_module_is_main_algebra__vectors;
-int __pyx_module_is_main_algebra__vectors = 0;
+/* Module declarations from 'easyvec.vectors' */
+static PyTypeObject *__pyx_ptype_7easyvec_7vectors_Vec3 = 0;
+#define __Pyx_MODULE_NAME "easyvec.vectors"
+extern int __pyx_module_is_main_easyvec__vectors;
+int __pyx_module_is_main_easyvec__vectors = 0;
 
-/* Implementation of 'algebra.vectors' */
+/* Implementation of 'easyvec.vectors' */
 static PyObject *__pyx_builtin_TypeError;
 static const char __pyx_k_x[] = "x";
 static const char __pyx_k_y[] = "y";
@@ -1117,15 +1117,15 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_x;
 static PyObject *__pyx_n_s_y;
 static PyObject *__pyx_n_s_z;
-static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_7algebra_7vectors_Vec3(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_7easyvec_7vectors_4Vec3___cinit__(struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec3_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_7easyvec_7vectors_Vec3(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "algebra/vectors.pyx":2
+/* "easyvec/vectors.pyx":2
  * cdef class Vec3(object):
  *     def __cinit__(self, x: double, y: double, z: double):             # <<<<<<<<<<<<<<
  *         self.x = x
@@ -1133,8 +1133,8 @@ static PyObject *__pyx_tuple__2;
  */
 
 /* Python wrapper */
-static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_7easyvec_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_7easyvec_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_x;
   double __pyx_v_y;
   double __pyx_v_z;
@@ -1193,23 +1193,23 @@ static int __pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(PyObject *__pyx_v_self, P
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 2, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("algebra.vectors.Vec3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.vectors.Vec3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7algebra_7vectors_4Vec3___cinit__(((struct __pyx_obj_7algebra_7vectors_Vec3 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_z);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec3___cinit__(((struct __pyx_obj_7easyvec_7vectors_Vec3 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z) {
+static int __pyx_pf_7easyvec_7vectors_4Vec3___cinit__(struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self, double __pyx_v_x, double __pyx_v_y, double __pyx_v_z) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "algebra/vectors.pyx":3
+  /* "easyvec/vectors.pyx":3
  * cdef class Vec3(object):
  *     def __cinit__(self, x: double, y: double, z: double):
  *         self.x = x             # <<<<<<<<<<<<<<
@@ -1218,7 +1218,7 @@ static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_
  */
   __pyx_v_self->x = __pyx_v_x;
 
-  /* "algebra/vectors.pyx":4
+  /* "easyvec/vectors.pyx":4
  *     def __cinit__(self, x: double, y: double, z: double):
  *         self.x = x
  *         self.y = y             # <<<<<<<<<<<<<<
@@ -1226,14 +1226,14 @@ static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_
  */
   __pyx_v_self->y = __pyx_v_y;
 
-  /* "algebra/vectors.pyx":5
+  /* "easyvec/vectors.pyx":5
  *         self.x = x
  *         self.y = y
  *         self.z = z             # <<<<<<<<<<<<<<
  */
   __pyx_v_self->z = __pyx_v_z;
 
-  /* "algebra/vectors.pyx":2
+  /* "easyvec/vectors.pyx":2
  * cdef class Vec3(object):
  *     def __cinit__(self, x: double, y: double, z: double):             # <<<<<<<<<<<<<<
  *         self.x = x
@@ -1253,20 +1253,20 @@ static int __pyx_pf_7algebra_7vectors_4Vec3___cinit__(struct __pyx_obj_7algebra_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7algebra_7vectors_4Vec3_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7algebra_7vectors_4Vec3_2__reduce_cython__[] = "Vec3.__reduce_cython__(self)";
-static PyObject *__pyx_pw_7algebra_7vectors_4Vec3_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec3_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_7vectors_4Vec3_2__reduce_cython__[] = "Vec3.__reduce_cython__(self)";
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec3_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7algebra_7vectors_4Vec3_2__reduce_cython__(((struct __pyx_obj_7algebra_7vectors_Vec3 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec3_2__reduce_cython__(((struct __pyx_obj_7easyvec_7vectors_Vec3 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1293,7 +1293,7 @@ static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUS
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("algebra.vectors.Vec3.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.vectors.Vec3.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -1308,20 +1308,20 @@ static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_2__reduce_cython__(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7algebra_7vectors_4Vec3_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_7algebra_7vectors_4Vec3_4__setstate_cython__[] = "Vec3.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_7algebra_7vectors_4Vec3_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec3_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_7easyvec_7vectors_4Vec3_4__setstate_cython__[] = "Vec3.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec3_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7algebra_7vectors_4Vec3_4__setstate_cython__(((struct __pyx_obj_7algebra_7vectors_Vec3 *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec3_4__setstate_cython__(((struct __pyx_obj_7easyvec_7vectors_Vec3 *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7algebra_7vectors_Vec3 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec3_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec3 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1348,14 +1348,14 @@ static PyObject *__pyx_pf_7algebra_7vectors_4Vec3_4__setstate_cython__(CYTHON_UN
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("algebra.vectors.Vec3.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.vectors.Vec3.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_7algebra_7vectors_Vec3(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_7easyvec_7vectors_Vec3(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -1363,14 +1363,14 @@ static PyObject *__pyx_tp_new_7algebra_7vectors_Vec3(PyTypeObject *t, PyObject *
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_7algebra_7vectors_4Vec3_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_7easyvec_7vectors_4Vec3_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_7algebra_7vectors_Vec3(PyObject *o) {
+static void __pyx_tp_dealloc_7easyvec_7vectors_Vec3(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -1379,18 +1379,18 @@ static void __pyx_tp_dealloc_7algebra_7vectors_Vec3(PyObject *o) {
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_7algebra_7vectors_Vec3[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_7algebra_7vectors_4Vec3_3__reduce_cython__, METH_NOARGS, __pyx_doc_7algebra_7vectors_4Vec3_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_7algebra_7vectors_4Vec3_5__setstate_cython__, METH_O, __pyx_doc_7algebra_7vectors_4Vec3_4__setstate_cython__},
+static PyMethodDef __pyx_methods_7easyvec_7vectors_Vec3[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec3_3__reduce_cython__, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec3_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec3_5__setstate_cython__, METH_O, __pyx_doc_7easyvec_7vectors_4Vec3_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_7algebra_7vectors_Vec3 = {
+static PyTypeObject __pyx_type_7easyvec_7vectors_Vec3 = {
   PyVarObject_HEAD_INIT(0, 0)
-  "algebra.vectors.Vec3", /*tp_name*/
-  sizeof(struct __pyx_obj_7algebra_7vectors_Vec3), /*tp_basicsize*/
+  "easyvec.vectors.Vec3", /*tp_name*/
+  sizeof(struct __pyx_obj_7easyvec_7vectors_Vec3), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_7algebra_7vectors_Vec3, /*tp_dealloc*/
+  __pyx_tp_dealloc_7easyvec_7vectors_Vec3, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -1423,7 +1423,7 @@ static PyTypeObject __pyx_type_7algebra_7vectors_Vec3 = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_7algebra_7vectors_Vec3, /*tp_methods*/
+  __pyx_methods_7easyvec_7vectors_Vec3, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -1433,7 +1433,7 @@ static PyTypeObject __pyx_type_7algebra_7vectors_Vec3 = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_7algebra_7vectors_Vec3, /*tp_new*/
+  __pyx_tp_new_7easyvec_7vectors_Vec3, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -1597,16 +1597,16 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_7algebra_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7easyvec_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_7algebra_7vectors_Vec3.tp_print = 0;
+  __pyx_type_7easyvec_7vectors_Vec3.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_7algebra_7vectors_Vec3.tp_dictoffset && __pyx_type_7algebra_7vectors_Vec3.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_7algebra_7vectors_Vec3.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_7easyvec_7vectors_Vec3.tp_dictoffset && __pyx_type_7easyvec_7vectors_Vec3.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_7easyvec_7vectors_Vec3.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Vec3, (PyObject *)&__pyx_type_7algebra_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7algebra_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_ptype_7algebra_7vectors_Vec3 = &__pyx_type_7algebra_7vectors_Vec3;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Vec3, (PyObject *)&__pyx_type_7easyvec_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7easyvec_7vectors_Vec3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_ptype_7easyvec_7vectors_Vec3 = &__pyx_type_7easyvec_7vectors_Vec3;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1807,14 +1807,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_algebra__vectors) {
+  if (__pyx_module_is_main_easyvec__vectors) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "algebra.vectors")) {
-      if (unlikely(PyDict_SetItemString(modules, "algebra.vectors", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "easyvec.vectors")) {
+      if (unlikely(PyDict_SetItemString(modules, "easyvec.vectors", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1835,7 +1835,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "algebra/vectors.pyx":1
+  /* "easyvec/vectors.pyx":1
  * cdef class Vec3(object):             # <<<<<<<<<<<<<<
  *     def __cinit__(self, x: double, y: double, z: double):
  *         self.x = x
@@ -1852,11 +1852,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init algebra.vectors", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init easyvec.vectors", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init algebra.vectors");
+    PyErr_SetString(PyExc_ImportError, "init easyvec.vectors");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
