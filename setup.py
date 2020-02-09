@@ -1,6 +1,12 @@
 # python setup.py bdist_wheel
 # pip install -e .
 
+# python setup.py sdist
+# $Env:CYTHONIZE=1
+# pip install twine
+# twine upload dist/*
+
+
 
 import os
 from setuptools import setup, find_packages, Extension
