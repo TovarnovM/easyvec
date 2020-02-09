@@ -856,7 +856,7 @@ cdef class Vec2:
         cdef real c = cos(angle)
         
         cdef real x = self.x * c - self.y * s
-        self.y = self.x * s + self.u * c
+        self.y = self.x * s + self.y * c
         self.x = x
         return self
 
