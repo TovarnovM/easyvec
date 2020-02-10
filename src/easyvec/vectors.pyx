@@ -5,14 +5,31 @@ cimport cython
 import numpy as np
 
 
-cdef real CMP_TOL = 1e-8
+CMP_TOL = 1e-8
 def get_CMP_TOL():
     return CMP_TOL
 
 cdef class Vec2:
+    @classmethod
+    def from_list(cls, lst):
+        return cls(lst[0], lst[1])
+
+    @classmethod
+    def from_dict(cls, dct):
+        return cls(dct['x'], dct['y'])
+
     def __cinit__(self, real x, real y):
         self.x = x
         self.y = y
+
+    cpdef Vec2 clone(self):
+        return Vec2(self.x, self.y)
+
+    cpdef Vec2 copy(self):
+        return Vec2(self.x, self.y)
+
+    def to_dict(self) -> dict:
+        return {k: self[k] for k in self.keys()}
 
     def __str__(self):
         return f'({self.x:.2f}, {self.y:.2f})'
@@ -169,7 +186,7 @@ cdef class Vec2:
     cpdef real[:] as_np(self):
         return np.array([self.x, self.y])
     
-    cpdef (real, real) as_tuple(self):
+    cpdef tuple as_tuple(self):
         return (self.x, self.y)
 
     cpdef Vec2 sub_num_(self, real num):
@@ -846,6 +863,17 @@ cdef class Vec2:
     cpdef Vec2 rotate90(self):
         cdef Vec2 result = Vec2(self.x, self.y)
         result.rotate90_()
+        return result
+
+    cpdef Vec2 rotate_minus90_(self):
+        cdef real buf = self.x
+        self.x = self.y
+        self.y = -buf
+        return self
+
+    cpdef Vec2 rotate_minus90(self):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.rotate_minus90_()
         return result
 
     @cython.cdivision(True)

@@ -9,9 +9,14 @@ ctypedef fused rational:
     cython.float
     cython.double
 
+cdef real CMP_TOL
+
 
 cdef class Vec2:
-    cdef real x, y
+    cdef public real x, y
+
+    cpdef Vec2 clone(self)
+    cpdef Vec2 copy(self)
 
     cpdef Vec2 add_num_(self, real num)
     cpdef Vec2 add_num(self, real num)
@@ -41,7 +46,7 @@ cdef class Vec2:
     cpdef Vec2 sub_arr(self, rational[:] tup)
 
     cpdef real[:] as_np(self)
-    cpdef (real, real) as_tuple(self)
+    cpdef tuple as_tuple(self)
     cpdef list keys(self)
     cpdef Vec2 neg_(self)
 
@@ -126,6 +131,8 @@ cdef class Vec2:
 
     cpdef Vec2 rotate90_(self)
     cpdef Vec2 rotate90(self)
+    cpdef Vec2 rotate_minus90_(self)
+    cpdef Vec2 rotate_minus90(self)
 
     cpdef Vec2 rotate_(self, real angle, int degrees=*)
     cpdef Vec2 rotate(self, real angle, int degrees=*)

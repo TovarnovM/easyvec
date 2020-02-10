@@ -2,9 +2,23 @@ from easyvec import Vec2
 import numpy as np
 from pytest import approx
 
-def test_constructor():
+def test_constructor1():
     v = Vec2(1,2)
     assert v is not None
+    assert v.x == approx(1)
+    assert v.y == approx(2)
+
+def test_constructor2():
+    v = Vec2.from_list([1, 2])
+    assert v == (1, 2)
+    assert v.x == approx(1)
+    assert v.y == approx(2)
+
+def test_constructor3():
+    v = Vec2.from_dict({'x': 1, 'y': 2})
+    assert v == (1, 2)
+    assert v.x == approx(1)
+    assert v.y == approx(2)
 
 def test_cmp1():
     from easyvec.vectors import get_CMP_TOL
