@@ -965,8 +965,8 @@ struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
-struct __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
-typedef struct __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
+struct __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
+typedef struct __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_;
@@ -987,7 +987,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate;
  *     cpdef list keys(self)
  *     cpdef Vec2 neg_(self)
  */
-struct __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc {
+struct __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc {
   __pyx_t_7easyvec_7vectors_real f0;
   __pyx_t_7easyvec_7vectors_real f1;
 };
@@ -1287,7 +1287,7 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*sub_list_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*sub_list)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch);
   __Pyx_memviewslice (*as_np)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
-  __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc (*as_tuple)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc (*as_tuple)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*neg_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mul_num_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mul_num)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
@@ -1333,8 +1333,8 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mod_tup)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mod_list_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mod_list)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*get_len)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*get_len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*len)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
@@ -2301,10 +2301,10 @@ static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_7easyvec_7vectors_re
 static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real(const char *itemp, PyObject *obj);
 
 /* FromPyCTupleUtility.proto */
-static __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_convert__from_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(PyObject *);
+static __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_convert__from_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(PyObject *);
 
 /* ToPyCTupleUtility.proto */
-static PyObject* __pyx_convert__to_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc);
+static PyObject* __pyx_convert__to_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc);
 
 /* None.proto */
 static CYTHON_INLINE long __Pyx_pow_long(long, long);
@@ -2445,7 +2445,7 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_fuse_4__pyx_f_7easyvec_7ve
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_neg_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_7easyvec_7vectors_4Vec2_keys(CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static __Pyx_memviewslice __pyx_f_7easyvec_7vectors_4Vec2_as_np(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_7vectors_4Vec2_as_tuple(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_7vectors_4Vec2_as_tuple(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_sub_num_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_sub_num(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_sub_vec_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_skip_dispatch); /* proto*/
@@ -2555,8 +2555,8 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_fuse_1__pyx_f_7easyvec_7ve
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_fuse_2__pyx_f_7easyvec_7vectors_4Vec2_mod_arr(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __Pyx_memviewslice __pyx_v_tup, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_fuse_3__pyx_f_7easyvec_7vectors_4Vec2_mod_arr(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __Pyx_memviewslice __pyx_v_tup, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_fuse_4__pyx_f_7easyvec_7vectors_4Vec2_mod_arr(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __Pyx_memviewslice __pyx_v_tup, int __pyx_skip_dispatch); /* proto*/
-static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_abs_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_abs(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_norm_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
@@ -2696,6 +2696,7 @@ static const char __pyx_k_abs[] = "abs_";
 static const char __pyx_k_arr[] = "arr";
 static const char __pyx_k_dot[] = "dot";
 static const char __pyx_k_int[] = "int";
+static const char __pyx_k_len[] = "len";
 static const char __pyx_k_neg[] = "neg_";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
@@ -2788,7 +2789,6 @@ static const char __pyx_k_dot_arr[] = "dot_arr";
 static const char __pyx_k_dot_tup[] = "dot_tup";
 static const char __pyx_k_floor_2[] = "floor";
 static const char __pyx_k_fortran[] = "fortran";
-static const char __pyx_k_get_len[] = "get_len";
 static const char __pyx_k_memview[] = "memview";
 static const char __pyx_k_mod_arr[] = "mod_arr_";
 static const char __pyx_k_mod_num[] = "mod_num_";
@@ -2859,6 +2859,7 @@ static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_ValueError[] = "ValueError";
 static const char __pyx_k_add_list_2[] = "add_list";
 static const char __pyx_k_div_list_2[] = "div_list";
+static const char __pyx_k_len_sqared[] = "len_sqared";
 static const char __pyx_k_memoryview[] = "memoryview";
 static const char __pyx_k_mod_list_2[] = "mod_list";
 static const char __pyx_k_mul_list_2[] = "mul_list";
@@ -2897,7 +2898,6 @@ static const char __pyx_k_floordiv_arr_2[] = "floordiv_arr";
 static const char __pyx_k_floordiv_num_2[] = "floordiv_num";
 static const char __pyx_k_floordiv_tup_2[] = "floordiv_tup";
 static const char __pyx_k_floordiv_vec_2[] = "floordiv_vec";
-static const char __pyx_k_get_len_sqared[] = "get_len_sqared";
 static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
 static const char __pyx_k_allocate_buffer[] = "allocate_buffer";
 static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
@@ -3271,8 +3271,6 @@ static PyObject *__pyx_n_s_fortran;
 static PyObject *__pyx_n_u_fortran;
 static PyObject *__pyx_n_s_get_CMP_TOL;
 static PyObject *__pyx_n_s_get_generator;
-static PyObject *__pyx_n_s_get_len;
-static PyObject *__pyx_n_s_get_len_sqared;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_id;
@@ -3288,6 +3286,8 @@ static PyObject *__pyx_kp_u_left_2;
 static PyObject *__pyx_kp_u_left_3;
 static PyObject *__pyx_kp_u_left_4;
 static PyObject *__pyx_kp_u_left_5;
+static PyObject *__pyx_n_s_len;
+static PyObject *__pyx_n_s_len_sqared;
 static PyObject *__pyx_n_s_long;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_memoryview;
@@ -3634,8 +3634,8 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_403__pyx_fuse_3mod_arr(struct 
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_405__pyx_fuse_4mod_arr(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __Pyx_memviewslice __pyx_v_tup); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_201__mod__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_203__imod__(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, PyObject *__pyx_v_other); /* proto */
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205get_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_207get_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_207len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_209abs_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_211abs(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_213__abs__(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
@@ -11845,14 +11845,14 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_51as_np(struct __pyx_obj_7easy
  */
 
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_54as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_7vectors_4Vec2_as_tuple(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
-  __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_r;
+static __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_7vectors_4Vec2_as_tuple(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
+  __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_5;
+  __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_5;
   __Pyx_RefNannySetupContext("as_tuple", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -11882,7 +11882,7 @@ static __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx
         if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __pyx_convert__from_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
+        __pyx_t_5 = __pyx_convert__from_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11954,7 +11954,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_53as_tuple(struct __pyx_obj_7e
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("as_tuple", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert__to_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_f_7easyvec_7vectors_4Vec2_as_tuple(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert__to_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_f_7easyvec_7vectors_4Vec2_as_tuple(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -45820,7 +45820,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_203__imod__(struct __pyx_obj_7
  *         else:
  *             raise NotImplementedError(f"      other={other}")             # <<<<<<<<<<<<<<
  * 
- *     cpdef real get_len(self):
+ *     cpdef real len(self):
  */
   /*else*/ {
     __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_other, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 701, __pyx_L1_error)
@@ -45859,13 +45859,13 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_203__imod__(struct __pyx_obj_7
 /* "easyvec/vectors.pyx":703
  *             raise NotImplementedError(f"      other={other}")
  * 
- *     cpdef real get_len(self):             # <<<<<<<<<<<<<<
+ *     cpdef real len(self):             # <<<<<<<<<<<<<<
  *         return sqrt(self.x*self.x + self.y*self.y)
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206get_len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -45873,7 +45873,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   __pyx_t_7easyvec_7vectors_real __pyx_t_5;
-  __Pyx_RefNannySetupContext("get_len", 0);
+  __Pyx_RefNannySetupContext("len", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -45883,9 +45883,9 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 703, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_7vectors_4Vec2_206get_len)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_7vectors_4Vec2_206len)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -45923,10 +45923,10 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
 
   /* "easyvec/vectors.pyx":704
  * 
- *     cpdef real get_len(self):
+ *     cpdef real len(self):
  *         return sqrt(self.x*self.x + self.y*self.y)             # <<<<<<<<<<<<<<
  * 
- *     cpdef real get_len_sqared(self):
+ *     cpdef real len_sqared(self):
  */
   __pyx_r = sqrt(((__pyx_v_self->x * __pyx_v_self->x) + (__pyx_v_self->y * __pyx_v_self->y)));
   goto __pyx_L0;
@@ -45934,7 +45934,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
   /* "easyvec/vectors.pyx":703
  *             raise NotImplementedError(f"      other={other}")
  * 
- *     cpdef real get_len(self):             # <<<<<<<<<<<<<<
+ *     cpdef real len(self):             # <<<<<<<<<<<<<<
  *         return sqrt(self.x*self.x + self.y*self.y)
  * 
  */
@@ -45945,7 +45945,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_WriteUnraisable("easyvec.vectors.Vec2.get_len", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("easyvec.vectors.Vec2.len", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -45953,26 +45953,26 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len(st
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206get_len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_7vectors_4Vec2_205get_len[] = "Vec2.get_len(self) -> real";
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206get_len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_7vectors_4Vec2_205len[] = "Vec2.len(self) -> real";
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_206len(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("get_len (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_205get_len(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self));
+  __Pyx_RefNannySetupContext("len (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_205len(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205get_len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205len(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("get_len", 0);
+  __Pyx_RefNannySetupContext("len", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_7vectors_4Vec2_get_len(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 703, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_7vectors_4Vec2_len(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 703, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -45981,7 +45981,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205get_len(struct __pyx_obj_7e
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("easyvec.vectors.Vec2.get_len", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.vectors.Vec2.len", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -45992,13 +45992,13 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_205get_len(struct __pyx_obj_7e
 /* "easyvec/vectors.pyx":706
  *         return sqrt(self.x*self.x + self.y*self.y)
  * 
- *     cpdef real get_len_sqared(self):             # <<<<<<<<<<<<<<
+ *     cpdef real len_sqared(self):             # <<<<<<<<<<<<<<
  *         return self.x*self.x + self.y*self.y
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208get_len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -46006,7 +46006,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   __pyx_t_7easyvec_7vectors_real __pyx_t_5;
-  __Pyx_RefNannySetupContext("get_len_sqared", 0);
+  __Pyx_RefNannySetupContext("len_sqared", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -46016,9 +46016,9 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_len_sqared); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_len_sqared); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_7vectors_4Vec2_208get_len_sqared)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_7vectors_4Vec2_208len_sqared)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -46056,7 +46056,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
 
   /* "easyvec/vectors.pyx":707
  * 
- *     cpdef real get_len_sqared(self):
+ *     cpdef real len_sqared(self):
  *         return self.x*self.x + self.y*self.y             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 abs_(self):
@@ -46067,7 +46067,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
   /* "easyvec/vectors.pyx":706
  *         return sqrt(self.x*self.x + self.y*self.y)
  * 
- *     cpdef real get_len_sqared(self):             # <<<<<<<<<<<<<<
+ *     cpdef real len_sqared(self):             # <<<<<<<<<<<<<<
  *         return self.x*self.x + self.y*self.y
  * 
  */
@@ -46078,7 +46078,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_WriteUnraisable("easyvec.vectors.Vec2.get_len_sqared", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("easyvec.vectors.Vec2.len_sqared", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -46086,26 +46086,26 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_get_len_sq
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208get_len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_7vectors_4Vec2_207get_len_sqared[] = "Vec2.get_len_sqared(self) -> real";
-static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208get_len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_7vectors_4Vec2_207len_sqared[] = "Vec2.len_sqared(self) -> real";
+static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_208len_sqared(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("get_len_sqared (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_207get_len_sqared(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self));
+  __Pyx_RefNannySetupContext("len_sqared (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_207len_sqared(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_207get_len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_207len_sqared(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("get_len_sqared", 0);
+  __Pyx_RefNannySetupContext("len_sqared", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_7vectors_4Vec2_get_len_sqared(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_7vectors_4Vec2_len_sqared(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -46114,7 +46114,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_207get_len_sqared(struct __pyx
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("easyvec.vectors.Vec2.get_len_sqared", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.vectors.Vec2.len_sqared", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -46504,20 +46504,19 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_213__abs__(struct __pyx_obj_7e
  * 
  *     @cython.cdivision(True)
  *     cpdef Vec2 norm_(self):             # <<<<<<<<<<<<<<
- *         cdef length = self.get_len()
+ *         cdef real length = self.len()
  *         self.x /= length
  */
 
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_216norm_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_norm_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, int __pyx_skip_dispatch) {
-  PyObject *__pyx_v_length = 0;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_length;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  __pyx_t_7easyvec_7vectors_real __pyx_t_5;
   __Pyx_RefNannySetupContext("norm_", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -46570,52 +46569,35 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_
   /* "easyvec/vectors.pyx":723
  *     @cython.cdivision(True)
  *     cpdef Vec2 norm_(self):
- *         cdef length = self.get_len()             # <<<<<<<<<<<<<<
+ *         cdef real length = self.len()             # <<<<<<<<<<<<<<
  *         self.x /= length
  *         self.y /= length
  */
-  __pyx_t_1 = PyFloat_FromDouble(((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_self->__pyx_vtab)->get_len(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 723, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_length = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_v_length = ((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_self->__pyx_vtab)->len(__pyx_v_self, 0);
 
   /* "easyvec/vectors.pyx":724
  *     cpdef Vec2 norm_(self):
- *         cdef length = self.get_len()
+ *         cdef real length = self.len()
  *         self.x /= length             # <<<<<<<<<<<<<<
  *         self.y /= length
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 724, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_1, __pyx_v_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 724, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 724, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_self->x = __pyx_t_5;
+  __pyx_v_self->x = (__pyx_v_self->x / __pyx_v_length);
 
   /* "easyvec/vectors.pyx":725
- *         cdef length = self.get_len()
+ *         cdef real length = self.len()
  *         self.x /= length
  *         self.y /= length             # <<<<<<<<<<<<<<
  * 
  *     @cython.cdivision(True)
  */
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 725, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_2, __pyx_v_length); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 725, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 725, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_self->y = __pyx_t_5;
+  __pyx_v_self->y = (__pyx_v_self->y / __pyx_v_length);
 
   /* "easyvec/vectors.pyx":722
  * 
  *     @cython.cdivision(True)
  *     cpdef Vec2 norm_(self):             # <<<<<<<<<<<<<<
- *         cdef length = self.get_len()
+ *         cdef real length = self.len()
  *         self.x /= length
  */
 
@@ -46630,7 +46612,6 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_
   __Pyx_AddTraceback("easyvec.vectors.Vec2.norm_", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_length);
   __Pyx_XGIVEREF((PyObject *)__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -49616,14 +49597,14 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_239__and__(PyObject *__pyx_v_l
  * 
  *     @cython.cdivision(True)
  *     cpdef real angle_to_xy(self, real x, real y, int degree=0):             # <<<<<<<<<<<<<<
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:
  */
 
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_242angle_to_xy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy *__pyx_optional_args) {
   int __pyx_v_degree = ((int)0);
-  PyObject *__pyx_v_angle = 0;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_angle;
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -49738,51 +49719,37 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   /* "easyvec/vectors.pyx":827
  *     @cython.cdivision(True)
  *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)             # <<<<<<<<<<<<<<
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)             # <<<<<<<<<<<<<<
  *         if angle > pi:
  *             angle -= 2*pi
  */
-  __pyx_t_1 = PyFloat_FromDouble((atan2(__pyx_v_y, __pyx_v_x) - atan2(__pyx_v_self->y, __pyx_v_self->x))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 827, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_angle = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_v_angle = (atan2(__pyx_v_y, __pyx_v_x) - atan2(__pyx_v_self->y, __pyx_v_self->x));
 
   /* "easyvec/vectors.pyx":828
  *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:             # <<<<<<<<<<<<<<
  *             angle -= 2*pi
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  */
-  __pyx_t_1 = PyFloat_FromDouble(M_PI); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 828, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_angle, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 828, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 828, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_11 = ((__pyx_v_angle > M_PI) != 0);
   if (__pyx_t_11) {
 
     /* "easyvec/vectors.pyx":829
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:
  *             angle -= 2*pi             # <<<<<<<<<<<<<<
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  *             angle += 2*pi
  */
-    __pyx_t_2 = PyFloat_FromDouble((2.0 * M_PI)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 829, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyNumber_InPlaceSubtract(__pyx_v_angle, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 829, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF_SET(__pyx_v_angle, __pyx_t_1);
-    __pyx_t_1 = 0;
+    __pyx_v_angle = (__pyx_v_angle - (2.0 * M_PI));
 
     /* "easyvec/vectors.pyx":828
  *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:             # <<<<<<<<<<<<<<
  *             angle -= 2*pi
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  */
     goto __pyx_L3;
   }
@@ -49790,37 +49757,26 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   /* "easyvec/vectors.pyx":830
  *         if angle > pi:
  *             angle -= 2*pi
- *         elif angle <= pi:             # <<<<<<<<<<<<<<
+ *         elif angle <= -pi:             # <<<<<<<<<<<<<<
  *             angle += 2*pi
  *         if degree != 0:
  */
-  __pyx_t_1 = PyFloat_FromDouble(M_PI); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 830, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_angle, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 830, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 830, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_11 = ((__pyx_v_angle <= (-M_PI)) != 0);
   if (__pyx_t_11) {
 
     /* "easyvec/vectors.pyx":831
  *             angle -= 2*pi
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  *             angle += 2*pi             # <<<<<<<<<<<<<<
  *         if degree != 0:
  *             angle *= 180.0/pi
  */
-    __pyx_t_2 = PyFloat_FromDouble((2.0 * M_PI)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 831, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_angle, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 831, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF_SET(__pyx_v_angle, __pyx_t_1);
-    __pyx_t_1 = 0;
+    __pyx_v_angle = (__pyx_v_angle + (2.0 * M_PI));
 
     /* "easyvec/vectors.pyx":830
  *         if angle > pi:
  *             angle -= 2*pi
- *         elif angle <= pi:             # <<<<<<<<<<<<<<
+ *         elif angle <= -pi:             # <<<<<<<<<<<<<<
  *             angle += 2*pi
  *         if degree != 0:
  */
@@ -49828,7 +49784,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   __pyx_L3:;
 
   /* "easyvec/vectors.pyx":832
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  *             angle += 2*pi
  *         if degree != 0:             # <<<<<<<<<<<<<<
  *             angle *= 180.0/pi
@@ -49844,16 +49800,10 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
  *         return angle
  * 
  */
-    __pyx_t_1 = PyFloat_FromDouble((180.0 / ((double)M_PI))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 833, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_InPlaceMultiply(__pyx_v_angle, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 833, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF_SET(__pyx_v_angle, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __pyx_v_angle = (__pyx_v_angle * (180.0 / ((double)M_PI)));
 
     /* "easyvec/vectors.pyx":832
- *         elif angle <= pi:
+ *         elif angle <= -pi:
  *             angle += 2*pi
  *         if degree != 0:             # <<<<<<<<<<<<<<
  *             angle *= 180.0/pi
@@ -49868,15 +49818,14 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
  * 
  *     @cython.nonecheck(False)
  */
-  __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_v_angle); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 834, __pyx_L1_error)
-  __pyx_r = __pyx_t_10;
+  __pyx_r = __pyx_v_angle;
   goto __pyx_L0;
 
   /* "easyvec/vectors.pyx":826
  * 
  *     @cython.cdivision(True)
  *     cpdef real angle_to_xy(self, real x, real y, int degree=0):             # <<<<<<<<<<<<<<
- *         cdef angle = atan2(y, x) - atan2(self.y, self.x)
+ *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:
  */
 
@@ -49893,7 +49842,6 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   __Pyx_WriteUnraisable("easyvec.vectors.Vec2.angle_to_xy", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_angle);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
@@ -64714,8 +64662,8 @@ static PyMethodDef __pyx_methods_7easyvec_7vectors_Vec2[] = {
   {"mod_tup", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_192mod_tup, METH_O, __pyx_doc_7easyvec_7vectors_4Vec2_191mod_tup},
   {"mod_list_", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_194mod_list_, METH_O, __pyx_doc_7easyvec_7vectors_4Vec2_193mod_list_},
   {"mod_list", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_196mod_list, METH_O, __pyx_doc_7easyvec_7vectors_4Vec2_195mod_list},
-  {"get_len", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_206get_len, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_205get_len},
-  {"get_len_sqared", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_208get_len_sqared, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_207get_len_sqared},
+  {"len", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_206len, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_205len},
+  {"len_sqared", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_208len_sqared, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_207len_sqared},
   {"abs_", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_210abs_, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_209abs_},
   {"abs", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_212abs, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_211abs},
   {"norm_", (PyCFunction)__pyx_pw_7easyvec_7vectors_4Vec2_216norm_, METH_NOARGS, __pyx_doc_7easyvec_7vectors_4Vec2_215norm_},
@@ -66059,8 +66007,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 1, 0, 1},
   {&__pyx_n_s_get_CMP_TOL, __pyx_k_get_CMP_TOL, sizeof(__pyx_k_get_CMP_TOL), 0, 0, 1, 1},
   {&__pyx_n_s_get_generator, __pyx_k_get_generator, sizeof(__pyx_k_get_generator), 0, 0, 1, 1},
-  {&__pyx_n_s_get_len, __pyx_k_get_len, sizeof(__pyx_k_get_len), 0, 0, 1, 1},
-  {&__pyx_n_s_get_len_sqared, __pyx_k_get_len_sqared, sizeof(__pyx_k_get_len_sqared), 0, 0, 1, 1},
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
@@ -66076,6 +66022,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_left_3, __pyx_k_left_3, sizeof(__pyx_k_left_3), 0, 1, 0, 0},
   {&__pyx_kp_u_left_4, __pyx_k_left_4, sizeof(__pyx_k_left_4), 0, 1, 0, 0},
   {&__pyx_kp_u_left_5, __pyx_k_left_5, sizeof(__pyx_k_left_5), 0, 1, 0, 0},
+  {&__pyx_n_s_len, __pyx_k_len, sizeof(__pyx_k_len), 0, 0, 1, 1},
+  {&__pyx_n_s_len_sqared, __pyx_k_len_sqared, sizeof(__pyx_k_len_sqared), 0, 0, 1, 1},
   {&__pyx_n_s_long, __pyx_k_long, sizeof(__pyx_k_long), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_memoryview, __pyx_k_memoryview, sizeof(__pyx_k_memoryview), 0, 0, 1, 1},
@@ -66842,7 +66790,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_7easyvec_7vectors_Vec2.sub_list_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_sub_list_;
   __pyx_vtable_7easyvec_7vectors_Vec2.sub_list = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_sub_list;
   __pyx_vtable_7easyvec_7vectors_Vec2.as_np = (__Pyx_memviewslice (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_as_np;
-  __pyx_vtable_7easyvec_7vectors_Vec2.as_tuple = (__pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_as_tuple;
+  __pyx_vtable_7easyvec_7vectors_Vec2.as_tuple = (__pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_as_tuple;
   __pyx_vtable_7easyvec_7vectors_Vec2.neg_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_neg_;
   __pyx_vtable_7easyvec_7vectors_Vec2.mul_num_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_mul_num_;
   __pyx_vtable_7easyvec_7vectors_Vec2.mul_num = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_mul_num;
@@ -66888,8 +66836,8 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_7easyvec_7vectors_Vec2.mod_tup = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_mod_tup;
   __pyx_vtable_7easyvec_7vectors_Vec2.mod_list_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_mod_list_;
   __pyx_vtable_7easyvec_7vectors_Vec2.mod_list = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, PyObject *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_mod_list;
-  __pyx_vtable_7easyvec_7vectors_Vec2.get_len = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_get_len;
-  __pyx_vtable_7easyvec_7vectors_Vec2.get_len_sqared = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_get_len_sqared;
+  __pyx_vtable_7easyvec_7vectors_Vec2.len = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_len;
+  __pyx_vtable_7easyvec_7vectors_Vec2.len_sqared = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_len_sqared;
   __pyx_vtable_7easyvec_7vectors_Vec2.abs_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_abs_;
   __pyx_vtable_7easyvec_7vectors_Vec2.abs = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_abs;
   __pyx_vtable_7easyvec_7vectors_Vec2.norm_ = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_7vectors_4Vec2_norm_;
@@ -73084,8 +73032,8 @@ static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real(con
 }
 
 /* FromPyCTupleUtility */
-  static __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_convert__from_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(PyObject * o) {
-    __pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc result;
+  static __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_convert__from_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(PyObject * o) {
+    __pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc result;
     if (!PyTuple_Check(o) || PyTuple_GET_SIZE(o) != 2) {
         PyErr_Format(PyExc_TypeError, "Expected %.16s of size %d, got %.200s", "a tuple", 2, Py_TYPE(o)->tp_name);
         goto bad;
@@ -73114,7 +73062,7 @@ bad:
 }
 
 /* ToPyCTupleUtility */
-  static PyObject* __pyx_convert__to_py___pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_7fb21____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc value) {
+  static PyObject* __pyx_convert__to_py___pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_132e4____dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc value) {
     PyObject* item = NULL;
     PyObject* result = PyTuple_New(2);
     if (!result) goto bad;

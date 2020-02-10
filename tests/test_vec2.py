@@ -365,3 +365,117 @@ def test_imod5():
     v = Vec2(13, 24)
     v %= np.array([3, 10])
     assert v == (1, 4)
+
+def test_len1():
+    v = Vec2(10,0)
+    assert v.len() == approx(10)
+    assert v.len_sqared() == approx(100)
+
+def test_len2():
+    v = Vec2(0,-10)
+    assert v.len() == approx(10)
+    assert v.len_sqared() == approx(100)
+
+def test_len3():
+    v = Vec2(10,10)
+    assert v.len() == approx(10*2**0.5)
+    assert v.len_sqared() == approx(200)
+
+def test_abs1():
+    v = Vec2(-2,-3)
+    assert v.abs() == abs(v)
+    assert v.abs() == (2,3)
+
+def test_abs2():
+    v = Vec2(2,-3)
+    assert v.abs() == abs(v)
+    assert v.abs() == (2,3)
+
+def test_abs3():
+    v = Vec2(-2,3)
+    assert v.abs() == abs(v)
+    assert v.abs() == (2,3)
+
+def test_abs4():
+    v = Vec2(2,3)
+    assert v.abs() == abs(v)
+    assert v.abs() == (2,3)
+
+def test_norm1():
+    v = Vec2(10,0)
+    assert v.norm() == (1,0)
+
+def test_norm2():
+    v = Vec2(10,0)
+    assert v.norm() == (1,0)
+
+def test_norm3():
+    v = Vec2(0,10)
+    assert v.norm() == (0,1)
+
+def test_norm4():
+    import numpy as np
+    for i in range(1000):
+        v = Vec2(np.random.uniform(-9999, 9999),np.random.uniform(-9999, 9999))
+        assert v.norm().len() == approx(1)
+
+def test_round1():
+    v = Vec2(1.2345678, -4.56789)
+    assert v.round() == (1,-5)
+    assert v.round(1) == (1.2,-4.6)
+    assert v.round(5) == (1.23457,-4.56789)
+    assert v.round(10) == v
+
+def test_ceil1():
+    v = Vec2(1.2345678, -4.56789)
+    assert v.ceil() == (2,-4)
+    assert v.ceil(1) == (1.3,-4.5)
+    assert v.ceil(5) == (1.23457,-4.56789)
+    assert v.ceil(10) == v
+
+def test_floor1():
+    v = Vec2(1.2345678, -4.56789)
+    assert v.floor() == (1,-5)
+    assert v.floor(1) == (1.2,-4.6)
+    assert v.floor(5) == (1.23456,-4.56789)
+    assert v.floor(10) == v
+
+def test_trunc1():
+    v = Vec2(1.2345678, -4.56789)
+    assert v.trunc() == (1,-4)
+    assert v.trunc(1) == (1.2,-4.5)
+    assert v.trunc(5) == (1.23456,-4.56789)
+    assert v.trunc(10) == v
+
+def test_cross1():
+    v = Vec2(10,20)
+    assert v & (1,2) == approx(0)
+    assert v & (-1,-2) == approx(0)
+    assert (-1,-2) & v == approx(0)
+    assert [-1,-2] & v == approx(0)
+
+def test_cross2():
+    v1 = Vec2(10,20).norm()
+    v2 = Vec2(-200,100).norm()
+    assert v1 & v2 == approx(1)
+    assert v2 & v1 == approx(-1)
+
+def test_angle_to1():
+    v1 = Vec2(10,20)
+    v2 = Vec2(-200,100)
+    assert v1.angle_to(v2, 1) == approx(90)
+    assert v2.angle_to(v1, 1) == approx(-90)
+
+def test_rotate1():
+    v = Vec2(10,0)
+    assert v.rotate(90, 1) == (0, 10)
+    assert v.rotate(-90, 1) == (0, -10)
+    assert v.rotate(180, 1) == (-10, 0)
+    assert v.rotate(-180, 1) == (-10, 0)
+
+def test_rotate2():
+    v = Vec2(10,0)
+    assert v.rotate(360, 1) == (10, 0)
+    assert v.rotate(-360, 1) == (10, 0)
+    assert v.rotate(270, 1) == (0, -10)
+    assert v.rotate(-270, 1) == (0, 10)

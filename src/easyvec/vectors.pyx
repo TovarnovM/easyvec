@@ -700,10 +700,10 @@ cdef class Vec2:
         else:
             raise NotImplementedError(f"Поделить на данную сущность нельзя  other={other}")
 
-    cpdef real get_len(self):
+    cpdef real len(self):
         return sqrt(self.x*self.x + self.y*self.y)
 
-    cpdef real get_len_sqared(self):
+    cpdef real len_sqared(self):
         return self.x*self.x + self.y*self.y
 
     cpdef Vec2 abs_(self):
@@ -720,7 +720,7 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 norm_(self):
-        cdef length = self.get_len()
+        cdef real length = self.len()
         self.x /= length
         self.y /= length
 
@@ -824,10 +824,10 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef real angle_to_xy(self, real x, real y, int degree=0):
-        cdef angle = atan2(y, x) - atan2(self.y, self.x)
+        cdef real angle = atan2(y, x) - atan2(self.y, self.x)
         if angle > pi:
             angle -= 2*pi
-        elif angle <= pi:
+        elif angle <= -pi:
             angle += 2*pi
         if degree != 0:
             angle *= 180.0/pi

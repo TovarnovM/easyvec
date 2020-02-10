@@ -103,8 +103,8 @@ cdef class Vec2:
     cpdef Vec2 mod_arr_(self, rational[:] arr)
     cpdef Vec2 mod_arr(self, rational[:] tup)
 
-    cpdef real get_len(self)
-    cpdef real get_len_sqared(self)
+    cpdef real len(self)
+    cpdef real len_sqared(self)
     cpdef Vec2 abs_(self)
     cpdef Vec2 abs(self)
     cpdef Vec2 norm_(self)
