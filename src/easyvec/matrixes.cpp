@@ -1171,7 +1171,7 @@ struct __pyx_obj_7easyvec_8matrixes_Mat2 {
 };
 
 
-/* "easyvec/matrixes.pyx":299
+/* "easyvec/matrixes.pyx":347
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
@@ -1443,6 +1443,8 @@ static struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *__pyx_vtabptr_7easyvec_7v
  */
 
 struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 {
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*copy)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*clone)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*i_axis)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*j_axis)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*x_axis)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
@@ -1450,6 +1452,9 @@ struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*transpose)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   __pyx_t_7easyvec_7vectors_real (*det)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*inverse)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*mul_mat_elements_)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*mul_mat_elements)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*mul_mat_)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*mul_mat)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*mul_vec)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*mul_num_)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
@@ -1752,20 +1757,6 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
-/* PyObjectFormat.proto */
-#if CYTHON_USE_UNICODE_WRITER
-static PyObject* __Pyx_PyObject_Format(PyObject* s, PyObject* f);
-#else
-#define __Pyx_PyObject_Format(s, f) PyObject_Format(s, f)
-#endif
-
-/* IncludeStringH.proto */
-#include <string.h>
-
-/* JoinPyUnicode.proto */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char);
-
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 #define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
@@ -1791,6 +1782,20 @@ static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UIN
 #define __PYX_UPDATE_DICT_CACHE(dict, value, cache_var, version_var)
 #define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP)  (VAR) = (LOOKUP);
 #endif
+
+/* PyObjectFormat.proto */
+#if CYTHON_USE_UNICODE_WRITER
+static PyObject* __Pyx_PyObject_Format(PyObject* s, PyObject* f);
+#else
+#define __Pyx_PyObject_Format(s, f) PyObject_Format(s, f)
+#endif
+
+/* IncludeStringH.proto */
+#include <string.h>
+
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
 
 /* GetModuleGlobalName.proto */
 #if CYTHON_USE_DICT_VERSIONS
@@ -2288,6 +2293,8 @@ static int __Pyx_ImportVoidPtr(PyObject *module, const char *name, void **p, con
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_copy(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_clone(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
@@ -2296,6 +2303,9 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_skip_dispatch); /* proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch); /* proto*/
@@ -2415,18 +2425,18 @@ static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_Ellipsis;
 static PyObject *__pyx_builtin_id;
 static PyObject *__pyx_builtin_IndexError;
-static const char __pyx_k_[] = "[[";
 static const char __pyx_k_O[] = "O";
 static const char __pyx_k_c[] = "c";
 static const char __pyx_k_2f[] = ".2f";
-static const char __pyx_k__2[] = ", ";
-static const char __pyx_k__3[] = "], [";
-static const char __pyx_k__4[] = "]]";
-static const char __pyx_k__5[] = "]])";
-static const char __pyx_k__6[] = "\320\242\320\260\320\272\320\276\320\271 \321\202\320\270\320\277 \321\201\321\200\320\260\320\262\320\275\320\265\320\275\320\270\321\217 \320\275\320\265 \320\277\320\276\320\264\320\264\320\265\321\200\320\266\320\270\320\262\320\260\320\265\321\202\321\201\321\217";
-static const char __pyx_k__8[] = "\320\235\320\265\320\277\321\200\320\260\320\262\320\270\320\273\321\214\320\275\321\213\320\271 \320\270\320\275\320\264\320\265\320\272\321\201 ";
+static const char __pyx_k__3[] = "[[";
+static const char __pyx_k__4[] = ", ";
+static const char __pyx_k__5[] = "], [";
+static const char __pyx_k__6[] = "]]";
+static const char __pyx_k__7[] = "]])";
+static const char __pyx_k__8[] = "\320\242\320\260\320\272\320\276\320\271 \321\202\320\270\320\277 \321\201\321\200\320\260\320\262\320\275\320\265\320\275\320\270\321\217 \320\275\320\265 \320\277\320\276\320\264\320\264\320\265\321\200\320\266\320\270\320\262\320\260\320\265\321\202\321\201\321\217";
 static const char __pyx_k_id[] = "id";
 static const char __pyx_k_np[] = "np";
+static const char __pyx_k__10[] = "\320\235\320\265\320\277\321\200\320\260\320\262\320\270\320\273\321\214\320\275\321\213\320\271 \320\270\320\275\320\264\320\265\320\272\321\201 ";
 static const char __pyx_k_det[] = "det";
 static const char __pyx_k_eye[] = "eye";
 static const char __pyx_k_m11[] = "m11";
@@ -2439,6 +2449,7 @@ static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_Mat2[] = "\320\235\320\265\320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \321\201\320\276\320\267\320\264\320\260\321\202\321\214 \321\215\320\272\320\267\320\265\320\274\320\277\320\273\321\217\321\200 Mat2 \320\270\320\267 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\276\320\262 ";
 static const char __pyx_k_args[] = "args";
 static const char __pyx_k_base[] = "base";
+static const char __pyx_k_copy[] = "copy";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_keys[] = "keys";
 static const char __pyx_k_left[] = "\320\237\320\265\321\200\320\265\320\274\320\275\320\276\320\266\320\270\321\202\321\214 \320\264\320\260\320\275\320\275\321\213\320\265 \321\201\321\203\321\211\320\275\320\276\321\201\321\202\320\270 \320\275\320\265\320\273\321\214\320\267\321\217 left=";
@@ -2459,6 +2470,7 @@ static const char __pyx_k_angle[] = "angle";
 static const char __pyx_k_array[] = "array";
 static const char __pyx_k_as_np[] = "as_np";
 static const char __pyx_k_class[] = "__class__";
+static const char __pyx_k_clone[] = "clone";
 static const char __pyx_k_close[] = "close";
 static const char __pyx_k_error[] = "error";
 static const char __pyx_k_flags[] = "flags";
@@ -2488,7 +2500,6 @@ static const char __pyx_k_update[] = "update";
 static const char __pyx_k_x_axis[] = "x_axis";
 static const char __pyx_k_y_axis[] = "y_axis";
 static const char __pyx_k_add_mat[] = "add_mat_";
-static const char __pyx_k_add_mul[] = "add_mul";
 static const char __pyx_k_add_num[] = "add_num_";
 static const char __pyx_k_degrees[] = "degrees";
 static const char __pyx_k_div_mat[] = "div_mat_";
@@ -2496,7 +2507,7 @@ static const char __pyx_k_div_num[] = "div_num_";
 static const char __pyx_k_fortran[] = "fortran";
 static const char __pyx_k_inverse[] = "inverse";
 static const char __pyx_k_memview[] = "memview";
-static const char __pyx_k_mul_mat[] = "mul_mat";
+static const char __pyx_k_mul_mat[] = "mul_mat_";
 static const char __pyx_k_mul_num[] = "mul_num_";
 static const char __pyx_k_mul_vec[] = "mul_vec";
 static const char __pyx_k_ndarray[] = "ndarray";
@@ -2518,6 +2529,7 @@ static const char __pyx_k_div_num_2[] = "div_num";
 static const char __pyx_k_enumerate[] = "enumerate";
 static const char __pyx_k_from_dict[] = "from_dict";
 static const char __pyx_k_from_list[] = "from_list";
+static const char __pyx_k_mul_mat_2[] = "mul_mat";
 static const char __pyx_k_mul_num_2[] = "mul_num";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
@@ -2546,9 +2558,11 @@ static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
 static const char __pyx_k_pyx_PickleError[] = "__pyx_PickleError";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_easyvec_matrixes[] = "easyvec.matrixes";
+static const char __pyx_k_mul_mat_elements[] = "mul_mat_elements_";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
 static const char __pyx_k_Mat2_get_generator[] = "Mat2.get_generator";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_mul_mat_elements_2[] = "mul_mat_elements";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
 static const char __pyx_k_NotImplementedError[] = "NotImplementedError";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
@@ -2574,7 +2588,6 @@ static const char __pyx_k_Unable_to_convert_item_to_object[] = "Unable to conver
 static const char __pyx_k_got_differing_extents_in_dimensi[] = "got differing extents in dimension %d (got %d and %d)";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_unable_to_allocate_shape_and_str[] = "unable to allocate shape and strides.";
-static PyObject *__pyx_kp_u_;
 static PyObject *__pyx_kp_u_2f;
 static PyObject *__pyx_n_s_ASCII;
 static PyObject *__pyx_kp_s_Buffer_view_does_not_expose_stri;
@@ -2605,15 +2618,15 @@ static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_kp_s_Unable_to_convert_item_to_object;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_View_MemoryView;
-static PyObject *__pyx_kp_u__2;
+static PyObject *__pyx_kp_u__10;
 static PyObject *__pyx_kp_u__3;
 static PyObject *__pyx_kp_u__4;
 static PyObject *__pyx_kp_u__5;
 static PyObject *__pyx_kp_u__6;
+static PyObject *__pyx_kp_u__7;
 static PyObject *__pyx_kp_u__8;
 static PyObject *__pyx_n_s_add_mat;
 static PyObject *__pyx_n_s_add_mat_2;
-static PyObject *__pyx_n_s_add_mul;
 static PyObject *__pyx_n_s_add_num;
 static PyObject *__pyx_n_s_add_num_2;
 static PyObject *__pyx_n_s_allocate_buffer;
@@ -2627,9 +2640,11 @@ static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
 static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_clone;
 static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
+static PyObject *__pyx_n_s_copy;
 static PyObject *__pyx_n_s_degrees;
 static PyObject *__pyx_n_s_det;
 static PyObject *__pyx_n_s_dict;
@@ -2679,6 +2694,9 @@ static PyObject *__pyx_n_s_memoryview;
 static PyObject *__pyx_n_s_memview;
 static PyObject *__pyx_n_s_mode;
 static PyObject *__pyx_n_s_mul_mat;
+static PyObject *__pyx_n_s_mul_mat_2;
+static PyObject *__pyx_n_s_mul_mat_elements;
+static PyObject *__pyx_n_s_mul_mat_elements_2;
 static PyObject *__pyx_n_s_mul_num;
 static PyObject *__pyx_n_s_mul_num_2;
 static PyObject *__pyx_n_s_mul_vec;
@@ -2745,49 +2763,56 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_4from_angle(PyTypeObject *__p
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_6eye(PyTypeObject *__pyx_v_cls); /* proto */
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_8zeros(PyTypeObject *__pyx_v_cls); /* proto */
 static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_args); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_18i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_20j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_26transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12copy(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14clone(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16__str__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_18__repr__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_20as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_26x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_28y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_1T___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_28det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42add_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44add_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46add_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_48add_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_50__sum__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54neg_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56neg(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_key); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64keys(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_71as_tuple(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_73sub_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_75sub_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_77sub_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_79sub_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85div_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87div_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89div_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91div_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_2_1___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_mat_elements_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_mat_elements(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40mul_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_48mul_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_50__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__imul__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54add_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56add_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58add_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60add_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__add__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64__iadd__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66neg_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68neg(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_70__neg__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_72__richcmp__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_74__getitem__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_key); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_76keys(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_78__iter__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_80get_generator(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83as_tuple(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85sub_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87sub_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89sub_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91sub_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__isub__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97div_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_99div_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_101div_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_103div_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_105__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_107__itruediv__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right); /* proto */
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_3m11___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
 static int __pyx_pf_7easyvec_8matrixes_4Mat2_3m11_2__set__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_3m12___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
@@ -2796,8 +2821,8 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_3m21___get__(struct __pyx_obj
 static int __pyx_pf_7easyvec_8matrixes_4Mat2_3m21_2__set__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_3m22___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
 static int __pyx_pf_7easyvec_8matrixes_4Mat2_3m22_2__set__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_99__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_109__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_111__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2850,10 +2875,10 @@ static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_184977713;
 static PyObject *__pyx_int_neg_1;
-static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple_;
+static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_slice__25;
-static PyObject *__pyx_tuple__10;
+static PyObject *__pyx_slice__27;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
 static PyObject *__pyx_tuple__13;
@@ -2868,8 +2893,8 @@ static PyObject *__pyx_tuple__21;
 static PyObject *__pyx_tuple__22;
 static PyObject *__pyx_tuple__23;
 static PyObject *__pyx_tuple__24;
+static PyObject *__pyx_tuple__25;
 static PyObject *__pyx_tuple__26;
-static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
 static PyObject *__pyx_tuple__30;
@@ -2877,7 +2902,9 @@ static PyObject *__pyx_tuple__31;
 static PyObject *__pyx_tuple__32;
 static PyObject *__pyx_tuple__33;
 static PyObject *__pyx_tuple__34;
-static PyObject *__pyx_codeobj__35;
+static PyObject *__pyx_tuple__35;
+static PyObject *__pyx_tuple__36;
+static PyObject *__pyx_codeobj__37;
 /* Late includes */
 
 /* "easyvec/matrixes.pyx":11
@@ -3564,7 +3591,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_4from_angle(PyTypeObject *__p
  * 
  *     @classmethod
  *     def eye(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(1,0,0,1)
  * 
  */
 
@@ -3591,12 +3618,12 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_6eye(PyTypeObject *__pyx_v_cl
   /* "easyvec/matrixes.pyx":42
  *     @classmethod
  *     def eye(cls):
- *         return cls()             # <<<<<<<<<<<<<<
+ *         return cls(1,0,0,1)             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_v_cls)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_v_cls), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3606,7 +3633,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_6eye(PyTypeObject *__pyx_v_cl
  * 
  *     @classmethod
  *     def eye(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(1,0,0,1)
  * 
  */
 
@@ -3625,7 +3652,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_6eye(PyTypeObject *__pyx_v_cl
  * 
  *     @classmethod
  *     def zeros(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(0,0,0,0)
  * 
  */
 
@@ -3652,12 +3679,12 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_8zeros(PyTypeObject *__pyx_v_
   /* "easyvec/matrixes.pyx":46
  *     @classmethod
  *     def zeros(cls):
- *         return cls()             # <<<<<<<<<<<<<<
+ *         return cls(0,0,0,0)             # <<<<<<<<<<<<<<
  * 
  *     def __cinit__(self, *args):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_v_cls)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_v_cls), __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3667,7 +3694,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_8zeros(PyTypeObject *__pyx_v_
  * 
  *     @classmethod
  *     def zeros(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(0,0,0,0)
  * 
  */
 
@@ -3683,7 +3710,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_8zeros(PyTypeObject *__pyx_v_
 }
 
 /* "easyvec/matrixes.pyx":48
- *         return cls()
+ *         return cls(0,0,0,0)
  * 
  *     def __cinit__(self, *args):             # <<<<<<<<<<<<<<
  *         cdef int alen = len(args)
@@ -4164,7 +4191,7 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyv
  *             self.m21 = args[2]
  *             self.m22 = args[3]             # <<<<<<<<<<<<<<
  *         elif alen == 0:
- *             self.m11 = 1.0
+ *             self.m11 = 0.0
  */
     __pyx_t_2 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -4185,26 +4212,26 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyv
     /* "easyvec/matrixes.pyx":88
  *             self.m22 = args[3]
  *         elif alen == 0:
- *             self.m11 = 1.0             # <<<<<<<<<<<<<<
+ *             self.m11 = 0.0             # <<<<<<<<<<<<<<
  *             self.m12 = 0.0
  *             self.m21 = 0.0
  */
-    __pyx_v_self->m11 = 1.0;
+    __pyx_v_self->m11 = 0.0;
 
     /* "easyvec/matrixes.pyx":89
  *         elif alen == 0:
- *             self.m11 = 1.0
+ *             self.m11 = 0.0
  *             self.m12 = 0.0             # <<<<<<<<<<<<<<
  *             self.m21 = 0.0
- *             self.m22 = 1.0
+ *             self.m22 = 0.0
  */
     __pyx_v_self->m12 = 0.0;
 
     /* "easyvec/matrixes.pyx":90
- *             self.m11 = 1.0
+ *             self.m11 = 0.0
  *             self.m12 = 0.0
  *             self.m21 = 0.0             # <<<<<<<<<<<<<<
- *             self.m22 = 1.0
+ *             self.m22 = 0.0
  *         else:
  */
     __pyx_v_self->m21 = 0.0;
@@ -4212,24 +4239,24 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyv
     /* "easyvec/matrixes.pyx":91
  *             self.m12 = 0.0
  *             self.m21 = 0.0
- *             self.m22 = 1.0             # <<<<<<<<<<<<<<
+ *             self.m22 = 0.0             # <<<<<<<<<<<<<<
  *         else:
  *             raise ValueError(f'   Mat2   {args}')
  */
-    __pyx_v_self->m22 = 1.0;
+    __pyx_v_self->m22 = 0.0;
 
     /* "easyvec/matrixes.pyx":87
  *             self.m21 = args[2]
  *             self.m22 = args[3]
  *         elif alen == 0:             # <<<<<<<<<<<<<<
- *             self.m11 = 1.0
+ *             self.m11 = 0.0
  *             self.m12 = 0.0
  */
     break;
     default:
 
     /* "easyvec/matrixes.pyx":93
- *             self.m22 = 1.0
+ *             self.m22 = 0.0
  *         else:
  *             raise ValueError(f'   Mat2   {args}')             # <<<<<<<<<<<<<<
  * 
@@ -4250,7 +4277,7 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyv
   }
 
   /* "easyvec/matrixes.pyx":48
- *         return cls()
+ *         return cls(0,0,0,0)
  * 
  *     def __cinit__(self, *args):             # <<<<<<<<<<<<<<
  *         cdef int alen = len(args)
@@ -4273,25 +4300,351 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_10__cinit__(struct __pyx_obj_7easyv
 /* "easyvec/matrixes.pyx":96
  * 
  * 
- *     def __str__(self):             # <<<<<<<<<<<<<<
- *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
+ *     cpdef Mat2 copy(self):             # <<<<<<<<<<<<<<
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
  * 
  */
 
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_13copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_copy(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_RefNannySetupContext("copy", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_13copy)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 96, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":97
+ * 
+ *     cpdef Mat2 copy(self):
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef Mat2 clone(self):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":96
+ * 
+ * 
+ *     cpdef Mat2 copy(self):             # <<<<<<<<<<<<<<
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.copy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_13__str__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_13__str__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_13copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_12copy[] = "Mat2.copy(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_13copy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__str__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __Pyx_RefNannySetupContext("copy (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_12copy(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12copy(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("copy", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_copy(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.copy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":99
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ *     cpdef Mat2 clone(self):             # <<<<<<<<<<<<<<
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_15clone(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_clone(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_RefNannySetupContext("clone", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_clone); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_15clone)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 99, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":100
+ * 
+ *     cpdef Mat2 clone(self):
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)             # <<<<<<<<<<<<<<
+ * 
+ *     def __str__(self):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":99
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ *     cpdef Mat2 clone(self):             # <<<<<<<<<<<<<<
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.clone", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_15clone(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_14clone[] = "Mat2.clone(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_15clone(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("clone (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_14clone(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14clone(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("clone", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_clone(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.clone", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":102
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
+ * 
+ *     def __str__(self):             # <<<<<<<<<<<<<<
+ *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_17__str__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_17__str__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__str__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_16__str__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16__str__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4301,7 +4654,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "easyvec/matrixes.pyx":97
+  /* "easyvec/matrixes.pyx":103
  * 
  *     def __str__(self):
  *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'             # <<<<<<<<<<<<<<
@@ -4309,17 +4662,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
  *     def __repr__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_3 = 127;
-  __Pyx_INCREF(__pyx_kp_u_);
+  __Pyx_INCREF(__pyx_kp_u__3);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u_);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__3);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u__3);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -4327,13 +4680,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__2);
+  __Pyx_INCREF(__pyx_kp_u__4);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__2);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__4);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__4);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -4341,13 +4694,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u__3);
+  __Pyx_INCREF(__pyx_kp_u__5);
   __pyx_t_2 += 4;
-  __Pyx_GIVEREF(__pyx_kp_u__3);
-  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__5);
+  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__5);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -4355,13 +4708,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__2);
+  __Pyx_INCREF(__pyx_kp_u__4);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u__2);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__4);
+  PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u__4);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -4369,19 +4722,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 7, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u__4);
+  __Pyx_INCREF(__pyx_kp_u__6);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__4);
-  PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u__4);
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__6);
+  PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u__6);
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":96
- * 
+  /* "easyvec/matrixes.pyx":102
+ *         return Mat2(self.m11, self.m12, self.m21, self.m22)
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
  *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
@@ -4401,7 +4754,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":99
+/* "easyvec/matrixes.pyx":105
  *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
@@ -4410,19 +4763,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_12__str__(struct __pyx_obj_7e
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_15__repr__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_15__repr__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_19__repr__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_19__repr__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__repr__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_18__repr__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_18__repr__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4432,7 +4785,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("__repr__", 0);
 
-  /* "easyvec/matrixes.pyx":100
+  /* "easyvec/matrixes.pyx":106
  * 
  *     def __repr__(self):
  *         return f'Mat2([[{self.m11}, {self.m12}], [{self.m21}, {self.m22}]])'             # <<<<<<<<<<<<<<
@@ -4440,7 +4793,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
  *     cpdef real[:,:] as_np(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_3 = 127;
@@ -4448,9 +4801,9 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   __pyx_t_2 += 7;
   __Pyx_GIVEREF(__pyx_kp_u_Mat2_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Mat2_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -4458,13 +4811,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__2);
+  __Pyx_INCREF(__pyx_kp_u__4);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__2);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__4);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__4);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -4472,13 +4825,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u__3);
+  __Pyx_INCREF(__pyx_kp_u__5);
   __pyx_t_2 += 4;
-  __Pyx_GIVEREF(__pyx_kp_u__3);
-  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__5);
+  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__5);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -4486,13 +4839,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__2);
+  __Pyx_INCREF(__pyx_kp_u__4);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u__2);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__4);
+  PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u__4);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -4500,18 +4853,18 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 7, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u__5);
+  __Pyx_INCREF(__pyx_kp_u__7);
   __pyx_t_2 += 3;
-  __Pyx_GIVEREF(__pyx_kp_u__5);
-  PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u__5);
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__7);
+  PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u__7);
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":99
+  /* "easyvec/matrixes.pyx":105
  *         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
@@ -4532,7 +4885,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":102
+/* "easyvec/matrixes.pyx":108
  *         return f'Mat2([[{self.m11}, {self.m12}], [{self.m21}, {self.m22}]])'
  * 
  *     cpdef real[:,:] as_np(self):             # <<<<<<<<<<<<<<
@@ -4540,7 +4893,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_14__repr__(struct __pyx_obj_7
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_17as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   __Pyx_memviewslice __pyx_r = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_RefNannyDeclarations
@@ -4561,9 +4914,9 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_17as_np)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_21as_np)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -4577,10 +4930,10 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 102, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 108, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __pyx_t_5.memview = NULL;
@@ -4601,23 +4954,23 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":103
+  /* "easyvec/matrixes.pyx":109
  * 
  *     cpdef real[:,:] as_np(self):
  *         return np.array([[self.m11, self.m12], [self.m21, self.m22]])             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 i_axis(self):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
@@ -4625,11 +4978,11 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
   PyList_SET_ITEM(__pyx_t_6, 1, __pyx_t_4);
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = PyList_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_7 = PyList_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_4);
   PyList_SET_ITEM(__pyx_t_7, 0, __pyx_t_4);
@@ -4637,7 +4990,7 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
   PyList_SET_ITEM(__pyx_t_7, 1, __pyx_t_2);
   __pyx_t_4 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_6);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_6);
@@ -4658,17 +5011,17 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
   __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_7, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":102
+  /* "easyvec/matrixes.pyx":108
  *         return f'Mat2([[{self.m11}, {self.m12}], [{self.m21}, {self.m22}]])'
  * 
  *     cpdef real[:,:] as_np(self):             # <<<<<<<<<<<<<<
@@ -4699,28 +5052,28 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8matrixes_4Mat2_as_np(struct __pyx_ob
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_17as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_16as_np[] = "Mat2.as_np(self) -> real[:, :]";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_17as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_20as_np[] = "Mat2.as_np(self) -> real[:, :]";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21as_np(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("as_np (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_16as_np(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_20as_np(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_20as_np(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_memviewslice __pyx_t_1 = { 0, 0, { 0 }, { 0 }, { 0 } };
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("as_np", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_as_np(__pyx_v_self, 1); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 102, __pyx_L1_error)
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_1, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7easyvec_7vectors_real, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_as_np(__pyx_v_self, 1); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 108, __pyx_L1_error)
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_1, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7easyvec_7vectors_real, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
   __pyx_t_1.memview = NULL;
@@ -4741,7 +5094,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16as_np(struct __pyx_obj_7eas
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":105
+/* "easyvec/matrixes.pyx":111
  *         return np.array([[self.m11, self.m12], [self.m21, self.m22]])
  * 
  *     cpdef Vec2 i_axis(self):             # <<<<<<<<<<<<<<
@@ -4749,7 +5102,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_16as_np(struct __pyx_obj_7eas
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_19i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -4767,311 +5120,9 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_i_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_i_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_19i_axis)) {
-        __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-          if (likely(__pyx_t_4)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-            __Pyx_INCREF(__pyx_t_4);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_3, function);
-          }
-        }
-        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
-        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 105, __pyx_L1_error)
-        __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
-        __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        goto __pyx_L0;
-      }
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
-      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
-        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-      }
-      #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    }
-    #endif
-  }
-
-  /* "easyvec/matrixes.pyx":106
- * 
- *     cpdef Vec2 i_axis(self):
- *         return Vec2(self.m11, self.m12)             # <<<<<<<<<<<<<<
- * 
- *     cpdef Vec2 j_axis(self):
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
-  __pyx_t_1 = 0;
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
-  __pyx_t_2 = 0;
-  goto __pyx_L0;
-
-  /* "easyvec/matrixes.pyx":105
- *         return np.array([[self.m11, self.m12], [self.m21, self.m22]])
- * 
- *     cpdef Vec2 i_axis(self):             # <<<<<<<<<<<<<<
- *         return Vec2(self.m11, self.m12)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.i_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_19i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_18i_axis[] = "Mat2.i_axis(self) -> Vec2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_19i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("i_axis (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_18i_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_18i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("i_axis", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_i_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.i_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "easyvec/matrixes.pyx":108
- *         return Vec2(self.m11, self.m12)
- * 
- *     cpdef Vec2 j_axis(self):             # <<<<<<<<<<<<<<
- *         return Vec2(self.m21, self.m22)
- * 
- */
-
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  __Pyx_RefNannySetupContext("j_axis", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
-    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
-      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_j_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_21j_axis)) {
-        __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-          if (likely(__pyx_t_4)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-            __Pyx_INCREF(__pyx_t_4);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_3, function);
-          }
-        }
-        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
-        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 108, __pyx_L1_error)
-        __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
-        __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        goto __pyx_L0;
-      }
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
-      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
-        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-      }
-      #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    }
-    #endif
-  }
-
-  /* "easyvec/matrixes.pyx":109
- * 
- *     cpdef Vec2 j_axis(self):
- *         return Vec2(self.m21, self.m22)             # <<<<<<<<<<<<<<
- * 
- *     cpdef Vec2 x_axis(self):
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
-  __pyx_t_1 = 0;
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
-  __pyx_t_2 = 0;
-  goto __pyx_L0;
-
-  /* "easyvec/matrixes.pyx":108
- *         return Vec2(self.m11, self.m12)
- * 
- *     cpdef Vec2 j_axis(self):             # <<<<<<<<<<<<<<
- *         return Vec2(self.m21, self.m22)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.j_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_20j_axis[] = "Mat2.j_axis(self) -> Vec2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_21j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("j_axis (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_20j_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_20j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("j_axis", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_j_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.j_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "easyvec/matrixes.pyx":111
- *         return Vec2(self.m21, self.m22)
- * 
- *     cpdef Vec2 x_axis(self):             # <<<<<<<<<<<<<<
- *         return Vec2(self.m11, self.m12)
- * 
- */
-
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  __Pyx_RefNannySetupContext("x_axis", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
-    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
-      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_x_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_23x_axis)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_23i_axis)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -5110,10 +5161,10 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 
   /* "easyvec/matrixes.pyx":112
  * 
- *     cpdef Vec2 x_axis(self):
+ *     cpdef Vec2 i_axis(self):
  *         return Vec2(self.m11, self.m12)             # <<<<<<<<<<<<<<
  * 
- *     cpdef Vec2 y_axis(self):
+ *     cpdef Vec2 j_axis(self):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
@@ -5136,9 +5187,9 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
   goto __pyx_L0;
 
   /* "easyvec/matrixes.pyx":111
- *         return Vec2(self.m21, self.m22)
+ *         return np.array([[self.m11, self.m12], [self.m21, self.m22]])
  * 
- *     cpdef Vec2 x_axis(self):             # <<<<<<<<<<<<<<
+ *     cpdef Vec2 i_axis(self):             # <<<<<<<<<<<<<<
  *         return Vec2(self.m11, self.m12)
  * 
  */
@@ -5149,7 +5200,7 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.x_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.i_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF((PyObject *)__pyx_r);
@@ -5158,26 +5209,26 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_22x_axis[] = "Mat2.x_axis(self) -> Vec2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_22i_axis[] = "Mat2.i_axis(self) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_23i_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("x_axis (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_22x_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __Pyx_RefNannySetupContext("i_axis (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_22i_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22i_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("x_axis", 0);
+  __Pyx_RefNannySetupContext("i_axis", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_x_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_i_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5186,7 +5237,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22x_axis(struct __pyx_obj_7ea
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.x_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.i_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5197,20 +5248,20 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_22x_axis(struct __pyx_obj_7ea
 /* "easyvec/matrixes.pyx":114
  *         return Vec2(self.m11, self.m12)
  * 
- *     cpdef Vec2 y_axis(self):             # <<<<<<<<<<<<<<
+ *     cpdef Vec2 j_axis(self):             # <<<<<<<<<<<<<<
  *         return Vec2(self.m21, self.m22)
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  __Pyx_RefNannySetupContext("y_axis", 0);
+  __Pyx_RefNannySetupContext("j_axis", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -5220,9 +5271,9 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_y_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_j_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_25y_axis)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_25j_axis)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -5261,10 +5312,10 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 
   /* "easyvec/matrixes.pyx":115
  * 
- *     cpdef Vec2 y_axis(self):
+ *     cpdef Vec2 j_axis(self):
  *         return Vec2(self.m21, self.m22)             # <<<<<<<<<<<<<<
  * 
- *     cpdef Mat2 transpose(self):
+ *     cpdef Vec2 x_axis(self):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
@@ -5289,6 +5340,308 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
   /* "easyvec/matrixes.pyx":114
  *         return Vec2(self.m11, self.m12)
  * 
+ *     cpdef Vec2 j_axis(self):             # <<<<<<<<<<<<<<
+ *         return Vec2(self.m21, self.m22)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.j_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_24j_axis[] = "Mat2.j_axis(self) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25j_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("j_axis (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_24j_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24j_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("j_axis", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_j_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.j_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":117
+ *         return Vec2(self.m21, self.m22)
+ * 
+ *     cpdef Vec2 x_axis(self):             # <<<<<<<<<<<<<<
+ *         return Vec2(self.m11, self.m12)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("x_axis", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_x_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_27x_axis)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 117, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":118
+ * 
+ *     cpdef Vec2 x_axis(self):
+ *         return Vec2(self.m11, self.m12)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef Vec2 y_axis(self):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":117
+ *         return Vec2(self.m21, self.m22)
+ * 
+ *     cpdef Vec2 x_axis(self):             # <<<<<<<<<<<<<<
+ *         return Vec2(self.m11, self.m12)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.x_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_26x_axis[] = "Mat2.x_axis(self) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27x_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("x_axis (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_26x_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_26x_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("x_axis", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_x_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.x_axis", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":120
+ *         return Vec2(self.m11, self.m12)
+ * 
+ *     cpdef Vec2 y_axis(self):             # <<<<<<<<<<<<<<
+ *         return Vec2(self.m21, self.m22)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("y_axis", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_y_axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_29y_axis)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":121
+ * 
+ *     cpdef Vec2 y_axis(self):
+ *         return Vec2(self.m21, self.m22)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef Mat2 transpose(self):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":120
+ *         return Vec2(self.m11, self.m12)
+ * 
  *     cpdef Vec2 y_axis(self):             # <<<<<<<<<<<<<<
  *         return Vec2(self.m21, self.m22)
  * 
@@ -5309,26 +5662,26 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_24y_axis[] = "Mat2.y_axis(self) -> Vec2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_25y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_28y_axis[] = "Mat2.y_axis(self) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29y_axis(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("y_axis (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_24y_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_28y_axis(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_28y_axis(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("y_axis", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_y_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_y_axis(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5345,7 +5698,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24y_axis(struct __pyx_obj_7ea
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":117
+/* "easyvec/matrixes.pyx":123
  *         return Vec2(self.m21, self.m22)
  * 
  *     cpdef Mat2 transpose(self):             # <<<<<<<<<<<<<<
@@ -5353,7 +5706,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_24y_axis(struct __pyx_obj_7ea
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -5372,9 +5725,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_transpose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_transpose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_27transpose)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_31transpose)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -5389,10 +5742,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 117, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 123, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5411,7 +5764,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":118
+  /* "easyvec/matrixes.pyx":124
  * 
  *     cpdef Mat2 transpose(self):
  *         return Mat2(self.m11, self.m21, self.m12, self.m22)             # <<<<<<<<<<<<<<
@@ -5419,15 +5772,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  *     @property
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -5441,14 +5794,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":117
+  /* "easyvec/matrixes.pyx":123
  *         return Vec2(self.m21, self.m22)
  * 
  *     cpdef Mat2 transpose(self):             # <<<<<<<<<<<<<<
@@ -5472,26 +5825,26 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_26transpose[] = "Mat2.transpose(self) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_27transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_30transpose[] = "Mat2.transpose(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31transpose(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("transpose (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_26transpose(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_30transpose(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_26transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30transpose(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("transpose", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_transpose(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_transpose(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5508,10 +5861,10 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_26transpose(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":121
+/* "easyvec/matrixes.pyx":127
  * 
  *     @property
- *     def T(self):             # <<<<<<<<<<<<<<
+ *     def T(self) -> Mat2:             # <<<<<<<<<<<<<<
  *         return self.transpose()
  * 
  */
@@ -5535,24 +5888,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_1T___get__(struct __pyx_obj_7
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "easyvec/matrixes.pyx":122
+  /* "easyvec/matrixes.pyx":128
  *     @property
- *     def T(self):
+ *     def T(self) -> Mat2:
  *         return self.transpose()             # <<<<<<<<<<<<<<
  * 
  *     cpdef real det(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->transpose(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->transpose(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":121
+  /* "easyvec/matrixes.pyx":127
  * 
  *     @property
- *     def T(self):             # <<<<<<<<<<<<<<
+ *     def T(self) -> Mat2:             # <<<<<<<<<<<<<<
  *         return self.transpose()
  * 
  */
@@ -5568,7 +5921,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_1T___get__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":124
+/* "easyvec/matrixes.pyx":130
  *         return self.transpose()
  * 
  *     cpdef real det(self):             # <<<<<<<<<<<<<<
@@ -5576,7 +5929,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_1T___get__(struct __pyx_obj_7
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -5595,9 +5948,9 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struc
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_det); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_det); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_29det)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_33det)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -5611,10 +5964,10 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struc
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
+        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5633,7 +5986,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struc
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":125
+  /* "easyvec/matrixes.pyx":131
  * 
  *     cpdef real det(self):
  *         return self.m11*self.m22 - self.m12*self.m21             # <<<<<<<<<<<<<<
@@ -5643,7 +5996,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struc
   __pyx_r = ((__pyx_v_self->m11 * __pyx_v_self->m22) - (__pyx_v_self->m12 * __pyx_v_self->m21));
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":124
+  /* "easyvec/matrixes.pyx":130
  *         return self.transpose()
  * 
  *     cpdef real det(self):             # <<<<<<<<<<<<<<
@@ -5665,26 +6018,26 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8matrixes_4Mat2_det(struc
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_28det[] = "Mat2.det(self) -> real";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_29det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_32det[] = "Mat2.det(self) -> real";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33det(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("det (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_28det(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_32det(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_28det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32det(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("det", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8matrixes_4Mat2_det(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8matrixes_4Mat2_det(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5701,15 +6054,15 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_28det(struct __pyx_obj_7easyv
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":128
- * 
+/* "easyvec/matrixes.pyx":135
  *     @cython.nonecheck(False)
+ *     @cython.cdivision(True)
  *     cpdef Mat2 inverse(self):             # <<<<<<<<<<<<<<
  *         cdef real det = self.det()
  *         if fabs(det) - 1.0 < CMP_TOL:
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_det;
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
@@ -5719,8 +6072,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   int __pyx_t_5;
-  __pyx_t_7easyvec_7vectors_real __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("inverse", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5731,9 +6083,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_inverse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_inverse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_31inverse)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_35inverse)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -5748,10 +6100,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 128, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 135, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5770,8 +6122,8 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":129
- *     @cython.nonecheck(False)
+  /* "easyvec/matrixes.pyx":136
+ *     @cython.cdivision(True)
  *     cpdef Mat2 inverse(self):
  *         cdef real det = self.det()             # <<<<<<<<<<<<<<
  *         if fabs(det) - 1.0 < CMP_TOL:
@@ -5779,7 +6131,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_det = ((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->det(__pyx_v_self, 0);
 
-  /* "easyvec/matrixes.pyx":130
+  /* "easyvec/matrixes.pyx":137
  *     cpdef Mat2 inverse(self):
  *         cdef real det = self.det()
  *         if fabs(det) - 1.0 < CMP_TOL:             # <<<<<<<<<<<<<<
@@ -5789,7 +6141,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_5 = (((fabs(__pyx_v_det) - 1.0) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
   if (__pyx_t_5) {
 
-    /* "easyvec/matrixes.pyx":131
+    /* "easyvec/matrixes.pyx":138
  *         cdef real det = self.det()
  *         if fabs(det) - 1.0 < CMP_TOL:
  *             return self.transpose()             # <<<<<<<<<<<<<<
@@ -5797,13 +6149,13 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  *             return Mat2()
  */
     __Pyx_XDECREF(((PyObject *)__pyx_r));
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->transpose(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->transpose(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":130
+    /* "easyvec/matrixes.pyx":137
  *     cpdef Mat2 inverse(self):
  *         cdef real det = self.det()
  *         if fabs(det) - 1.0 < CMP_TOL:             # <<<<<<<<<<<<<<
@@ -5812,7 +6164,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   }
 
-  /* "easyvec/matrixes.pyx":132
+  /* "easyvec/matrixes.pyx":139
  *         if fabs(det) - 1.0 < CMP_TOL:
  *             return self.transpose()
  *         if fabs(det) < CMP_TOL:             # <<<<<<<<<<<<<<
@@ -5822,7 +6174,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_5 = ((fabs(__pyx_v_det) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
   if (__pyx_t_5) {
 
-    /* "easyvec/matrixes.pyx":133
+    /* "easyvec/matrixes.pyx":140
  *             return self.transpose()
  *         if fabs(det) < CMP_TOL:
  *             return Mat2()             # <<<<<<<<<<<<<<
@@ -5830,13 +6182,13 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  *              self.m22 / det, -self.m12 / det,
  */
     __Pyx_XDECREF(((PyObject *)__pyx_r));
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":132
+    /* "easyvec/matrixes.pyx":139
  *         if fabs(det) - 1.0 < CMP_TOL:
  *             return self.transpose()
  *         if fabs(det) < CMP_TOL:             # <<<<<<<<<<<<<<
@@ -5845,7 +6197,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   }
 
-  /* "easyvec/matrixes.pyx":134
+  /* "easyvec/matrixes.pyx":141
  *         if fabs(det) < CMP_TOL:
  *             return Mat2()
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -5854,79 +6206,61 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":135
+  /* "easyvec/matrixes.pyx":142
  *             return Mat2()
  *         return Mat2(
  *              self.m22 / det, -self.m12 / det,             # <<<<<<<<<<<<<<
  *             -self.m21 / det,  self.m11 / det
  *         )
  */
-  if (unlikely(__pyx_v_det == 0)) {
-    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 135, __pyx_L1_error)
-  }
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_det)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_det)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = (-__pyx_v_self->m12);
-  if (unlikely(__pyx_v_det == 0)) {
-    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 135, __pyx_L1_error)
-  }
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_t_6 / __pyx_v_det)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(((-__pyx_v_self->m12) / __pyx_v_det)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":136
+  /* "easyvec/matrixes.pyx":143
  *         return Mat2(
  *              self.m22 / det, -self.m12 / det,
  *             -self.m21 / det,  self.m11 / det             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_6 = (-__pyx_v_self->m21);
-  if (unlikely(__pyx_v_det == 0)) {
-    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 136, __pyx_L1_error)
-  }
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_t_6 / __pyx_v_det)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(((-__pyx_v_self->m21) / __pyx_v_det)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (unlikely(__pyx_v_det == 0)) {
-    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 136, __pyx_L1_error)
-  }
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_det)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_det)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":134
+  /* "easyvec/matrixes.pyx":141
  *         if fabs(det) < CMP_TOL:
  *             return Mat2()
  *         return Mat2(             # <<<<<<<<<<<<<<
  *              self.m22 / det, -self.m12 / det,
  *             -self.m21 / det,  self.m11 / det
  */
-  __pyx_t_7 = PyTuple_New(4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_7, 3, __pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_6, 3, __pyx_t_4);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":128
- * 
+  /* "easyvec/matrixes.pyx":135
  *     @cython.nonecheck(False)
+ *     @cython.cdivision(True)
  *     cpdef Mat2 inverse(self):             # <<<<<<<<<<<<<<
  *         cdef real det = self.det()
  *         if fabs(det) - 1.0 < CMP_TOL:
@@ -5938,7 +6272,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_AddTraceback("easyvec.matrixes.Mat2.inverse", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
@@ -5948,26 +6282,26 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_30inverse[] = "Mat2.inverse(self) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_31inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_34inverse[] = "Mat2.inverse(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35inverse(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("inverse (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_30inverse(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_34inverse(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34inverse(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("inverse", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_inverse(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_inverse(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5984,7 +6318,669 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30inverse(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":140
+/* "easyvec/matrixes.pyx":147
+ * 
+ *     @property
+ *     def _1(self) -> Mat2:             # <<<<<<<<<<<<<<
+ *         return self.inverse()
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_2_1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_2_1_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_2_1___get__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_2_1___get__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "easyvec/matrixes.pyx":148
+ *     @property
+ *     def _1(self) -> Mat2:
+ *         return self.inverse()             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->inverse(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":147
+ * 
+ *     @property
+ *     def _1(self) -> Mat2:             # <<<<<<<<<<<<<<
+ *         return self.inverse()
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2._1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":151
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements_(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         self.m11 *= right.m11
+ *         self.m12 *= right.m12
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_mat_elements_(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_elements_", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_mat_elements); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_mat_elements_)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_right)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_right));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 151, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":152
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements_(self, Mat2 right):
+ *         self.m11 *= right.m11             # <<<<<<<<<<<<<<
+ *         self.m12 *= right.m12
+ *         self.m21 *= right.m21
+ */
+  __pyx_v_self->m11 = (__pyx_v_self->m11 * __pyx_v_right->m11);
+
+  /* "easyvec/matrixes.pyx":153
+ *     cpdef Mat2 mul_mat_elements_(self, Mat2 right):
+ *         self.m11 *= right.m11
+ *         self.m12 *= right.m12             # <<<<<<<<<<<<<<
+ *         self.m21 *= right.m21
+ *         self.m22 *= right.m22
+ */
+  __pyx_v_self->m12 = (__pyx_v_self->m12 * __pyx_v_right->m12);
+
+  /* "easyvec/matrixes.pyx":154
+ *         self.m11 *= right.m11
+ *         self.m12 *= right.m12
+ *         self.m21 *= right.m21             # <<<<<<<<<<<<<<
+ *         self.m22 *= right.m22
+ *         return self
+ */
+  __pyx_v_self->m21 = (__pyx_v_self->m21 * __pyx_v_right->m21);
+
+  /* "easyvec/matrixes.pyx":155
+ *         self.m12 *= right.m12
+ *         self.m21 *= right.m21
+ *         self.m22 *= right.m22             # <<<<<<<<<<<<<<
+ *         return self
+ * 
+ */
+  __pyx_v_self->m22 = (__pyx_v_self->m22 * __pyx_v_right->m22);
+
+  /* "easyvec/matrixes.pyx":156
+ *         self.m21 *= right.m21
+ *         self.m22 *= right.m22
+ *         return self             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __Pyx_INCREF(((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_v_self;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":151
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements_(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         self.m11 *= right.m11
+ *         self.m12 *= right.m12
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_elements_", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_mat_elements_(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_36mul_mat_elements_[] = "Mat2.mul_mat_elements_(self, Mat2 right) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_mat_elements_(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("mul_mat_elements_ (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_right), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "right", 0))) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_36mul_mat_elements_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_mat_elements_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_elements_", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements_(__pyx_v_self, __pyx_v_right, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_elements_", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":159
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         return Mat2(
+ *             self.m11 * right.m11,
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_mat_elements(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_elements", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_mat_elements_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_mat_elements)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_right)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_right));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 159, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":160
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements(self, Mat2 right):
+ *         return Mat2(             # <<<<<<<<<<<<<<
+ *             self.m11 * right.m11,
+ *             self.m12 * right.m12,
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+
+  /* "easyvec/matrixes.pyx":161
+ *     cpdef Mat2 mul_mat_elements(self, Mat2 right):
+ *         return Mat2(
+ *             self.m11 * right.m11,             # <<<<<<<<<<<<<<
+ *             self.m12 * right.m12,
+ *             self.m21 * right.m21,
+ */
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 * __pyx_v_right->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+
+  /* "easyvec/matrixes.pyx":162
+ *         return Mat2(
+ *             self.m11 * right.m11,
+ *             self.m12 * right.m12,             # <<<<<<<<<<<<<<
+ *             self.m21 * right.m21,
+ *             self.m22 * right.m22
+ */
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 * __pyx_v_right->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+
+  /* "easyvec/matrixes.pyx":163
+ *             self.m11 * right.m11,
+ *             self.m12 * right.m12,
+ *             self.m21 * right.m21,             # <<<<<<<<<<<<<<
+ *             self.m22 * right.m22
+ *         )
+ */
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 * __pyx_v_right->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+
+  /* "easyvec/matrixes.pyx":164
+ *             self.m12 * right.m12,
+ *             self.m21 * right.m21,
+ *             self.m22 * right.m22             # <<<<<<<<<<<<<<
+ *         )
+ * 
+ */
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 * __pyx_v_right->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+
+  /* "easyvec/matrixes.pyx":160
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements(self, Mat2 right):
+ *         return Mat2(             # <<<<<<<<<<<<<<
+ *             self.m11 * right.m11,
+ *             self.m12 * right.m12,
+ */
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":159
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_elements(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         return Mat2(
+ *             self.m11 * right.m11,
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_elements", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_mat_elements(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_38mul_mat_elements[] = "Mat2.mul_mat_elements(self, Mat2 right) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_mat_elements(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("mul_mat_elements (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_right), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "right", 0))) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_38mul_mat_elements(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_mat_elements(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_elements", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements(__pyx_v_self, __pyx_v_right, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_elements", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":168
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+ */
+
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_41mul_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_m11;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_m12;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_m21;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_m22;
+  struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_41mul_mat_)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_right)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_right));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 168, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/matrixes.pyx":169
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_(self, Mat2 right):
+ *         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21             # <<<<<<<<<<<<<<
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
+ */
+  __pyx_v_m11 = ((__pyx_v_self->m11 * __pyx_v_right->m11) + (__pyx_v_self->m12 * __pyx_v_right->m21));
+
+  /* "easyvec/matrixes.pyx":170
+ *     cpdef Mat2 mul_mat_(self, Mat2 right):
+ *         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22             # <<<<<<<<<<<<<<
+ *         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22
+ */
+  __pyx_v_m12 = ((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22));
+
+  /* "easyvec/matrixes.pyx":171
+ *         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22             # <<<<<<<<<<<<<<
+ *         cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22
+ *         self.m11 = m11
+ */
+  __pyx_v_m21 = ((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22));
+
+  /* "easyvec/matrixes.pyx":172
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22             # <<<<<<<<<<<<<<
+ *         self.m11 = m11
+ *         self.m12 = m12
+ */
+  __pyx_v_m22 = ((__pyx_v_self->m21 * __pyx_v_right->m12) + (__pyx_v_self->m22 * __pyx_v_right->m22));
+
+  /* "easyvec/matrixes.pyx":173
+ *         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
+ *         cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22
+ *         self.m11 = m11             # <<<<<<<<<<<<<<
+ *         self.m12 = m12
+ *         self.m21 = m21
+ */
+  __pyx_v_self->m11 = __pyx_v_m11;
+
+  /* "easyvec/matrixes.pyx":174
+ *         cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22
+ *         self.m11 = m11
+ *         self.m12 = m12             # <<<<<<<<<<<<<<
+ *         self.m21 = m21
+ *         self.m22 = m22
+ */
+  __pyx_v_self->m12 = __pyx_v_m12;
+
+  /* "easyvec/matrixes.pyx":175
+ *         self.m11 = m11
+ *         self.m12 = m12
+ *         self.m21 = m21             # <<<<<<<<<<<<<<
+ *         self.m22 = m22
+ *         return self
+ */
+  __pyx_v_self->m21 = __pyx_v_m21;
+
+  /* "easyvec/matrixes.pyx":176
+ *         self.m12 = m12
+ *         self.m21 = m21
+ *         self.m22 = m22             # <<<<<<<<<<<<<<
+ *         return self
+ * 
+ */
+  __pyx_v_self->m22 = __pyx_v_m22;
+
+  /* "easyvec/matrixes.pyx":177
+ *         self.m21 = m21
+ *         self.m22 = m22
+ *         return self             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __Pyx_INCREF(((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_v_self;
+  goto __pyx_L0;
+
+  /* "easyvec/matrixes.pyx":168
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Mat2 mul_mat_(self, Mat2 right):             # <<<<<<<<<<<<<<
+ *         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
+ *         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_41mul_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_40mul_mat_[] = "Mat2.mul_mat_(self, Mat2 right) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_41mul_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("mul_mat_ (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_right), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "right", 0))) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_40mul_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40mul_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("mul_mat_", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_(__pyx_v_self, __pyx_v_right, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.mul_mat_", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":180
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_mat(self, Mat2 right):             # <<<<<<<<<<<<<<
@@ -5992,7 +6988,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_30inverse(struct __pyx_obj_7e
  *             self.m11 * right.m11 + self.m12 * right.m21,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -6011,9 +7007,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_43mul_mat)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -6028,10 +7024,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_right)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_right));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 140, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 180, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6050,7 +7046,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":141
+  /* "easyvec/matrixes.pyx":181
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_mat(self, Mat2 right):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -6059,54 +7055,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":142
+  /* "easyvec/matrixes.pyx":182
  *     cpdef Mat2 mul_mat(self, Mat2 right):
  *         return Mat2(
  *             self.m11 * right.m11 + self.m12 * right.m21,             # <<<<<<<<<<<<<<
  *             self.m11 * right.m12 + self.m12 * right.m22,
  *             self.m11 * right.m12 + self.m12 * right.m22,
  */
-  __pyx_t_1 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m11) + (__pyx_v_self->m12 * __pyx_v_right->m21))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m11) + (__pyx_v_self->m12 * __pyx_v_right->m21))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":143
+  /* "easyvec/matrixes.pyx":183
  *         return Mat2(
  *             self.m11 * right.m11 + self.m12 * right.m21,
  *             self.m11 * right.m12 + self.m12 * right.m22,             # <<<<<<<<<<<<<<
  *             self.m11 * right.m12 + self.m12 * right.m22,
  *             self.m21 * right.m12 + self.m22 * right.m22
  */
-  __pyx_t_2 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":144
+  /* "easyvec/matrixes.pyx":184
  *             self.m11 * right.m11 + self.m12 * right.m21,
  *             self.m11 * right.m12 + self.m12 * right.m22,
  *             self.m11 * right.m12 + self.m12 * right.m22,             # <<<<<<<<<<<<<<
  *             self.m21 * right.m12 + self.m22 * right.m22
  *         )
  */
-  __pyx_t_3 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_right->m12) + (__pyx_v_self->m12 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":145
+  /* "easyvec/matrixes.pyx":185
  *             self.m11 * right.m12 + self.m12 * right.m22,
  *             self.m11 * right.m12 + self.m12 * right.m22,
  *             self.m21 * right.m12 + self.m22 * right.m22             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyFloat_FromDouble(((__pyx_v_self->m21 * __pyx_v_right->m12) + (__pyx_v_self->m22 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(((__pyx_v_self->m21 * __pyx_v_right->m12) + (__pyx_v_self->m22 * __pyx_v_right->m22))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":141
+  /* "easyvec/matrixes.pyx":181
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_mat(self, Mat2 right):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 * right.m11 + self.m12 * right.m21,
  *             self.m11 * right.m12 + self.m12 * right.m22,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -6120,14 +7116,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":140
+  /* "easyvec/matrixes.pyx":180
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_mat(self, Mat2 right):             # <<<<<<<<<<<<<<
@@ -6151,14 +7147,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_32mul_mat[] = "Mat2.mul_mat(self, Mat2 right) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_42mul_mat[] = "Mat2.mul_mat(self, Mat2 right) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43mul_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mul_mat (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_right), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "right", 0))) __PYX_ERR(0, 140, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_32mul_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_right), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "right", 0))) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_42mul_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right));
 
   /* function exit code */
   goto __pyx_L0;
@@ -6169,13 +7165,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42mul_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mul_mat", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat(__pyx_v_self, __pyx_v_right, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat(__pyx_v_self, __pyx_v_right, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6192,7 +7188,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32mul_mat(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":149
+/* "easyvec/matrixes.pyx":189
  * 
  *     @cython.nonecheck(False)
  *     cpdef Vec2 mul_vec(self, Vec2 vec):             # <<<<<<<<<<<<<<
@@ -6200,7 +7196,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_32mul_mat(struct __pyx_obj_7e
  *             self.m11 * vec.x + self.m12 * vec.y,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
 static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -6218,9 +7214,9 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_45mul_vec)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -6235,10 +7231,10 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_vec)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_vec));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 149, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 189, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6257,7 +7253,7 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":150
+  /* "easyvec/matrixes.pyx":190
  *     @cython.nonecheck(False)
  *     cpdef Vec2 mul_vec(self, Vec2 vec):
  *         return Vec2(             # <<<<<<<<<<<<<<
@@ -6266,34 +7262,34 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":151
+  /* "easyvec/matrixes.pyx":191
  *     cpdef Vec2 mul_vec(self, Vec2 vec):
  *         return Vec2(
  *             self.m11 * vec.x + self.m12 * vec.y,             # <<<<<<<<<<<<<<
  * 			self.m21 * vec.x + self.m22 * vec.y
  *         )
  */
-  __pyx_t_1 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_vec->x) + (__pyx_v_self->m12 * __pyx_v_vec->y))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(((__pyx_v_self->m11 * __pyx_v_vec->x) + (__pyx_v_self->m12 * __pyx_v_vec->y))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":152
+  /* "easyvec/matrixes.pyx":192
  *         return Vec2(
  *             self.m11 * vec.x + self.m12 * vec.y,
  * 			self.m21 * vec.x + self.m22 * vec.y             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_2 = PyFloat_FromDouble(((__pyx_v_self->m21 * __pyx_v_vec->x) + (__pyx_v_self->m22 * __pyx_v_vec->y))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(((__pyx_v_self->m21 * __pyx_v_vec->x) + (__pyx_v_self->m22 * __pyx_v_vec->y))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":150
+  /* "easyvec/matrixes.pyx":190
  *     @cython.nonecheck(False)
  *     cpdef Vec2 mul_vec(self, Vec2 vec):
  *         return Vec2(             # <<<<<<<<<<<<<<
  *             self.m11 * vec.x + self.m12 * vec.y,
  * 			self.m21 * vec.x + self.m22 * vec.y
  */
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -6301,14 +7297,14 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":149
+  /* "easyvec/matrixes.pyx":189
  * 
  *     @cython.nonecheck(False)
  *     cpdef Vec2 mul_vec(self, Vec2 vec):             # <<<<<<<<<<<<<<
@@ -6331,14 +7327,14 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8matrixes_4Mat2
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_34mul_vec[] = "Mat2.mul_vec(self, Vec2 vec) -> Vec2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_44mul_vec[] = "Mat2.mul_vec(self, Vec2 vec) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45mul_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mul_vec (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vec", 0))) __PYX_ERR(0, 149, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_34mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_vec));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vec", 0))) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_44mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_vec));
 
   /* function exit code */
   goto __pyx_L0;
@@ -6349,13 +7345,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44mul_vec(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mul_vec", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_vec(__pyx_v_self, __pyx_v_vec, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_vec(__pyx_v_self, __pyx_v_vec, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6372,7 +7368,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34mul_vec(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":156
+/* "easyvec/matrixes.pyx":196
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -6380,7 +7376,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_34mul_vec(struct __pyx_obj_7e
  *         self.m12 *= num
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -6399,11 +7395,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_47mul_num_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 196, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6419,10 +7415,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 156, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 196, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6441,7 +7437,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":157
+  /* "easyvec/matrixes.pyx":197
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num_(self, real num):
  *         self.m11 *= num             # <<<<<<<<<<<<<<
@@ -6450,7 +7446,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 * __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":158
+  /* "easyvec/matrixes.pyx":198
  *     cpdef Mat2 mul_num_(self, real num):
  *         self.m11 *= num
  *         self.m12 *= num             # <<<<<<<<<<<<<<
@@ -6459,7 +7455,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 * __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":159
+  /* "easyvec/matrixes.pyx":199
  *         self.m11 *= num
  *         self.m12 *= num
  *         self.m21 *= num             # <<<<<<<<<<<<<<
@@ -6468,7 +7464,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 * __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":160
+  /* "easyvec/matrixes.pyx":200
  *         self.m12 *= num
  *         self.m21 *= num
  *         self.m22 *= num             # <<<<<<<<<<<<<<
@@ -6477,7 +7473,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 * __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":161
+  /* "easyvec/matrixes.pyx":201
  *         self.m21 *= num
  *         self.m22 *= num
  *         return self             # <<<<<<<<<<<<<<
@@ -6489,7 +7485,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":156
+  /* "easyvec/matrixes.pyx":196
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -6513,15 +7509,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_36mul_num_[] = "Mat2.mul_num_(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_46mul_num_[] = "Mat2.mul_num_(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47mul_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mul_num_ (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 156, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 196, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6529,20 +7525,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_36mul_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_46mul_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46mul_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mul_num_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6559,7 +7555,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_num_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":164
+/* "easyvec/matrixes.pyx":204
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num(self, real num):             # <<<<<<<<<<<<<<
@@ -6567,7 +7563,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_36mul_num_(struct __pyx_obj_7
  *             self.m11 * num,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_mul_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -6586,11 +7582,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mul_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_49mul_num)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 204, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6606,10 +7602,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 164, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 204, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6628,7 +7624,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":165
+  /* "easyvec/matrixes.pyx":205
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -6637,54 +7633,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":166
+  /* "easyvec/matrixes.pyx":206
  *     cpdef Mat2 mul_num(self, real num):
  *         return Mat2(
  *             self.m11 * num,             # <<<<<<<<<<<<<<
  *             self.m12 * num,
  *             self.m21 * num,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 * __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 * __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":167
+  /* "easyvec/matrixes.pyx":207
  *         return Mat2(
  *             self.m11 * num,
  *             self.m12 * num,             # <<<<<<<<<<<<<<
  *             self.m21 * num,
  *             self.m22 * num
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 * __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 * __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":168
+  /* "easyvec/matrixes.pyx":208
  *             self.m11 * num,
  *             self.m12 * num,
  *             self.m21 * num,             # <<<<<<<<<<<<<<
  *             self.m22 * num
  *         )
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 * __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 * __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":169
+  /* "easyvec/matrixes.pyx":209
  *             self.m12 * num,
  *             self.m21 * num,
  *             self.m22 * num             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 * __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 * __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 209, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":165
+  /* "easyvec/matrixes.pyx":205
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 * num,
  *             self.m12 * num,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -6698,14 +7694,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":164
+  /* "easyvec/matrixes.pyx":204
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 mul_num(self, real num):             # <<<<<<<<<<<<<<
@@ -6729,15 +7725,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_38mul_num[] = "Mat2.mul_num(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_48mul_num[] = "Mat2.mul_num(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49mul_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mul_num (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6745,20 +7741,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_38mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_48mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_48mul_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mul_num", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_mul_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6775,7 +7771,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_num(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":172
+/* "easyvec/matrixes.pyx":212
  *         )
  * 
  *     def __mul__(left, right):             # <<<<<<<<<<<<<<
@@ -6784,19 +7780,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_38mul_num(struct __pyx_obj_7e
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_41__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_41__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_51__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_51__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__mul__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_50__mul__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_50__mul__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -6810,7 +7806,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   Py_UCS4 __pyx_t_9;
   __Pyx_RefNannySetupContext("__mul__", 0);
 
-  /* "easyvec/matrixes.pyx":173
+  /* "easyvec/matrixes.pyx":213
  * 
  *     def __mul__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -6821,7 +7817,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":174
+    /* "easyvec/matrixes.pyx":214
  *     def __mul__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Vec2):             # <<<<<<<<<<<<<<
@@ -6832,7 +7828,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "easyvec/matrixes.pyx":175
+      /* "easyvec/matrixes.pyx":215
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Vec2):
  *                 return (<Mat2>left).mul_vec(<Vec2>right)             # <<<<<<<<<<<<<<
@@ -6840,13 +7836,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  *                 return (<Mat2>left).mul_mat(<Mat2>right)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":174
+      /* "easyvec/matrixes.pyx":214
  *     def __mul__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Vec2):             # <<<<<<<<<<<<<<
@@ -6855,7 +7851,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":176
+    /* "easyvec/matrixes.pyx":216
  *             if isinstance(right, Vec2):
  *                 return (<Mat2>left).mul_vec(<Vec2>right)
  *             elif isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -6866,7 +7862,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
     __pyx_t_2 = (__pyx_t_1 != 0);
     if (__pyx_t_2) {
 
-      /* "easyvec/matrixes.pyx":177
+      /* "easyvec/matrixes.pyx":217
  *                 return (<Mat2>left).mul_vec(<Vec2>right)
  *             elif isinstance(right, Mat2):
  *                 return (<Mat2>left).mul_mat(<Mat2>right)             # <<<<<<<<<<<<<<
@@ -6874,13 +7870,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 177, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":176
+      /* "easyvec/matrixes.pyx":216
  *             if isinstance(right, Vec2):
  *                 return (<Mat2>left).mul_vec(<Vec2>right)
  *             elif isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -6889,19 +7885,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":178
+    /* "easyvec/matrixes.pyx":218
  *             elif isinstance(right, Mat2):
  *                 return (<Mat2>left).mul_mat(<Mat2>right)
  *             elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):             # <<<<<<<<<<<<<<
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))
  *             elif isinstance(right, int) or isinstance(right, float):
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_1 = PyObject_IsInstance(__pyx_v_right, __pyx_t_4); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_1 = PyObject_IsInstance(__pyx_v_right, __pyx_t_4); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_5 = (__pyx_t_1 != 0);
     if (!__pyx_t_5) {
@@ -6923,16 +7919,16 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
       __pyx_t_2 = __pyx_t_5;
       goto __pyx_L5_bool_binop_done;
     }
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_memoryview); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_memoryview); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = PyObject_IsInstance(__pyx_v_right, __pyx_t_4); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_5 = PyObject_IsInstance(__pyx_v_right, __pyx_t_4); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_1 = (__pyx_t_5 != 0);
     __pyx_t_2 = __pyx_t_1;
     __pyx_L5_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "easyvec/matrixes.pyx":179
+      /* "easyvec/matrixes.pyx":219
  *                 return (<Mat2>left).mul_mat(<Mat2>right)
  *             elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))             # <<<<<<<<<<<<<<
@@ -6940,11 +7936,11 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  *                 return (<Mat2>left).mul_num(<real>right)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_right, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_right, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_right, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_right, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4);
@@ -6952,17 +7948,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
       PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_3);
       __pyx_t_4 = 0;
       __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_vec(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_r = __pyx_t_6;
       __pyx_t_6 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":178
+      /* "easyvec/matrixes.pyx":218
  *             elif isinstance(right, Mat2):
  *                 return (<Mat2>left).mul_mat(<Mat2>right)
  *             elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):             # <<<<<<<<<<<<<<
@@ -6971,7 +7967,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":180
+    /* "easyvec/matrixes.pyx":220
  *             elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -6991,7 +7987,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
     __pyx_L9_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "easyvec/matrixes.pyx":181
+      /* "easyvec/matrixes.pyx":221
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).mul_num(<real>right)             # <<<<<<<<<<<<<<
@@ -6999,14 +7995,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  *             return (<Mat2>right).mul_num(<real>left)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 181, __pyx_L1_error)
-      __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 181, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 221, __pyx_L1_error)
+      __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_r = __pyx_t_6;
       __pyx_t_6 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":180
+      /* "easyvec/matrixes.pyx":220
  *             elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):
  *                 return (<Mat2>left).mul_vec(Vec2(right[0], right[1]))
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -7015,7 +8011,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":173
+    /* "easyvec/matrixes.pyx":213
  * 
  *     def __mul__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -7025,7 +8021,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
     goto __pyx_L3;
   }
 
-  /* "easyvec/matrixes.pyx":182
+  /* "easyvec/matrixes.pyx":222
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).mul_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
@@ -7045,7 +8041,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   __pyx_L11_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":183
+    /* "easyvec/matrixes.pyx":223
  *                 return (<Mat2>left).mul_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):
  *             return (<Mat2>right).mul_num(<real>left)             # <<<<<<<<<<<<<<
@@ -7053,14 +8049,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_left); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
-    __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_left); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->mul_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_r = __pyx_t_6;
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":182
+    /* "easyvec/matrixes.pyx":222
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).mul_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
@@ -7070,14 +8066,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   }
   __pyx_L3:;
 
-  /* "easyvec/matrixes.pyx":184
+  /* "easyvec/matrixes.pyx":224
  *         elif isinstance(left, int) or isinstance(left, float):
  *             return (<Mat2>right).mul_num(<real>left)
  *         raise NotImplementedError(f"    left={left}, right={right}")             # <<<<<<<<<<<<<<
  * 
- *     @cython.nonecheck(False)
+ * 
  */
-  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_8 = 0;
   __pyx_t_9 = 127;
@@ -7086,7 +8082,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   __pyx_t_8 += 40;
   __Pyx_GIVEREF(__pyx_kp_u_left);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_kp_u_left);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_9;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -7097,24 +8093,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   __pyx_t_8 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_kp_u_right);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_9;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_6, 3, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_Raise(__pyx_t_6, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __PYX_ERR(0, 184, __pyx_L1_error)
+  __PYX_ERR(0, 224, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":172
+  /* "easyvec/matrixes.pyx":212
  *         )
  * 
  *     def __mul__(left, right):             # <<<<<<<<<<<<<<
@@ -7135,7 +8131,183 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":187
+/* "easyvec/matrixes.pyx":227
+ * 
+ * 
+ *     def __imul__(self, right):             # <<<<<<<<<<<<<<
+ *         if isinstance(right, Mat2):
+ *             return self.mul_mat_(<Mat2>right)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_53__imul__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_53__imul__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__imul__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_52__imul__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__imul__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_5;
+  Py_ssize_t __pyx_t_6;
+  Py_UCS4 __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  __Pyx_RefNannySetupContext("__imul__", 0);
+
+  /* "easyvec/matrixes.pyx":228
+ * 
+ *     def __imul__(self, right):
+ *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
+ *             return self.mul_mat_(<Mat2>right)
+ *         elif isinstance(right, int) or isinstance(right, float):
+ */
+  __pyx_t_1 = __Pyx_TypeCheck(__pyx_v_right, __pyx_ptype_7easyvec_8matrixes_Mat2); 
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "easyvec/matrixes.pyx":229
+ *     def __imul__(self, right):
+ *         if isinstance(right, Mat2):
+ *             return self.mul_mat_(<Mat2>right)             # <<<<<<<<<<<<<<
+ *         elif isinstance(right, int) or isinstance(right, float):
+ *             return self.mul_num_(<real>right)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->mul_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/matrixes.pyx":228
+ * 
+ *     def __imul__(self, right):
+ *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
+ *             return self.mul_mat_(<Mat2>right)
+ *         elif isinstance(right, int) or isinstance(right, float):
+ */
+  }
+
+  /* "easyvec/matrixes.pyx":230
+ *         if isinstance(right, Mat2):
+ *             return self.mul_mat_(<Mat2>right)
+ *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
+ *             return self.mul_num_(<real>right)
+ *         raise NotImplementedError(f"    left={self}, right={right}")
+ */
+  __pyx_t_1 = PyInt_Check(__pyx_v_right); 
+  __pyx_t_4 = (__pyx_t_1 != 0);
+  if (!__pyx_t_4) {
+  } else {
+    __pyx_t_2 = __pyx_t_4;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_4 = PyFloat_Check(__pyx_v_right); 
+  __pyx_t_1 = (__pyx_t_4 != 0);
+  __pyx_t_2 = __pyx_t_1;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "easyvec/matrixes.pyx":231
+ *             return self.mul_mat_(<Mat2>right)
+ *         elif isinstance(right, int) or isinstance(right, float):
+ *             return self.mul_num_(<real>right)             # <<<<<<<<<<<<<<
+ *         raise NotImplementedError(f"    left={self}, right={right}")
+ * 
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->mul_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/matrixes.pyx":230
+ *         if isinstance(right, Mat2):
+ *             return self.mul_mat_(<Mat2>right)
+ *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
+ *             return self.mul_num_(<real>right)
+ *         raise NotImplementedError(f"    left={self}, right={right}")
+ */
+  }
+
+  /* "easyvec/matrixes.pyx":232
+ *         elif isinstance(right, int) or isinstance(right, float):
+ *             return self.mul_num_(<real>right)
+ *         raise NotImplementedError(f"    left={self}, right={right}")             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_6 = 0;
+  __pyx_t_7 = 127;
+  __Pyx_INCREF(__pyx_kp_u_left);
+  __pyx_t_7 = (65535 > __pyx_t_7) ? 65535 : __pyx_t_7;
+  __pyx_t_6 += 40;
+  __Pyx_GIVEREF(__pyx_kp_u_left);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_left);
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
+  __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_8);
+  __pyx_t_8 = 0;
+  __Pyx_INCREF(__pyx_kp_u_right);
+  __pyx_t_6 += 8;
+  __Pyx_GIVEREF(__pyx_kp_u_right);
+  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
+  __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
+  __pyx_t_8 = 0;
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __PYX_ERR(0, 232, __pyx_L1_error)
+
+  /* "easyvec/matrixes.pyx":227
+ * 
+ * 
+ *     def __imul__(self, right):             # <<<<<<<<<<<<<<
+ *         if isinstance(right, Mat2):
+ *             return self.mul_mat_(<Mat2>right)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.__imul__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":235
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -7143,7 +8315,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_40__mul__(PyObject *__pyx_v_l
  *         self.m12 += num
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_add_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -7162,11 +8334,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_55add_num_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7182,10 +8354,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 187, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 235, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7204,7 +8376,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":188
+  /* "easyvec/matrixes.pyx":236
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num_(self, real num):
  *         self.m11 += num             # <<<<<<<<<<<<<<
@@ -7213,7 +8385,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 + __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":189
+  /* "easyvec/matrixes.pyx":237
  *     cpdef Mat2 add_num_(self, real num):
  *         self.m11 += num
  *         self.m12 += num             # <<<<<<<<<<<<<<
@@ -7222,7 +8394,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 + __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":190
+  /* "easyvec/matrixes.pyx":238
  *         self.m11 += num
  *         self.m12 += num
  *         self.m21 += num             # <<<<<<<<<<<<<<
@@ -7231,7 +8403,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 + __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":191
+  /* "easyvec/matrixes.pyx":239
  *         self.m12 += num
  *         self.m21 += num
  *         self.m22 += num             # <<<<<<<<<<<<<<
@@ -7240,7 +8412,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 + __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":192
+  /* "easyvec/matrixes.pyx":240
  *         self.m21 += num
  *         self.m22 += num
  *         return self             # <<<<<<<<<<<<<<
@@ -7252,7 +8424,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":187
+  /* "easyvec/matrixes.pyx":235
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -7276,15 +8448,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_42add_num_[] = "Mat2.add_num_(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_54add_num_[] = "Mat2.add_num_(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55add_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_num_ (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 187, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7292,20 +8464,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_42add_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_54add_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42add_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54add_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("add_num_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7322,7 +8494,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42add_num_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":195
+/* "easyvec/matrixes.pyx":243
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num(self, real num):             # <<<<<<<<<<<<<<
@@ -7330,7 +8502,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_42add_num_(struct __pyx_obj_7
  *             self.m11 + num,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_add_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -7349,11 +8521,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_57add_num)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7369,10 +8541,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 243, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 195, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 243, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7391,7 +8563,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":196
+  /* "easyvec/matrixes.pyx":244
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -7400,54 +8572,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":197
+  /* "easyvec/matrixes.pyx":245
  *     cpdef Mat2 add_num(self, real num):
  *         return Mat2(
  *             self.m11 + num,             # <<<<<<<<<<<<<<
  *             self.m12 + num,
  *             self.m21 + num,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 + __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 + __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":198
+  /* "easyvec/matrixes.pyx":246
  *         return Mat2(
  *             self.m11 + num,
  *             self.m12 + num,             # <<<<<<<<<<<<<<
  *             self.m21 + num,
  *             self.m22 + num
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 + __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 + __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":199
+  /* "easyvec/matrixes.pyx":247
  *             self.m11 + num,
  *             self.m12 + num,
  *             self.m21 + num,             # <<<<<<<<<<<<<<
  *             self.m22 + num
  *         )
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 + __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 + __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":200
+  /* "easyvec/matrixes.pyx":248
  *             self.m12 + num,
  *             self.m21 + num,
  *             self.m22 + num             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 + __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 + __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 248, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":196
+  /* "easyvec/matrixes.pyx":244
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 + num,
  *             self.m12 + num,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -7461,14 +8633,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":195
+  /* "easyvec/matrixes.pyx":243
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_num(self, real num):             # <<<<<<<<<<<<<<
@@ -7492,15 +8664,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_44add_num[] = "Mat2.add_num(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_56add_num[] = "Mat2.add_num(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57add_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_num (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 243, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7508,20 +8680,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_44add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_56add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44add_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56add_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("add_num", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7538,7 +8710,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44add_num(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":205
+/* "easyvec/matrixes.pyx":253
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -7546,7 +8718,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_44add_num(struct __pyx_obj_7e
  *         self.m12 += mat.m12
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_59add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_add_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -7564,9 +8736,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_59add_mat_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -7581,10 +8753,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 205, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 253, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7603,7 +8775,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":206
+  /* "easyvec/matrixes.pyx":254
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat_(self, Mat2 mat):
  *         self.m11 += mat.m11             # <<<<<<<<<<<<<<
@@ -7612,7 +8784,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 + __pyx_v_mat->m11);
 
-  /* "easyvec/matrixes.pyx":207
+  /* "easyvec/matrixes.pyx":255
  *     cpdef Mat2 add_mat_(self, Mat2 mat):
  *         self.m11 += mat.m11
  *         self.m12 += mat.m12             # <<<<<<<<<<<<<<
@@ -7621,7 +8793,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 + __pyx_v_mat->m12);
 
-  /* "easyvec/matrixes.pyx":208
+  /* "easyvec/matrixes.pyx":256
  *         self.m11 += mat.m11
  *         self.m12 += mat.m12
  *         self.m21 += mat.m21             # <<<<<<<<<<<<<<
@@ -7630,7 +8802,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 + __pyx_v_mat->m21);
 
-  /* "easyvec/matrixes.pyx":209
+  /* "easyvec/matrixes.pyx":257
  *         self.m12 += mat.m12
  *         self.m21 += mat.m21
  *         self.m22 += mat.m22             # <<<<<<<<<<<<<<
@@ -7639,7 +8811,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 + __pyx_v_mat->m22);
 
-  /* "easyvec/matrixes.pyx":210
+  /* "easyvec/matrixes.pyx":258
  *         self.m21 += mat.m21
  *         self.m22 += mat.m22
  *         return self             # <<<<<<<<<<<<<<
@@ -7651,7 +8823,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":205
+  /* "easyvec/matrixes.pyx":253
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -7674,14 +8846,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_46add_mat_[] = "Mat2.add_mat_(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_59add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_58add_mat_[] = "Mat2.add_mat_(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_59add_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_mat_ (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 205, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_46add_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_58add_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -7692,13 +8864,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46add_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58add_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("add_mat_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7715,7 +8887,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46add_mat_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":213
+/* "easyvec/matrixes.pyx":261
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -7723,7 +8895,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_46add_mat_(struct __pyx_obj_7
  *             self.m11 + mat.m11,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_61add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_add_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -7742,9 +8914,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_61add_mat)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -7759,10 +8931,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 261, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 213, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 261, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7781,7 +8953,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":214
+  /* "easyvec/matrixes.pyx":262
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -7790,54 +8962,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":215
+  /* "easyvec/matrixes.pyx":263
  *     cpdef Mat2 add_mat(self, Mat2 mat):
  *         return Mat2(
  *             self.m11 + mat.m11,             # <<<<<<<<<<<<<<
  *             self.m12 + mat.m12,
  *             self.m21 + mat.m21,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 + __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 + __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 263, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":216
+  /* "easyvec/matrixes.pyx":264
  *         return Mat2(
  *             self.m11 + mat.m11,
  *             self.m12 + mat.m12,             # <<<<<<<<<<<<<<
  *             self.m21 + mat.m21,
  *             self.m22 + mat.m22
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 + __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 + __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 264, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":217
+  /* "easyvec/matrixes.pyx":265
  *             self.m11 + mat.m11,
  *             self.m12 + mat.m12,
  *             self.m21 + mat.m21,             # <<<<<<<<<<<<<<
  *             self.m22 + mat.m22
  *         )
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 + __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 + __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":218
+  /* "easyvec/matrixes.pyx":266
  *             self.m12 + mat.m12,
  *             self.m21 + mat.m21,
  *             self.m22 + mat.m22             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 + __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 + __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":214
+  /* "easyvec/matrixes.pyx":262
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 + mat.m11,
  *             self.m12 + mat.m12,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -7851,14 +9023,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":213
+  /* "easyvec/matrixes.pyx":261
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 add_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -7882,14 +9054,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_48add_mat[] = "Mat2.add_mat(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_61add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_60add_mat[] = "Mat2.add_mat(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_61add_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_mat (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 213, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_48add_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 261, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_60add_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -7900,13 +9072,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_48add_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60add_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("add_mat", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_add_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7923,289 +9095,28 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_48add_mat(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":221
+/* "easyvec/matrixes.pyx":269
  *         )
  * 
- *     def __sum__(left, right):             # <<<<<<<<<<<<<<
+ *     def __add__(left, right):             # <<<<<<<<<<<<<<
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_51__sum__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_50__sum__[] = "Mat2.__sum__(left, right)";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_51__sum__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_63__add__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_63__add__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__sum__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_50__sum__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((PyObject *)__pyx_v_right));
+  __Pyx_RefNannySetupContext("__add__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_62__add__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_50__sum__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_left, PyObject *__pyx_v_right) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_t_6;
-  __pyx_t_7easyvec_7vectors_real __pyx_t_7;
-  Py_ssize_t __pyx_t_8;
-  Py_UCS4 __pyx_t_9;
-  __Pyx_RefNannySetupContext("__sum__", 0);
-
-  /* "easyvec/matrixes.pyx":222
- * 
- *     def __sum__(left, right):
- *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
- *             if isinstance(right, Mat2):
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- */
-  __pyx_t_1 = __Pyx_TypeCheck(((PyObject *)__pyx_v_left), __pyx_ptype_7easyvec_8matrixes_Mat2); 
-  __pyx_t_2 = (__pyx_t_1 != 0);
-  if (__pyx_t_2) {
-
-    /* "easyvec/matrixes.pyx":223
- *     def __sum__(left, right):
- *         if isinstance(left, Mat2):
- *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- *             elif isinstance(right, int) or isinstance(right, float):
- */
-    __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_right, __pyx_ptype_7easyvec_8matrixes_Mat2); 
-    __pyx_t_1 = (__pyx_t_2 != 0);
-    if (__pyx_t_1) {
-
-      /* "easyvec/matrixes.pyx":224
- *         if isinstance(left, Mat2):
- *             if isinstance(right, Mat2):
- *                 return (<Mat2>left).add_mul(<Mat2>right)             # <<<<<<<<<<<<<<
- *             elif isinstance(right, int) or isinstance(right, float):
- *                 return (<Mat2>left).add_num(<real>right)
- */
-      __Pyx_XDECREF(__pyx_r);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_left), __pyx_n_s_add_mul); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = NULL;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_v_right) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_right);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_r = __pyx_t_3;
-      __pyx_t_3 = 0;
-      goto __pyx_L0;
-
-      /* "easyvec/matrixes.pyx":223
- *     def __sum__(left, right):
- *         if isinstance(left, Mat2):
- *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- *             elif isinstance(right, int) or isinstance(right, float):
- */
-    }
-
-    /* "easyvec/matrixes.pyx":225
- *             if isinstance(right, Mat2):
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
- *                 return (<Mat2>left).add_num(<real>right)
- *         elif isinstance(left, int) or isinstance(left, float):
- */
-    __pyx_t_2 = PyInt_Check(__pyx_v_right); 
-    __pyx_t_6 = (__pyx_t_2 != 0);
-    if (!__pyx_t_6) {
-    } else {
-      __pyx_t_1 = __pyx_t_6;
-      goto __pyx_L5_bool_binop_done;
-    }
-    __pyx_t_6 = PyFloat_Check(__pyx_v_right); 
-    __pyx_t_2 = (__pyx_t_6 != 0);
-    __pyx_t_1 = __pyx_t_2;
-    __pyx_L5_bool_binop_done:;
-    if (__pyx_t_1) {
-
-      /* "easyvec/matrixes.pyx":226
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- *             elif isinstance(right, int) or isinstance(right, float):
- *                 return (<Mat2>left).add_num(<real>right)             # <<<<<<<<<<<<<<
- *         elif isinstance(left, int) or isinstance(left, float):
- *             return (<Mat2>right).add_num(<real>left)
- */
-      __Pyx_XDECREF(__pyx_r);
-      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 226, __pyx_L1_error)
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_r = __pyx_t_3;
-      __pyx_t_3 = 0;
-      goto __pyx_L0;
-
-      /* "easyvec/matrixes.pyx":225
- *             if isinstance(right, Mat2):
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
- *                 return (<Mat2>left).add_num(<real>right)
- *         elif isinstance(left, int) or isinstance(left, float):
- */
-    }
-
-    /* "easyvec/matrixes.pyx":222
- * 
- *     def __sum__(left, right):
- *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
- *             if isinstance(right, Mat2):
- *                 return (<Mat2>left).add_mul(<Mat2>right)
- */
-    goto __pyx_L3;
-  }
-
-  /* "easyvec/matrixes.pyx":227
- *             elif isinstance(right, int) or isinstance(right, float):
- *                 return (<Mat2>left).add_num(<real>right)
- *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
- *             return (<Mat2>right).add_num(<real>left)
- *         raise NotImplementedError(f"    left={left}, right={right}")
- */
-  __pyx_t_2 = PyInt_Check(((PyObject *)__pyx_v_left)); 
-  __pyx_t_6 = (__pyx_t_2 != 0);
-  if (!__pyx_t_6) {
-  } else {
-    __pyx_t_1 = __pyx_t_6;
-    goto __pyx_L7_bool_binop_done;
-  }
-  __pyx_t_6 = PyFloat_Check(((PyObject *)__pyx_v_left)); 
-  __pyx_t_2 = (__pyx_t_6 != 0);
-  __pyx_t_1 = __pyx_t_2;
-  __pyx_L7_bool_binop_done:;
-  if (__pyx_t_1) {
-
-    /* "easyvec/matrixes.pyx":228
- *                 return (<Mat2>left).add_num(<real>right)
- *         elif isinstance(left, int) or isinstance(left, float):
- *             return (<Mat2>right).add_num(<real>left)             # <<<<<<<<<<<<<<
- *         raise NotImplementedError(f"    left={left}, right={right}")
- * 
- */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_7 = __pyx_PyFloat_AsDouble(((PyObject *)__pyx_v_left)); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 228, __pyx_L1_error)
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_r = __pyx_t_3;
-    __pyx_t_3 = 0;
-    goto __pyx_L0;
-
-    /* "easyvec/matrixes.pyx":227
- *             elif isinstance(right, int) or isinstance(right, float):
- *                 return (<Mat2>left).add_num(<real>right)
- *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
- *             return (<Mat2>right).add_num(<real>left)
- *         raise NotImplementedError(f"    left={left}, right={right}")
- */
-  }
-  __pyx_L3:;
-
-  /* "easyvec/matrixes.pyx":229
- *         elif isinstance(left, int) or isinstance(left, float):
- *             return (<Mat2>right).add_num(<real>left)
- *         raise NotImplementedError(f"    left={left}, right={right}")             # <<<<<<<<<<<<<<
- * 
- *     def __isum__(self, right):
- */
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_8 = 0;
-  __pyx_t_9 = 127;
-  __Pyx_INCREF(__pyx_kp_u_left_2);
-  __pyx_t_9 = (65535 > __pyx_t_9) ? 65535 : __pyx_t_9;
-  __pyx_t_8 += 36;
-  __Pyx_GIVEREF(__pyx_kp_u_left_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_left_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_left), __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 229, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_9;
-  __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4);
-  __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u_right);
-  __pyx_t_8 += 8;
-  __Pyx_GIVEREF(__pyx_kp_u_right);
-  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 229, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_9;
-  __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_4);
-  __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 229, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __PYX_ERR(0, 229, __pyx_L1_error)
-
-  /* "easyvec/matrixes.pyx":221
- *         )
- * 
- *     def __sum__(left, right):             # <<<<<<<<<<<<<<
- *         if isinstance(left, Mat2):
- *             if isinstance(right, Mat2):
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.__sum__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "easyvec/matrixes.pyx":231
- *         raise NotImplementedError(f"    left={left}, right={right}")
- * 
- *     def __isum__(self, right):             # <<<<<<<<<<<<<<
- *         if isinstance(right, Mat2):
- *             return self.add_mat_(<Mat2>right)
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_53__isum__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_52__isum__[] = "Mat2.__isum__(self, right)";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_53__isum__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__isum__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__add__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -8216,11 +9127,253 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   Py_ssize_t __pyx_t_6;
   Py_UCS4 __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  __Pyx_RefNannySetupContext("__isum__", 0);
+  __Pyx_RefNannySetupContext("__add__", 0);
 
-  /* "easyvec/matrixes.pyx":232
+  /* "easyvec/matrixes.pyx":270
  * 
- *     def __isum__(self, right):
+ *     def __add__(left, right):
+ *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
+ *             if isinstance(right, Mat2):
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ */
+  __pyx_t_1 = __Pyx_TypeCheck(__pyx_v_left, __pyx_ptype_7easyvec_8matrixes_Mat2); 
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "easyvec/matrixes.pyx":271
+ *     def __add__(left, right):
+ *         if isinstance(left, Mat2):
+ *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ *             elif isinstance(right, int) or isinstance(right, float):
+ */
+    __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_right, __pyx_ptype_7easyvec_8matrixes_Mat2); 
+    __pyx_t_1 = (__pyx_t_2 != 0);
+    if (__pyx_t_1) {
+
+      /* "easyvec/matrixes.pyx":272
+ *         if isinstance(left, Mat2):
+ *             if isinstance(right, Mat2):
+ *                 return (<Mat2>left).add_mat(<Mat2>right)             # <<<<<<<<<<<<<<
+ *             elif isinstance(right, int) or isinstance(right, float):
+ *                 return (<Mat2>left).add_num(<real>right)
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->add_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "easyvec/matrixes.pyx":271
+ *     def __add__(left, right):
+ *         if isinstance(left, Mat2):
+ *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ *             elif isinstance(right, int) or isinstance(right, float):
+ */
+    }
+
+    /* "easyvec/matrixes.pyx":273
+ *             if isinstance(right, Mat2):
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
+ *                 return (<Mat2>left).add_num(<real>right)
+ *         elif isinstance(left, int) or isinstance(left, float):
+ */
+    __pyx_t_2 = PyInt_Check(__pyx_v_right); 
+    __pyx_t_4 = (__pyx_t_2 != 0);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_1 = __pyx_t_4;
+      goto __pyx_L5_bool_binop_done;
+    }
+    __pyx_t_4 = PyFloat_Check(__pyx_v_right); 
+    __pyx_t_2 = (__pyx_t_4 != 0);
+    __pyx_t_1 = __pyx_t_2;
+    __pyx_L5_bool_binop_done:;
+    if (__pyx_t_1) {
+
+      /* "easyvec/matrixes.pyx":274
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ *             elif isinstance(right, int) or isinstance(right, float):
+ *                 return (<Mat2>left).add_num(<real>right)             # <<<<<<<<<<<<<<
+ *         elif isinstance(left, int) or isinstance(left, float):
+ *             return (<Mat2>right).add_num(<real>left)
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "easyvec/matrixes.pyx":273
+ *             if isinstance(right, Mat2):
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
+ *                 return (<Mat2>left).add_num(<real>right)
+ *         elif isinstance(left, int) or isinstance(left, float):
+ */
+    }
+
+    /* "easyvec/matrixes.pyx":270
+ * 
+ *     def __add__(left, right):
+ *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
+ *             if isinstance(right, Mat2):
+ *                 return (<Mat2>left).add_mat(<Mat2>right)
+ */
+    goto __pyx_L3;
+  }
+
+  /* "easyvec/matrixes.pyx":275
+ *             elif isinstance(right, int) or isinstance(right, float):
+ *                 return (<Mat2>left).add_num(<real>right)
+ *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
+ *             return (<Mat2>right).add_num(<real>left)
+ *         raise NotImplementedError(f"    left={left}, right={right}")
+ */
+  __pyx_t_2 = PyInt_Check(__pyx_v_left); 
+  __pyx_t_4 = (__pyx_t_2 != 0);
+  if (!__pyx_t_4) {
+  } else {
+    __pyx_t_1 = __pyx_t_4;
+    goto __pyx_L7_bool_binop_done;
+  }
+  __pyx_t_4 = PyFloat_Check(__pyx_v_left); 
+  __pyx_t_2 = (__pyx_t_4 != 0);
+  __pyx_t_1 = __pyx_t_2;
+  __pyx_L7_bool_binop_done:;
+  if (__pyx_t_1) {
+
+    /* "easyvec/matrixes.pyx":276
+ *                 return (<Mat2>left).add_num(<real>right)
+ *         elif isinstance(left, int) or isinstance(left, float):
+ *             return (<Mat2>right).add_num(<real>left)             # <<<<<<<<<<<<<<
+ *         raise NotImplementedError(f"    left={left}, right={right}")
+ * 
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_left); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 276, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->add_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 276, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/matrixes.pyx":275
+ *             elif isinstance(right, int) or isinstance(right, float):
+ *                 return (<Mat2>left).add_num(<real>right)
+ *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
+ *             return (<Mat2>right).add_num(<real>left)
+ *         raise NotImplementedError(f"    left={left}, right={right}")
+ */
+  }
+  __pyx_L3:;
+
+  /* "easyvec/matrixes.pyx":277
+ *         elif isinstance(left, int) or isinstance(left, float):
+ *             return (<Mat2>right).add_num(<real>left)
+ *         raise NotImplementedError(f"    left={left}, right={right}")             # <<<<<<<<<<<<<<
+ * 
+ *     def __iadd__(self, right):
+ */
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_6 = 0;
+  __pyx_t_7 = 127;
+  __Pyx_INCREF(__pyx_kp_u_left_2);
+  __pyx_t_7 = (65535 > __pyx_t_7) ? 65535 : __pyx_t_7;
+  __pyx_t_6 += 36;
+  __Pyx_GIVEREF(__pyx_kp_u_left_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_left_2);
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
+  __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_8);
+  __pyx_t_8 = 0;
+  __Pyx_INCREF(__pyx_kp_u_right);
+  __pyx_t_6 += 8;
+  __Pyx_GIVEREF(__pyx_kp_u_right);
+  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
+  __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
+  __pyx_t_8 = 0;
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __PYX_ERR(0, 277, __pyx_L1_error)
+
+  /* "easyvec/matrixes.pyx":269
+ *         )
+ * 
+ *     def __add__(left, right):             # <<<<<<<<<<<<<<
+ *         if isinstance(left, Mat2):
+ *             if isinstance(right, Mat2):
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.__add__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/matrixes.pyx":279
+ *         raise NotImplementedError(f"    left={left}, right={right}")
+ * 
+ *     def __iadd__(self, right):             # <<<<<<<<<<<<<<
+ *         if isinstance(right, Mat2):
+ *             return self.add_mat_(<Mat2>right)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_65__iadd__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_65__iadd__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__iadd__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_64__iadd__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64__iadd__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_5;
+  Py_ssize_t __pyx_t_6;
+  Py_UCS4 __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  __Pyx_RefNannySetupContext("__iadd__", 0);
+
+  /* "easyvec/matrixes.pyx":280
+ * 
+ *     def __iadd__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
  *             return self.add_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):
@@ -8229,30 +9382,30 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":233
- *     def __isum__(self, right):
+    /* "easyvec/matrixes.pyx":281
+ *     def __iadd__(self, right):
  *         if isinstance(right, Mat2):
  *             return self.add_mat_(<Mat2>right)             # <<<<<<<<<<<<<<
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.add_num_(<real>right)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->add_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->add_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":232
+    /* "easyvec/matrixes.pyx":280
  * 
- *     def __isum__(self, right):
+ *     def __iadd__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
  *             return self.add_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):
  */
   }
 
-  /* "easyvec/matrixes.pyx":234
+  /* "easyvec/matrixes.pyx":282
  *         if isinstance(right, Mat2):
  *             return self.add_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -8272,7 +9425,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":235
+    /* "easyvec/matrixes.pyx":283
  *             return self.add_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.add_num_(<real>right)             # <<<<<<<<<<<<<<
@@ -8280,14 +9433,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L1_error)
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->add_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->add_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":234
+    /* "easyvec/matrixes.pyx":282
  *         if isinstance(right, Mat2):
  *             return self.add_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -8296,14 +9449,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
  */
   }
 
-  /* "easyvec/matrixes.pyx":236
+  /* "easyvec/matrixes.pyx":284
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.add_num_(<real>right)
  *         raise NotImplementedError(f"    self={self}, right={right}")             # <<<<<<<<<<<<<<
  * 
  *     @cython.nonecheck(False)
  */
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 0;
   __pyx_t_7 = 127;
@@ -8312,7 +9465,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   __pyx_t_6 += 36;
   __Pyx_GIVEREF(__pyx_kp_u_self);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_self);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
@@ -8323,27 +9476,27 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   __pyx_t_6 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
   __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_Raise(__pyx_t_3, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __PYX_ERR(0, 236, __pyx_L1_error)
+  __PYX_ERR(0, 284, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":231
+  /* "easyvec/matrixes.pyx":279
  *         raise NotImplementedError(f"    left={left}, right={right}")
  * 
- *     def __isum__(self, right):             # <<<<<<<<<<<<<<
+ *     def __iadd__(self, right):             # <<<<<<<<<<<<<<
  *         if isinstance(right, Mat2):
  *             return self.add_mat_(<Mat2>right)
  */
@@ -8352,7 +9505,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("easyvec.matrixes.Mat2.__isum__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("easyvec.matrixes.Mat2.__iadd__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -8360,7 +9513,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":239
+/* "easyvec/matrixes.pyx":287
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg_(self):             # <<<<<<<<<<<<<<
@@ -8368,7 +9521,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_52__isum__(struct __pyx_obj_7
  *         self.m12 = -self.m12
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_67neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_neg_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -8386,9 +9539,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_neg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_neg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_55neg_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_67neg_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -8403,10 +9556,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 239, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 287, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -8425,7 +9578,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":240
+  /* "easyvec/matrixes.pyx":288
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg_(self):
  *         self.m11 = -self.m11             # <<<<<<<<<<<<<<
@@ -8434,7 +9587,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (-__pyx_v_self->m11);
 
-  /* "easyvec/matrixes.pyx":241
+  /* "easyvec/matrixes.pyx":289
  *     cpdef Mat2 neg_(self):
  *         self.m11 = -self.m11
  *         self.m12 = -self.m12             # <<<<<<<<<<<<<<
@@ -8443,7 +9596,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (-__pyx_v_self->m12);
 
-  /* "easyvec/matrixes.pyx":242
+  /* "easyvec/matrixes.pyx":290
  *         self.m11 = -self.m11
  *         self.m12 = -self.m12
  *         self.m21 = -self.m21             # <<<<<<<<<<<<<<
@@ -8452,7 +9605,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (-__pyx_v_self->m21);
 
-  /* "easyvec/matrixes.pyx":243
+  /* "easyvec/matrixes.pyx":291
  *         self.m12 = -self.m12
  *         self.m21 = -self.m21
  *         self.m22 = -self.m22             # <<<<<<<<<<<<<<
@@ -8461,7 +9614,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (-__pyx_v_self->m22);
 
-  /* "easyvec/matrixes.pyx":244
+  /* "easyvec/matrixes.pyx":292
  *         self.m21 = -self.m21
  *         self.m22 = -self.m22
  *         return self             # <<<<<<<<<<<<<<
@@ -8473,7 +9626,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":239
+  /* "easyvec/matrixes.pyx":287
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg_(self):             # <<<<<<<<<<<<<<
@@ -8496,26 +9649,26 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_54neg_[] = "Mat2.neg_(self) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_55neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_67neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_66neg_[] = "Mat2.neg_(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_67neg_(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("neg_ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_54neg_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_66neg_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54neg_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66neg_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("neg_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_neg_(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_neg_(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8532,7 +9685,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54neg_(struct __pyx_obj_7easy
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":247
+/* "easyvec/matrixes.pyx":295
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg(self):             # <<<<<<<<<<<<<<
@@ -8540,7 +9693,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_54neg_(struct __pyx_obj_7easy
  *             -self.m11,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_69neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_neg(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -8559,9 +9712,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_neg_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_neg_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_57neg)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_69neg)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -8576,10 +9729,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 247, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 247, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 295, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -8598,7 +9751,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":248
+  /* "easyvec/matrixes.pyx":296
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg(self):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -8607,54 +9760,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":249
+  /* "easyvec/matrixes.pyx":297
  *     cpdef Mat2 neg(self):
  *         return Mat2(
  *             -self.m11,             # <<<<<<<<<<<<<<
  *             -self.m12,
  *             -self.m21,
  */
-  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":250
+  /* "easyvec/matrixes.pyx":298
  *         return Mat2(
  *             -self.m11,
  *             -self.m12,             # <<<<<<<<<<<<<<
  *             -self.m21,
  *             -self.m22
  */
-  __pyx_t_2 = PyFloat_FromDouble((-__pyx_v_self->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((-__pyx_v_self->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":251
+  /* "easyvec/matrixes.pyx":299
  *             -self.m11,
  *             -self.m12,
  *             -self.m21,             # <<<<<<<<<<<<<<
  *             -self.m22
  *         )
  */
-  __pyx_t_3 = PyFloat_FromDouble((-__pyx_v_self->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((-__pyx_v_self->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":252
+  /* "easyvec/matrixes.pyx":300
  *             -self.m12,
  *             -self.m21,
  *             -self.m22             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyFloat_FromDouble((-__pyx_v_self->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((-__pyx_v_self->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 300, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":248
+  /* "easyvec/matrixes.pyx":296
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg(self):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             -self.m11,
  *             -self.m12,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 248, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8668,14 +9821,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 248, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":247
+  /* "easyvec/matrixes.pyx":295
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 neg(self):             # <<<<<<<<<<<<<<
@@ -8699,26 +9852,26 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_56neg[] = "Mat2.neg(self) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_57neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_69neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_68neg[] = "Mat2.neg(self) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_69neg(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("neg (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_56neg(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_68neg(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56neg(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68neg(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("neg", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_neg(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_neg(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8735,7 +9888,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56neg(struct __pyx_obj_7easyv
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":255
+/* "easyvec/matrixes.pyx":303
  *         )
  * 
  *     def __neg__(self):             # <<<<<<<<<<<<<<
@@ -8744,25 +9897,25 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_56neg(struct __pyx_obj_7easyv
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_59__neg__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_59__neg__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_71__neg__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_71__neg__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__neg__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_70__neg__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_70__neg__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__neg__", 0);
 
-  /* "easyvec/matrixes.pyx":256
+  /* "easyvec/matrixes.pyx":304
  * 
  *     def __neg__(self):
  *         return self.neg()             # <<<<<<<<<<<<<<
@@ -8770,13 +9923,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(struct __pyx_obj_7e
  *     @cython.nonecheck(False)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->neg(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 256, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->neg(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":255
+  /* "easyvec/matrixes.pyx":303
  *         )
  * 
  *     def __neg__(self):             # <<<<<<<<<<<<<<
@@ -8795,7 +9948,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":259
+/* "easyvec/matrixes.pyx":307
  * 
  *     @cython.nonecheck(False)
  *     def __richcmp__(v1, v2, int op):             # <<<<<<<<<<<<<<
@@ -8804,19 +9957,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_58__neg__(struct __pyx_obj_7e
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_61__richcmp__(PyObject *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_61__richcmp__(PyObject *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_73__richcmp__(PyObject *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_73__richcmp__(PyObject *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__richcmp__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_v1), ((PyObject *)__pyx_v_v2), ((int)__pyx_v_op));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_72__richcmp__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_v1), ((PyObject *)__pyx_v_v2), ((int)__pyx_v_op));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_72__richcmp__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_v1, PyObject *__pyx_v_v2, int __pyx_v_op) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -8827,7 +9980,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
   double __pyx_t_6;
   __Pyx_RefNannySetupContext("__richcmp__", 0);
 
-  /* "easyvec/matrixes.pyx":260
+  /* "easyvec/matrixes.pyx":308
  *     @cython.nonecheck(False)
  *     def __richcmp__(v1, v2, int op):
  *         if op == Py_EQ:             # <<<<<<<<<<<<<<
@@ -8837,7 +9990,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
   __pyx_t_1 = ((__pyx_v_op == Py_EQ) != 0);
   if (__pyx_t_1) {
 
-    /* "easyvec/matrixes.pyx":261
+    /* "easyvec/matrixes.pyx":309
  *     def __richcmp__(v1, v2, int op):
  *         if op == Py_EQ:
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \             # <<<<<<<<<<<<<<
@@ -8845,123 +9998,123 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
  *         elif op == Py_NE:
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) < __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L4_bool_binop_done;
     }
 
-    /* "easyvec/matrixes.pyx":262
+    /* "easyvec/matrixes.pyx":310
  *         if op == Py_EQ:
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL             # <<<<<<<<<<<<<<
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  */
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "easyvec/matrixes.pyx":261
+    /* "easyvec/matrixes.pyx":309
  *     def __richcmp__(v1, v2, int op):
  *         if op == Py_EQ:
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \             # <<<<<<<<<<<<<<
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL
  *         elif op == Py_NE:
  */
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) < __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L4_bool_binop_done;
     }
 
-    /* "easyvec/matrixes.pyx":262
+    /* "easyvec/matrixes.pyx":310
  *         if op == Py_EQ:
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL             # <<<<<<<<<<<<<<
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  */
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) < __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L4_bool_binop_done;
     }
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) < __pyx_v_7easyvec_7vectors_CMP_TOL);
-    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_2 = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -8970,7 +10123,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":260
+    /* "easyvec/matrixes.pyx":308
  *     @cython.nonecheck(False)
  *     def __richcmp__(v1, v2, int op):
  *         if op == Py_EQ:             # <<<<<<<<<<<<<<
@@ -8979,7 +10132,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
  */
   }
 
-  /* "easyvec/matrixes.pyx":263
+  /* "easyvec/matrixes.pyx":311
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL
  *         elif op == Py_NE:             # <<<<<<<<<<<<<<
@@ -8989,7 +10142,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
   __pyx_t_1 = ((__pyx_v_op == Py_NE) != 0);
   if (__pyx_t_1) {
 
-    /* "easyvec/matrixes.pyx":264
+    /* "easyvec/matrixes.pyx":312
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \             # <<<<<<<<<<<<<<
@@ -8997,123 +10150,123 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
  *         raise NotImplementedError("    ")
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) >= __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (!__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L8_bool_binop_done;
     }
 
-    /* "easyvec/matrixes.pyx":265
+    /* "easyvec/matrixes.pyx":313
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  *                 or fabs(v1[1][0] - v2[1][0]) >= CMP_TOL or fabs(v1[1][1] - v2[1][1]) >= CMP_TOL             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("    ")
  * 
  */
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "easyvec/matrixes.pyx":264
+    /* "easyvec/matrixes.pyx":312
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \             # <<<<<<<<<<<<<<
  *                 or fabs(v1[1][0] - v2[1][0]) >= CMP_TOL or fabs(v1[1][1] - v2[1][1]) >= CMP_TOL
  *         raise NotImplementedError("    ")
  */
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 264, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) >= __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (!__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L8_bool_binop_done;
     }
 
-    /* "easyvec/matrixes.pyx":265
+    /* "easyvec/matrixes.pyx":313
  *         elif op == Py_NE:
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  *                 or fabs(v1[1][0] - v2[1][0]) >= CMP_TOL or fabs(v1[1][1] - v2[1][1]) >= CMP_TOL             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("    ")
  * 
  */
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) >= __pyx_v_7easyvec_7vectors_CMP_TOL);
     if (!__pyx_t_1) {
     } else {
-      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L8_bool_binop_done;
     }
-    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_v1), 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_v2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (fabs(__pyx_t_6) >= __pyx_v_7easyvec_7vectors_CMP_TOL);
-    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_2 = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -9122,7 +10275,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":263
+    /* "easyvec/matrixes.pyx":311
  *             return  fabs(v1[0][0] - v2[0][0]) < CMP_TOL and fabs(v1[0][1] - v2[0][1]) < CMP_TOL  \
  *                 and fabs(v1[1][0] - v2[1][0]) < CMP_TOL and fabs(v1[1][1] - v2[1][1]) < CMP_TOL
  *         elif op == Py_NE:             # <<<<<<<<<<<<<<
@@ -9131,20 +10284,20 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
  */
   }
 
-  /* "easyvec/matrixes.pyx":266
+  /* "easyvec/matrixes.pyx":314
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  *                 or fabs(v1[1][0] - v2[1][0]) >= CMP_TOL or fabs(v1[1][1] - v2[1][1]) >= CMP_TOL
  *         raise NotImplementedError("    ")             # <<<<<<<<<<<<<<
  * 
  *     def __getitem__(self, key):
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 314, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_Raise(__pyx_t_2, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __PYX_ERR(0, 266, __pyx_L1_error)
+  __PYX_ERR(0, 314, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":259
+  /* "easyvec/matrixes.pyx":307
  * 
  *     @cython.nonecheck(False)
  *     def __richcmp__(v1, v2, int op):             # <<<<<<<<<<<<<<
@@ -9166,7 +10319,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":268
+/* "easyvec/matrixes.pyx":316
  *         raise NotImplementedError("    ")
  * 
  *     def __getitem__(self, key):             # <<<<<<<<<<<<<<
@@ -9175,19 +10328,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_60__richcmp__(struct __pyx_ob
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_63__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_v_key); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_63__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_v_key) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_75__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_v_key); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_75__getitem__(PyObject *__pyx_v_self, PyObject *__pyx_v_key) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__getitem__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_key));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_74__getitem__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_key));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_key) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_74__getitem__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_key) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9198,20 +10351,20 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("__getitem__", 0);
 
-  /* "easyvec/matrixes.pyx":269
+  /* "easyvec/matrixes.pyx":317
  * 
  *     def __getitem__(self, key):
  *         if key == 0:             # <<<<<<<<<<<<<<
  *             return self.x_axis()
  *         if key == 1:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":270
+    /* "easyvec/matrixes.pyx":318
  *     def __getitem__(self, key):
  *         if key == 0:
  *             return self.x_axis()             # <<<<<<<<<<<<<<
@@ -9219,13 +10372,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *             return self.y_axis()
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->x_axis(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->x_axis(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":269
+    /* "easyvec/matrixes.pyx":317
  * 
  *     def __getitem__(self, key):
  *         if key == 0:             # <<<<<<<<<<<<<<
@@ -9234,20 +10387,20 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
   }
 
-  /* "easyvec/matrixes.pyx":271
+  /* "easyvec/matrixes.pyx":319
  *         if key == 0:
  *             return self.x_axis()
  *         if key == 1:             # <<<<<<<<<<<<<<
  *             return self.y_axis()
  *         if isinstance(key, str):
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":272
+    /* "easyvec/matrixes.pyx":320
  *             return self.x_axis()
  *         if key == 1:
  *             return self.y_axis()             # <<<<<<<<<<<<<<
@@ -9255,13 +10408,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *             if key == 'm11':
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->y_axis(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->y_axis(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":271
+    /* "easyvec/matrixes.pyx":319
  *         if key == 0:
  *             return self.x_axis()
  *         if key == 1:             # <<<<<<<<<<<<<<
@@ -9270,7 +10423,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
   }
 
-  /* "easyvec/matrixes.pyx":273
+  /* "easyvec/matrixes.pyx":321
  *         if key == 1:
  *             return self.y_axis()
  *         if isinstance(key, str):             # <<<<<<<<<<<<<<
@@ -9281,17 +10434,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "easyvec/matrixes.pyx":274
+    /* "easyvec/matrixes.pyx":322
  *             return self.y_axis()
  *         if isinstance(key, str):
  *             if key == 'm11':             # <<<<<<<<<<<<<<
  *                 return self.m11
  *             if key == 'm12':
  */
-    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m11, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 274, __pyx_L1_error)
+    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m11, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 322, __pyx_L1_error)
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":275
+      /* "easyvec/matrixes.pyx":323
  *         if isinstance(key, str):
  *             if key == 'm11':
  *                 return self.m11             # <<<<<<<<<<<<<<
@@ -9299,13 +10452,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m12
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":274
+      /* "easyvec/matrixes.pyx":322
  *             return self.y_axis()
  *         if isinstance(key, str):
  *             if key == 'm11':             # <<<<<<<<<<<<<<
@@ -9314,17 +10467,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":276
+    /* "easyvec/matrixes.pyx":324
  *             if key == 'm11':
  *                 return self.m11
  *             if key == 'm12':             # <<<<<<<<<<<<<<
  *                 return self.m12
  *             if key == 'm21':
  */
-    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m12, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 276, __pyx_L1_error)
+    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m12, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 324, __pyx_L1_error)
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":277
+      /* "easyvec/matrixes.pyx":325
  *                 return self.m11
  *             if key == 'm12':
  *                 return self.m12             # <<<<<<<<<<<<<<
@@ -9332,13 +10485,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m21
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":276
+      /* "easyvec/matrixes.pyx":324
  *             if key == 'm11':
  *                 return self.m11
  *             if key == 'm12':             # <<<<<<<<<<<<<<
@@ -9347,17 +10500,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":278
+    /* "easyvec/matrixes.pyx":326
  *             if key == 'm12':
  *                 return self.m12
  *             if key == 'm21':             # <<<<<<<<<<<<<<
  *                 return self.m21
  *             if key == 'm22':
  */
-    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m21, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 278, __pyx_L1_error)
+    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m21, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 326, __pyx_L1_error)
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":279
+      /* "easyvec/matrixes.pyx":327
  *                 return self.m12
  *             if key == 'm21':
  *                 return self.m21             # <<<<<<<<<<<<<<
@@ -9365,13 +10518,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m22
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 327, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":278
+      /* "easyvec/matrixes.pyx":326
  *             if key == 'm12':
  *                 return self.m12
  *             if key == 'm21':             # <<<<<<<<<<<<<<
@@ -9380,17 +10533,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":280
+    /* "easyvec/matrixes.pyx":328
  *             if key == 'm21':
  *                 return self.m21
  *             if key == 'm22':             # <<<<<<<<<<<<<<
  *                 return self.m22
  *         elif isinstance(key, tuple) and (len(key)==2):
  */
-    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m22, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 280, __pyx_L1_error)
+    __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_m22, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 328, __pyx_L1_error)
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":281
+      /* "easyvec/matrixes.pyx":329
  *                 return self.m21
  *             if key == 'm22':
  *                 return self.m22             # <<<<<<<<<<<<<<
@@ -9398,13 +10551,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *             if key[0] == 0 and key[1] == 0:
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 329, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":280
+      /* "easyvec/matrixes.pyx":328
  *             if key == 'm21':
  *                 return self.m21
  *             if key == 'm22':             # <<<<<<<<<<<<<<
@@ -9413,7 +10566,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":273
+    /* "easyvec/matrixes.pyx":321
  *         if key == 1:
  *             return self.y_axis()
  *         if isinstance(key, str):             # <<<<<<<<<<<<<<
@@ -9423,7 +10576,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
     goto __pyx_L5;
   }
 
-  /* "easyvec/matrixes.pyx":282
+  /* "easyvec/matrixes.pyx":330
  *             if key == 'm22':
  *                 return self.m22
  *         elif isinstance(key, tuple) and (len(key)==2):             # <<<<<<<<<<<<<<
@@ -9437,43 +10590,43 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
     __pyx_t_3 = __pyx_t_4;
     goto __pyx_L10_bool_binop_done;
   }
-  __pyx_t_5 = PyObject_Length(__pyx_v_key); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Length(__pyx_v_key); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 330, __pyx_L1_error)
   __pyx_t_4 = ((__pyx_t_5 == 2) != 0);
   __pyx_t_3 = __pyx_t_4;
   __pyx_L10_bool_binop_done:;
   if (__pyx_t_3) {
 
-    /* "easyvec/matrixes.pyx":283
+    /* "easyvec/matrixes.pyx":331
  *                 return self.m22
  *         elif isinstance(key, tuple) and (len(key)==2):
  *             if key[0] == 0 and key[1] == 0:             # <<<<<<<<<<<<<<
  *                 return self.m11
  *             if key[0] == 0 and key[1] == 1:
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_4) {
     } else {
       __pyx_t_3 = __pyx_t_4;
       goto __pyx_L13_bool_binop_done;
     }
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 283, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_3 = __pyx_t_4;
     __pyx_L13_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":284
+      /* "easyvec/matrixes.pyx":332
  *         elif isinstance(key, tuple) and (len(key)==2):
  *             if key[0] == 0 and key[1] == 0:
  *                 return self.m11             # <<<<<<<<<<<<<<
@@ -9481,13 +10634,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m12
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":283
+      /* "easyvec/matrixes.pyx":331
  *                 return self.m22
  *         elif isinstance(key, tuple) and (len(key)==2):
  *             if key[0] == 0 and key[1] == 0:             # <<<<<<<<<<<<<<
@@ -9496,37 +10649,37 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":285
+    /* "easyvec/matrixes.pyx":333
  *             if key[0] == 0 and key[1] == 0:
  *                 return self.m11
  *             if key[0] == 0 and key[1] == 1:             # <<<<<<<<<<<<<<
  *                 return self.m12
  *             if key[0] == 1 and key[1] == 0:
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_4) {
     } else {
       __pyx_t_3 = __pyx_t_4;
       goto __pyx_L16_bool_binop_done;
     }
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 333, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_3 = __pyx_t_4;
     __pyx_L16_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":286
+      /* "easyvec/matrixes.pyx":334
  *                 return self.m11
  *             if key[0] == 0 and key[1] == 1:
  *                 return self.m12             # <<<<<<<<<<<<<<
@@ -9534,13 +10687,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m21
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":285
+      /* "easyvec/matrixes.pyx":333
  *             if key[0] == 0 and key[1] == 0:
  *                 return self.m11
  *             if key[0] == 0 and key[1] == 1:             # <<<<<<<<<<<<<<
@@ -9549,37 +10702,37 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":287
+    /* "easyvec/matrixes.pyx":335
  *             if key[0] == 0 and key[1] == 1:
  *                 return self.m12
  *             if key[0] == 1 and key[1] == 0:             # <<<<<<<<<<<<<<
  *                 return self.m21
  *             if key[0] == 1 and key[1] == 1:
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_4) {
     } else {
       __pyx_t_3 = __pyx_t_4;
       goto __pyx_L19_bool_binop_done;
     }
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 335, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_3 = __pyx_t_4;
     __pyx_L19_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":288
+      /* "easyvec/matrixes.pyx":336
  *                 return self.m12
  *             if key[0] == 1 and key[1] == 0:
  *                 return self.m21             # <<<<<<<<<<<<<<
@@ -9587,13 +10740,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  *                 return self.m22
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":287
+      /* "easyvec/matrixes.pyx":335
  *             if key[0] == 0 and key[1] == 1:
  *                 return self.m12
  *             if key[0] == 1 and key[1] == 0:             # <<<<<<<<<<<<<<
@@ -9602,37 +10755,37 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":289
+    /* "easyvec/matrixes.pyx":337
  *             if key[0] == 1 and key[1] == 0:
  *                 return self.m21
  *             if key[0] == 1 and key[1] == 1:             # <<<<<<<<<<<<<<
  *                 return self.m22
  *         raise KeyError(f'  {key}')
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_key, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_4) {
     } else {
       __pyx_t_3 = __pyx_t_4;
       goto __pyx_L22_bool_binop_done;
     }
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_3 = __pyx_t_4;
     __pyx_L22_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "easyvec/matrixes.pyx":290
+      /* "easyvec/matrixes.pyx":338
  *                 return self.m21
  *             if key[0] == 1 and key[1] == 1:
  *                 return self.m22             # <<<<<<<<<<<<<<
@@ -9640,13 +10793,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  * 
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":289
+      /* "easyvec/matrixes.pyx":337
  *             if key[0] == 1 and key[1] == 0:
  *                 return self.m21
  *             if key[0] == 1 and key[1] == 1:             # <<<<<<<<<<<<<<
@@ -9655,7 +10808,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  */
     }
 
-    /* "easyvec/matrixes.pyx":282
+    /* "easyvec/matrixes.pyx":330
  *             if key == 'm22':
  *                 return self.m22
  *         elif isinstance(key, tuple) and (len(key)==2):             # <<<<<<<<<<<<<<
@@ -9665,26 +10818,26 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
   }
   __pyx_L5:;
 
-  /* "easyvec/matrixes.pyx":291
+  /* "easyvec/matrixes.pyx":339
  *             if key[0] == 1 and key[1] == 1:
  *                 return self.m22
  *         raise KeyError(f'  {key}')             # <<<<<<<<<<<<<<
  * 
  *     cpdef list keys(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_kp_u__8, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_kp_u__10, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_KeyError, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_KeyError, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 291, __pyx_L1_error)
+  __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":268
+  /* "easyvec/matrixes.pyx":316
  *         raise NotImplementedError("    ")
  * 
  *     def __getitem__(self, key):             # <<<<<<<<<<<<<<
@@ -9704,7 +10857,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":293
+/* "easyvec/matrixes.pyx":341
  *         raise KeyError(f'  {key}')
  * 
  *     cpdef list keys(self):             # <<<<<<<<<<<<<<
@@ -9712,7 +10865,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_62__getitem__(struct __pyx_ob
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_65keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_77keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -9730,9 +10883,9 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_keys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_keys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 341, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_65keys)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_77keys)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -9747,10 +10900,10 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 341, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 293, __pyx_L1_error)
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 341, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9769,7 +10922,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":294
+  /* "easyvec/matrixes.pyx":342
  * 
  *     cpdef list keys(self):
  *         return ['m11', 'm12', 'm21', 'm22']             # <<<<<<<<<<<<<<
@@ -9777,7 +10930,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
  *     def __iter__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 342, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_u_m11);
   __Pyx_GIVEREF(__pyx_n_u_m11);
@@ -9795,7 +10948,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":293
+  /* "easyvec/matrixes.pyx":341
  *         raise KeyError(f'  {key}')
  * 
  *     cpdef list keys(self):             # <<<<<<<<<<<<<<
@@ -9818,26 +10971,26 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_keys(CYTHON_UNUSED struct __py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_65keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_64keys[] = "Mat2.keys(self) -> list";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_65keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_77keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_76keys[] = "Mat2.keys(self) -> list";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_77keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("keys (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_64keys(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_76keys(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64keys(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_76keys(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("keys", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_keys(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_keys(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 341, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9854,7 +11007,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64keys(struct __pyx_obj_7easy
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":296
+/* "easyvec/matrixes.pyx":344
  *         return ['m11', 'm12', 'm21', 'm22']
  * 
  *     def __iter__(self):             # <<<<<<<<<<<<<<
@@ -9863,19 +11016,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_64keys(struct __pyx_obj_7easy
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_67__iter__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_67__iter__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_79__iter__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_79__iter__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__iter__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_78__iter__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_78__iter__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9883,7 +11036,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__iter__", 0);
 
-  /* "easyvec/matrixes.pyx":297
+  /* "easyvec/matrixes.pyx":345
  * 
  *     def __iter__(self):
  *         return self.get_generator()             # <<<<<<<<<<<<<<
@@ -9891,7 +11044,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7
  *     def get_generator(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_generator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_generator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -9905,14 +11058,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":296
+  /* "easyvec/matrixes.pyx":344
  *         return ['m11', 'm12', 'm21', 'm22']
  * 
  *     def __iter__(self):             # <<<<<<<<<<<<<<
@@ -9932,9 +11085,9 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_66__iter__(struct __pyx_obj_7
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_82generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "easyvec/matrixes.pyx":299
+/* "easyvec/matrixes.pyx":347
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
@@ -9943,20 +11096,20 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_69get_generator(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_68get_generator[] = "Mat2.get_generator(self)";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_69get_generator(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_81get_generator(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_80get_generator[] = "Mat2.get_generator(self)";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_81get_generator(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_generator (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_80get_generator(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_80get_generator(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   struct __pyx_obj_7easyvec_8matrixes___pyx_scope_struct__get_generator *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -9965,7 +11118,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(struct __pyx_
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_7easyvec_8matrixes___pyx_scope_struct__get_generator *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 299, __pyx_L1_error)
+    __PYX_ERR(0, 347, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -9973,7 +11126,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(struct __pyx_
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_7easyvec_8matrixes_4Mat2_70generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_generator, __pyx_n_s_Mat2_get_generator, __pyx_n_s_easyvec_matrixes); if (unlikely(!gen)) __PYX_ERR(0, 299, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_7easyvec_8matrixes_4Mat2_82generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_generator, __pyx_n_s_Mat2_get_generator, __pyx_n_s_easyvec_matrixes); if (unlikely(!gen)) __PYX_ERR(0, 347, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -9989,7 +11142,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_68get_generator(struct __pyx_
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_82generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
 {
   struct __pyx_obj_7easyvec_8matrixes___pyx_scope_struct__get_generator *__pyx_cur_scope = ((struct __pyx_obj_7easyvec_8matrixes___pyx_scope_struct__get_generator *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
@@ -10007,20 +11160,20 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 347, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":300
+  /* "easyvec/matrixes.pyx":348
  * 
  *     def get_generator(self):
  *         yield (self.m11, self.m12)             # <<<<<<<<<<<<<<
  *         yield (self.m21, self.m22)
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 348, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -10037,20 +11190,20 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 1;
   return __pyx_r;
   __pyx_L4_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 300, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 348, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":301
+  /* "easyvec/matrixes.pyx":349
  *     def get_generator(self):
  *         yield (self.m11, self.m12)
  *         yield (self.m21, self.m22)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m21); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m21); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->m22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -10067,10 +11220,10 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 2;
   return __pyx_r;
   __pyx_L5_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 301, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 349, __pyx_L1_error)
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "easyvec/matrixes.pyx":299
+  /* "easyvec/matrixes.pyx":347
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
@@ -10097,7 +11250,7 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":304
+/* "easyvec/matrixes.pyx":352
  * 
  * 
  *     cpdef tuple as_tuple(self):             # <<<<<<<<<<<<<<
@@ -10105,7 +11258,7 @@ static PyObject *__pyx_gb_7easyvec_8matrixes_4Mat2_70generator(__pyx_CoroutineOb
  * 
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_72as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_84as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
 static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -10123,9 +11276,9 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_72as_tuple)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_84as_tuple)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -10140,10 +11293,10 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 304, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyTuple_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 304, __pyx_L1_error)
+        if (!(likely(PyTuple_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 352, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10162,7 +11315,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":305
+  /* "easyvec/matrixes.pyx":353
  * 
  *     cpdef tuple as_tuple(self):
  *         return ((self.m11, self.m12), (self.m21, self.m22))             # <<<<<<<<<<<<<<
@@ -10170,11 +11323,11 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
  *     @cython.nonecheck(False)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -10182,11 +11335,11 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->m21); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->m22); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -10194,7 +11347,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -10206,7 +11359,7 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":304
+  /* "easyvec/matrixes.pyx":352
  * 
  * 
  *     cpdef tuple as_tuple(self):             # <<<<<<<<<<<<<<
@@ -10229,26 +11382,26 @@ static PyObject *__pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(struct __pyx_obj_7eas
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_72as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_71as_tuple[] = "Mat2.as_tuple(self) -> tuple";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_72as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_84as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_83as_tuple[] = "Mat2.as_tuple(self) -> tuple";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_84as_tuple(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("as_tuple (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_71as_tuple(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_83as_tuple(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_71as_tuple(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83as_tuple(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("as_tuple", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8matrixes_4Mat2_as_tuple(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10265,7 +11418,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_71as_tuple(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":308
+/* "easyvec/matrixes.pyx":356
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -10273,7 +11426,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_71as_tuple(struct __pyx_obj_7
  *         self.m12 -= num
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_sub_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -10292,11 +11445,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 356, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_86sub_num_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 356, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -10312,10 +11465,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 308, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 356, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 308, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 356, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10334,7 +11487,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":309
+  /* "easyvec/matrixes.pyx":357
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num_(self, real num):
  *         self.m11 -= num             # <<<<<<<<<<<<<<
@@ -10343,7 +11496,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 - __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":310
+  /* "easyvec/matrixes.pyx":358
  *     cpdef Mat2 sub_num_(self, real num):
  *         self.m11 -= num
  *         self.m12 -= num             # <<<<<<<<<<<<<<
@@ -10352,7 +11505,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 - __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":311
+  /* "easyvec/matrixes.pyx":359
  *         self.m11 -= num
  *         self.m12 -= num
  *         self.m21 -= num             # <<<<<<<<<<<<<<
@@ -10361,7 +11514,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 - __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":312
+  /* "easyvec/matrixes.pyx":360
  *         self.m12 -= num
  *         self.m21 -= num
  *         self.m22 -= num             # <<<<<<<<<<<<<<
@@ -10370,7 +11523,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 - __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":313
+  /* "easyvec/matrixes.pyx":361
  *         self.m21 -= num
  *         self.m22 -= num
  *         return self             # <<<<<<<<<<<<<<
@@ -10382,7 +11535,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":308
+  /* "easyvec/matrixes.pyx":356
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -10406,15 +11559,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_73sub_num_[] = "Mat2.sub_num_(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_85sub_num_[] = "Mat2.sub_num_(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86sub_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sub_num_ (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 308, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 356, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10422,20 +11575,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_73sub_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_85sub_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_73sub_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85sub_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("sub_num_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 356, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10452,7 +11605,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_73sub_num_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":316
+/* "easyvec/matrixes.pyx":364
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num(self, real num):             # <<<<<<<<<<<<<<
@@ -10460,7 +11613,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_73sub_num_(struct __pyx_obj_7
  *             self.m11 - num,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_sub_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -10479,11 +11632,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_88sub_num)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 316, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 364, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -10499,10 +11652,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 316, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 316, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 364, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10521,7 +11674,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":317
+  /* "easyvec/matrixes.pyx":365
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -10530,54 +11683,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":318
+  /* "easyvec/matrixes.pyx":366
  *     cpdef Mat2 sub_num(self, real num):
  *         return Mat2(
  *             self.m11 - num,             # <<<<<<<<<<<<<<
  *             self.m12 - num,
  *             self.m21 - num,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 - __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 - __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":319
+  /* "easyvec/matrixes.pyx":367
  *         return Mat2(
  *             self.m11 - num,
  *             self.m12 - num,             # <<<<<<<<<<<<<<
  *             self.m21 - num,
  *             self.m22 - num
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 - __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 - __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":320
+  /* "easyvec/matrixes.pyx":368
  *             self.m11 - num,
  *             self.m12 - num,
  *             self.m21 - num,             # <<<<<<<<<<<<<<
  *             self.m22 - num
  *         )
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 - __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 - __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":321
+  /* "easyvec/matrixes.pyx":369
  *             self.m12 - num,
  *             self.m21 - num,
  *             self.m22 - num             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 - __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 - __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 369, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":317
+  /* "easyvec/matrixes.pyx":365
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 - num,
  *             self.m12 - num,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 365, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -10591,14 +11744,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 365, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":316
+  /* "easyvec/matrixes.pyx":364
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_num(self, real num):             # <<<<<<<<<<<<<<
@@ -10622,15 +11775,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_75sub_num[] = "Mat2.sub_num(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_87sub_num[] = "Mat2.sub_num(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88sub_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sub_num (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 316, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 364, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10638,20 +11791,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_75sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_87sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_75sub_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87sub_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("sub_num", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10668,7 +11821,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_75sub_num(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":326
+/* "easyvec/matrixes.pyx":374
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -10676,7 +11829,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_75sub_num(struct __pyx_obj_7e
  *         self.m12 -= mat.m12
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -10694,9 +11847,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_90sub_mat_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -10711,10 +11864,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 326, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 326, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 374, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10733,7 +11886,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":327
+  /* "easyvec/matrixes.pyx":375
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat_(self, Mat2 mat):
  *         self.m11 -= mat.m11             # <<<<<<<<<<<<<<
@@ -10742,7 +11895,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 - __pyx_v_mat->m11);
 
-  /* "easyvec/matrixes.pyx":328
+  /* "easyvec/matrixes.pyx":376
  *     cpdef Mat2 sub_mat_(self, Mat2 mat):
  *         self.m11 -= mat.m11
  *         self.m12 -= mat.m12             # <<<<<<<<<<<<<<
@@ -10751,7 +11904,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 - __pyx_v_mat->m12);
 
-  /* "easyvec/matrixes.pyx":329
+  /* "easyvec/matrixes.pyx":377
  *         self.m11 -= mat.m11
  *         self.m12 -= mat.m12
  *         self.m21 -= mat.m21             # <<<<<<<<<<<<<<
@@ -10760,7 +11913,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 - __pyx_v_mat->m21);
 
-  /* "easyvec/matrixes.pyx":330
+  /* "easyvec/matrixes.pyx":378
  *         self.m12 -= mat.m12
  *         self.m21 -= mat.m21
  *         self.m22 -= mat.m22             # <<<<<<<<<<<<<<
@@ -10769,7 +11922,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 - __pyx_v_mat->m22);
 
-  /* "easyvec/matrixes.pyx":331
+  /* "easyvec/matrixes.pyx":379
  *         self.m21 -= mat.m21
  *         self.m22 -= mat.m22
  *         return self             # <<<<<<<<<<<<<<
@@ -10781,7 +11934,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":326
+  /* "easyvec/matrixes.pyx":374
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -10804,14 +11957,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_77sub_mat_[] = "Mat2.sub_mat_(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_89sub_mat_[] = "Mat2.sub_mat_(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90sub_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sub_mat_ (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 326, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_77sub_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 374, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_89sub_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -10822,13 +11975,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_77sub_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89sub_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("sub_mat_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10845,7 +11998,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_77sub_mat_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":334
+/* "easyvec/matrixes.pyx":382
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -10853,7 +12006,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_77sub_mat_(struct __pyx_obj_7
  *             self.m11 - mat.m11,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -10872,9 +12025,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sub_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_92sub_mat)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -10889,10 +12042,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 334, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 382, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10911,7 +12064,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":335
+  /* "easyvec/matrixes.pyx":383
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -10920,54 +12073,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":336
+  /* "easyvec/matrixes.pyx":384
  *     cpdef Mat2 sub_mat(self, Mat2 mat):
  *         return Mat2(
  *             self.m11 - mat.m11,             # <<<<<<<<<<<<<<
  *             self.m12 - mat.m12,
  *             self.m21 - mat.m21,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 - __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 - __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":337
+  /* "easyvec/matrixes.pyx":385
  *         return Mat2(
  *             self.m11 - mat.m11,
  *             self.m12 - mat.m12,             # <<<<<<<<<<<<<<
  *             self.m21 - mat.m21,
  *             self.m22 - mat.m22
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 - __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 - __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":338
+  /* "easyvec/matrixes.pyx":386
  *             self.m11 - mat.m11,
  *             self.m12 - mat.m12,
  *             self.m21 - mat.m21,             # <<<<<<<<<<<<<<
  *             self.m22 - mat.m22
  *         )
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 - __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 338, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 - __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":339
+  /* "easyvec/matrixes.pyx":387
  *             self.m12 - mat.m12,
  *             self.m21 - mat.m21,
  *             self.m22 - mat.m22             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 - __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 - __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":335
+  /* "easyvec/matrixes.pyx":383
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 - mat.m11,
  *             self.m12 - mat.m12,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -10981,14 +12134,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":334
+  /* "easyvec/matrixes.pyx":382
  * 
  *     @cython.nonecheck(False)
  *     cpdef Mat2 sub_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -11012,14 +12165,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_79sub_mat[] = "Mat2.sub_mat(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_91sub_mat[] = "Mat2.sub_mat(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92sub_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sub_mat (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 334, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_79sub_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_91sub_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -11030,13 +12183,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_79sub_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91sub_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("sub_mat", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_sub_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11053,7 +12206,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_79sub_mat(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":342
+/* "easyvec/matrixes.pyx":390
  *         )
  * 
  *     def __sub__(left, right):             # <<<<<<<<<<<<<<
@@ -11062,19 +12215,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_79sub_mat(struct __pyx_obj_7e
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_82__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_82__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_94__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_94__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__sub__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_93__sub__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__sub__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -11087,7 +12240,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   Py_UCS4 __pyx_t_8;
   __Pyx_RefNannySetupContext("__sub__", 0);
 
-  /* "easyvec/matrixes.pyx":343
+  /* "easyvec/matrixes.pyx":391
  * 
  *     def __sub__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -11098,7 +12251,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":344
+    /* "easyvec/matrixes.pyx":392
  *     def __sub__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -11109,7 +12262,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "easyvec/matrixes.pyx":345
+      /* "easyvec/matrixes.pyx":393
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).sub_mat(<Mat2>right)             # <<<<<<<<<<<<<<
@@ -11117,13 +12270,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  *                 return (<Mat2>left).sub_num(<real>right)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->sub_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 345, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->sub_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 393, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":344
+      /* "easyvec/matrixes.pyx":392
  *     def __sub__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -11132,7 +12285,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":346
+    /* "easyvec/matrixes.pyx":394
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).sub_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -11152,7 +12305,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
     __pyx_L5_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "easyvec/matrixes.pyx":347
+      /* "easyvec/matrixes.pyx":395
  *                 return (<Mat2>left).sub_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).sub_num(<real>right)             # <<<<<<<<<<<<<<
@@ -11160,14 +12313,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  *             return ((<Mat2>right).sub_num(<real>left)).neg()
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 347, __pyx_L1_error)
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 347, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":346
+      /* "easyvec/matrixes.pyx":394
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).sub_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -11176,7 +12329,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  */
     }
 
-    /* "easyvec/matrixes.pyx":343
+    /* "easyvec/matrixes.pyx":391
  * 
  *     def __sub__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -11186,7 +12339,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
     goto __pyx_L3;
   }
 
-  /* "easyvec/matrixes.pyx":348
+  /* "easyvec/matrixes.pyx":396
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).sub_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
@@ -11206,7 +12359,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   __pyx_L7_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "easyvec/matrixes.pyx":349
+    /* "easyvec/matrixes.pyx":397
  *                 return (<Mat2>left).sub_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):
  *             return ((<Mat2>right).sub_num(<real>left)).neg()             # <<<<<<<<<<<<<<
@@ -11214,17 +12367,17 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_left); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 349, __pyx_L1_error)
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_left); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 397, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right)->__pyx_vtab)->sub_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3)->__pyx_vtab)->neg(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_6 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3)->__pyx_vtab)->neg(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 397, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_r = __pyx_t_6;
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":348
+    /* "easyvec/matrixes.pyx":396
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).sub_num(<real>right)
  *         elif isinstance(left, int) or isinstance(left, float):             # <<<<<<<<<<<<<<
@@ -11234,14 +12387,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   }
   __pyx_L3:;
 
-  /* "easyvec/matrixes.pyx":350
+  /* "easyvec/matrixes.pyx":398
  *         elif isinstance(left, int) or isinstance(left, float):
  *             return ((<Mat2>right).sub_num(<real>left)).neg()
  *         raise NotImplementedError(f"    left={left}, right={right}")             # <<<<<<<<<<<<<<
  * 
  *     def __isub__(self, right):
  */
-  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = 0;
   __pyx_t_8 = 127;
@@ -11250,7 +12403,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   __pyx_t_7 += 36;
   __Pyx_GIVEREF(__pyx_kp_u_left_3);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_kp_u_left_3);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
   __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
@@ -11261,24 +12414,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   __pyx_t_7 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_kp_u_right);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_8;
   __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_6, 3, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_Raise(__pyx_t_6, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __PYX_ERR(0, 350, __pyx_L1_error)
+  __PYX_ERR(0, 398, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":342
+  /* "easyvec/matrixes.pyx":390
  *         )
  * 
  *     def __sub__(left, right):             # <<<<<<<<<<<<<<
@@ -11298,7 +12451,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":352
+/* "easyvec/matrixes.pyx":400
  *         raise NotImplementedError(f"    left={left}, right={right}")
  * 
  *     def __isub__(self, right):             # <<<<<<<<<<<<<<
@@ -11307,19 +12460,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_81__sub__(PyObject *__pyx_v_l
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_84__isub__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_84__isub__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_96__isub__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_96__isub__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__isub__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_95__isub__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__isub__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -11332,7 +12485,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("__isub__", 0);
 
-  /* "easyvec/matrixes.pyx":353
+  /* "easyvec/matrixes.pyx":401
  * 
  *     def __isub__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -11343,7 +12496,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":354
+    /* "easyvec/matrixes.pyx":402
  *     def __isub__(self, right):
  *         if isinstance(right, Mat2):
  *             return self.sub_mat_(<Mat2>right)             # <<<<<<<<<<<<<<
@@ -11351,13 +12504,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
  *             return self.sub_num_(<real>right)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->sub_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 354, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->sub_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":353
+    /* "easyvec/matrixes.pyx":401
  * 
  *     def __isub__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -11366,7 +12519,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
  */
   }
 
-  /* "easyvec/matrixes.pyx":355
+  /* "easyvec/matrixes.pyx":403
  *         if isinstance(right, Mat2):
  *             return self.sub_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -11386,7 +12539,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":356
+    /* "easyvec/matrixes.pyx":404
  *             return self.sub_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.sub_num_(<real>right)             # <<<<<<<<<<<<<<
@@ -11394,14 +12547,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 356, __pyx_L1_error)
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->sub_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 356, __pyx_L1_error)
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 404, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->sub_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":355
+    /* "easyvec/matrixes.pyx":403
  *         if isinstance(right, Mat2):
  *             return self.sub_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -11410,14 +12563,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
  */
   }
 
-  /* "easyvec/matrixes.pyx":357
+  /* "easyvec/matrixes.pyx":405
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.sub_num_(<real>right)
  *         raise NotImplementedError(f"    self={self}, right={right}")             # <<<<<<<<<<<<<<
  * 
  *     @cython.nonecheck(False)
  */
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 0;
   __pyx_t_7 = 127;
@@ -11426,7 +12579,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   __pyx_t_6 += 36;
   __Pyx_GIVEREF(__pyx_kp_u_self);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_self);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
@@ -11437,24 +12590,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   __pyx_t_6 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
   __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_Raise(__pyx_t_3, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __PYX_ERR(0, 357, __pyx_L1_error)
+  __PYX_ERR(0, 405, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":352
+  /* "easyvec/matrixes.pyx":400
  *         raise NotImplementedError(f"    left={left}, right={right}")
  * 
  *     def __isub__(self, right):             # <<<<<<<<<<<<<<
@@ -11474,7 +12627,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":361
+/* "easyvec/matrixes.pyx":409
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -11482,7 +12635,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_83__isub__(struct __pyx_obj_7
  *         self.m12 /= num
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_98div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_div_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -11501,11 +12654,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 361, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_98div_num_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 361, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -11521,10 +12674,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 361, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 409, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11543,7 +12696,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":362
+  /* "easyvec/matrixes.pyx":410
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num_(self, real num):
  *         self.m11 /= num             # <<<<<<<<<<<<<<
@@ -11552,7 +12705,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 / __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":363
+  /* "easyvec/matrixes.pyx":411
  *     cpdef Mat2 div_num_(self, real num):
  *         self.m11 /= num
  *         self.m12 /= num             # <<<<<<<<<<<<<<
@@ -11561,7 +12714,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 / __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":364
+  /* "easyvec/matrixes.pyx":412
  *         self.m11 /= num
  *         self.m12 /= num
  *         self.m21 /= num             # <<<<<<<<<<<<<<
@@ -11570,7 +12723,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 / __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":365
+  /* "easyvec/matrixes.pyx":413
  *         self.m12 /= num
  *         self.m21 /= num
  *         self.m22 /= num             # <<<<<<<<<<<<<<
@@ -11579,7 +12732,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 / __pyx_v_num);
 
-  /* "easyvec/matrixes.pyx":366
+  /* "easyvec/matrixes.pyx":414
  *         self.m21 /= num
  *         self.m22 /= num
  *         return self             # <<<<<<<<<<<<<<
@@ -11591,7 +12744,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":361
+  /* "easyvec/matrixes.pyx":409
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num_(self, real num):             # <<<<<<<<<<<<<<
@@ -11615,15 +12768,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_85div_num_[] = "Mat2.div_num_(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_98div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_97div_num_[] = "Mat2.div_num_(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_98div_num_(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("div_num_ (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 361, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 409, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11631,20 +12784,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_85div_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_97div_num_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85div_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97div_num_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("div_num_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_num_(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11661,7 +12814,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85div_num_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":370
+/* "easyvec/matrixes.pyx":418
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num(self, real num):             # <<<<<<<<<<<<<<
@@ -11669,7 +12822,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_85div_num_(struct __pyx_obj_7
  *             self.m11 / num,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_100div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_div_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -11688,11 +12841,11 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_num_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_100div_num)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 370, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 418, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -11708,10 +12861,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 370, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 418, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11730,7 +12883,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":371
+  /* "easyvec/matrixes.pyx":419
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -11739,54 +12892,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":372
+  /* "easyvec/matrixes.pyx":420
  *     cpdef Mat2 div_num(self, real num):
  *         return Mat2(
  *             self.m11 / num,             # <<<<<<<<<<<<<<
  *             self.m12 / num,
  *             self.m21 / num,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_num)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":373
+  /* "easyvec/matrixes.pyx":421
  *         return Mat2(
  *             self.m11 / num,
  *             self.m12 / num,             # <<<<<<<<<<<<<<
  *             self.m21 / num,
  *             self.m22 / num
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 / __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 / __pyx_v_num)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":374
+  /* "easyvec/matrixes.pyx":422
  *             self.m11 / num,
  *             self.m12 / num,
  *             self.m21 / num,             # <<<<<<<<<<<<<<
  *             self.m22 / num
  *         )
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 / __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 374, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m21 / __pyx_v_num)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":375
+  /* "easyvec/matrixes.pyx":423
  *             self.m12 / num,
  *             self.m21 / num,
  *             self.m22 / num             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 423, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":371
+  /* "easyvec/matrixes.pyx":419
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num(self, real num):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 / num,
  *             self.m12 / num,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -11800,14 +12953,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":370
+  /* "easyvec/matrixes.pyx":418
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_num(self, real num):             # <<<<<<<<<<<<<<
@@ -11831,15 +12984,15 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_87div_num[] = "Mat2.div_num(self, real num) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_100div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_99div_num[] = "Mat2.div_num(self, real num) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_100div_num(PyObject *__pyx_v_self, PyObject *__pyx_arg_num) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_num;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("div_num (wrapper)", 0);
   assert(__pyx_arg_num); {
-    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 370, __pyx_L3_error)
+    __pyx_v_num = __pyx_PyFloat_AsDouble(__pyx_arg_num); if (unlikely((__pyx_v_num == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 418, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11847,20 +13000,20 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_87div_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_99div_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((__pyx_t_7easyvec_7vectors_real)__pyx_v_num));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87div_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_99div_num(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_num) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("div_num", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_num(__pyx_v_self, __pyx_v_num, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11877,7 +13030,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87div_num(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":381
+/* "easyvec/matrixes.pyx":429
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -11885,7 +13038,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_87div_num(struct __pyx_obj_7e
  *         self.m12 /= mat.m12
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_102div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_div_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -11903,9 +13056,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_mat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_102div_mat_)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -11920,10 +13073,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 381, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 429, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11942,7 +13095,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":382
+  /* "easyvec/matrixes.pyx":430
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat_(self, Mat2 mat):
  *         self.m11 /= mat.m11             # <<<<<<<<<<<<<<
@@ -11951,7 +13104,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m11 = (__pyx_v_self->m11 / __pyx_v_mat->m11);
 
-  /* "easyvec/matrixes.pyx":383
+  /* "easyvec/matrixes.pyx":431
  *     cpdef Mat2 div_mat_(self, Mat2 mat):
  *         self.m11 /= mat.m11
  *         self.m12 /= mat.m12             # <<<<<<<<<<<<<<
@@ -11960,7 +13113,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m12 = (__pyx_v_self->m12 / __pyx_v_mat->m12);
 
-  /* "easyvec/matrixes.pyx":384
+  /* "easyvec/matrixes.pyx":432
  *         self.m11 /= mat.m11
  *         self.m12 /= mat.m12
  *         self.m21 /= mat.m21             # <<<<<<<<<<<<<<
@@ -11969,7 +13122,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m21 = (__pyx_v_self->m21 / __pyx_v_mat->m21);
 
-  /* "easyvec/matrixes.pyx":385
+  /* "easyvec/matrixes.pyx":433
  *         self.m12 /= mat.m12
  *         self.m21 /= mat.m21
  *         self.m22 /= mat.m22             # <<<<<<<<<<<<<<
@@ -11978,7 +13131,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __pyx_v_self->m22 = (__pyx_v_self->m22 / __pyx_v_mat->m22);
 
-  /* "easyvec/matrixes.pyx":386
+  /* "easyvec/matrixes.pyx":434
  *         self.m21 /= mat.m21
  *         self.m22 /= mat.m22
  *         return self             # <<<<<<<<<<<<<<
@@ -11990,7 +13143,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":381
+  /* "easyvec/matrixes.pyx":429
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat_(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -12013,14 +13166,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_89div_mat_[] = "Mat2.div_mat_(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_102div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_101div_mat_[] = "Mat2.div_mat_(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_102div_mat_(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("div_mat_ (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 381, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_89div_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_101div_mat_(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -12031,13 +13184,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89div_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_101div_mat_(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("div_mat_", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_mat_(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12054,7 +13207,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89div_mat_(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":390
+/* "easyvec/matrixes.pyx":438
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -12062,7 +13215,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_89div_mat_(struct __pyx_obj_7
  *             self.m11 / mat.m11,
  */
 
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_104div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
 static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat2_div_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat, int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -12081,9 +13234,9 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_div_mat_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8matrixes_4Mat2_104div_mat)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -12098,10 +13251,10 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_mat)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_mat));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 390, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8matrixes_Mat2))))) __PYX_ERR(0, 438, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12120,7 +13273,7 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
     #endif
   }
 
-  /* "easyvec/matrixes.pyx":391
+  /* "easyvec/matrixes.pyx":439
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
@@ -12129,54 +13282,54 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
 
-  /* "easyvec/matrixes.pyx":392
+  /* "easyvec/matrixes.pyx":440
  *     cpdef Mat2 div_mat(self, Mat2 mat):
  *         return Mat2(
  *             self.m11 / mat.m11,             # <<<<<<<<<<<<<<
  *             self.m12 / mat.m12,
  *             self.m21 / mat.m21,
  */
-  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->m11 / __pyx_v_mat->m11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "easyvec/matrixes.pyx":393
+  /* "easyvec/matrixes.pyx":441
  *         return Mat2(
  *             self.m11 / mat.m11,
  *             self.m12 / mat.m12,             # <<<<<<<<<<<<<<
  *             self.m21 / mat.m21,
  *             self.m22 / mat.m22
  */
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 / __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->m12 / __pyx_v_mat->m12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "easyvec/matrixes.pyx":394
+  /* "easyvec/matrixes.pyx":442
  *             self.m11 / mat.m11,
  *             self.m12 / mat.m12,
  *             self.m21 / mat.m21,             # <<<<<<<<<<<<<<
  *             self.m22 / mat.m22
  *         )
  */
-  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 / __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->m21 / __pyx_v_mat->m21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "easyvec/matrixes.pyx":395
+  /* "easyvec/matrixes.pyx":443
  *             self.m12 / mat.m12,
  *             self.m21 / mat.m21,
  *             self.m22 / mat.m22             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_self->m22 / __pyx_v_mat->m22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "easyvec/matrixes.pyx":391
+  /* "easyvec/matrixes.pyx":439
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat(self, Mat2 mat):
  *         return Mat2(             # <<<<<<<<<<<<<<
  *             self.m11 / mat.m11,
  *             self.m12 / mat.m12,
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -12190,14 +13343,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/matrixes.pyx":390
+  /* "easyvec/matrixes.pyx":438
  *     @cython.nonecheck(False)
  *     @cython.cdivision(True)
  *     cpdef Mat2 div_mat(self, Mat2 mat):             # <<<<<<<<<<<<<<
@@ -12221,14 +13374,14 @@ static struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_f_7easyvec_8matrixes_4Mat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_91div_mat[] = "Mat2.div_mat(self, Mat2 mat) -> Mat2";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_104div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_103div_mat[] = "Mat2.div_mat(self, Mat2 mat) -> Mat2";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_104div_mat(PyObject *__pyx_v_self, PyObject *__pyx_v_mat) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("div_mat (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 390, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_91div_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_mat), __pyx_ptype_7easyvec_8matrixes_Mat2, 1, "mat", 0))) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_103div_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_mat));
 
   /* function exit code */
   goto __pyx_L0;
@@ -12239,13 +13392,13 @@ static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91div_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_103div_mat(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_mat) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("div_mat", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8matrixes_4Mat2_div_mat(__pyx_v_self, __pyx_v_mat, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12262,7 +13415,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91div_mat(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":398
+/* "easyvec/matrixes.pyx":446
  *         )
  * 
  *     def __truediv__(left, right):             # <<<<<<<<<<<<<<
@@ -12271,19 +13424,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_91div_mat(struct __pyx_obj_7e
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_94__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_94__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_106__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_106__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__truediv__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_105__truediv__(((PyObject *)__pyx_v_left), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_105__truediv__(PyObject *__pyx_v_left, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -12296,7 +13449,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("__truediv__", 0);
 
-  /* "easyvec/matrixes.pyx":399
+  /* "easyvec/matrixes.pyx":447
  * 
  *     def __truediv__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -12307,7 +13460,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":400
+    /* "easyvec/matrixes.pyx":448
  *     def __truediv__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -12318,7 +13471,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "easyvec/matrixes.pyx":401
+      /* "easyvec/matrixes.pyx":449
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).div_mat(<Mat2>right)             # <<<<<<<<<<<<<<
@@ -12326,13 +13479,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  *                 return (<Mat2>left).div_num(<real>right)
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->div_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->div_mat(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 449, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":400
+      /* "easyvec/matrixes.pyx":448
  *     def __truediv__(left, right):
  *         if isinstance(left, Mat2):
  *             if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -12341,7 +13494,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  */
     }
 
-    /* "easyvec/matrixes.pyx":402
+    /* "easyvec/matrixes.pyx":450
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).div_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -12361,7 +13514,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
     __pyx_L5_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "easyvec/matrixes.pyx":403
+      /* "easyvec/matrixes.pyx":451
  *                 return (<Mat2>left).div_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).div_num(<real>right)             # <<<<<<<<<<<<<<
@@ -12369,14 +13522,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  * 
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 403, __pyx_L1_error)
-      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->div_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 403, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 451, __pyx_L1_error)
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left)->__pyx_vtab)->div_num(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_left), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "easyvec/matrixes.pyx":402
+      /* "easyvec/matrixes.pyx":450
  *             if isinstance(right, Mat2):
  *                 return (<Mat2>left).div_mat(<Mat2>right)
  *             elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -12385,7 +13538,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  */
     }
 
-    /* "easyvec/matrixes.pyx":399
+    /* "easyvec/matrixes.pyx":447
  * 
  *     def __truediv__(left, right):
  *         if isinstance(left, Mat2):             # <<<<<<<<<<<<<<
@@ -12394,14 +13547,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  */
   }
 
-  /* "easyvec/matrixes.pyx":404
+  /* "easyvec/matrixes.pyx":452
  *             elif isinstance(right, int) or isinstance(right, float):
  *                 return (<Mat2>left).div_num(<real>right)
  *         raise NotImplementedError(f"    left={left}, right={right}")             # <<<<<<<<<<<<<<
  * 
  *     def __itruediv__(self, right):
  */
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 0;
   __pyx_t_7 = 127;
@@ -12410,7 +13563,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
   __pyx_t_6 += 36;
   __Pyx_GIVEREF(__pyx_kp_u_left_3);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_left_3);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_left, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
@@ -12421,24 +13574,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
   __pyx_t_6 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
   __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_Raise(__pyx_t_3, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __PYX_ERR(0, 404, __pyx_L1_error)
+  __PYX_ERR(0, 452, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":398
+  /* "easyvec/matrixes.pyx":446
  *         )
  * 
  *     def __truediv__(left, right):             # <<<<<<<<<<<<<<
@@ -12458,7 +13611,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
   return __pyx_r;
 }
 
-/* "easyvec/matrixes.pyx":406
+/* "easyvec/matrixes.pyx":454
  *         raise NotImplementedError(f"    left={left}, right={right}")
  * 
  *     def __itruediv__(self, right):             # <<<<<<<<<<<<<<
@@ -12467,19 +13620,19 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_93__truediv__(PyObject *__pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_96__itruediv__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_96__itruediv__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_108__itruediv__(PyObject *__pyx_v_self, PyObject *__pyx_v_right); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_108__itruediv__(PyObject *__pyx_v_self, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__itruediv__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_107__itruediv__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v_right));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_107__itruediv__(struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, PyObject *__pyx_v_right) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -12492,7 +13645,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("__itruediv__", 0);
 
-  /* "easyvec/matrixes.pyx":407
+  /* "easyvec/matrixes.pyx":455
  * 
  *     def __itruediv__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -12503,7 +13656,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":408
+    /* "easyvec/matrixes.pyx":456
  *     def __itruediv__(self, right):
  *         if isinstance(right, Mat2):
  *             return self.div_mat_(<Mat2>right)             # <<<<<<<<<<<<<<
@@ -12511,13 +13664,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
  *             return self.div_num_(<real>right)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->div_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->div_mat_(__pyx_v_self, ((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_right), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 456, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":407
+    /* "easyvec/matrixes.pyx":455
  * 
  *     def __itruediv__(self, right):
  *         if isinstance(right, Mat2):             # <<<<<<<<<<<<<<
@@ -12526,7 +13679,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
  */
   }
 
-  /* "easyvec/matrixes.pyx":409
+  /* "easyvec/matrixes.pyx":457
  *         if isinstance(right, Mat2):
  *             return self.div_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -12546,7 +13699,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "easyvec/matrixes.pyx":410
+    /* "easyvec/matrixes.pyx":458
  *             return self.div_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.div_num_(<real>right)             # <<<<<<<<<<<<<<
@@ -12554,14 +13707,14 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L1_error)
-    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->div_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 410, __pyx_L1_error)
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_v_right); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 458, __pyx_L1_error)
+    __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8matrixes_Mat2 *)__pyx_v_self->__pyx_vtab)->div_num_(__pyx_v_self, ((__pyx_t_7easyvec_7vectors_real)__pyx_t_5), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 458, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/matrixes.pyx":409
+    /* "easyvec/matrixes.pyx":457
  *         if isinstance(right, Mat2):
  *             return self.div_mat_(<Mat2>right)
  *         elif isinstance(right, int) or isinstance(right, float):             # <<<<<<<<<<<<<<
@@ -12570,13 +13723,13 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
  */
   }
 
-  /* "easyvec/matrixes.pyx":411
+  /* "easyvec/matrixes.pyx":459
  *         elif isinstance(right, int) or isinstance(right, float):
  *             return self.div_num_(<real>right)
  *         raise NotImplementedError(f"    self={self}, right={right}")             # <<<<<<<<<<<<<<
  * 
  */
-  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 0;
   __pyx_t_7 = 127;
@@ -12585,7 +13738,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
   __pyx_t_6 += 36;
   __Pyx_GIVEREF(__pyx_kp_u_self);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_self);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_self), __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
@@ -12596,24 +13749,24 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
   __pyx_t_6 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_right);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_right);
-  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_right, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_7 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) > __pyx_t_7) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) : __pyx_t_7;
   __pyx_t_6 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_8);
   __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_NotImplementedError, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_Raise(__pyx_t_3, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __PYX_ERR(0, 411, __pyx_L1_error)
+  __PYX_ERR(0, 459, __pyx_L1_error)
 
-  /* "easyvec/matrixes.pyx":406
+  /* "easyvec/matrixes.pyx":454
  *         raise NotImplementedError(f"    left={left}, right={right}")
  * 
  *     def __itruediv__(self, right):             # <<<<<<<<<<<<<<
@@ -12638,7 +13791,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_95__itruediv__(struct __pyx_o
  * cdef class Mat2:
  *     cdef public real m11, m12, m21, m22             # <<<<<<<<<<<<<<
  * 
- *     cpdef Vec2 i_axis(self)
+ *     cpdef Mat2 copy(self)
  */
 
 /* Python wrapper */
@@ -12920,20 +14073,20 @@ static int __pyx_pf_7easyvec_8matrixes_4Mat2_3m22_2__set__(struct __pyx_obj_7eas
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_98__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_97__reduce_cython__[] = "Mat2.__reduce_cython__(self)";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_98__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_110__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_109__reduce_cython__[] = "Mat2.__reduce_cython__(self)";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_110__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_97__reduce_cython__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_109__reduce_cython__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_109__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12945,7 +14098,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97__reduce_cython__(CYTHON_UN
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12975,20 +14128,20 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_97__reduce_cython__(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_100__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_7easyvec_8matrixes_4Mat2_99__setstate_cython__[] = "Mat2.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_100__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_112__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_7easyvec_8matrixes_4Mat2_111__setstate_cython__[] = "Mat2.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_7easyvec_8matrixes_4Mat2_112__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_99__setstate_cython__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_7easyvec_8matrixes_4Mat2_111__setstate_cython__(((struct __pyx_obj_7easyvec_8matrixes_Mat2 *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_99__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_111__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8matrixes_Mat2 *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12999,7 +14152,7 @@ static PyObject *__pyx_pf_7easyvec_8matrixes_4Mat2_99__setstate_cython__(CYTHON_
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13219,7 +14372,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13251,7 +14404,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13378,7 +14531,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13652,7 +14805,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -13893,7 +15046,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14609,7 +15762,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14662,7 +15815,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -16345,7 +17498,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17378,7 +18531,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -17734,7 +18887,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -18274,7 +19427,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -18388,7 +19541,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__22, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__24, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -19393,7 +20546,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19446,7 +20599,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19797,9 +20950,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__25);
-            __Pyx_GIVEREF(__pyx_slice__25);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__25);
+            __Pyx_INCREF(__pyx_slice__27);
+            __Pyx_GIVEREF(__pyx_slice__27);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__27);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 682, __pyx_L1_error)
@@ -19832,7 +20985,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__25); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__27); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -19972,9 +21125,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__25);
-        __Pyx_GIVEREF(__pyx_slice__25);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__25);
+        __Pyx_INCREF(__pyx_slice__27);
+        __Pyx_GIVEREF(__pyx_slice__27);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__27);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 696, __pyx_L1_error)
@@ -20098,7 +21251,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22261,7 +23414,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -22314,7 +23467,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -25884,6 +27037,10 @@ static PyObject *__pyx_getprop_7easyvec_8matrixes_4Mat2_T(PyObject *o, CYTHON_UN
   return __pyx_pw_7easyvec_8matrixes_4Mat2_1T_1__get__(o);
 }
 
+static PyObject *__pyx_getprop_7easyvec_8matrixes_4Mat2__1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_7easyvec_8matrixes_4Mat2_2_1_1__get__(o);
+}
+
 static PyObject *__pyx_getprop_7easyvec_8matrixes_4Mat2_m11(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_7easyvec_8matrixes_4Mat2_3m11_1__get__(o);
 }
@@ -25946,44 +27103,48 @@ static PyMethodDef __pyx_methods_7easyvec_8matrixes_Mat2[] = {
   {"from_angle", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8matrixes_4Mat2_5from_angle, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8matrixes_4Mat2_4from_angle},
   {"eye", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_7eye, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_6eye},
   {"zeros", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_9zeros, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_8zeros},
-  {"as_np", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_17as_np, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_16as_np},
-  {"i_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_19i_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_18i_axis},
-  {"j_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_21j_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_20j_axis},
-  {"x_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_23x_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_22x_axis},
-  {"y_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_25y_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_24y_axis},
-  {"transpose", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_27transpose, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_26transpose},
-  {"det", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_29det, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_28det},
-  {"inverse", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_31inverse, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_30inverse},
-  {"mul_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_33mul_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_32mul_mat},
-  {"mul_vec", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_35mul_vec, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_34mul_vec},
-  {"mul_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_36mul_num_},
-  {"mul_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_38mul_num},
-  {"add_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_43add_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_42add_num_},
-  {"add_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_45add_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_44add_num},
-  {"add_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_47add_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_46add_mat_},
-  {"add_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_49add_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_48add_mat},
-  {"__sum__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_51__sum__, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_50__sum__},
-  {"__isum__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_53__isum__, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_52__isum__},
-  {"neg_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_55neg_, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_54neg_},
-  {"neg", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_57neg, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_56neg},
-  {"keys", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_65keys, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_64keys},
-  {"get_generator", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_69get_generator, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_68get_generator},
-  {"as_tuple", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_72as_tuple, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_71as_tuple},
-  {"sub_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_74sub_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_73sub_num_},
-  {"sub_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_76sub_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_75sub_num},
-  {"sub_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_78sub_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_77sub_mat_},
-  {"sub_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_80sub_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_79sub_mat},
-  {"div_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_86div_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_85div_num_},
-  {"div_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_88div_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_87div_num},
-  {"div_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_90div_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_89div_mat_},
-  {"div_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_92div_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_91div_mat},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_98__reduce_cython__, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_97__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_100__setstate_cython__, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_99__setstate_cython__},
+  {"copy", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_13copy, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_12copy},
+  {"clone", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_15clone, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_14clone},
+  {"as_np", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_21as_np, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_20as_np},
+  {"i_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_23i_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_22i_axis},
+  {"j_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_25j_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_24j_axis},
+  {"x_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_27x_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_26x_axis},
+  {"y_axis", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_29y_axis, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_28y_axis},
+  {"transpose", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_31transpose, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_30transpose},
+  {"det", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_33det, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_32det},
+  {"inverse", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_35inverse, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_34inverse},
+  {"mul_mat_elements_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_37mul_mat_elements_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_36mul_mat_elements_},
+  {"mul_mat_elements", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_39mul_mat_elements, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_38mul_mat_elements},
+  {"mul_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_41mul_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_40mul_mat_},
+  {"mul_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_43mul_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_42mul_mat},
+  {"mul_vec", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_45mul_vec, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_44mul_vec},
+  {"mul_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_47mul_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_46mul_num_},
+  {"mul_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_49mul_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_48mul_num},
+  {"add_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_55add_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_54add_num_},
+  {"add_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_57add_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_56add_num},
+  {"add_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_59add_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_58add_mat_},
+  {"add_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_61add_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_60add_mat},
+  {"neg_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_67neg_, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_66neg_},
+  {"neg", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_69neg, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_68neg},
+  {"keys", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_77keys, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_76keys},
+  {"get_generator", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_81get_generator, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_80get_generator},
+  {"as_tuple", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_84as_tuple, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_83as_tuple},
+  {"sub_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_86sub_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_85sub_num_},
+  {"sub_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_88sub_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_87sub_num},
+  {"sub_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_90sub_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_89sub_mat_},
+  {"sub_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_92sub_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_91sub_mat},
+  {"div_num_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_98div_num_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_97div_num_},
+  {"div_num", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_100div_num, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_99div_num},
+  {"div_mat_", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_102div_mat_, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_101div_mat_},
+  {"div_mat", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_104div_mat, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_103div_mat},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_110__reduce_cython__, METH_NOARGS, __pyx_doc_7easyvec_8matrixes_4Mat2_109__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_7easyvec_8matrixes_4Mat2_112__setstate_cython__, METH_O, __pyx_doc_7easyvec_8matrixes_4Mat2_111__setstate_cython__},
   {0, 0, 0, 0}
 };
 
 static struct PyGetSetDef __pyx_getsets_7easyvec_8matrixes_Mat2[] = {
   {(char *)"T", __pyx_getprop_7easyvec_8matrixes_4Mat2_T, 0, (char *)0, 0},
+  {(char *)"_1", __pyx_getprop_7easyvec_8matrixes_4Mat2__1, 0, (char *)0, 0},
   {(char *)"m11", __pyx_getprop_7easyvec_8matrixes_4Mat2_m11, __pyx_setprop_7easyvec_8matrixes_4Mat2_m11, (char *)"m11: 'real'", 0},
   {(char *)"m12", __pyx_getprop_7easyvec_8matrixes_4Mat2_m12, __pyx_setprop_7easyvec_8matrixes_4Mat2_m12, (char *)"m12: 'real'", 0},
   {(char *)"m21", __pyx_getprop_7easyvec_8matrixes_4Mat2_m21, __pyx_setprop_7easyvec_8matrixes_4Mat2_m21, (char *)"m21: 'real'", 0},
@@ -25992,16 +27153,16 @@ static struct PyGetSetDef __pyx_getsets_7easyvec_8matrixes_Mat2[] = {
 };
 
 static PyNumberMethods __pyx_tp_as_number_Mat2 = {
-  0, /*nb_add*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_82__sub__, /*nb_subtract*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_41__mul__, /*nb_multiply*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_63__add__, /*nb_add*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_94__sub__, /*nb_subtract*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_51__mul__, /*nb_multiply*/
   #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
   0, /*nb_divide*/
   #endif
   0, /*nb_remainder*/
   0, /*nb_divmod*/
   0, /*nb_power*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_59__neg__, /*nb_negative*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_71__neg__, /*nb_negative*/
   0, /*nb_positive*/
   0, /*nb_absolute*/
   0, /*nb_nonzero*/
@@ -26027,9 +27188,9 @@ static PyNumberMethods __pyx_tp_as_number_Mat2 = {
   #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
   0, /*nb_hex*/
   #endif
-  0, /*nb_inplace_add*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_84__isub__, /*nb_inplace_subtract*/
-  0, /*nb_inplace_multiply*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_65__iadd__, /*nb_inplace_add*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_96__isub__, /*nb_inplace_subtract*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_53__imul__, /*nb_inplace_multiply*/
   #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
   0, /*nb_inplace_divide*/
   #endif
@@ -26041,9 +27202,9 @@ static PyNumberMethods __pyx_tp_as_number_Mat2 = {
   0, /*nb_inplace_xor*/
   0, /*nb_inplace_or*/
   0, /*nb_floor_divide*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_94__truediv__, /*nb_true_divide*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_106__truediv__, /*nb_true_divide*/
   0, /*nb_inplace_floor_divide*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_96__itruediv__, /*nb_inplace_true_divide*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_108__itruediv__, /*nb_inplace_true_divide*/
   0, /*nb_index*/
   #if PY_VERSION_HEX >= 0x03050000
   0, /*nb_matrix_multiply*/
@@ -26068,7 +27229,7 @@ static PySequenceMethods __pyx_tp_as_sequence_Mat2 = {
 
 static PyMappingMethods __pyx_tp_as_mapping_Mat2 = {
   0, /*mp_length*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_63__getitem__, /*mp_subscript*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_75__getitem__, /*mp_subscript*/
   0, /*mp_ass_subscript*/
 };
 
@@ -26092,13 +27253,13 @@ static PyTypeObject __pyx_type_7easyvec_8matrixes_Mat2 = {
   #if PY_MAJOR_VERSION >= 3
   0, /*tp_as_async*/
   #endif
-  __pyx_pw_7easyvec_8matrixes_4Mat2_15__repr__, /*tp_repr*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_19__repr__, /*tp_repr*/
   &__pyx_tp_as_number_Mat2, /*tp_as_number*/
   &__pyx_tp_as_sequence_Mat2, /*tp_as_sequence*/
   &__pyx_tp_as_mapping_Mat2, /*tp_as_mapping*/
   0, /*tp_hash*/
   0, /*tp_call*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_13__str__, /*tp_str*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_17__str__, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
@@ -26106,9 +27267,9 @@ static PyTypeObject __pyx_type_7easyvec_8matrixes_Mat2 = {
   0, /*tp_doc*/
   0, /*tp_traverse*/
   0, /*tp_clear*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_61__richcmp__, /*tp_richcompare*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_73__richcmp__, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
-  __pyx_pw_7easyvec_8matrixes_4Mat2_67__iter__, /*tp_iter*/
+  __pyx_pw_7easyvec_8matrixes_4Mat2_79__iter__, /*tp_iter*/
   0, /*tp_iternext*/
   __pyx_methods_7easyvec_8matrixes_Mat2, /*tp_methods*/
   0, /*tp_members*/
@@ -27008,7 +28169,6 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
   {&__pyx_kp_u_2f, __pyx_k_2f, sizeof(__pyx_k_2f), 0, 1, 0, 0},
   {&__pyx_n_s_ASCII, __pyx_k_ASCII, sizeof(__pyx_k_ASCII), 0, 0, 1, 1},
   {&__pyx_kp_s_Buffer_view_does_not_expose_stri, __pyx_k_Buffer_view_does_not_expose_stri, sizeof(__pyx_k_Buffer_view_does_not_expose_stri), 0, 0, 1, 0},
@@ -27039,15 +28199,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Unable_to_convert_item_to_object, __pyx_k_Unable_to_convert_item_to_object, sizeof(__pyx_k_Unable_to_convert_item_to_object), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
-  {&__pyx_kp_u__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0, 0},
+  {&__pyx_kp_u__10, __pyx_k__10, sizeof(__pyx_k__10), 0, 1, 0, 0},
   {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
   {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
   {&__pyx_kp_u__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 1, 0, 0},
   {&__pyx_kp_u__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 1, 0, 0},
+  {&__pyx_kp_u__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 1, 0, 0},
   {&__pyx_kp_u__8, __pyx_k__8, sizeof(__pyx_k__8), 0, 1, 0, 0},
   {&__pyx_n_s_add_mat, __pyx_k_add_mat, sizeof(__pyx_k_add_mat), 0, 0, 1, 1},
   {&__pyx_n_s_add_mat_2, __pyx_k_add_mat_2, sizeof(__pyx_k_add_mat_2), 0, 0, 1, 1},
-  {&__pyx_n_s_add_mul, __pyx_k_add_mul, sizeof(__pyx_k_add_mul), 0, 0, 1, 1},
   {&__pyx_n_s_add_num, __pyx_k_add_num, sizeof(__pyx_k_add_num), 0, 0, 1, 1},
   {&__pyx_n_s_add_num_2, __pyx_k_add_num_2, sizeof(__pyx_k_add_num_2), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
@@ -27061,9 +28221,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
   {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+  {&__pyx_n_s_clone, __pyx_k_clone, sizeof(__pyx_k_clone), 0, 0, 1, 1},
   {&__pyx_n_s_close, __pyx_k_close, sizeof(__pyx_k_close), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
+  {&__pyx_n_s_copy, __pyx_k_copy, sizeof(__pyx_k_copy), 0, 0, 1, 1},
   {&__pyx_n_s_degrees, __pyx_k_degrees, sizeof(__pyx_k_degrees), 0, 0, 1, 1},
   {&__pyx_n_s_det, __pyx_k_det, sizeof(__pyx_k_det), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
@@ -27113,6 +28275,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_memview, __pyx_k_memview, sizeof(__pyx_k_memview), 0, 0, 1, 1},
   {&__pyx_n_s_mode, __pyx_k_mode, sizeof(__pyx_k_mode), 0, 0, 1, 1},
   {&__pyx_n_s_mul_mat, __pyx_k_mul_mat, sizeof(__pyx_k_mul_mat), 0, 0, 1, 1},
+  {&__pyx_n_s_mul_mat_2, __pyx_k_mul_mat_2, sizeof(__pyx_k_mul_mat_2), 0, 0, 1, 1},
+  {&__pyx_n_s_mul_mat_elements, __pyx_k_mul_mat_elements, sizeof(__pyx_k_mul_mat_elements), 0, 0, 1, 1},
+  {&__pyx_n_s_mul_mat_elements_2, __pyx_k_mul_mat_elements_2, sizeof(__pyx_k_mul_mat_elements_2), 0, 0, 1, 1},
   {&__pyx_n_s_mul_num, __pyx_k_mul_num, sizeof(__pyx_k_mul_num), 0, 0, 1, 1},
   {&__pyx_n_s_mul_num_2, __pyx_k_mul_num_2, sizeof(__pyx_k_mul_num_2), 0, 0, 1, 1},
   {&__pyx_n_s_mul_vec, __pyx_k_mul_vec, sizeof(__pyx_k_mul_vec), 0, 0, 1, 1},
@@ -27177,8 +28342,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 80, __pyx_L1_error)
-  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 184, __pyx_L1_error)
-  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 339, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 148, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 151, __pyx_L1_error)
@@ -27195,16 +28360,38 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "easyvec/matrixes.pyx":266
+  /* "easyvec/matrixes.pyx":42
+ *     @classmethod
+ *     def eye(cls):
+ *         return cls(1,0,0,1)             # <<<<<<<<<<<<<<
+ * 
+ *     @classmethod
+ */
+  __pyx_tuple_ = PyTuple_Pack(4, __pyx_int_1, __pyx_int_0, __pyx_int_0, __pyx_int_1); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "easyvec/matrixes.pyx":46
+ *     @classmethod
+ *     def zeros(cls):
+ *         return cls(0,0,0,0)             # <<<<<<<<<<<<<<
+ * 
+ *     def __cinit__(self, *args):
+ */
+  __pyx_tuple__2 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+
+  /* "easyvec/matrixes.pyx":314
  *             return fabs(v1[0][0] - v2[0][0]) >= CMP_TOL or fabs(v1[0][1] - v2[0][1]) >= CMP_TOL  \
  *                 or fabs(v1[1][0] - v2[1][0]) >= CMP_TOL or fabs(v1[1][1] - v2[1][1]) >= CMP_TOL
  *         raise NotImplementedError("    ")             # <<<<<<<<<<<<<<
  * 
  *     def __getitem__(self, key):
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u__6); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 266, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u__8); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27212,18 +28399,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "View.MemoryView":133
  * 
@@ -27232,9 +28419,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "View.MemoryView":136
  * 
@@ -27243,9 +28430,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
   /* "View.MemoryView":148
  * 
@@ -27254,9 +28441,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -27265,9 +28452,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -27276,9 +28463,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27286,18 +28473,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -27306,9 +28493,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -27317,9 +28504,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -27328,9 +28515,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -27339,9 +28526,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -27350,12 +28537,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__22 = PyTuple_New(1); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
+  __pyx_tuple__24 = PyTuple_New(1); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__22, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__22);
+  PyTuple_SET_ITEM(__pyx_tuple__24, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__24);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27363,18 +28550,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "View.MemoryView":682
  *         if item is Ellipsis:
@@ -27383,9 +28570,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 seen_ellipsis = True
  *             else:
  */
-  __pyx_slice__25 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__25)) __PYX_ERR(1, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__25);
-  __Pyx_GIVEREF(__pyx_slice__25);
+  __pyx_slice__27 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__27)) __PYX_ERR(1, 682, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__27);
+  __Pyx_GIVEREF(__pyx_slice__27);
 
   /* "View.MemoryView":703
  *     for suboffset in suboffsets[:ndim]:
@@ -27394,9 +28581,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 703, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 703, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -27404,18 +28591,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "View.MemoryView":286
  *         return self.name
@@ -27424,9 +28611,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "View.MemoryView":287
  * 
@@ -27435,9 +28622,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -27446,9 +28633,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "View.MemoryView":291
  * 
@@ -27457,9 +28644,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
 
   /* "View.MemoryView":292
  * 
@@ -27468,19 +28655,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__35);
+  __Pyx_GIVEREF(__pyx_tuple__35);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__34 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__34);
-  __Pyx_GIVEREF(__pyx_tuple__34);
-  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__36 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -27541,6 +28728,8 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   __pyx_vtabptr_7easyvec_8matrixes_Mat2 = &__pyx_vtable_7easyvec_8matrixes_Mat2;
+  __pyx_vtable_7easyvec_8matrixes_Mat2.copy = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_copy;
+  __pyx_vtable_7easyvec_8matrixes_Mat2.clone = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_clone;
   __pyx_vtable_7easyvec_8matrixes_Mat2.i_axis = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_i_axis;
   __pyx_vtable_7easyvec_8matrixes_Mat2.j_axis = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_j_axis;
   __pyx_vtable_7easyvec_8matrixes_Mat2.x_axis = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_x_axis;
@@ -27548,6 +28737,9 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_7easyvec_8matrixes_Mat2.transpose = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_transpose;
   __pyx_vtable_7easyvec_8matrixes_Mat2.det = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_det;
   __pyx_vtable_7easyvec_8matrixes_Mat2.inverse = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_inverse;
+  __pyx_vtable_7easyvec_8matrixes_Mat2.mul_mat_elements_ = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements_;
+  __pyx_vtable_7easyvec_8matrixes_Mat2.mul_mat_elements = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_elements;
+  __pyx_vtable_7easyvec_8matrixes_Mat2.mul_mat_ = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat_;
   __pyx_vtable_7easyvec_8matrixes_Mat2.mul_mat = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_8matrixes_Mat2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_mat;
   __pyx_vtable_7easyvec_8matrixes_Mat2.mul_vec = (struct __pyx_obj_7easyvec_7vectors_Vec2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_vec;
   __pyx_vtable_7easyvec_8matrixes_Mat2.mul_num_ = (struct __pyx_obj_7easyvec_8matrixes_Mat2 *(*)(struct __pyx_obj_7easyvec_8matrixes_Mat2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch))__pyx_f_7easyvec_8matrixes_4Mat2_mul_num_;
@@ -27580,7 +28772,7 @@ static int __Pyx_modinit_type_init_code(void) {
   if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Mat2_3, (PyObject *)&__pyx_type_7easyvec_8matrixes_Mat2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7easyvec_8matrixes_Mat2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __pyx_ptype_7easyvec_8matrixes_Mat2 = &__pyx_type_7easyvec_8matrixes_Mat2;
-  if (PyType_Ready(&__pyx_type_7easyvec_8matrixes___pyx_scope_struct__get_generator) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7easyvec_8matrixes___pyx_scope_struct__get_generator) < 0) __PYX_ERR(0, 347, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7easyvec_8matrixes___pyx_scope_struct__get_generator.tp_print = 0;
   #endif
@@ -27988,7 +29180,7 @@ if (!__Pyx_RefNanny) {
  * 
  *     @classmethod
  *     def eye(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(1,0,0,1)
  * 
  */
   __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2, __pyx_n_s_eye); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
@@ -27999,7 +29191,7 @@ if (!__Pyx_RefNanny) {
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def eye(cls):
- *         return cls()
+ *         return cls(1,0,0,1)
  */
   __pyx_t_1 = __Pyx_Method_ClassMethod(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -28012,18 +29204,18 @@ if (!__Pyx_RefNanny) {
  * 
  *     @classmethod
  *     def zeros(cls):             # <<<<<<<<<<<<<<
- *         return cls()
+ *         return cls(0,0,0,0)
  * 
  */
   __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_7easyvec_8matrixes_Mat2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
   /* "easyvec/matrixes.pyx":44
- *         return cls()
+ *         return cls(1,0,0,1)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def zeros(cls):
- *         return cls()
+ *         return cls(0,0,0,0)
  */
   __pyx_t_2 = __Pyx_Method_ClassMethod(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -28062,7 +29254,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_2);
@@ -28076,7 +29268,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_2);
@@ -28090,7 +29282,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_2);
@@ -28104,7 +29296,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_2);
@@ -28118,7 +29310,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_2);
@@ -29004,6 +30196,32 @@ bad:
 }
 #endif
 
+/* PyDictVersioning */
+#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
+}
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
+    PyObject **dictptr = NULL;
+    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
+    if (offset) {
+#if CYTHON_COMPILING_IN_CPYTHON
+        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
+#else
+        dictptr = _PyObject_GetDictPtr(obj);
+#endif
+    }
+    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
+}
+static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
+        return 0;
+    return obj_dict_version == __Pyx_get_object_dict_version(obj);
+}
+#endif
+
 /* PyObjectFormat */
 #if CYTHON_USE_UNICODE_WRITER
 static PyObject* __Pyx_PyObject_Format(PyObject* obj, PyObject* format_spec) {
@@ -29101,32 +30319,6 @@ bad:
     return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
 #endif
 }
-
-/* PyDictVersioning */
-#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
-}
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
-    PyObject **dictptr = NULL;
-    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
-    if (offset) {
-#if CYTHON_COMPILING_IN_CPYTHON
-        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
-#else
-        dictptr = _PyObject_GetDictPtr(obj);
-#endif
-    }
-    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
-}
-static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
-        return 0;
-    return obj_dict_version == __Pyx_get_object_dict_version(obj);
-}
-#endif
 
 /* GetModuleGlobalName */
 #if CYTHON_USE_DICT_VERSIONS

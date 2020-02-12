@@ -39,11 +39,11 @@ cdef class Mat2:
 
     @classmethod
     def eye(cls):
-        return cls()
+        return cls(1,0,0,1)
 
     @classmethod
     def zeros(cls):
-        return cls()
+        return cls(0,0,0,0)
 
     def __cinit__(self, *args):
         cdef int alen = len(args)
@@ -85,14 +85,20 @@ cdef class Mat2:
             self.m21 = args[2]
             self.m22 = args[3]  
         elif alen == 0:
-            self.m11 = 1.0
+            self.m11 = 0.0
             self.m12 = 0.0
             self.m21 = 0.0
-            self.m22 = 1.0
+            self.m22 = 0.0
         else:                        
             raise ValueError(f'Невозможно создать экземпляр Mat2 из параметров {args}')
 
     
+    cpdef Mat2 copy(self):
+        return Mat2(self.m11, self.m12, self.m21, self.m22)
+
+    cpdef Mat2 clone(self):
+        return Mat2(self.m11, self.m12, self.m21, self.m22)
+
     def __str__(self):
         return f'[[{self.m11:.2f}, {self.m12:.2f}], [{self.m21:.2f}, {self.m22:.2f}]]'
 
@@ -118,13 +124,14 @@ cdef class Mat2:
         return Mat2(self.m11, self.m21, self.m12, self.m22)
     
     @property
-    def T(self):
+    def T(self) -> Mat2:
         return self.transpose()
 
     cpdef real det(self):
         return self.m11*self.m22 - self.m12*self.m21
 
     @cython.nonecheck(False)
+    @cython.cdivision(True)
     cpdef Mat2 inverse(self):
         cdef real det = self.det()
         if fabs(det) - 1.0 < CMP_TOL:
@@ -135,6 +142,39 @@ cdef class Mat2:
              self.m22 / det, -self.m12 / det,
             -self.m21 / det,  self.m11 / det
         )
+
+    @property
+    def _1(self) -> Mat2:
+        return self.inverse()
+
+    @cython.nonecheck(False)
+    cpdef Mat2 mul_mat_elements_(self, Mat2 right):
+        self.m11 *= right.m11
+        self.m12 *= right.m12
+        self.m21 *= right.m21
+        self.m22 *= right.m22
+        return self
+
+    @cython.nonecheck(False)
+    cpdef Mat2 mul_mat_elements(self, Mat2 right):
+        return Mat2(
+            self.m11 * right.m11,
+            self.m12 * right.m12,
+            self.m21 * right.m21,
+            self.m22 * right.m22 
+        )
+
+    @cython.nonecheck(False)
+    cpdef Mat2 mul_mat_(self, Mat2 right):
+        cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
+        cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
+        cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
+        cdef real m22 = self.m21 * right.m12 + self.m22 * right.m22
+        self.m11 = m11
+        self.m12 = m12
+        self.m21 = m21
+        self.m22 = m22
+        return self
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_mat(self, Mat2 right):
@@ -183,6 +223,14 @@ cdef class Mat2:
             return (<Mat2>right).mul_num(<real>left)
         raise NotImplementedError(f"Перемножить данные сущности нельзя left={left}, right={right}")
     
+
+    def __imul__(self, right):
+        if isinstance(right, Mat2):
+            return self.mul_mat_(<Mat2>right)
+        elif isinstance(right, int) or isinstance(right, float):
+            return self.mul_num_(<real>right)
+        raise NotImplementedError(f"Перемножить данные сущности нельзя left={self}, right={right}")
+    
     @cython.nonecheck(False)
     cpdef Mat2 add_num_(self, real num):
         self.m11 += num
@@ -218,17 +266,17 @@ cdef class Mat2:
             self.m22 + mat.m22
         )
 
-    def __sum__(left, right):
+    def __add__(left, right):
         if isinstance(left, Mat2):
             if isinstance(right, Mat2):
-                return (<Mat2>left).add_mul(<Mat2>right)
+                return (<Mat2>left).add_mat(<Mat2>right)
             elif isinstance(right, int) or isinstance(right, float):
                 return (<Mat2>left).add_num(<real>right)
         elif isinstance(left, int) or isinstance(left, float):
             return (<Mat2>right).add_num(<real>left)
         raise NotImplementedError(f"Сложить данные сущности нельзя left={left}, right={right}")
     
-    def __isum__(self, right):
+    def __iadd__(self, right):
         if isinstance(right, Mat2):
             return self.add_mat_(<Mat2>right)
         elif isinstance(right, int) or isinstance(right, float):
