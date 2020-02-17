@@ -11642,7 +11642,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_50__getitem__(struct __pyx_obj
  *             return self.y
  *         raise IndexError(f'      {key}')             # <<<<<<<<<<<<<<
  * 
- *     def __setitem__(self, key, value: real) -> real:
+ *     def __setitem__(self, key, value: real):
  */
   __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -11679,7 +11679,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_50__getitem__(struct __pyx_obj
 /* "easyvec/vectors.pyx":164
  *         raise IndexError(f'      {key}')
  * 
- *     def __setitem__(self, key, value: real) -> real:             # <<<<<<<<<<<<<<
+ *     def __setitem__(self, key, value: real):             # <<<<<<<<<<<<<<
  *         if key == 0:
  *             self.x = <real>value
  */
@@ -11717,7 +11717,7 @@ static int __pyx_pf_7easyvec_7vectors_4Vec2_52__setitem__(struct __pyx_obj_7easy
 
   /* "easyvec/vectors.pyx":165
  * 
- *     def __setitem__(self, key, value: real) -> real:
+ *     def __setitem__(self, key, value: real):
  *         if key == 0:             # <<<<<<<<<<<<<<
  *             self.x = <real>value
  *         elif key == 1:
@@ -11729,7 +11729,7 @@ static int __pyx_pf_7easyvec_7vectors_4Vec2_52__setitem__(struct __pyx_obj_7easy
   if (__pyx_t_2) {
 
     /* "easyvec/vectors.pyx":166
- *     def __setitem__(self, key, value: real) -> real:
+ *     def __setitem__(self, key, value: real):
  *         if key == 0:
  *             self.x = <real>value             # <<<<<<<<<<<<<<
  *         elif key == 1:
@@ -11739,7 +11739,7 @@ static int __pyx_pf_7easyvec_7vectors_4Vec2_52__setitem__(struct __pyx_obj_7easy
 
     /* "easyvec/vectors.pyx":165
  * 
- *     def __setitem__(self, key, value: real) -> real:
+ *     def __setitem__(self, key, value: real):
  *         if key == 0:             # <<<<<<<<<<<<<<
  *             self.x = <real>value
  *         elif key == 1:
@@ -11862,7 +11862,7 @@ static int __pyx_pf_7easyvec_7vectors_4Vec2_52__setitem__(struct __pyx_obj_7easy
   /* "easyvec/vectors.pyx":164
  *         raise IndexError(f'      {key}')
  * 
- *     def __setitem__(self, key, value: real) -> real:             # <<<<<<<<<<<<<<
+ *     def __setitem__(self, key, value: real):             # <<<<<<<<<<<<<<
  *         if key == 0:
  *             self.x = <real>value
  */

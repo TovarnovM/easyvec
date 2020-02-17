@@ -45,6 +45,9 @@ cdef class Vec2:
             return fabs(v1[0] - v2[0]) >= CMP_TOL or fabs(v1[1] - v2[1]) >= CMP_TOL
         raise NotImplementedError("Такой тип сравнения не поддерживается")
 
+    cpdef bint is_eq(self, Vec2 other):
+        return fabs(self.x - other.x) < CMP_TOL and fabs(self.y - other.y) < CMP_TOL
+
     cpdef Vec2 add_num_(self, real num):
         self.x += num
         self.y += num
@@ -161,7 +164,7 @@ cdef class Vec2:
             return self.y
         raise IndexError(f'Невозможно получить компонент вектора по индексу {key}')
 
-    def __setitem__(self, key, value: real) -> real:
+    def __setitem__(self, key, value: real):
         if key == 0:
             self.x = <real>value
         elif key == 1:

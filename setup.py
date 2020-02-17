@@ -32,6 +32,7 @@ def no_cythonize(extensions, **_ignore):
 extensions = [
     Extension("easyvec.vectors", ["src/easyvec/vectors.pyx"], language="c++"),
     Extension("easyvec.matrixes", ["src/easyvec/matrixes.pyx"], language="c++"),
+    Extension("easyvec.geometry", ["src/easyvec/geometry.pyx"], language="c++"),
 ]
 
 CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0)))

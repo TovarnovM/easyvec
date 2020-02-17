@@ -17,6 +17,7 @@ cdef class Vec2:
 
     cpdef Vec2 clone(self)
     cpdef Vec2 copy(self)
+    cpdef bint is_eq(self, Vec2 other)
 
     cpdef Vec2 add_num_(self, real num)
     cpdef Vec2 add_num(self, real num)
