@@ -1,89 +1,92 @@
 import numpy as np
 from libc.math cimport fabs
 cimport cython
-from .vectors import CMP_TOL
+from .vectors cimport CMP_TOL
 
 
 @cython.nonecheck(False)
-cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 u2):
+cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \
        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))    
 
 @cython.nonecheck(False)
-cpdef bint is_point_on_line(Vec2 u1, Vec2 u2, Vec2 p, bint safe=False):
-    if safe and u1.is_eq(u2):
-        return u1.is_eq(p)
-    cdef Vec2 v1 = u2.sub(u1)
-    cdef Vec2 v2 = p.sub(u1)
-    return fabs(v1.cross(v2)) < CMP_TOL
+@cython.cdivision(True)
+cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+    cdef Vec2 vec1 = u1.sub(v1)
+    cdef Vec2 vec2 = v2.sub(v1)
+    cdef Vec2 vec3 = u2.sub(u1).rotate90()
 
-@cython.nonecheck(False)
-cpdef bint is_point_on_ray(Vec2 r1, Vec2 r2, Vec2 p, bint safe=False):
-    if safe and r1.is_eq(r2):
-        return r1.is_eq(p)
-    cdef Vec2 v1 = r2.sub(r1)
-    cdef Vec2 v2 = p.sub(r1)
-    return (fabs(v1.cross(v2)) < CMP_TOL) and (v1.dot(v2) >= CMP_TOL)
-
-@cython.nonecheck(False)
-cpdef bint is_cross_segment_line(Vec2 s1, Vec2 s2, Vec2 u1, Vec2 u2, bint safe=False):
-    if safe and u1.is_eq(u2):
-        return u1.is_eq(s1) or u1.is_eq(s2)
-    cdef Vec2 v1 = u2.sub(u1)
-    cdef Vec2 v21 = s1.sub(u1)
-    cdef Vec2 v22 = s2.sub(u1)
-    cdef real cp1 = v1.cross(v21)
-    if fabs(cp1) < CMP_TOL:
-        return 1
-    cdef real cp2 = v1.cross(v22)
-    if fabs(cp2) < CMP_TOL:
-        return 1
-    return (cp1<0) ^ (cp2<0) 
-
-@cython.nonecheck(False)
-cpdef bint is_cross_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 u2, bint safe=False):
-    return is_bbox_intersect(u1, u2, v1, v2) and \
-       is_cross_segment_line(u1, u2, v1, v2, safe) and \
-       is_cross_segment_line(v1, v2, u1, u2, safe)
-        
-@cython.nonecheck(False)
-cpdef bint is_cross_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2, bint safe=False):
-    if safe:
-        if u1.is_eq(u2):
-            if v1.is_eq(v2):
-                return u1.is_eq(v1)
-            return is_point_on_line(v1, v2, u1, False)
-        if v1.is_eq(v2):
-            return is_point_on_line(u1, u2, v1, False)
+    cdef real dot = vec2.dot(vec3)
+    if fabs(dot) < CMP_TOL:
+        if vec1.len_sqared() <= CMP_TOL:
+            return True, 0.0, 0.0
+        return False, 0.0, 0.0
     
-    cdef Vec2 r1 = u2.sub(u1)
-    cdef Vec2 r2 = v2.sub(v1)
-    cdef real cp1 = r1.cross(r2)
-    if fabs(cp1) > CMP_TOL:
-        return 1
-    return is_point_on_line(u1, u2, v1, False)
+    cdef real t1 = vec2.cross(vec1) / dot
+    cdef real t2 = vec1.dot(vec3) / dot
+    return True, t1, t2
 
 @cython.nonecheck(False)
-cpdef bint is_cross_ray_line(Vec2 r1, Vec2 r2, Vec2 u1, Vec2 u2, bint safe=False):
-    if safe:
-        if u1.is_eq(u2):
-            if r1.is_eq(r2):
-                return u1.is_eq(r1)
-            return is_point_on_ray(r1, r2, u1, False)
-        if r1.is_eq(r2):
-            return is_point_on_line(u1, u2, r1, False)
-    
-    cdef Vec2 r21 = r2.sub(r1)
-    cdef Vec2 u21 = u2.sub(u1)
-    cdef real cp1 = r21.cross(r21)
-    if fabs(cp1) < CMP_TOL:
-        return is_point_on_line(r1, r2, u1)
-        
-    cdef real cp2 = v1.cross(v22)
-    if fabs(cp2) < CMP_TOL:
-        return 1
-    return (cp1<0) ^ (cp2<0)       
-    
+cpdef Vec2 intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+    if not suc:
+        return None
+    return u1.add( u2.sub(u1).mul(t1) )
+
+@cython.nonecheck(False)
+cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+    if not is_bbox_intersect(u1, u2, v1, v2):
+        return None
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+    if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :
+        return None
+    return u1.add( u2.sub(u1).mul(t1) )
+
+@cython.nonecheck(False)
+cpdef Vec2 intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+    if (not suc) or t1 < 0.0 or t2 < 0.0 :
+        return None
+    return u1.add( u2.sub(u1).mul(t1) )
+
+@cython.nonecheck(False)
+cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+    if (not suc) or t1 < 0.0:
+        return None
+    return r1.add( r2.sub(r1).mul(t1) )    
+
+@cython.nonecheck(False)
+cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+    if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :
+        return None
+    return r1.add( r2.sub(r1).mul(t1) )   
+
+@cython.nonecheck(False)
+cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):
+    cdef:
+        bint suc
+        real t1, t2
+    suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)
+    if (not suc) or t2 < 0.0 or t2 > 1.0 :
+        return None
+    return u1.add( u2.sub(u1).mul(t1) )
 
 cpdef real fmax(real a, real b):
     if a > b:
@@ -263,7 +266,7 @@ cdef class Rect:
                 return (<Rect>r1).union(<Rect>r2)
             if isinstance(r2, Vec2):
                 return (<Rect>r1).union_vec(<Vec2>r2)
-            elif isinstance(right, np.ndarray) or isinstance(right, tuple) or isinstance(right, list) or isinstance(right, memoryview):
+            elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))
         raise ValueError(f'Невозможно объединить сущности {r1} и {r2}')
             

@@ -3,6 +3,7 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
+        "depends": [],
         "language": "c++",
         "name": "easyvec.geometry",
         "sources": [
@@ -620,6 +621,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #define __PYX_HAVE__easyvec__geometry
 #define __PYX_HAVE_API__easyvec__geometry
 /* Early includes */
+#include <math.h>
 #include "pythread.h"
 #include <string.h>
 #include <stdlib.h>
@@ -978,7 +980,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate;
 
-/* "vectors.pxd":117
+/* "vectors.pxd":118
  *     cpdef Vec2 norm_(self)
  *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -990,7 +992,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ {
   int ndigits;
 };
 
-/* "vectors.pxd":118
+/* "vectors.pxd":119
  *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1002,7 +1004,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round {
   int ndigits;
 };
 
-/* "vectors.pxd":119
+/* "vectors.pxd":120
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1014,7 +1016,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_ {
   int ndigits;
 };
 
-/* "vectors.pxd":120
+/* "vectors.pxd":121
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)
  *     cpdef Vec2 ceil(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1026,7 +1028,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil {
   int ndigits;
 };
 
-/* "vectors.pxd":121
+/* "vectors.pxd":122
  *     cpdef Vec2 ceil_(self, int ndigits=*)
  *     cpdef Vec2 ceil(self, int ndigits=*)
  *     cpdef Vec2 floor_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1038,7 +1040,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_floor_ {
   int ndigits;
 };
 
-/* "vectors.pxd":122
+/* "vectors.pxd":123
  *     cpdef Vec2 ceil(self, int ndigits=*)
  *     cpdef Vec2 floor_(self, int ndigits=*)
  *     cpdef Vec2 floor(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1050,7 +1052,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_floor {
   int ndigits;
 };
 
-/* "vectors.pxd":123
+/* "vectors.pxd":124
  *     cpdef Vec2 floor_(self, int ndigits=*)
  *     cpdef Vec2 floor(self, int ndigits=*)
  *     cpdef Vec2 trunc_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1062,7 +1064,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc_ {
   int ndigits;
 };
 
-/* "vectors.pxd":124
+/* "vectors.pxd":125
  *     cpdef Vec2 floor(self, int ndigits=*)
  *     cpdef Vec2 trunc_(self, int ndigits=*)
  *     cpdef Vec2 trunc(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1074,7 +1076,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
   int ndigits;
 };
 
-/* "vectors.pxd":129
+/* "vectors.pxd":130
  *     cpdef real cross_xy(self, real x, real y)
  * 
  *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
@@ -1086,7 +1088,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int degree;
 };
 
-/* "vectors.pxd":130
+/* "vectors.pxd":131
  * 
  *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
  *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
@@ -1098,7 +1100,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int degree;
 };
 
-/* "vectors.pxd":137
+/* "vectors.pxd":138
  *     cpdef Vec2 rotate_minus90(self)
  * 
  *     cpdef Vec2 rotate_(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
@@ -1110,7 +1112,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_ {
   int degrees;
 };
 
-/* "vectors.pxd":138
+/* "vectors.pxd":139
  * 
  *     cpdef Vec2 rotate_(self, real angle, int degrees=*)
  *     cpdef Vec2 rotate(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
@@ -1120,6 +1122,21 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_ {
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate {
   int __pyx_n;
   int degrees;
+};
+struct __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
+typedef struct __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc;
+
+/* "easyvec/geometry.pxd":4
+ * 
+ * cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)
+ * cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)             # <<<<<<<<<<<<<<
+ * cpdef Vec2 intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)
+ */
+struct __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc {
+  int f0;
+  __pyx_t_7easyvec_7vectors_real f1;
+  __pyx_t_7easyvec_7vectors_real f2;
 };
 
 /* "vectors.pxd":15
@@ -1137,7 +1154,7 @@ struct __pyx_obj_7easyvec_7vectors_Vec2 {
 };
 
 
-/* "vectors.pxd":141
+/* "vectors.pxd":142
  * 
  * 
  * cdef class Vec3:             # <<<<<<<<<<<<<<
@@ -1151,8 +1168,8 @@ struct __pyx_obj_7easyvec_7vectors_Vec3 {
 };
 
 
-/* "easyvec/geometry.pxd":3
- * from .vectors cimport Vec2, real, rational
+/* "easyvec/geometry.pxd":15
+ * cpdef real fmin(real a, real b)
  * 
  * cdef class Rect:             # <<<<<<<<<<<<<<
  *     cdef public real x1, x2, y1, y2
@@ -1168,12 +1185,12 @@ struct __pyx_obj_7easyvec_8geometry_Rect {
 };
 
 
-/* "easyvec/geometry.pyx":85
+/* "easyvec/geometry.pyx":186
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
  *         yield self.x1
- *         yield self.x2
+ *         yield self.y1
  */
 struct __pyx_obj_7easyvec_8geometry___pyx_scope_struct__get_generator {
   PyObject_HEAD
@@ -1270,6 +1287,7 @@ struct __pyx_memoryviewslice_obj {
 struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*clone)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*copy)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  int (*is_eq)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_num_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_num)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
@@ -1431,8 +1449,8 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
 static struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *__pyx_vtabptr_7easyvec_7vectors_Vec2;
 
 
-/* "easyvec/geometry.pyx":3
- * import numpy as np
+/* "easyvec/geometry.pyx":104
+ * 
  * 
  * cdef class Rect:             # <<<<<<<<<<<<<<
  *     def __cinit__(self, *args):
@@ -1445,6 +1463,18 @@ struct __pyx_vtabstruct_7easyvec_8geometry_Rect {
   __Pyx_memviewslice (*as_np)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
   PyObject *(*as_tuple)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
   PyObject *(*keys)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  int (*is_null)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  int (*is_in)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  int (*is_cross_seg)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  int (*is_cross_ray)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  int (*is_cross_line)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*area)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*perimeter)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  int (*is_intersect)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8geometry_Rect *(*intersect)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8geometry_Rect *(*__pyx_union)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8geometry_Rect *(*union_vec)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_8geometry_Rect *(*union_point)(struct __pyx_obj_7easyvec_8geometry_Rect *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_7easyvec_8geometry_Rect *__pyx_vtabptr_7easyvec_8geometry_Rect;
 
@@ -1570,6 +1600,123 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject
 /* GetBuiltinName.proto */
 static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+
+/* RaiseDoubleKeywords.proto */
+static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
+
+/* ParseKeywords.proto */
+static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
+    PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
+    const char* function_name);
+
+/* ArgTypeTest.proto */
+#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
+    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
+        __Pyx__ArgTypeTest(obj, type, name, exact))
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
+
+/* PyCFunctionFastCall.proto */
+#if CYTHON_FAST_PYCCALL
+static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObject **args, Py_ssize_t nargs);
+#else
+#define __Pyx_PyCFunction_FastCall(func, args, nargs)  (assert(0), NULL)
+#endif
+
+/* PyFunctionFastCall.proto */
+#if CYTHON_FAST_PYCALL
+#define __Pyx_PyFunction_FastCall(func, args, nargs)\
+    __Pyx_PyFunction_FastCallDict((func), (args), (nargs), NULL)
+#if 1 || PY_VERSION_HEX < 0x030600B1
+static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, Py_ssize_t nargs, PyObject *kwargs);
+#else
+#define __Pyx_PyFunction_FastCallDict(func, args, nargs, kwargs) _PyFunction_FastCallDict(func, args, nargs, kwargs)
+#endif
+#define __Pyx_BUILD_ASSERT_EXPR(cond)\
+    (sizeof(char [1 - 2*!(cond)]) - 1)
+#ifndef Py_MEMBER_SIZE
+#define Py_MEMBER_SIZE(type, member) sizeof(((type *)0)->member)
+#endif
+  static size_t __pyx_pyframe_localsplus_offset = 0;
+  #include "frameobject.h"
+  #define __Pxy_PyFrame_Initialize_Offsets()\
+    ((void)__Pyx_BUILD_ASSERT_EXPR(sizeof(PyFrameObject) == offsetof(PyFrameObject, f_localsplus) + Py_MEMBER_SIZE(PyFrameObject, f_localsplus)),\
+     (void)(__pyx_pyframe_localsplus_offset = ((size_t)PyFrame_Type.tp_basicsize) - Py_MEMBER_SIZE(PyFrameObject, f_localsplus)))
+  #define __Pyx_PyFrame_GetLocalsplus(frame)\
+    (assert(__pyx_pyframe_localsplus_offset), (PyObject **)(((char *)(frame)) + __pyx_pyframe_localsplus_offset))
+#endif
+
+/* PyObjectCall.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
+#else
+#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
+#endif
+
+/* PyObjectCall2Args.proto */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
+
+/* PyObjectCallMethO.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
+#endif
+
+/* PyObjectCallOneArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
+
+/* ExtTypeTest.proto */
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
+
+/* PyObjectCallNoArg.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
+#else
+#define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
+#endif
+
+/* PyThreadStateGet.proto */
+#if CYTHON_FAST_THREAD_STATE
+#define __Pyx_PyThreadState_declare  PyThreadState *__pyx_tstate;
+#define __Pyx_PyThreadState_assign  __pyx_tstate = __Pyx_PyThreadState_Current;
+#define __Pyx_PyErr_Occurred()  __pyx_tstate->curexc_type
+#else
+#define __Pyx_PyThreadState_declare
+#define __Pyx_PyThreadState_assign
+#define __Pyx_PyErr_Occurred()  PyErr_Occurred()
+#endif
+
+/* PyErrFetchRestore.proto */
+#if CYTHON_FAST_THREAD_STATE
+#define __Pyx_PyErr_Clear() __Pyx_ErrRestore(NULL, NULL, NULL)
+#define __Pyx_ErrRestoreWithState(type, value, tb)  __Pyx_ErrRestoreInState(PyThreadState_GET(), type, value, tb)
+#define __Pyx_ErrFetchWithState(type, value, tb)    __Pyx_ErrFetchInState(PyThreadState_GET(), type, value, tb)
+#define __Pyx_ErrRestore(type, value, tb)  __Pyx_ErrRestoreInState(__pyx_tstate, type, value, tb)
+#define __Pyx_ErrFetch(type, value, tb)    __Pyx_ErrFetchInState(__pyx_tstate, type, value, tb)
+static CYTHON_INLINE void __Pyx_ErrRestoreInState(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb);
+static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb);
+#if CYTHON_COMPILING_IN_CPYTHON
+#define __Pyx_PyErr_SetNone(exc) (Py_INCREF(exc), __Pyx_ErrRestore((exc), NULL, NULL))
+#else
+#define __Pyx_PyErr_SetNone(exc) PyErr_SetNone(exc)
+#endif
+#else
+#define __Pyx_PyErr_Clear() PyErr_Clear()
+#define __Pyx_PyErr_SetNone(exc) PyErr_SetNone(exc)
+#define __Pyx_ErrRestoreWithState(type, value, tb)  PyErr_Restore(type, value, tb)
+#define __Pyx_ErrFetchWithState(type, value, tb)  PyErr_Fetch(type, value, tb)
+#define __Pyx_ErrRestoreInState(tstate, type, value, tb)  PyErr_Restore(type, value, tb)
+#define __Pyx_ErrFetchInState(tstate, type, value, tb)  PyErr_Fetch(type, value, tb)
+#define __Pyx_ErrRestore(type, value, tb)  PyErr_Restore(type, value, tb)
+#define __Pyx_ErrFetch(type, value, tb)  PyErr_Fetch(type, value, tb)
+#endif
+
+/* WriteUnraisableException.proto */
+static void __Pyx_WriteUnraisable(const char *name, int clineno,
+                                  int lineno, const char *filename,
+                                  int full_traceback, int nogil);
+
 /* KeywordStringCheck.proto */
 static int __Pyx_CheckKeywordStrings(PyObject *kwdict, const char* function_name, int kw_allowed);
 
@@ -1617,87 +1764,6 @@ static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
         PyObject_Format(s, f))
 #endif
 
-/* PyCFunctionFastCall.proto */
-#if CYTHON_FAST_PYCCALL
-static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObject **args, Py_ssize_t nargs);
-#else
-#define __Pyx_PyCFunction_FastCall(func, args, nargs)  (assert(0), NULL)
-#endif
-
-/* PyFunctionFastCall.proto */
-#if CYTHON_FAST_PYCALL
-#define __Pyx_PyFunction_FastCall(func, args, nargs)\
-    __Pyx_PyFunction_FastCallDict((func), (args), (nargs), NULL)
-#if 1 || PY_VERSION_HEX < 0x030600B1
-static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, Py_ssize_t nargs, PyObject *kwargs);
-#else
-#define __Pyx_PyFunction_FastCallDict(func, args, nargs, kwargs) _PyFunction_FastCallDict(func, args, nargs, kwargs)
-#endif
-#define __Pyx_BUILD_ASSERT_EXPR(cond)\
-    (sizeof(char [1 - 2*!(cond)]) - 1)
-#ifndef Py_MEMBER_SIZE
-#define Py_MEMBER_SIZE(type, member) sizeof(((type *)0)->member)
-#endif
-  static size_t __pyx_pyframe_localsplus_offset = 0;
-  #include "frameobject.h"
-  #define __Pxy_PyFrame_Initialize_Offsets()\
-    ((void)__Pyx_BUILD_ASSERT_EXPR(sizeof(PyFrameObject) == offsetof(PyFrameObject, f_localsplus) + Py_MEMBER_SIZE(PyFrameObject, f_localsplus)),\
-     (void)(__pyx_pyframe_localsplus_offset = ((size_t)PyFrame_Type.tp_basicsize) - Py_MEMBER_SIZE(PyFrameObject, f_localsplus)))
-  #define __Pyx_PyFrame_GetLocalsplus(frame)\
-    (assert(__pyx_pyframe_localsplus_offset), (PyObject **)(((char *)(frame)) + __pyx_pyframe_localsplus_offset))
-#endif
-
-/* PyObjectCall.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
-#else
-#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
-#endif
-
-/* PyObjectCallMethO.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
-#endif
-
-/* PyObjectCallOneArg.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
-
-/* PyThreadStateGet.proto */
-#if CYTHON_FAST_THREAD_STATE
-#define __Pyx_PyThreadState_declare  PyThreadState *__pyx_tstate;
-#define __Pyx_PyThreadState_assign  __pyx_tstate = __Pyx_PyThreadState_Current;
-#define __Pyx_PyErr_Occurred()  __pyx_tstate->curexc_type
-#else
-#define __Pyx_PyThreadState_declare
-#define __Pyx_PyThreadState_assign
-#define __Pyx_PyErr_Occurred()  PyErr_Occurred()
-#endif
-
-/* PyErrFetchRestore.proto */
-#if CYTHON_FAST_THREAD_STATE
-#define __Pyx_PyErr_Clear() __Pyx_ErrRestore(NULL, NULL, NULL)
-#define __Pyx_ErrRestoreWithState(type, value, tb)  __Pyx_ErrRestoreInState(PyThreadState_GET(), type, value, tb)
-#define __Pyx_ErrFetchWithState(type, value, tb)    __Pyx_ErrFetchInState(PyThreadState_GET(), type, value, tb)
-#define __Pyx_ErrRestore(type, value, tb)  __Pyx_ErrRestoreInState(__pyx_tstate, type, value, tb)
-#define __Pyx_ErrFetch(type, value, tb)    __Pyx_ErrFetchInState(__pyx_tstate, type, value, tb)
-static CYTHON_INLINE void __Pyx_ErrRestoreInState(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb);
-static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb);
-#if CYTHON_COMPILING_IN_CPYTHON
-#define __Pyx_PyErr_SetNone(exc) (Py_INCREF(exc), __Pyx_ErrRestore((exc), NULL, NULL))
-#else
-#define __Pyx_PyErr_SetNone(exc) PyErr_SetNone(exc)
-#endif
-#else
-#define __Pyx_PyErr_Clear() PyErr_Clear()
-#define __Pyx_PyErr_SetNone(exc) PyErr_SetNone(exc)
-#define __Pyx_ErrRestoreWithState(type, value, tb)  PyErr_Restore(type, value, tb)
-#define __Pyx_ErrFetchWithState(type, value, tb)  PyErr_Fetch(type, value, tb)
-#define __Pyx_ErrRestoreInState(tstate, type, value, tb)  PyErr_Restore(type, value, tb)
-#define __Pyx_ErrFetchInState(tstate, type, value, tb)  PyErr_Fetch(type, value, tb)
-#define __Pyx_ErrRestore(type, value, tb)  PyErr_Restore(type, value, tb)
-#define __Pyx_ErrFetch(type, value, tb)  PyErr_Fetch(type, value, tb)
-#endif
-
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
@@ -1741,16 +1807,6 @@ static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UIN
 #define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP)  (VAR) = (LOOKUP);
 #endif
 
-/* PyObjectCallNoArg.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
-#else
-#define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
-#endif
-
-/* ExtTypeTest.proto */
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
-
 /* GetModuleGlobalName.proto */
 #if CYTHON_USE_DICT_VERSIONS
 #define __Pyx_GetModuleGlobalName(var, name)  {\
@@ -1771,9 +1827,6 @@ static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_ve
 #define __Pyx_GetModuleGlobalNameUncached(var, name)  (var) = __Pyx__GetModuleGlobalName(name)
 static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name);
 #endif
-
-/* PyObjectCall2Args.proto */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
 
 /* MemviewSliceInit.proto */
 #define __Pyx_BUF_MAX_NDIMS %(BUF_MAX_NDIMS)d
@@ -1809,24 +1862,6 @@ static CYTHON_INLINE int __Pyx_PyBytes_Equals(PyObject* s1, PyObject* s2, int eq
 
 /* UnicodeEquals.proto */
 static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int equals);
-
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
-
-/* RaiseDoubleKeywords.proto */
-static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
-
-/* ParseKeywords.proto */
-static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
-    PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
-    const char* function_name);
-
-/* ArgTypeTest.proto */
-#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
-    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
-        __Pyx__ArgTypeTest(obj, type, name, exact))
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
 /* StrEquals.proto */
 #if PY_MAJOR_VERSION >= 3
@@ -2104,6 +2139,9 @@ static int __pyx_slices_overlap(__Pyx_memviewslice *slice1,
 /* Capsule.proto */
 static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
 
+/* ToPyCTupleUtility.proto */
+static PyObject* __pyx_convert__to_py___pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc);
+
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
@@ -2243,6 +2281,9 @@ static int __pyx_Generator_init(void);
 /* CheckBinaryVersion.proto */
 static int __Pyx_check_binary_version(void);
 
+/* FunctionExport.proto */
+static int __Pyx_ExportFunction(const char *name, void (*f)(void), const char *sig);
+
 /* VoidPtrImport.proto */
 static int __Pyx_ImportVoidPtr(PyObject *module, const char *name, void **p, const char *sig);
 
@@ -2254,6 +2295,18 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
 static __Pyx_memviewslice __pyx_f_7easyvec_8geometry_4Rect_as_np(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_4Rect_as_tuple(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_4Rect_keys(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_null(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_in(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_seg(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_ray(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_line(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch); /* proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_4Rect_area(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_4Rect_perimeter(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union_vec(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_skip_dispatch); /* proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union_point(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_skip_dispatch); /* proto*/
 static PyObject *__pyx_array_get_memview(struct __pyx_array_obj *__pyx_v_self); /* proto*/
 static char *__pyx_memoryview_get_item_pointer(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_index); /* proto*/
 static PyObject *__pyx_memoryview_is_slice(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_obj); /* proto*/
@@ -2275,6 +2328,8 @@ static PyTypeObject *__pyx_ptype_7easyvec_7vectors_Vec3 = 0;
 static __pyx_t_7easyvec_7vectors_real *__pyx_vp_7easyvec_7vectors_CMP_TOL = 0;
 #define __pyx_v_7easyvec_7vectors_CMP_TOL (*__pyx_vp_7easyvec_7vectors_CMP_TOL)
 
+/* Module declarations from 'libc.math' */
+
 /* Module declarations from 'easyvec.geometry' */
 static PyTypeObject *__pyx_ptype_7easyvec_8geometry_Rect = 0;
 static PyTypeObject *__pyx_ptype_7easyvec_8geometry___pyx_scope_struct__get_generator = 0;
@@ -2289,6 +2344,16 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
+static int __pyx_f_7easyvec_8geometry_is_bbox_intersect(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_8geometry__intersect_ts(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_lines(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_segments(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_rays(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_ray_line(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_ray_segment(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_line_segment(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_fmax(__pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_fmin(__pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -2338,19 +2403,40 @@ static PyObject *__pyx_builtin_Ellipsis;
 static PyObject *__pyx_builtin_id;
 static const char __pyx_k_[] = ", ";
 static const char __pyx_k_O[] = "O";
+static const char __pyx_k_a[] = "a";
+static const char __pyx_k_b[] = "b";
 static const char __pyx_k_c[] = "c";
+static const char __pyx_k_x[] = "x";
+static const char __pyx_k_y[] = "y";
 static const char __pyx_k_2f[] = ".2f";
 static const char __pyx_k__2[] = ")";
 static const char __pyx_k__3[] = "\320\235\320\265\320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \320\277\320\276\320\273\321\203\321\207\320\270\321\202\321\214 \320\272\320\276\320\274\320\277\320\276\320\275\320\265\320\275\321\202 \320\277\321\200\321\217\320\274\320\276\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272\320\260 \320\277\320\276 \320\270\320\275\320\264\320\265\320\272\321\201\321\203 ";
+static const char __pyx_k__5[] = "\320\235\320\265\320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \320\277\320\265\321\200\320\265\321\201\320\265\321\207\321\214 \321\201\321\203\321\211\320\275\320\276\321\201\321\202\320\270 ";
+static const char __pyx_k__6[] = " \320\270 ";
+static const char __pyx_k__7[] = "\320\235\320\265\320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \320\276\320\261\321\212\320\265\320\264\320\270\320\275\320\270\321\202\321\214 \321\201\321\203\321\211\320\275\320\276\321\201\321\202\320\270 ";
 static const char __pyx_k_id[] = "id";
 static const char __pyx_k_np[] = "np";
+static const char __pyx_k_p1[] = "p1";
+static const char __pyx_k_p2[] = "p2";
+static const char __pyx_k_r1[] = "r1";
+static const char __pyx_k_r2[] = "r2";
+static const char __pyx_k_s1[] = "s1";
+static const char __pyx_k_s2[] = "s2";
+static const char __pyx_k_u1[] = "u1";
+static const char __pyx_k_u2[] = "u2";
+static const char __pyx_k_v1[] = "v1";
+static const char __pyx_k_v2[] = "v2";
 static const char __pyx_k_x1[] = "x1";
 static const char __pyx_k_x2[] = "x2";
 static const char __pyx_k_y1[] = "y1";
 static const char __pyx_k_y2[] = "y2";
+static const char __pyx_k_add[] = "add";
+static const char __pyx_k_mul[] = "mul";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
+static const char __pyx_k_sub[] = "sub";
 static const char __pyx_k_Rect[] = "\320\235\320\265\320\262\320\276\320\267\320\274\320\276\320\266\320\275\320\276 \321\201\320\276\320\267\320\264\320\260\321\202\321\214 \321\215\320\272\320\267\320\265\320\274\320\277\320\273\321\217\321\200 Rect \320\270\320\267 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\276\320\262 ";
+static const char __pyx_k_area[] = "area";
 static const char __pyx_k_args[] = "args";
 static const char __pyx_k_base[] = "base";
 static const char __pyx_k_copy[] = "copy";
@@ -2374,11 +2460,13 @@ static const char __pyx_k_clone[] = "clone";
 static const char __pyx_k_close[] = "close";
 static const char __pyx_k_error[] = "error";
 static const char __pyx_k_flags[] = "flags";
+static const char __pyx_k_is_in[] = "is_in";
 static const char __pyx_k_numpy[] = "numpy";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_start[] = "start";
 static const char __pyx_k_throw[] = "throw";
+static const char __pyx_k_union[] = "union";
 static const char __pyx_k_Rect_2[] = "Rect(";
 static const char __pyx_k_Rect_3[] = "Rect";
 static const char __pyx_k_encode[] = "encode";
@@ -2391,26 +2479,38 @@ static const char __pyx_k_struct[] = "struct";
 static const char __pyx_k_unpack[] = "unpack";
 static const char __pyx_k_update[] = "update";
 static const char __pyx_k_fortran[] = "fortran";
+static const char __pyx_k_is_null[] = "is_null";
 static const char __pyx_k_memview[] = "memview";
+static const char __pyx_k_ndarray[] = "ndarray";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
 static const char __pyx_k_as_tuple[] = "as_tuple";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_itemsize[] = "itemsize";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
+static const char __pyx_k_rotate90[] = "rotate90";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_enumerate[] = "enumerate";
+static const char __pyx_k_intersect[] = "intersect";
+static const char __pyx_k_perimeter[] = "perimeter";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
+static const char __pyx_k_union_vec[] = "union_vec";
 static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_ValueError[] = "ValueError";
+static const char __pyx_k_memoryview[] = "memoryview";
 static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
+static const char __pyx_k_union_point[] = "union_point";
+static const char __pyx_k_is_cross_ray[] = "is_cross_ray";
+static const char __pyx_k_is_cross_seg[] = "is_cross_seg";
+static const char __pyx_k_is_intersect[] = "is_intersect";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_get_generator[] = "get_generator";
+static const char __pyx_k_is_cross_line[] = "is_cross_line";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
 static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
@@ -2477,11 +2577,18 @@ static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_View_MemoryView;
 static PyObject *__pyx_kp_u__2;
 static PyObject *__pyx_kp_u__3;
+static PyObject *__pyx_kp_u__5;
+static PyObject *__pyx_kp_u__6;
+static PyObject *__pyx_kp_u__7;
+static PyObject *__pyx_n_s_a;
+static PyObject *__pyx_n_s_add;
 static PyObject *__pyx_n_s_allocate_buffer;
+static PyObject *__pyx_n_s_area;
 static PyObject *__pyx_n_s_args;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_as_np;
 static PyObject *__pyx_n_s_as_tuple;
+static PyObject *__pyx_n_s_b;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
@@ -2507,21 +2614,34 @@ static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_intersect;
+static PyObject *__pyx_n_s_is_cross_line;
+static PyObject *__pyx_n_s_is_cross_ray;
+static PyObject *__pyx_n_s_is_cross_seg;
+static PyObject *__pyx_n_s_is_in;
+static PyObject *__pyx_n_s_is_intersect;
+static PyObject *__pyx_n_s_is_null;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
 static PyObject *__pyx_n_s_keys;
 static PyObject *__pyx_n_s_main;
+static PyObject *__pyx_n_s_memoryview;
 static PyObject *__pyx_n_s_memview;
 static PyObject *__pyx_n_s_mode;
+static PyObject *__pyx_n_s_mul;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_name_2;
+static PyObject *__pyx_n_s_ndarray;
 static PyObject *__pyx_n_s_ndim;
 static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_n_s_obj;
+static PyObject *__pyx_n_s_p1;
+static PyObject *__pyx_n_s_p2;
 static PyObject *__pyx_n_s_pack;
+static PyObject *__pyx_n_s_perimeter;
 static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
@@ -2531,10 +2651,15 @@ static PyObject *__pyx_n_s_pyx_state;
 static PyObject *__pyx_n_s_pyx_type;
 static PyObject *__pyx_n_s_pyx_unpickle_Enum;
 static PyObject *__pyx_n_s_pyx_vtable;
+static PyObject *__pyx_n_s_r1;
+static PyObject *__pyx_n_s_r2;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
+static PyObject *__pyx_n_s_rotate90;
+static PyObject *__pyx_n_s_s1;
+static PyObject *__pyx_n_s_s2;
 static PyObject *__pyx_n_s_send;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
@@ -2548,16 +2673,36 @@ static PyObject *__pyx_kp_s_strided_and_direct_or_indirect;
 static PyObject *__pyx_kp_s_strided_and_indirect;
 static PyObject *__pyx_kp_s_stringsource;
 static PyObject *__pyx_n_s_struct;
+static PyObject *__pyx_n_s_sub;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_throw;
+static PyObject *__pyx_n_s_u1;
+static PyObject *__pyx_n_s_u2;
 static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
+static PyObject *__pyx_n_s_union;
+static PyObject *__pyx_n_s_union_point;
+static PyObject *__pyx_n_s_union_vec;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
+static PyObject *__pyx_n_s_v1;
+static PyObject *__pyx_n_s_v2;
+static PyObject *__pyx_n_s_x;
 static PyObject *__pyx_n_u_x1;
 static PyObject *__pyx_n_u_x2;
+static PyObject *__pyx_n_s_y;
 static PyObject *__pyx_n_u_y1;
 static PyObject *__pyx_n_u_y2;
+static PyObject *__pyx_pf_7easyvec_8geometry_is_bbox_intersect(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_2_intersect_ts(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4intersect_lines(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_6intersect_segments(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_8intersect_rays(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_10intersect_ray_line(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_12intersect_ray_segment(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_14intersect_line_segment(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_16fmax(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_18fmin(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b); /* proto */
 static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, PyObject *__pyx_v_args); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_4__repr__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
@@ -2570,6 +2715,20 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_18keys(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_20__iter__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_22get_generator(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25is_null(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_27is_in(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_29is_cross_seg(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_31is_cross_ray(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_33is_cross_line(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_35area(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_37perimeter(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_39is_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_41intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_43__mul__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_45union(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_47union_vec(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_49union_point(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_51__sum__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_r1, PyObject *__pyx_v_r2); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2x1___get__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
 static int __pyx_pf_7easyvec_8geometry_4Rect_2x1_2__set__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2x2___get__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
@@ -2578,8 +2737,8 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2y1___get__(struct __pyx_obj_
 static int __pyx_pf_7easyvec_8geometry_4Rect_2y1_2__set__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2y2___get__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
 static int __pyx_pf_7easyvec_8geometry_4Rect_2y2_2__set__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_27__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_53__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_55__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2628,6 +2787,7 @@ static PyObject *__pyx_tp_new_array(PyTypeObject *t, PyObject *a, PyObject *k); 
 static PyObject *__pyx_tp_new_Enum(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_memoryview(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new__memoryviewslice(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_float_0_0;
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
@@ -2635,12 +2795,9 @@ static PyObject *__pyx_int_3;
 static PyObject *__pyx_int_184977713;
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_tuple__4;
-static PyObject *__pyx_tuple__5;
-static PyObject *__pyx_tuple__6;
-static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__8;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_slice__20;
+static PyObject *__pyx_slice__24;
 static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
@@ -2651,19 +2808,2685 @@ static PyObject *__pyx_tuple__16;
 static PyObject *__pyx_tuple__17;
 static PyObject *__pyx_tuple__18;
 static PyObject *__pyx_tuple__19;
+static PyObject *__pyx_tuple__20;
 static PyObject *__pyx_tuple__21;
 static PyObject *__pyx_tuple__22;
 static PyObject *__pyx_tuple__23;
-static PyObject *__pyx_tuple__24;
 static PyObject *__pyx_tuple__25;
 static PyObject *__pyx_tuple__26;
 static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
-static PyObject *__pyx_codeobj__30;
+static PyObject *__pyx_tuple__30;
+static PyObject *__pyx_tuple__31;
+static PyObject *__pyx_tuple__32;
+static PyObject *__pyx_tuple__33;
+static PyObject *__pyx_codeobj__34;
 /* Late includes */
 
-/* "easyvec/geometry.pyx":4
+/* "easyvec/geometry.pyx":8
+ * 
+ * @cython.nonecheck(False)
+ * cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \
+ *        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_1is_bbox_intersect(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_f_7easyvec_8geometry_is_bbox_intersect(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  __Pyx_RefNannySetupContext("is_bbox_intersect", 0);
+
+  /* "easyvec/geometry.pyx":9
+ * @cython.nonecheck(False)
+ * cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \             # <<<<<<<<<<<<<<
+ *        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))
+ * 
+ */
+  __pyx_t_2 = ((__pyx_f_7easyvec_8geometry_fmin(__pyx_v_u1->x, __pyx_v_u2->x, 0) <= __pyx_f_7easyvec_8geometry_fmax(__pyx_v_v1->x, __pyx_v_v2->x, 0)) != 0);
+  if (__pyx_t_2) {
+  } else {
+    __pyx_t_1 = __pyx_t_2;
+    goto __pyx_L3_bool_binop_done;
+  }
+
+  /* "easyvec/geometry.pyx":10
+ * cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \
+ *        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __pyx_t_2 = ((__pyx_f_7easyvec_8geometry_fmax(__pyx_v_u1->x, __pyx_v_u2->x, 0) >= __pyx_f_7easyvec_8geometry_fmin(__pyx_v_v1->x, __pyx_v_v2->x, 0)) != 0);
+  if (__pyx_t_2) {
+  } else {
+    __pyx_t_1 = __pyx_t_2;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = ((__pyx_f_7easyvec_8geometry_fmin(__pyx_v_u1->y, __pyx_v_u2->y, 0) <= __pyx_f_7easyvec_8geometry_fmax(__pyx_v_v1->y, __pyx_v_v2->y, 0)) != 0);
+  if (__pyx_t_2) {
+  } else {
+    __pyx_t_1 = __pyx_t_2;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = ((__pyx_f_7easyvec_8geometry_fmax(__pyx_v_u1->y, __pyx_v_u2->y, 0) >= __pyx_f_7easyvec_8geometry_fmin(__pyx_v_v1->y, __pyx_v_v2->y, 0)) != 0);
+  __pyx_t_1 = __pyx_t_2;
+  __pyx_L3_bool_binop_done:;
+  __pyx_r = __pyx_t_1;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":8
+ * 
+ * @cython.nonecheck(False)
+ * cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \
+ *        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_1is_bbox_intersect(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_is_bbox_intersect[] = "is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_1is_bbox_intersect(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_bbox_intersect (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_bbox_intersect", 1, 4, 4, 1); __PYX_ERR(0, 8, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_bbox_intersect", 1, 4, 4, 2); __PYX_ERR(0, 8, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_bbox_intersect", 1, 4, 4, 3); __PYX_ERR(0, 8, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_bbox_intersect") < 0)) __PYX_ERR(0, 8, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_bbox_intersect", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 8, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.is_bbox_intersect", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_is_bbox_intersect(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_is_bbox_intersect(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_bbox_intersect", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_is_bbox_intersect(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.is_bbox_intersect", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":14
+ * @cython.nonecheck(False)
+ * @cython.cdivision(True)
+ * cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef Vec2 vec1 = u1.sub(v1)
+ *     cdef Vec2 vec2 = v2.sub(v1)
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_3_intersect_ts(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_8geometry__intersect_ts(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec3 = 0;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_dot;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_6;
+  __Pyx_RefNannySetupContext("_intersect_ts", 0);
+
+  /* "easyvec/geometry.pyx":15
+ * @cython.cdivision(True)
+ * cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     cdef Vec2 vec1 = u1.sub(v1)             # <<<<<<<<<<<<<<
+ *     cdef Vec2 vec2 = v2.sub(v1)
+ *     cdef Vec2 vec3 = u2.sub(u1).rotate90()
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u1), __pyx_n_s_sub); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, ((PyObject *)__pyx_v_v1)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_v1));
+  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_v_vec1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "easyvec/geometry.pyx":16
+ * cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     cdef Vec2 vec1 = u1.sub(v1)
+ *     cdef Vec2 vec2 = v2.sub(v1)             # <<<<<<<<<<<<<<
+ *     cdef Vec2 vec3 = u2.sub(u1).rotate90()
+ * 
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_v2), __pyx_n_s_sub); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, ((PyObject *)__pyx_v_v1)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_v1));
+  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_v_vec2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "easyvec/geometry.pyx":17
+ *     cdef Vec2 vec1 = u1.sub(v1)
+ *     cdef Vec2 vec2 = v2.sub(v1)
+ *     cdef Vec2 vec3 = u2.sub(u1).rotate90()             # <<<<<<<<<<<<<<
+ * 
+ *     cdef real dot = vec2.dot(vec3)
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u2), __pyx_n_s_sub); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_u1)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_u1));
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_rotate90); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_v_vec3 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "easyvec/geometry.pyx":19
+ *     cdef Vec2 vec3 = u2.sub(u1).rotate90()
+ * 
+ *     cdef real dot = vec2.dot(vec3)             # <<<<<<<<<<<<<<
+ *     if fabs(dot) < CMP_TOL:
+ *         if vec1.len_sqared() <= CMP_TOL:
+ */
+  __pyx_v_dot = ((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vec2->__pyx_vtab)->dot(__pyx_v_vec2, __pyx_v_vec3, 0);
+
+  /* "easyvec/geometry.pyx":20
+ * 
+ *     cdef real dot = vec2.dot(vec3)
+ *     if fabs(dot) < CMP_TOL:             # <<<<<<<<<<<<<<
+ *         if vec1.len_sqared() <= CMP_TOL:
+ *             return True, 0.0, 0.0
+ */
+  __pyx_t_5 = ((fabs(__pyx_v_dot) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+  if (__pyx_t_5) {
+
+    /* "easyvec/geometry.pyx":21
+ *     cdef real dot = vec2.dot(vec3)
+ *     if fabs(dot) < CMP_TOL:
+ *         if vec1.len_sqared() <= CMP_TOL:             # <<<<<<<<<<<<<<
+ *             return True, 0.0, 0.0
+ *         return False, 0.0, 0.0
+ */
+    __pyx_t_5 = ((((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vec1->__pyx_vtab)->len_sqared(__pyx_v_vec1, 0) <= __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+    if (__pyx_t_5) {
+
+      /* "easyvec/geometry.pyx":22
+ *     if fabs(dot) < CMP_TOL:
+ *         if vec1.len_sqared() <= CMP_TOL:
+ *             return True, 0.0, 0.0             # <<<<<<<<<<<<<<
+ *         return False, 0.0, 0.0
+ * 
+ */
+      __pyx_t_6.f0 = 1;
+      __pyx_t_6.f1 = 0.0;
+      __pyx_t_6.f2 = 0.0;
+      __pyx_r = __pyx_t_6;
+      goto __pyx_L0;
+
+      /* "easyvec/geometry.pyx":21
+ *     cdef real dot = vec2.dot(vec3)
+ *     if fabs(dot) < CMP_TOL:
+ *         if vec1.len_sqared() <= CMP_TOL:             # <<<<<<<<<<<<<<
+ *             return True, 0.0, 0.0
+ *         return False, 0.0, 0.0
+ */
+    }
+
+    /* "easyvec/geometry.pyx":23
+ *         if vec1.len_sqared() <= CMP_TOL:
+ *             return True, 0.0, 0.0
+ *         return False, 0.0, 0.0             # <<<<<<<<<<<<<<
+ * 
+ *     cdef real t1 = vec2.cross(vec1) / dot
+ */
+    __pyx_t_6.f0 = 0;
+    __pyx_t_6.f1 = 0.0;
+    __pyx_t_6.f2 = 0.0;
+    __pyx_r = __pyx_t_6;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":20
+ * 
+ *     cdef real dot = vec2.dot(vec3)
+ *     if fabs(dot) < CMP_TOL:             # <<<<<<<<<<<<<<
+ *         if vec1.len_sqared() <= CMP_TOL:
+ *             return True, 0.0, 0.0
+ */
+  }
+
+  /* "easyvec/geometry.pyx":25
+ *         return False, 0.0, 0.0
+ * 
+ *     cdef real t1 = vec2.cross(vec1) / dot             # <<<<<<<<<<<<<<
+ *     cdef real t2 = vec1.dot(vec3) / dot
+ *     return True, t1, t2
+ */
+  __pyx_v_t1 = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vec2->__pyx_vtab)->cross(__pyx_v_vec2, __pyx_v_vec1, 0) / __pyx_v_dot);
+
+  /* "easyvec/geometry.pyx":26
+ * 
+ *     cdef real t1 = vec2.cross(vec1) / dot
+ *     cdef real t2 = vec1.dot(vec3) / dot             # <<<<<<<<<<<<<<
+ *     return True, t1, t2
+ * 
+ */
+  __pyx_v_t2 = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vec1->__pyx_vtab)->dot(__pyx_v_vec1, __pyx_v_vec3, 0) / __pyx_v_dot);
+
+  /* "easyvec/geometry.pyx":27
+ *     cdef real t1 = vec2.cross(vec1) / dot
+ *     cdef real t2 = vec1.dot(vec3) / dot
+ *     return True, t1, t2             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __pyx_t_6.f0 = 1;
+  __pyx_t_6.f1 = __pyx_v_t1;
+  __pyx_t_6.f2 = __pyx_v_t2;
+  __pyx_r = __pyx_t_6;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":14
+ * @cython.nonecheck(False)
+ * @cython.cdivision(True)
+ * cpdef (bint, real, real) _intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef Vec2 vec1 = u1.sub(v1)
+ *     cdef Vec2 vec2 = v2.sub(v1)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry._intersect_ts", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_pretend_to_initialize(&__pyx_r);
+  __pyx_L0:;
+  __Pyx_XDECREF((PyObject *)__pyx_v_vec1);
+  __Pyx_XDECREF((PyObject *)__pyx_v_vec2);
+  __Pyx_XDECREF((PyObject *)__pyx_v_vec3);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_3_intersect_ts(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_2_intersect_ts[] = "_intersect_ts(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2) -> (bint, real, real)";
+static PyObject *__pyx_pw_7easyvec_8geometry_3_intersect_ts(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("_intersect_ts (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("_intersect_ts", 1, 4, 4, 1); __PYX_ERR(0, 14, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("_intersect_ts", 1, 4, 4, 2); __PYX_ERR(0, 14, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("_intersect_ts", 1, 4, 4, 3); __PYX_ERR(0, 14, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_intersect_ts") < 0)) __PYX_ERR(0, 14, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("_intersect_ts", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 14, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry._intersect_ts", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_2_intersect_ts(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_2_intersect_ts(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("_intersect_ts", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_convert__to_py___pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry._intersect_ts", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":30
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_5intersect_lines(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_lines(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  CYTHON_UNUSED __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_1;
+  int __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  __Pyx_RefNannySetupContext("intersect_lines", 0);
+
+  /* "easyvec/geometry.pyx":34
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)             # <<<<<<<<<<<<<<
+ *     if not suc:
+ *         return None
+ */
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0);
+  __pyx_t_2 = __pyx_t_1.f0;
+  __pyx_t_3 = __pyx_t_1.f1;
+  __pyx_t_4 = __pyx_t_1.f2;
+  __pyx_v_suc = __pyx_t_2;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":35
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if not suc:             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  __pyx_t_2 = ((!(__pyx_v_suc != 0)) != 0);
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":36
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if not suc:
+ *         return None             # <<<<<<<<<<<<<<
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":35
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if not suc:             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":37
+ *     if not suc:
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u1), __pyx_n_s_add); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u2), __pyx_n_s_sub); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_9);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_9, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_10, ((PyObject *)__pyx_v_u1)) : __Pyx_PyObject_CallOneArg(__pyx_t_9, ((PyObject *)__pyx_v_u1));
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_mul); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_9);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_9, function);
+    }
+  }
+  __pyx_t_7 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+    __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_6);
+    if (likely(__pyx_t_9)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+      __Pyx_INCREF(__pyx_t_9);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_6, function);
+    }
+  }
+  __pyx_t_5 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_9, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
+  __pyx_t_5 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":30
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_lines", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_5intersect_lines(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4intersect_lines[] = "intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_5intersect_lines(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_lines (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_lines", 1, 4, 4, 1); __PYX_ERR(0, 30, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_lines", 1, 4, 4, 2); __PYX_ERR(0, 30, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_lines", 1, 4, 4, 3); __PYX_ERR(0, 30, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_lines") < 0)) __PYX_ERR(0, 30, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_lines", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 30, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_lines", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4intersect_lines(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4intersect_lines(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_lines", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_lines(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_lines", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":40
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     if not is_bbox_intersect(u1, u2, v1, v2):
+ *         return None
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_7intersect_segments(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_segments(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_RefNannySetupContext("intersect_segments", 0);
+
+  /* "easyvec/geometry.pyx":41
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     if not is_bbox_intersect(u1, u2, v1, v2):             # <<<<<<<<<<<<<<
+ *         return None
+ *     cdef:
+ */
+  __pyx_t_1 = ((!(__pyx_f_7easyvec_8geometry_is_bbox_intersect(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0) != 0)) != 0);
+  if (__pyx_t_1) {
+
+    /* "easyvec/geometry.pyx":42
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     if not is_bbox_intersect(u1, u2, v1, v2):
+ *         return None             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":41
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
+ *     if not is_bbox_intersect(u1, u2, v1, v2):             # <<<<<<<<<<<<<<
+ *         return None
+ *     cdef:
+ */
+  }
+
+  /* "easyvec/geometry.pyx":46
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)             # <<<<<<<<<<<<<<
+ *     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ */
+  __pyx_t_2 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0);
+  __pyx_t_1 = __pyx_t_2.f0;
+  __pyx_t_3 = __pyx_t_2.f1;
+  __pyx_t_4 = __pyx_t_2.f2;
+  __pyx_v_suc = __pyx_t_1;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":47
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  __pyx_t_5 = ((!(__pyx_v_suc != 0)) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_1 = __pyx_t_5;
+    goto __pyx_L5_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t1 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_1 = __pyx_t_5;
+    goto __pyx_L5_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t1 > 1.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_1 = __pyx_t_5;
+    goto __pyx_L5_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_1 = __pyx_t_5;
+    goto __pyx_L5_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 > 1.0) != 0);
+  __pyx_t_1 = __pyx_t_5;
+  __pyx_L5_bool_binop_done:;
+  if (__pyx_t_1) {
+
+    /* "easyvec/geometry.pyx":48
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None             # <<<<<<<<<<<<<<
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":47
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":49
+ *     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u1), __pyx_n_s_add); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u2), __pyx_n_s_sub); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_9 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, ((PyObject *)__pyx_v_u1)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, ((PyObject *)__pyx_v_u1));
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_mul); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_6 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
+  __pyx_t_6 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":40
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     if not is_bbox_intersect(u1, u2, v1, v2):
+ *         return None
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_segments", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_7intersect_segments(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_6intersect_segments[] = "intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_7intersect_segments(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_segments (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_segments", 1, 4, 4, 1); __PYX_ERR(0, 40, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_segments", 1, 4, 4, 2); __PYX_ERR(0, 40, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_segments", 1, 4, 4, 3); __PYX_ERR(0, 40, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_segments") < 0)) __PYX_ERR(0, 40, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_segments", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 40, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_segments", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_6intersect_segments(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_6intersect_segments(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_segments", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_segments(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_segments", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":52
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_9intersect_rays(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_rays(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_1;
+  int __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_RefNannySetupContext("intersect_rays", 0);
+
+  /* "easyvec/geometry.pyx":56
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)             # <<<<<<<<<<<<<<
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 :
+ *         return None
+ */
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0);
+  __pyx_t_2 = __pyx_t_1.f0;
+  __pyx_t_3 = __pyx_t_1.f1;
+  __pyx_t_4 = __pyx_t_1.f2;
+  __pyx_v_suc = __pyx_t_2;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":57
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  __pyx_t_5 = ((!(__pyx_v_suc != 0)) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t1 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 < 0.0) != 0);
+  __pyx_t_2 = __pyx_t_5;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":58
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 :
+ *         return None             # <<<<<<<<<<<<<<
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":57
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":59
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 :
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u1), __pyx_n_s_add); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u2), __pyx_n_s_sub); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_9 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, ((PyObject *)__pyx_v_u1)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, ((PyObject *)__pyx_v_u1));
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_mul); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_6 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
+  __pyx_t_6 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":52
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_rays", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_9intersect_rays(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8intersect_rays[] = "intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_9intersect_rays(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_rays (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_rays", 1, 4, 4, 1); __PYX_ERR(0, 52, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_rays", 1, 4, 4, 2); __PYX_ERR(0, 52, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_rays", 1, 4, 4, 3); __PYX_ERR(0, 52, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_rays") < 0)) __PYX_ERR(0, 52, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_rays", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 52, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_rays", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8intersect_rays(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_8intersect_rays(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_rays", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_rays(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_rays", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":62
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_11intersect_ray_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_ray_line(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  CYTHON_UNUSED __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_1;
+  int __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_RefNannySetupContext("intersect_ray_line", 0);
+
+  /* "easyvec/geometry.pyx":66
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)             # <<<<<<<<<<<<<<
+ *     if (not suc) or t1 < 0.0:
+ *         return None
+ */
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2, 0);
+  __pyx_t_2 = __pyx_t_1.f0;
+  __pyx_t_3 = __pyx_t_1.f1;
+  __pyx_t_4 = __pyx_t_1.f2;
+  __pyx_v_suc = __pyx_t_2;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":67
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0:             # <<<<<<<<<<<<<<
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ */
+  __pyx_t_5 = ((!(__pyx_v_suc != 0)) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t1 < 0.0) != 0);
+  __pyx_t_2 = __pyx_t_5;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":68
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0:
+ *         return None             # <<<<<<<<<<<<<<
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":67
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0:             # <<<<<<<<<<<<<<
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":69
+ *     if (not suc) or t1 < 0.0:
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_r1), __pyx_n_s_add); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_r2), __pyx_n_s_sub); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_9 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, ((PyObject *)__pyx_v_r1)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, ((PyObject *)__pyx_v_r1));
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_mul); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_6 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
+  __pyx_t_6 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":62
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_11intersect_ray_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_10intersect_ray_line[] = "intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_11intersect_ray_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_ray_line (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_r1,&__pyx_n_s_r2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_line", 1, 4, 4, 1); __PYX_ERR(0, 62, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_line", 1, 4, 4, 2); __PYX_ERR(0, 62, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_line", 1, 4, 4, 3); __PYX_ERR(0, 62, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_ray_line") < 0)) __PYX_ERR(0, 62, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_r1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_r2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_ray_line", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 62, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "r1", 0))) __PYX_ERR(0, 62, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "r2", 0))) __PYX_ERR(0, 62, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 62, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_10intersect_ray_line(__pyx_self, __pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_10intersect_ray_line(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_ray_line", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_ray_line(__pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":72
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_13intersect_ray_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_ray_segment(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_1;
+  int __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_RefNannySetupContext("intersect_ray_segment", 0);
+
+  /* "easyvec/geometry.pyx":76
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)             # <<<<<<<<<<<<<<
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ */
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2, 0);
+  __pyx_t_2 = __pyx_t_1.f0;
+  __pyx_t_3 = __pyx_t_1.f1;
+  __pyx_t_4 = __pyx_t_1.f2;
+  __pyx_v_suc = __pyx_t_2;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":77
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ */
+  __pyx_t_5 = ((!(__pyx_v_suc != 0)) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t1 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 > 1.0) != 0);
+  __pyx_t_2 = __pyx_t_5;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":78
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None             # <<<<<<<<<<<<<<
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":77
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":79
+ *     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ *     return r1.add( r2.sub(r1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_r1), __pyx_n_s_add); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_r2), __pyx_n_s_sub); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_9 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, ((PyObject *)__pyx_v_r1)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, ((PyObject *)__pyx_v_r1));
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_mul); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_6 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
+  __pyx_t_6 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":72
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_13intersect_ray_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_12intersect_ray_segment[] = "intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_13intersect_ray_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_ray_segment (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_r1,&__pyx_n_s_r2,&__pyx_n_s_v1,&__pyx_n_s_v2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_segment", 1, 4, 4, 1); __PYX_ERR(0, 72, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_segment", 1, 4, 4, 2); __PYX_ERR(0, 72, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_v2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_ray_segment", 1, 4, 4, 3); __PYX_ERR(0, 72, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_ray_segment") < 0)) __PYX_ERR(0, 72, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_r1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_r2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_v2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_ray_segment", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 72, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "r1", 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "r2", 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v1", 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_v2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "v2", 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_12intersect_ray_segment(__pyx_self, __pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_12intersect_ray_segment(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_ray_segment", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_ray_segment(__pyx_v_r1, __pyx_v_r2, __pyx_v_v1, __pyx_v_v2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_ray_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":82
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_15intersect_line_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_8geometry_intersect_line_segment(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_v_suc;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_t_1;
+  int __pyx_t_2;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_3;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_4;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_RefNannySetupContext("intersect_line_segment", 0);
+
+  /* "easyvec/geometry.pyx":86
+ *         bint suc
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)             # <<<<<<<<<<<<<<
+ *     if (not suc) or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ */
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_s1, __pyx_v_s2, 0);
+  __pyx_t_2 = __pyx_t_1.f0;
+  __pyx_t_3 = __pyx_t_1.f1;
+  __pyx_t_4 = __pyx_t_1.f2;
+  __pyx_v_suc = __pyx_t_2;
+  __pyx_v_t1 = __pyx_t_3;
+  __pyx_v_t2 = __pyx_t_4;
+
+  /* "easyvec/geometry.pyx":87
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)
+ *     if (not suc) or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  __pyx_t_5 = ((!(__pyx_v_suc != 0)) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 < 0.0) != 0);
+  if (!__pyx_t_5) {
+  } else {
+    __pyx_t_2 = __pyx_t_5;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_5 = ((__pyx_v_t2 > 1.0) != 0);
+  __pyx_t_2 = __pyx_t_5;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":88
+ *     suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)
+ *     if (not suc) or t2 < 0.0 or t2 > 1.0 :
+ *         return None             # <<<<<<<<<<<<<<
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)Py_None); __Pyx_INCREF(Py_None);
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":87
+ *         real t1, t2
+ *     suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)
+ *     if (not suc) or t2 < 0.0 or t2 > 1.0 :             # <<<<<<<<<<<<<<
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ */
+  }
+
+  /* "easyvec/geometry.pyx":89
+ *     if (not suc) or t2 < 0.0 or t2 > 1.0 :
+ *         return None
+ *     return u1.add( u2.sub(u1).mul(t1) )             # <<<<<<<<<<<<<<
+ * 
+ * cpdef real fmax(real a, real b):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u1), __pyx_n_s_add); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_u2), __pyx_n_s_sub); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_9 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, ((PyObject *)__pyx_v_u1)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, ((PyObject *)__pyx_v_u1));
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_mul); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_t1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_11 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_11)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_11);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
+    }
+  }
+  __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_10)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_6 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_r = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
+  __pyx_t_6 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":82
+ * 
+ * @cython.nonecheck(False)
+ * cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):             # <<<<<<<<<<<<<<
+ *     cdef:
+ *         bint suc
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_line_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_15intersect_line_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_14intersect_line_segment[] = "intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2) -> Vec2";
+static PyObject *__pyx_pw_7easyvec_8geometry_15intersect_line_segment(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect_line_segment (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_u1,&__pyx_n_s_u2,&__pyx_n_s_s1,&__pyx_n_s_s2,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_line_segment", 1, 4, 4, 1); __PYX_ERR(0, 82, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_s1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_line_segment", 1, 4, 4, 2); __PYX_ERR(0, 82, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_s2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("intersect_line_segment", 1, 4, 4, 3); __PYX_ERR(0, 82, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_line_segment") < 0)) __PYX_ERR(0, 82, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+    }
+    __pyx_v_u1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_u2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    __pyx_v_s1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
+    __pyx_v_s2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[3]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("intersect_line_segment", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 82, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.intersect_line_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u1", 0))) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_u2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "u2", 0))) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_s1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "s1", 0))) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_s2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "s2", 0))) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_14intersect_line_segment(__pyx_self, __pyx_v_u1, __pyx_v_u2, __pyx_v_s1, __pyx_v_s2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_14intersect_line_segment(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_s2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect_line_segment", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_intersect_line_segment(__pyx_v_u1, __pyx_v_u2, __pyx_v_s1, __pyx_v_s2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.intersect_line_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":91
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ * cpdef real fmax(real a, real b):             # <<<<<<<<<<<<<<
+ *     if a > b:
+ *         return a
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_17fmax(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_fmax(__pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("fmax", 0);
+
+  /* "easyvec/geometry.pyx":92
+ * 
+ * cpdef real fmax(real a, real b):
+ *     if a > b:             # <<<<<<<<<<<<<<
+ *         return a
+ *     else:
+ */
+  __pyx_t_1 = ((__pyx_v_a > __pyx_v_b) != 0);
+  if (__pyx_t_1) {
+
+    /* "easyvec/geometry.pyx":93
+ * cpdef real fmax(real a, real b):
+ *     if a > b:
+ *         return a             # <<<<<<<<<<<<<<
+ *     else:
+ *         return b
+ */
+    __pyx_r = __pyx_v_a;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":92
+ * 
+ * cpdef real fmax(real a, real b):
+ *     if a > b:             # <<<<<<<<<<<<<<
+ *         return a
+ *     else:
+ */
+  }
+
+  /* "easyvec/geometry.pyx":95
+ *         return a
+ *     else:
+ *         return b             # <<<<<<<<<<<<<<
+ * 
+ * cpdef real fmin(real a, real b):
+ */
+  /*else*/ {
+    __pyx_r = __pyx_v_b;
+    goto __pyx_L0;
+  }
+
+  /* "easyvec/geometry.pyx":91
+ *     return u1.add( u2.sub(u1).mul(t1) )
+ * 
+ * cpdef real fmax(real a, real b):             # <<<<<<<<<<<<<<
+ *     if a > b:
+ *         return a
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_17fmax(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_16fmax[] = "fmax(real a, real b) -> real";
+static PyObject *__pyx_pw_7easyvec_8geometry_17fmax(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_a;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_b;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("fmax (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_a,&__pyx_n_s_b,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_b)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("fmax", 1, 2, 2, 1); __PYX_ERR(0, 91, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fmax") < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_a = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_a == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_b = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_b == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("fmax", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 91, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.fmax", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7easyvec_8geometry_16fmax(__pyx_self, __pyx_v_a, __pyx_v_b);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_16fmax(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("fmax", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8geometry_fmax(__pyx_v_a, __pyx_v_b, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.fmax", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":97
+ *         return b
+ * 
+ * cpdef real fmin(real a, real b):             # <<<<<<<<<<<<<<
+ *     if a < b:
+ *         return a
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_19fmin(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_fmin(__pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("fmin", 0);
+
+  /* "easyvec/geometry.pyx":98
+ * 
+ * cpdef real fmin(real a, real b):
+ *     if a < b:             # <<<<<<<<<<<<<<
+ *         return a
+ *     else:
+ */
+  __pyx_t_1 = ((__pyx_v_a < __pyx_v_b) != 0);
+  if (__pyx_t_1) {
+
+    /* "easyvec/geometry.pyx":99
+ * cpdef real fmin(real a, real b):
+ *     if a < b:
+ *         return a             # <<<<<<<<<<<<<<
+ *     else:
+ *         return b
+ */
+    __pyx_r = __pyx_v_a;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":98
+ * 
+ * cpdef real fmin(real a, real b):
+ *     if a < b:             # <<<<<<<<<<<<<<
+ *         return a
+ *     else:
+ */
+  }
+
+  /* "easyvec/geometry.pyx":101
+ *         return a
+ *     else:
+ *         return b             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  /*else*/ {
+    __pyx_r = __pyx_v_b;
+    goto __pyx_L0;
+  }
+
+  /* "easyvec/geometry.pyx":97
+ *         return b
+ * 
+ * cpdef real fmin(real a, real b):             # <<<<<<<<<<<<<<
+ *     if a < b:
+ *         return a
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_19fmin(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_18fmin[] = "fmin(real a, real b) -> real";
+static PyObject *__pyx_pw_7easyvec_8geometry_19fmin(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_a;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_b;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("fmin (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_a,&__pyx_n_s_b,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_b)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("fmin", 1, 2, 2, 1); __PYX_ERR(0, 97, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fmin") < 0)) __PYX_ERR(0, 97, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_a = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_a == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+    __pyx_v_b = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_b == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("fmin", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 97, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.fmin", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7easyvec_8geometry_18fmin(__pyx_self, __pyx_v_a, __pyx_v_b);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_18fmin(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_7easyvec_7vectors_real __pyx_v_a, __pyx_t_7easyvec_7vectors_real __pyx_v_b) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("fmin", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8geometry_fmin(__pyx_v_a, __pyx_v_b, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.fmin", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":105
  * 
  * cdef class Rect:
  *     def __cinit__(self, *args):             # <<<<<<<<<<<<<<
@@ -2702,79 +5525,79 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "easyvec/geometry.pyx":5
+  /* "easyvec/geometry.pyx":106
  * cdef class Rect:
  *     def __cinit__(self, *args):
  *         cdef int alen = len(args)             # <<<<<<<<<<<<<<
  *         if alen >= 4:
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
  */
-  __pyx_t_1 = PyTuple_GET_SIZE(__pyx_v_args); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_GET_SIZE(__pyx_v_args); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 106, __pyx_L1_error)
   __pyx_v_alen = __pyx_t_1;
 
-  /* "easyvec/geometry.pyx":6
+  /* "easyvec/geometry.pyx":107
  *     def __cinit__(self, *args):
  *         cdef int alen = len(args)
  *         if alen >= 4:             # <<<<<<<<<<<<<<
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  */
   __pyx_t_2 = ((__pyx_v_alen >= 4) != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":7
+    /* "easyvec/geometry.pyx":108
  *         cdef int alen = len(args)
  *         if alen >= 4:
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])             # <<<<<<<<<<<<<<
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])             # <<<<<<<<<<<<<<
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  *         elif alen == 2:
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
     __pyx_v_self->x1 = __pyx_t_5;
-    __pyx_v_self->x2 = __pyx_t_6;
+    __pyx_v_self->y1 = __pyx_t_6;
 
-    /* "easyvec/geometry.pyx":8
+    /* "easyvec/geometry.pyx":109
  *         if alen >= 4:
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])             # <<<<<<<<<<<<<<
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])             # <<<<<<<<<<<<<<
  *         elif alen == 2:
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
-    __pyx_v_self->y1 = __pyx_t_5;
+    __pyx_v_self->x2 = __pyx_t_5;
     __pyx_v_self->y2 = __pyx_t_4;
 
-    /* "easyvec/geometry.pyx":6
+    /* "easyvec/geometry.pyx":107
  *     def __cinit__(self, *args):
  *         cdef int alen = len(args)
  *         if alen >= 4:             # <<<<<<<<<<<<<<
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  */
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":9
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+  /* "easyvec/geometry.pyx":110
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  *         elif alen == 2:             # <<<<<<<<<<<<<<
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
@@ -2782,61 +5605,61 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
   __pyx_t_2 = ((__pyx_v_alen == 2) != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":10
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+    /* "easyvec/geometry.pyx":111
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  *         elif alen == 2:
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])             # <<<<<<<<<<<<<<
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
  *         elif alen == 1:
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
-    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
     __pyx_v_self->x1 = __pyx_t_5;
     __pyx_v_self->x2 = __pyx_t_6;
 
-    /* "easyvec/geometry.pyx":11
+    /* "easyvec/geometry.pyx":112
  *         elif alen == 2:
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])             # <<<<<<<<<<<<<<
  *         elif alen == 1:
- *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[0][1])
+ *             self.x1, self.y1 = <real>(args[0][0]), <real>(args[0][1])
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
-    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
     __pyx_v_self->y1 = __pyx_t_5;
     __pyx_v_self->y2 = __pyx_t_4;
 
-    /* "easyvec/geometry.pyx":9
- *             self.x1, self.x2 = <real>(args[0]), <real>(args[1])
- *             self.y1, self.y2 = <real>(args[2]), <real>(args[3])
+    /* "easyvec/geometry.pyx":110
+ *             self.x1, self.y1 = <real>(args[0]), <real>(args[1])
+ *             self.x2, self.y2 = <real>(args[2]), <real>(args[3])
  *         elif alen == 2:             # <<<<<<<<<<<<<<
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
@@ -2844,101 +5667,101 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":12
+  /* "easyvec/geometry.pyx":113
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
  *         elif alen == 1:             # <<<<<<<<<<<<<<
- *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[0][1])
- *             self.y1, self.y2 = <real>(args[0][2]), <real>(args[0][3])
+ *             self.x1, self.y1 = <real>(args[0][0]), <real>(args[0][1])
+ *             self.x2, self.y2 = <real>(args[0][2]), <real>(args[0][3])
  */
   __pyx_t_2 = ((__pyx_v_alen == 1) != 0);
   if (likely(__pyx_t_2)) {
 
-    /* "easyvec/geometry.pyx":13
+    /* "easyvec/geometry.pyx":114
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
  *         elif alen == 1:
- *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[0][1])             # <<<<<<<<<<<<<<
- *             self.y1, self.y2 = <real>(args[0][2]), <real>(args[0][3])
+ *             self.x1, self.y1 = <real>(args[0][0]), <real>(args[0][1])             # <<<<<<<<<<<<<<
+ *             self.x2, self.y2 = <real>(args[0][2]), <real>(args[0][3])
  *         else:
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
-    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_6 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_4);
     __pyx_v_self->x1 = __pyx_t_5;
-    __pyx_v_self->x2 = __pyx_t_6;
+    __pyx_v_self->y1 = __pyx_t_6;
 
-    /* "easyvec/geometry.pyx":14
+    /* "easyvec/geometry.pyx":115
  *         elif alen == 1:
- *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[0][1])
- *             self.y1, self.y2 = <real>(args[0][2]), <real>(args[0][3])             # <<<<<<<<<<<<<<
+ *             self.x1, self.y1 = <real>(args[0][0]), <real>(args[0][1])
+ *             self.x2, self.y2 = <real>(args[0][2]), <real>(args[0][3])             # <<<<<<<<<<<<<<
  *         else:
  *             raise ValueError(f'   Rect   {args}')
  */
-    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_5 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
-    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetItemInt_Tuple(__pyx_v_args, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6);
-    __pyx_v_self->y1 = __pyx_t_5;
+    __pyx_v_self->x2 = __pyx_t_5;
     __pyx_v_self->y2 = __pyx_t_4;
 
-    /* "easyvec/geometry.pyx":12
+    /* "easyvec/geometry.pyx":113
  *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[1][0])
  *             self.y1, self.y2 = <real>(args[0][1]), <real>(args[1][1])
  *         elif alen == 1:             # <<<<<<<<<<<<<<
- *             self.x1, self.x2 = <real>(args[0][0]), <real>(args[0][1])
- *             self.y1, self.y2 = <real>(args[0][2]), <real>(args[0][3])
+ *             self.x1, self.y1 = <real>(args[0][0]), <real>(args[0][1])
+ *             self.x2, self.y2 = <real>(args[0][2]), <real>(args[0][3])
  */
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":16
- *             self.y1, self.y2 = <real>(args[0][2]), <real>(args[0][3])
+  /* "easyvec/geometry.pyx":117
+ *             self.x2, self.y2 = <real>(args[0][2]), <real>(args[0][3])
  *         else:
  *             raise ValueError(f'   Rect   {args}')             # <<<<<<<<<<<<<<
  *         if self.x1 > self.x2:
  *             self.x1, self.x2 = self.x2, self.x1
  */
   /*else*/ {
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_args, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_args, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Rect, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Rect, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 16, __pyx_L1_error)
+    __PYX_ERR(0, 117, __pyx_L1_error)
   }
   __pyx_L3:;
 
-  /* "easyvec/geometry.pyx":17
+  /* "easyvec/geometry.pyx":118
  *         else:
  *             raise ValueError(f'   Rect   {args}')
  *         if self.x1 > self.x2:             # <<<<<<<<<<<<<<
@@ -2948,7 +5771,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
   __pyx_t_2 = ((__pyx_v_self->x1 > __pyx_v_self->x2) != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":18
+    /* "easyvec/geometry.pyx":119
  *             raise ValueError(f'   Rect   {args}')
  *         if self.x1 > self.x2:
  *             self.x1, self.x2 = self.x2, self.x1             # <<<<<<<<<<<<<<
@@ -2960,7 +5783,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
     __pyx_v_self->x1 = __pyx_t_4;
     __pyx_v_self->x2 = __pyx_t_5;
 
-    /* "easyvec/geometry.pyx":17
+    /* "easyvec/geometry.pyx":118
  *         else:
  *             raise ValueError(f'   Rect   {args}')
  *         if self.x1 > self.x2:             # <<<<<<<<<<<<<<
@@ -2969,7 +5792,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
  */
   }
 
-  /* "easyvec/geometry.pyx":19
+  /* "easyvec/geometry.pyx":120
  *         if self.x1 > self.x2:
  *             self.x1, self.x2 = self.x2, self.x1
  *         if self.y1 > self.y2:             # <<<<<<<<<<<<<<
@@ -2979,7 +5802,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
   __pyx_t_2 = ((__pyx_v_self->y1 > __pyx_v_self->y2) != 0);
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":20
+    /* "easyvec/geometry.pyx":121
  *             self.x1, self.x2 = self.x2, self.x1
  *         if self.y1 > self.y2:
  *             self.y1, self.y2 = self.y2, self.y1             # <<<<<<<<<<<<<<
@@ -2991,7 +5814,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
     __pyx_v_self->y1 = __pyx_t_5;
     __pyx_v_self->y2 = __pyx_t_4;
 
-    /* "easyvec/geometry.pyx":19
+    /* "easyvec/geometry.pyx":120
  *         if self.x1 > self.x2:
  *             self.x1, self.x2 = self.x2, self.x1
  *         if self.y1 > self.y2:             # <<<<<<<<<<<<<<
@@ -3000,7 +5823,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
  */
   }
 
-  /* "easyvec/geometry.pyx":4
+  /* "easyvec/geometry.pyx":105
  * 
  * cdef class Rect:
  *     def __cinit__(self, *args):             # <<<<<<<<<<<<<<
@@ -3021,11 +5844,11 @@ static int __pyx_pf_7easyvec_8geometry_4Rect___cinit__(struct __pyx_obj_7easyvec
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":22
+/* "easyvec/geometry.pyx":123
  *             self.y1, self.y2 = self.y2, self.y1
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
- *         return f'Rect({self.x1:.2f}, {self.x2:.2f}, {self.y1:.2f}, {self.y2:.2f})'
+ *         return f'Rect({self.x1:.2f}, {self.y1:.2f}, {self.x2:.2f}, {self.y2:.2f})'
  * 
  */
 
@@ -3052,15 +5875,15 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "easyvec/geometry.pyx":23
+  /* "easyvec/geometry.pyx":124
  * 
  *     def __str__(self):
- *         return f'Rect({self.x1:.2f}, {self.x2:.2f}, {self.y1:.2f}, {self.y2:.2f})'             # <<<<<<<<<<<<<<
+ *         return f'Rect({self.x1:.2f}, {self.y1:.2f}, {self.x2:.2f}, {self.y2:.2f})'             # <<<<<<<<<<<<<<
  * 
  *     def __repr__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_3 = 127;
@@ -3068,9 +5891,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   __pyx_t_2 += 5;
   __Pyx_GIVEREF(__pyx_kp_u_Rect_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_Rect_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -3082,9 +5905,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   __pyx_t_2 += 2;
   __Pyx_GIVEREF(__pyx_kp_u_);
   PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -3096,9 +5919,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   __pyx_t_2 += 2;
   __Pyx_GIVEREF(__pyx_kp_u_);
   PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_kp_u_2f); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_3;
@@ -3110,9 +5933,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   __pyx_t_2 += 2;
   __Pyx_GIVEREF(__pyx_kp_u_);
   PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u_);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Format(__pyx_t_5, __pyx_kp_u_2f); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
@@ -3124,18 +5947,18 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   __pyx_t_2 += 1;
   __Pyx_GIVEREF(__pyx_kp_u__2);
   PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u__2);
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 9, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":22
+  /* "easyvec/geometry.pyx":123
  *             self.y1, self.y2 = self.y2, self.y1
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
- *         return f'Rect({self.x1:.2f}, {self.x2:.2f}, {self.y1:.2f}, {self.y2:.2f})'
+ *         return f'Rect({self.x1:.2f}, {self.y1:.2f}, {self.x2:.2f}, {self.y2:.2f})'
  * 
  */
 
@@ -3152,8 +5975,8 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2__str__(struct __pyx_obj_7ea
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":25
- *         return f'Rect({self.x1:.2f}, {self.x2:.2f}, {self.y1:.2f}, {self.y2:.2f})'
+/* "easyvec/geometry.pyx":126
+ *         return f'Rect({self.x1:.2f}, {self.y1:.2f}, {self.x2:.2f}, {self.y2:.2f})'
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return str(self)
@@ -3179,7 +6002,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_4__repr__(struct __pyx_obj_7e
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__repr__", 0);
 
-  /* "easyvec/geometry.pyx":26
+  /* "easyvec/geometry.pyx":127
  * 
  *     def __repr__(self):
  *         return str(self)             # <<<<<<<<<<<<<<
@@ -3187,14 +6010,14 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_4__repr__(struct __pyx_obj_7e
  *     cpdef Rect copy(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyUnicode_Type)), ((PyObject *)__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyUnicode_Type)), ((PyObject *)__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":25
- *         return f'Rect({self.x1:.2f}, {self.x2:.2f}, {self.y1:.2f}, {self.y2:.2f})'
+  /* "easyvec/geometry.pyx":126
+ *         return f'Rect({self.x1:.2f}, {self.y1:.2f}, {self.x2:.2f}, {self.y2:.2f})'
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return str(self)
@@ -3212,11 +6035,11 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_4__repr__(struct __pyx_obj_7e
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":28
+/* "easyvec/geometry.pyx":129
  *         return str(self)
  * 
  *     cpdef Rect copy(self):             # <<<<<<<<<<<<<<
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3239,7 +6062,7 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_7copy)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
@@ -3256,10 +6079,10 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 28, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 129, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3278,23 +6101,23 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
     #endif
   }
 
-  /* "easyvec/geometry.pyx":29
+  /* "easyvec/geometry.pyx":130
  * 
  *     cpdef Rect copy(self):
- *         return Rect(self.x1, self.x2, self.y1, self.y2)             # <<<<<<<<<<<<<<
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Rect clone(self):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -3308,18 +6131,18 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":28
+  /* "easyvec/geometry.pyx":129
  *         return str(self)
  * 
  *     cpdef Rect copy(self):             # <<<<<<<<<<<<<<
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3358,7 +6181,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_6copy(struct __pyx_obj_7easyv
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("copy", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_copy(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_copy(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3375,11 +6198,11 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_6copy(struct __pyx_obj_7easyv
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":31
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+/* "easyvec/geometry.pyx":132
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  *     cpdef Rect clone(self):             # <<<<<<<<<<<<<<
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3402,7 +6225,7 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_clone); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_clone); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_9clone)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
@@ -3419,10 +6242,10 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 31, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 132, __pyx_L1_error)
         __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3441,23 +6264,23 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
     #endif
   }
 
-  /* "easyvec/geometry.pyx":32
+  /* "easyvec/geometry.pyx":133
  * 
  *     cpdef Rect clone(self):
- *         return Rect(self.x1, self.x2, self.y1, self.y2)             # <<<<<<<<<<<<<<
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)             # <<<<<<<<<<<<<<
  * 
  *     cpdef real[:] as_np(self):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -3471,18 +6294,18 @@ static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rec
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_4);
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":31
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+  /* "easyvec/geometry.pyx":132
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  *     cpdef Rect clone(self):             # <<<<<<<<<<<<<<
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3521,7 +6344,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_8clone(struct __pyx_obj_7easy
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("clone", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_clone(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_clone(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3538,11 +6361,11 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_8clone(struct __pyx_obj_7easy
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":34
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+/* "easyvec/geometry.pyx":135
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  *     cpdef real[:] as_np(self):             # <<<<<<<<<<<<<<
- *         return np.array([self.x1, self.x2, self.y1, self.y2])
+ *         return np.array([self.x1, self.y1, self.x2, self.y2])
  * 
  */
 
@@ -3568,7 +6391,7 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8geometry_4Rect_as_np(struct __pyx_ob
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_11as_np)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -3584,10 +6407,10 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8geometry_4Rect_as_np(struct __pyx_ob
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 34, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __pyx_t_5.memview = NULL;
@@ -3608,27 +6431,27 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8geometry_4Rect_as_np(struct __pyx_ob
     #endif
   }
 
-  /* "easyvec/geometry.pyx":35
+  /* "easyvec/geometry.pyx":136
  * 
  *     cpdef real[:] as_np(self):
- *         return np.array([self.x1, self.x2, self.y1, self.y2])             # <<<<<<<<<<<<<<
+ *         return np.array([self.x1, self.y1, self.x2, self.y2])             # <<<<<<<<<<<<<<
  * 
  *     cpdef tuple as_tuple(self):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyList_New(4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_2);
@@ -3655,21 +6478,21 @@ static __Pyx_memviewslice __pyx_f_7easyvec_8geometry_4Rect_as_np(struct __pyx_ob
   __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_7, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_8);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7easyvec_7vectors_real(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":34
- *         return Rect(self.x1, self.x2, self.y1, self.y2)
+  /* "easyvec/geometry.pyx":135
+ *         return Rect(self.x1, self.y1, self.x2, self.y2)
  * 
  *     cpdef real[:] as_np(self):             # <<<<<<<<<<<<<<
- *         return np.array([self.x1, self.x2, self.y1, self.y2])
+ *         return np.array([self.x1, self.y1, self.x2, self.y2])
  * 
  */
 
@@ -3717,8 +6540,8 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_10as_np(struct __pyx_obj_7eas
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("as_np", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_as_np(__pyx_v_self, 1); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_1, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7easyvec_7vectors_real, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_as_np(__pyx_v_self, 1); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_t_1, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7easyvec_7vectors_real, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7easyvec_7vectors_real, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
   __pyx_t_1.memview = NULL;
@@ -3739,11 +6562,11 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_10as_np(struct __pyx_obj_7eas
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":37
- *         return np.array([self.x1, self.x2, self.y1, self.y2])
+/* "easyvec/geometry.pyx":138
+ *         return np.array([self.x1, self.y1, self.x2, self.y2])
  * 
  *     cpdef tuple as_tuple(self):             # <<<<<<<<<<<<<<
- *         return (self.x1, self.x2, self.y1, self.y2)
+ *         return (self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3766,7 +6589,7 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_as_tuple(struct __pyx_obj_7eas
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_as_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_13as_tuple)) {
         __Pyx_XDECREF(__pyx_r);
@@ -3783,10 +6606,10 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_as_tuple(struct __pyx_obj_7eas
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyTuple_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 37, __pyx_L1_error)
+        if (!(likely(PyTuple_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 138, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3805,23 +6628,23 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_as_tuple(struct __pyx_obj_7eas
     #endif
   }
 
-  /* "easyvec/geometry.pyx":38
+  /* "easyvec/geometry.pyx":139
  * 
  *     cpdef tuple as_tuple(self):
- *         return (self.x1, self.x2, self.y1, self.y2)             # <<<<<<<<<<<<<<
+ *         return (self.x1, self.y1, self.x2, self.y2)             # <<<<<<<<<<<<<<
  * 
  *     def __getitem__(self, key) -> real:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -3839,11 +6662,11 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_as_tuple(struct __pyx_obj_7eas
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":37
- *         return np.array([self.x1, self.x2, self.y1, self.y2])
+  /* "easyvec/geometry.pyx":138
+ *         return np.array([self.x1, self.y1, self.x2, self.y2])
  * 
  *     cpdef tuple as_tuple(self):             # <<<<<<<<<<<<<<
- *         return (self.x1, self.x2, self.y1, self.y2)
+ *         return (self.x1, self.y1, self.x2, self.y2)
  * 
  */
 
@@ -3882,7 +6705,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_12as_tuple(struct __pyx_obj_7
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("as_tuple", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_as_tuple(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_as_tuple(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3899,8 +6722,8 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_12as_tuple(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":40
- *         return (self.x1, self.x2, self.y1, self.y2)
+/* "easyvec/geometry.pyx":141
+ *         return (self.x1, self.y1, self.x2, self.y2)
  * 
  *     def __getitem__(self, key) -> real:             # <<<<<<<<<<<<<<
  *         if key == 0:
@@ -3928,34 +6751,34 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_14__getitem__(struct __pyx_ob
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__getitem__", 0);
 
-  /* "easyvec/geometry.pyx":41
+  /* "easyvec/geometry.pyx":142
  * 
  *     def __getitem__(self, key) -> real:
  *         if key == 0:             # <<<<<<<<<<<<<<
  *             return self.x1
  *         elif key == 1:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":42
+    /* "easyvec/geometry.pyx":143
  *     def __getitem__(self, key) -> real:
  *         if key == 0:
  *             return self.x1             # <<<<<<<<<<<<<<
  *         elif key == 1:
- *             return self.x2
+ *             return self.y1
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":41
+    /* "easyvec/geometry.pyx":142
  * 
  *     def __getitem__(self, key) -> real:
  *         if key == 0:             # <<<<<<<<<<<<<<
@@ -3964,267 +6787,267 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_14__getitem__(struct __pyx_ob
  */
   }
 
-  /* "easyvec/geometry.pyx":43
+  /* "easyvec/geometry.pyx":144
  *         if key == 0:
  *             return self.x1
  *         elif key == 1:             # <<<<<<<<<<<<<<
- *             return self.x2
+ *             return self.y1
  *         elif key == 2:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":44
+    /* "easyvec/geometry.pyx":145
  *             return self.x1
  *         elif key == 1:
- *             return self.x2             # <<<<<<<<<<<<<<
+ *             return self.y1             # <<<<<<<<<<<<<<
  *         elif key == 2:
- *             return self.y1
+ *             return self.x2
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":43
+    /* "easyvec/geometry.pyx":144
  *         if key == 0:
  *             return self.x1
  *         elif key == 1:             # <<<<<<<<<<<<<<
- *             return self.x2
+ *             return self.y1
  *         elif key == 2:
  */
   }
 
-  /* "easyvec/geometry.pyx":45
+  /* "easyvec/geometry.pyx":146
  *         elif key == 1:
- *             return self.x2
- *         elif key == 2:             # <<<<<<<<<<<<<<
  *             return self.y1
+ *         elif key == 2:             # <<<<<<<<<<<<<<
+ *             return self.x2
  *         elif key == 3:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":46
- *             return self.x2
+    /* "easyvec/geometry.pyx":147
+ *             return self.y1
  *         elif key == 2:
- *             return self.y1             # <<<<<<<<<<<<<<
+ *             return self.x2             # <<<<<<<<<<<<<<
  *         elif key == 3:
  *             return self.y2
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":45
+    /* "easyvec/geometry.pyx":146
  *         elif key == 1:
- *             return self.x2
- *         elif key == 2:             # <<<<<<<<<<<<<<
  *             return self.y1
+ *         elif key == 2:             # <<<<<<<<<<<<<<
+ *             return self.x2
  *         elif key == 3:
  */
   }
 
-  /* "easyvec/geometry.pyx":47
+  /* "easyvec/geometry.pyx":148
  *         elif key == 2:
- *             return self.y1
+ *             return self.x2
  *         elif key == 3:             # <<<<<<<<<<<<<<
  *             return self.y2
  *         elif key =='x1':
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":48
- *             return self.y1
+    /* "easyvec/geometry.pyx":149
+ *             return self.x2
  *         elif key == 3:
  *             return self.y2             # <<<<<<<<<<<<<<
  *         elif key =='x1':
  *             return self.x1
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":47
+    /* "easyvec/geometry.pyx":148
  *         elif key == 2:
- *             return self.y1
+ *             return self.x2
  *         elif key == 3:             # <<<<<<<<<<<<<<
  *             return self.y2
  *         elif key =='x1':
  */
   }
 
-  /* "easyvec/geometry.pyx":49
+  /* "easyvec/geometry.pyx":150
  *         elif key == 3:
  *             return self.y2
  *         elif key =='x1':             # <<<<<<<<<<<<<<
  *             return self.x1
- *         elif key == 'x2':
+ *         elif key == 'y1':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 150, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":50
+    /* "easyvec/geometry.pyx":151
  *             return self.y2
  *         elif key =='x1':
  *             return self.x1             # <<<<<<<<<<<<<<
- *         elif key == 'x2':
- *             return self.x2
+ *         elif key == 'y1':
+ *             return self.y1
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":49
+    /* "easyvec/geometry.pyx":150
  *         elif key == 3:
  *             return self.y2
  *         elif key =='x1':             # <<<<<<<<<<<<<<
  *             return self.x1
- *         elif key == 'x2':
+ *         elif key == 'y1':
  */
   }
 
-  /* "easyvec/geometry.pyx":51
+  /* "easyvec/geometry.pyx":152
  *         elif key =='x1':
  *             return self.x1
- *         elif key == 'x2':             # <<<<<<<<<<<<<<
- *             return self.x2
- *         elif key == 'y1':
+ *         elif key == 'y1':             # <<<<<<<<<<<<<<
+ *             return self.y1
+ *         elif key == 'x2':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 152, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":52
+    /* "easyvec/geometry.pyx":153
  *             return self.x1
- *         elif key == 'x2':
- *             return self.x2             # <<<<<<<<<<<<<<
  *         elif key == 'y1':
- *             return self.y1
+ *             return self.y1             # <<<<<<<<<<<<<<
+ *         elif key == 'x2':
+ *             return self.x2
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":51
+    /* "easyvec/geometry.pyx":152
  *         elif key =='x1':
  *             return self.x1
- *         elif key == 'x2':             # <<<<<<<<<<<<<<
- *             return self.x2
- *         elif key == 'y1':
+ *         elif key == 'y1':             # <<<<<<<<<<<<<<
+ *             return self.y1
+ *         elif key == 'x2':
  */
   }
 
-  /* "easyvec/geometry.pyx":53
- *         elif key == 'x2':
- *             return self.x2
- *         elif key == 'y1':             # <<<<<<<<<<<<<<
+  /* "easyvec/geometry.pyx":154
+ *         elif key == 'y1':
  *             return self.y1
+ *         elif key == 'x2':             # <<<<<<<<<<<<<<
+ *             return self.x2
  *         elif key == 'y2':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 154, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":54
- *             return self.x2
- *         elif key == 'y1':
- *             return self.y1             # <<<<<<<<<<<<<<
+    /* "easyvec/geometry.pyx":155
+ *             return self.y1
+ *         elif key == 'x2':
+ *             return self.x2             # <<<<<<<<<<<<<<
  *         elif key == 'y2':
  *             return self.y2
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":53
- *         elif key == 'x2':
- *             return self.x2
- *         elif key == 'y1':             # <<<<<<<<<<<<<<
+    /* "easyvec/geometry.pyx":154
+ *         elif key == 'y1':
  *             return self.y1
+ *         elif key == 'x2':             # <<<<<<<<<<<<<<
+ *             return self.x2
  *         elif key == 'y2':
  */
   }
 
-  /* "easyvec/geometry.pyx":55
- *         elif key == 'y1':
- *             return self.y1
+  /* "easyvec/geometry.pyx":156
+ *         elif key == 'x2':
+ *             return self.x2
  *         elif key == 'y2':             # <<<<<<<<<<<<<<
  *             return self.y2
  *         raise IndexError(f'      {key}')
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 156, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":56
- *             return self.y1
+    /* "easyvec/geometry.pyx":157
+ *             return self.x2
  *         elif key == 'y2':
  *             return self.y2             # <<<<<<<<<<<<<<
  *         raise IndexError(f'      {key}')
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "easyvec/geometry.pyx":55
- *         elif key == 'y1':
- *             return self.y1
+    /* "easyvec/geometry.pyx":156
+ *         elif key == 'x2':
+ *             return self.x2
  *         elif key == 'y2':             # <<<<<<<<<<<<<<
  *             return self.y2
  *         raise IndexError(f'      {key}')
  */
   }
 
-  /* "easyvec/geometry.pyx":57
+  /* "easyvec/geometry.pyx":158
  *         elif key == 'y2':
  *             return self.y2
  *         raise IndexError(f'      {key}')             # <<<<<<<<<<<<<<
  * 
  *     def __setitem__(self, key, value: real):
  */
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u__3, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u__3, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 57, __pyx_L1_error)
+  __PYX_ERR(0, 158, __pyx_L1_error)
 
-  /* "easyvec/geometry.pyx":40
- *         return (self.x1, self.x2, self.y1, self.y2)
+  /* "easyvec/geometry.pyx":141
+ *         return (self.x1, self.y1, self.x2, self.y2)
  * 
  *     def __getitem__(self, key) -> real:             # <<<<<<<<<<<<<<
  *         if key == 0:
@@ -4243,7 +7066,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_14__getitem__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":59
+/* "easyvec/geometry.pyx":160
  *         raise IndexError(f'      {key}')
  * 
  *     def __setitem__(self, key, value: real):             # <<<<<<<<<<<<<<
@@ -4259,7 +7082,7 @@ static int __pyx_pw_7easyvec_8geometry_4Rect_17__setitem__(PyObject *__pyx_v_sel
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setitem__ (wrapper)", 0);
   assert(__pyx_arg_value); {
-    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 160, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4282,29 +7105,29 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__setitem__", 0);
 
-  /* "easyvec/geometry.pyx":60
+  /* "easyvec/geometry.pyx":161
  * 
  *     def __setitem__(self, key, value: real):
  *         if key == 0:             # <<<<<<<<<<<<<<
  *             self.x1 = <real>value
  *         elif key == 1:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":61
+    /* "easyvec/geometry.pyx":162
  *     def __setitem__(self, key, value: real):
  *         if key == 0:
  *             self.x1 = <real>value             # <<<<<<<<<<<<<<
  *         elif key == 1:
- *             self.x2 = <real>value
+ *             self.y1 = <real>value
  */
     __pyx_v_self->x1 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":60
+    /* "easyvec/geometry.pyx":161
  * 
  *     def __setitem__(self, key, value: real):
  *         if key == 0:             # <<<<<<<<<<<<<<
@@ -4314,85 +7137,85 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":62
+  /* "easyvec/geometry.pyx":163
  *         if key == 0:
  *             self.x1 = <real>value
  *         elif key == 1:             # <<<<<<<<<<<<<<
- *             self.x2 = <real>value
+ *             self.y1 = <real>value
  *         elif key == 2:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":63
+    /* "easyvec/geometry.pyx":164
  *             self.x1 = <real>value
  *         elif key == 1:
- *             self.x2 = <real>value             # <<<<<<<<<<<<<<
- *         elif key == 2:
- *             self.y1 = <real>value
- */
-    __pyx_v_self->x2 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
-
-    /* "easyvec/geometry.pyx":62
- *         if key == 0:
- *             self.x1 = <real>value
- *         elif key == 1:             # <<<<<<<<<<<<<<
- *             self.x2 = <real>value
- *         elif key == 2:
- */
-    goto __pyx_L3;
-  }
-
-  /* "easyvec/geometry.pyx":64
- *         elif key == 1:
- *             self.x2 = <real>value
- *         elif key == 2:             # <<<<<<<<<<<<<<
- *             self.y1 = <real>value
- *         elif key == 3:
- */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_2) {
-
-    /* "easyvec/geometry.pyx":65
- *             self.x2 = <real>value
- *         elif key == 2:
  *             self.y1 = <real>value             # <<<<<<<<<<<<<<
- *         elif key == 3:
- *             self.y2 = <real>value
+ *         elif key == 2:
+ *             self.x2 = <real>value
  */
     __pyx_v_self->y1 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":64
- *         elif key == 1:
- *             self.x2 = <real>value
- *         elif key == 2:             # <<<<<<<<<<<<<<
+    /* "easyvec/geometry.pyx":163
+ *         if key == 0:
+ *             self.x1 = <real>value
+ *         elif key == 1:             # <<<<<<<<<<<<<<
  *             self.y1 = <real>value
+ *         elif key == 2:
+ */
+    goto __pyx_L3;
+  }
+
+  /* "easyvec/geometry.pyx":165
+ *         elif key == 1:
+ *             self.y1 = <real>value
+ *         elif key == 2:             # <<<<<<<<<<<<<<
+ *             self.x2 = <real>value
+ *         elif key == 3:
+ */
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":166
+ *             self.y1 = <real>value
+ *         elif key == 2:
+ *             self.x2 = <real>value             # <<<<<<<<<<<<<<
+ *         elif key == 3:
+ *             self.y2 = <real>value
+ */
+    __pyx_v_self->x2 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
+
+    /* "easyvec/geometry.pyx":165
+ *         elif key == 1:
+ *             self.y1 = <real>value
+ *         elif key == 2:             # <<<<<<<<<<<<<<
+ *             self.x2 = <real>value
  *         elif key == 3:
  */
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":66
+  /* "easyvec/geometry.pyx":167
  *         elif key == 2:
- *             self.y1 = <real>value
+ *             self.x2 = <real>value
  *         elif key == 3:             # <<<<<<<<<<<<<<
  *             self.y2 = <real>value
  *         elif key =='x1':
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_key, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":67
- *             self.y1 = <real>value
+    /* "easyvec/geometry.pyx":168
+ *             self.x2 = <real>value
  *         elif key == 3:
  *             self.y2 = <real>value             # <<<<<<<<<<<<<<
  *         elif key =='x1':
@@ -4400,9 +7223,9 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  */
     __pyx_v_self->y2 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":66
+    /* "easyvec/geometry.pyx":167
  *         elif key == 2:
- *             self.y1 = <real>value
+ *             self.x2 = <real>value
  *         elif key == 3:             # <<<<<<<<<<<<<<
  *             self.y2 = <real>value
  *         elif key =='x1':
@@ -4410,17 +7233,17 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":68
+  /* "easyvec/geometry.pyx":169
  *         elif key == 3:
  *             self.y2 = <real>value
  *         elif key =='x1':             # <<<<<<<<<<<<<<
  *             self.x1 = <real>value
  *         elif key == 'x2':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 169, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":69
+    /* "easyvec/geometry.pyx":170
  *             self.y2 = <real>value
  *         elif key =='x1':
  *             self.x1 = <real>value             # <<<<<<<<<<<<<<
@@ -4429,7 +7252,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  */
     __pyx_v_self->x1 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":68
+    /* "easyvec/geometry.pyx":169
  *         elif key == 3:
  *             self.y2 = <real>value
  *         elif key =='x1':             # <<<<<<<<<<<<<<
@@ -4439,17 +7262,17 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":70
+  /* "easyvec/geometry.pyx":171
  *         elif key =='x1':
  *             self.x1 = <real>value
  *         elif key == 'x2':             # <<<<<<<<<<<<<<
  *             self.x2 = <real>value
  *         elif key == 'y1':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_x2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 171, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":71
+    /* "easyvec/geometry.pyx":172
  *             self.x1 = <real>value
  *         elif key == 'x2':
  *             self.x2 = <real>value             # <<<<<<<<<<<<<<
@@ -4458,7 +7281,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  */
     __pyx_v_self->x2 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":70
+    /* "easyvec/geometry.pyx":171
  *         elif key =='x1':
  *             self.x1 = <real>value
  *         elif key == 'x2':             # <<<<<<<<<<<<<<
@@ -4468,17 +7291,17 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":72
+  /* "easyvec/geometry.pyx":173
  *         elif key == 'x2':
  *             self.x2 = <real>value
  *         elif key == 'y1':             # <<<<<<<<<<<<<<
  *             self.y1 = <real>value
  *         elif key == 'y2':
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y1, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 173, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "easyvec/geometry.pyx":73
+    /* "easyvec/geometry.pyx":174
  *             self.x2 = <real>value
  *         elif key == 'y1':
  *             self.y1 = <real>value             # <<<<<<<<<<<<<<
@@ -4487,7 +7310,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  */
     __pyx_v_self->y1 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":72
+    /* "easyvec/geometry.pyx":173
  *         elif key == 'x2':
  *             self.x2 = <real>value
  *         elif key == 'y1':             # <<<<<<<<<<<<<<
@@ -4497,17 +7320,17 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":74
+  /* "easyvec/geometry.pyx":175
  *         elif key == 'y1':
  *             self.y1 = <real>value
  *         elif key == 'y2':             # <<<<<<<<<<<<<<
  *             self.y2 = <real>value
  *         else:
  */
-  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_key, __pyx_n_u_y2, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
   if (likely(__pyx_t_2)) {
 
-    /* "easyvec/geometry.pyx":75
+    /* "easyvec/geometry.pyx":176
  *             self.y1 = <real>value
  *         elif key == 'y2':
  *             self.y2 = <real>value             # <<<<<<<<<<<<<<
@@ -4516,7 +7339,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  */
     __pyx_v_self->y2 = ((__pyx_t_7easyvec_7vectors_real)__pyx_v_value);
 
-    /* "easyvec/geometry.pyx":74
+    /* "easyvec/geometry.pyx":175
  *         elif key == 'y1':
  *             self.y1 = <real>value
  *         elif key == 'y2':             # <<<<<<<<<<<<<<
@@ -4526,7 +7349,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
     goto __pyx_L3;
   }
 
-  /* "easyvec/geometry.pyx":77
+  /* "easyvec/geometry.pyx":178
  *             self.y2 = <real>value
  *         else:
  *             raise IndexError(f'      {key}')             # <<<<<<<<<<<<<<
@@ -4534,21 +7357,21 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
  *     cpdef list keys(self):
  */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_key, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u__3, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Concat(__pyx_kp_u__3, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_IndexError, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 77, __pyx_L1_error)
+    __PYX_ERR(0, 178, __pyx_L1_error)
   }
   __pyx_L3:;
 
-  /* "easyvec/geometry.pyx":59
+  /* "easyvec/geometry.pyx":160
  *         raise IndexError(f'      {key}')
  * 
  *     def __setitem__(self, key, value: real):             # <<<<<<<<<<<<<<
@@ -4569,11 +7392,11 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_16__setitem__(struct __pyx_obj_7eas
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":79
+/* "easyvec/geometry.pyx":180
  *             raise IndexError(f'      {key}')
  * 
  *     cpdef list keys(self):             # <<<<<<<<<<<<<<
- *         return ['x1', 'x2', 'y1', 'y2']
+ *         return ['x1', 'y1', 'x2', 'y2']
  * 
  */
 
@@ -4595,7 +7418,7 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_keys(CYTHON_UNUSED struct __py
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_keys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_keys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_19keys)) {
         __Pyx_XDECREF(__pyx_r);
@@ -4612,10 +7435,10 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_keys(CYTHON_UNUSED struct __py
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 79, __pyx_L1_error)
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 180, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4634,25 +7457,25 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_keys(CYTHON_UNUSED struct __py
     #endif
   }
 
-  /* "easyvec/geometry.pyx":80
+  /* "easyvec/geometry.pyx":181
  * 
  *     cpdef list keys(self):
- *         return ['x1', 'x2', 'y1', 'y2']             # <<<<<<<<<<<<<<
+ *         return ['x1', 'y1', 'x2', 'y2']             # <<<<<<<<<<<<<<
  * 
  *     def __iter__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_u_x1);
   __Pyx_GIVEREF(__pyx_n_u_x1);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_u_x1);
-  __Pyx_INCREF(__pyx_n_u_x2);
-  __Pyx_GIVEREF(__pyx_n_u_x2);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_u_x2);
   __Pyx_INCREF(__pyx_n_u_y1);
   __Pyx_GIVEREF(__pyx_n_u_y1);
-  PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_u_y1);
+  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_u_y1);
+  __Pyx_INCREF(__pyx_n_u_x2);
+  __Pyx_GIVEREF(__pyx_n_u_x2);
+  PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_u_x2);
   __Pyx_INCREF(__pyx_n_u_y2);
   __Pyx_GIVEREF(__pyx_n_u_y2);
   PyList_SET_ITEM(__pyx_t_1, 3, __pyx_n_u_y2);
@@ -4660,11 +7483,11 @@ static PyObject *__pyx_f_7easyvec_8geometry_4Rect_keys(CYTHON_UNUSED struct __py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":79
+  /* "easyvec/geometry.pyx":180
  *             raise IndexError(f'      {key}')
  * 
  *     cpdef list keys(self):             # <<<<<<<<<<<<<<
- *         return ['x1', 'x2', 'y1', 'y2']
+ *         return ['x1', 'y1', 'x2', 'y2']
  * 
  */
 
@@ -4702,7 +7525,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_18keys(struct __pyx_obj_7easy
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("keys", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_keys(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_4Rect_keys(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4719,8 +7542,8 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_18keys(struct __pyx_obj_7easy
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pyx":82
- *         return ['x1', 'x2', 'y1', 'y2']
+/* "easyvec/geometry.pyx":183
+ *         return ['x1', 'y1', 'x2', 'y2']
  * 
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self.get_generator()
@@ -4748,7 +7571,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_20__iter__(struct __pyx_obj_7
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__iter__", 0);
 
-  /* "easyvec/geometry.pyx":83
+  /* "easyvec/geometry.pyx":184
  * 
  *     def __iter__(self):
  *         return self.get_generator()             # <<<<<<<<<<<<<<
@@ -4756,7 +7579,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_20__iter__(struct __pyx_obj_7
  *     def get_generator(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_generator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_generator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4770,15 +7593,15 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_20__iter__(struct __pyx_obj_7
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "easyvec/geometry.pyx":82
- *         return ['x1', 'x2', 'y1', 'y2']
+  /* "easyvec/geometry.pyx":183
+ *         return ['x1', 'y1', 'x2', 'y2']
  * 
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self.get_generator()
@@ -4799,12 +7622,12 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_20__iter__(struct __pyx_obj_7
 }
 static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "easyvec/geometry.pyx":85
+/* "easyvec/geometry.pyx":186
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
  *         yield self.x1
- *         yield self.x2
+ *         yield self.y1
  */
 
 /* Python wrapper */
@@ -4830,7 +7653,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_22get_generator(struct __pyx_
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_7easyvec_8geometry___pyx_scope_struct__get_generator *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 85, __pyx_L1_error)
+    __PYX_ERR(0, 186, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -4838,7 +7661,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_22get_generator(struct __pyx_
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_7easyvec_8geometry_4Rect_24generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_generator, __pyx_n_s_Rect_get_generator, __pyx_n_s_easyvec_geometry); if (unlikely(!gen)) __PYX_ERR(0, 85, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_7easyvec_8geometry_4Rect_24generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_generator, __pyx_n_s_Rect_get_generator, __pyx_n_s_easyvec_geometry); if (unlikely(!gen)) __PYX_ERR(0, 186, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -4872,16 +7695,16 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 186, __pyx_L1_error)
 
-  /* "easyvec/geometry.pyx":86
+  /* "easyvec/geometry.pyx":187
  * 
  *     def get_generator(self):
  *         yield self.x1             # <<<<<<<<<<<<<<
- *         yield self.x2
  *         yield self.y1
+ *         yield self.x2
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4892,16 +7715,16 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 1;
   return __pyx_r;
   __pyx_L4_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 86, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 187, __pyx_L1_error)
 
-  /* "easyvec/geometry.pyx":87
+  /* "easyvec/geometry.pyx":188
  *     def get_generator(self):
  *         yield self.x1
- *         yield self.x2             # <<<<<<<<<<<<<<
- *         yield self.y1
+ *         yield self.y1             # <<<<<<<<<<<<<<
+ *         yield self.x2
  *         yield self.y2
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4912,15 +7735,16 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 2;
   return __pyx_r;
   __pyx_L5_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 188, __pyx_L1_error)
 
-  /* "easyvec/geometry.pyx":88
+  /* "easyvec/geometry.pyx":189
  *         yield self.x1
- *         yield self.x2
- *         yield self.y1             # <<<<<<<<<<<<<<
+ *         yield self.y1
+ *         yield self.x2             # <<<<<<<<<<<<<<
  *         yield self.y2
+ * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4931,14 +7755,16 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 3;
   return __pyx_r;
   __pyx_L6_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 88, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 189, __pyx_L1_error)
 
-  /* "easyvec/geometry.pyx":89
- *         yield self.x2
+  /* "easyvec/geometry.pyx":190
  *         yield self.y1
+ *         yield self.x2
  *         yield self.y2             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef bint is_null(self):
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4949,15 +7775,15 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
   __pyx_generator->resume_label = 4;
   return __pyx_r;
   __pyx_L7_resume_from_yield:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 89, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 190, __pyx_L1_error)
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "easyvec/geometry.pyx":85
+  /* "easyvec/geometry.pyx":186
  *         return self.get_generator()
  * 
  *     def get_generator(self):             # <<<<<<<<<<<<<<
  *         yield self.x1
- *         yield self.x2
+ *         yield self.y1
  */
 
   /* function exit code */
@@ -4977,7 +7803,2873 @@ static PyObject *__pyx_gb_7easyvec_8geometry_4Rect_24generator(__pyx_CoroutineOb
   return __pyx_r;
 }
 
-/* "easyvec/geometry.pxd":4
+/* "easyvec/geometry.pyx":192
+ *         yield self.y2
+ * 
+ *     cpdef bint is_null(self):             # <<<<<<<<<<<<<<
+ *         return fabs(self.x1) < CMP_TOL and fabs(self.y1) < CMP_TOL and \
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_26is_null(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_null(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  __Pyx_RefNannySetupContext("is_null", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_null); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_26is_null)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 192, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_5;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":193
+ * 
+ *     cpdef bint is_null(self):
+ *         return fabs(self.x1) < CMP_TOL and fabs(self.y1) < CMP_TOL and \             # <<<<<<<<<<<<<<
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL
+ * 
+ */
+  __pyx_t_6 = ((fabs(__pyx_v_self->x1) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_6 = ((fabs(__pyx_v_self->y1) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+
+  /* "easyvec/geometry.pyx":194
+ *     cpdef bint is_null(self):
+ *         return fabs(self.x1) < CMP_TOL and fabs(self.y1) < CMP_TOL and \
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef bint is_in(self, Vec2 p):
+ */
+  __pyx_t_6 = ((fabs(__pyx_v_self->x2) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_6 = ((fabs(__pyx_v_self->y2) < __pyx_v_7easyvec_7vectors_CMP_TOL) != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L3_bool_binop_done:;
+  __pyx_r = __pyx_t_5;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":192
+ *         yield self.y2
+ * 
+ *     cpdef bint is_null(self):             # <<<<<<<<<<<<<<
+ *         return fabs(self.x1) < CMP_TOL and fabs(self.y1) < CMP_TOL and \
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_null", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_26is_null(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_25is_null[] = "Rect.is_null(self) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_26is_null(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_null (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_25is_null(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25is_null(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_null", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_null(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_null", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":196
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL
+ * 
+ *     cpdef bint is_in(self, Vec2 p):             # <<<<<<<<<<<<<<
+ *         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_28is_in(PyObject *__pyx_v_self, PyObject *__pyx_v_p); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_in(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("is_in", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_in); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_28is_in)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_p)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_p));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_5;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":197
+ * 
+ *     cpdef bint is_in(self, Vec2 p):
+ *         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2):
+ */
+  __pyx_t_6 = (__pyx_v_self->x1 <= __pyx_v_p->x);
+  if (__pyx_t_6) {
+    __pyx_t_6 = (__pyx_v_p->x <= __pyx_v_self->x2);
+  }
+  __pyx_t_7 = (__pyx_t_6 != 0);
+  if (__pyx_t_7) {
+  } else {
+    __pyx_t_5 = __pyx_t_7;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_7 = (__pyx_v_self->y1 <= __pyx_v_p->y);
+  if (__pyx_t_7) {
+    __pyx_t_7 = (__pyx_v_p->y <= __pyx_v_self->y2);
+  }
+  __pyx_t_6 = (__pyx_t_7 != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L3_bool_binop_done:;
+  __pyx_r = __pyx_t_5;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":196
+ *                fabs(self.x2) < CMP_TOL and fabs(self.y2) < CMP_TOL
+ * 
+ *     cpdef bint is_in(self, Vec2 p):             # <<<<<<<<<<<<<<
+ *         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_in", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_28is_in(PyObject *__pyx_v_self, PyObject *__pyx_v_p); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_27is_in[] = "Rect.is_in(self, Vec2 p) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_28is_in(PyObject *__pyx_v_self, PyObject *__pyx_v_p) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_in (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p", 0))) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_27is_in(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_p));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_27is_in(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_in", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_in(__pyx_v_self, __pyx_v_p, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":199
+ *         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)
+ * 
+ *     cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         pass
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_30is_cross_seg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_seg(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("is_cross_seg", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_cross_seg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_30is_cross_seg)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        __pyx_t_5 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+            __pyx_t_5 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (PyFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        {
+          __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 199, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          if (__pyx_t_4) {
+            __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
+          }
+          __Pyx_INCREF(((PyObject *)__pyx_v_p1));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p1));
+          PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_5, ((PyObject *)__pyx_v_p1));
+          __Pyx_INCREF(((PyObject *)__pyx_v_p2));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p2));
+          PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, ((PyObject *)__pyx_v_p2));
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        }
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 199, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_7;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":200
+ * 
+ *     cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2):
+ *         pass             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2):
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_cross_seg", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":199
+ *         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)
+ * 
+ *     cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         pass
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_30is_cross_seg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_29is_cross_seg[] = "Rect.is_cross_seg(self, Vec2 p1, Vec2 p2) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_30is_cross_seg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_cross_seg (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_p1,&__pyx_n_s_p2,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_cross_seg", 1, 2, 2, 1); __PYX_ERR(0, 199, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_cross_seg") < 0)) __PYX_ERR(0, 199, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_cross_seg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 199, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) __PYX_ERR(0, 199, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_29is_cross_seg(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_29is_cross_seg(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_cross_seg", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_cross_seg(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_seg", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":202
+ *         pass
+ * 
+ *     cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         pass
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_32is_cross_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_ray(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, CYTHON_UNUSED struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("is_cross_ray", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_cross_ray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 202, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_32is_cross_ray)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        __pyx_t_5 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+            __pyx_t_5 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (PyFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        {
+          __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 202, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          if (__pyx_t_4) {
+            __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
+          }
+          __Pyx_INCREF(((PyObject *)__pyx_v_p1));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p1));
+          PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_5, ((PyObject *)__pyx_v_p1));
+          __Pyx_INCREF(((PyObject *)__pyx_v_p2));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p2));
+          PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, ((PyObject *)__pyx_v_p2));
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        }
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 202, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_7;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":203
+ * 
+ *     cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2):
+ *         pass             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_cross_ray", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":202
+ *         pass
+ * 
+ *     cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         pass
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_32is_cross_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_31is_cross_ray[] = "Rect.is_cross_ray(self, Vec2 p1, Vec2 p2) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_32is_cross_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_cross_ray (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_p1,&__pyx_n_s_p2,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_cross_ray", 1, 2, 2, 1); __PYX_ERR(0, 202, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_cross_ray") < 0)) __PYX_ERR(0, 202, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_cross_ray", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 202, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_ray", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) __PYX_ERR(0, 202, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_31is_cross_ray(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_31is_cross_ray(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_cross_ray", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_cross_ray(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_ray", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":205
+ *         pass
+ * 
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         if p1.is_eq(p2):
+ *             return 0
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_34is_cross_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_cross_line(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("is_cross_line", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_cross_line); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_34is_cross_line)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        __pyx_t_5 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+            __pyx_t_5 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (PyFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_4, ((PyObject *)__pyx_v_p1), ((PyObject *)__pyx_v_p2)};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+        } else
+        #endif
+        {
+          __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 205, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          if (__pyx_t_4) {
+            __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
+          }
+          __Pyx_INCREF(((PyObject *)__pyx_v_p1));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p1));
+          PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_5, ((PyObject *)__pyx_v_p1));
+          __Pyx_INCREF(((PyObject *)__pyx_v_p2));
+          __Pyx_GIVEREF(((PyObject *)__pyx_v_p2));
+          PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, ((PyObject *)__pyx_v_p2));
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        }
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 205, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_7;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":206
+ * 
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):
+ *         if p1.is_eq(p2):             # <<<<<<<<<<<<<<
+ *             return 0
+ * 
+ */
+  __pyx_t_7 = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p1->__pyx_vtab)->is_eq(__pyx_v_p1, __pyx_v_p2, 0) != 0);
+  if (__pyx_t_7) {
+
+    /* "easyvec/geometry.pyx":207
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):
+ *         if p1.is_eq(p2):
+ *             return 0             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef real area(self):
+ */
+    __pyx_r = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":206
+ * 
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):
+ *         if p1.is_eq(p2):             # <<<<<<<<<<<<<<
+ *             return 0
+ * 
+ */
+  }
+
+  /* "easyvec/geometry.pyx":205
+ *         pass
+ * 
+ *     cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):             # <<<<<<<<<<<<<<
+ *         if p1.is_eq(p2):
+ *             return 0
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_cross_line", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_34is_cross_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_33is_cross_line[] = "Rect.is_cross_line(self, Vec2 p1, Vec2 p2) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_34is_cross_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_cross_line (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_p1,&__pyx_n_s_p2,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("is_cross_line", 1, 2, 2, 1); __PYX_ERR(0, 205, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_cross_line") < 0)) __PYX_ERR(0, 205, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_cross_line", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 205, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) __PYX_ERR(0, 205, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_33is_cross_line(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_33is_cross_line(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_cross_line", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_cross_line(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_cross_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":209
+ *             return 0
+ * 
+ *     cpdef real area(self):             # <<<<<<<<<<<<<<
+ *         return (self.x2 - self.x1) * (self.y2 - self.y1)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_36area(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_4Rect_area(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_5;
+  __Pyx_RefNannySetupContext("area", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_area); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_36area)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_5;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":210
+ * 
+ *     cpdef real area(self):
+ *         return (self.x2 - self.x1) * (self.y2 - self.y1)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef real perimeter(self):
+ */
+  __pyx_r = ((__pyx_v_self->x2 - __pyx_v_self->x1) * (__pyx_v_self->y2 - __pyx_v_self->y1));
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":209
+ *             return 0
+ * 
+ *     cpdef real area(self):             # <<<<<<<<<<<<<<
+ *         return (self.x2 - self.x1) * (self.y2 - self.y1)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.area", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_36area(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_35area[] = "Rect.area(self) -> real";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_36area(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("area (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_35area(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_35area(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("area", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8geometry_4Rect_area(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.area", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":212
+ *         return (self.x2 - self.x1) * (self.y2 - self.y1)
+ * 
+ *     cpdef real perimeter(self):             # <<<<<<<<<<<<<<
+ *         return 2*(self.x2 - self.x1 + self.y2 - self.y1)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_38perimeter(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_8geometry_4Rect_perimeter(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_5;
+  __Pyx_RefNannySetupContext("perimeter", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_perimeter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_38perimeter)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_5;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":213
+ * 
+ *     cpdef real perimeter(self):
+ *         return 2*(self.x2 - self.x1 + self.y2 - self.y1)             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __pyx_r = (2.0 * (((__pyx_v_self->x2 - __pyx_v_self->x1) + __pyx_v_self->y2) - __pyx_v_self->y1));
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":212
+ *         return (self.x2 - self.x1) * (self.y2 - self.y1)
+ * 
+ *     cpdef real perimeter(self):             # <<<<<<<<<<<<<<
+ *         return 2*(self.x2 - self.x1 + self.y2 - self.y1)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.perimeter", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_38perimeter(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_37perimeter[] = "Rect.perimeter(self) -> real";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_38perimeter(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("perimeter (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_37perimeter(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_37perimeter(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("perimeter", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_7easyvec_8geometry_4Rect_perimeter(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.perimeter", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":216
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef bint is_intersect(self, Rect other):             # <<<<<<<<<<<<<<
+ *         return (self.x1 <= other.x2) and (self.x2 >= other.x1) \
+ *            and (self.y1 <= other.y2) and (self.y2 >= other.y2)
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_40is_intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static int __pyx_f_7easyvec_8geometry_4Rect_is_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  __Pyx_RefNannySetupContext("is_intersect", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_is_intersect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_40is_intersect)) {
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_other)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_other));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_r = __pyx_t_5;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":217
+ *     @cython.nonecheck(False)
+ *     cpdef bint is_intersect(self, Rect other):
+ *         return (self.x1 <= other.x2) and (self.x2 >= other.x1) \             # <<<<<<<<<<<<<<
+ *            and (self.y1 <= other.y2) and (self.y2 >= other.y2)
+ * 
+ */
+  __pyx_t_6 = ((__pyx_v_self->x1 <= __pyx_v_other->x2) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+
+  /* "easyvec/geometry.pyx":218
+ *     cpdef bint is_intersect(self, Rect other):
+ *         return (self.x1 <= other.x2) and (self.x2 >= other.x1) \
+ *            and (self.y1 <= other.y2) and (self.y2 >= other.y2)             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __pyx_t_6 = ((__pyx_v_self->x2 >= __pyx_v_other->x1) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_6 = ((__pyx_v_self->y1 <= __pyx_v_other->y2) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_6 = ((__pyx_v_self->y2 >= __pyx_v_other->y2) != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L3_bool_binop_done:;
+  __pyx_r = __pyx_t_5;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":216
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef bint is_intersect(self, Rect other):             # <<<<<<<<<<<<<<
+ *         return (self.x1 <= other.x2) and (self.x2 >= other.x1) \
+ *            and (self.y1 <= other.y2) and (self.y2 >= other.y2)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_WriteUnraisable("easyvec.geometry.Rect.is_intersect", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_40is_intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_39is_intersect[] = "Rect.is_intersect(self, Rect other) -> bool";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_40is_intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_intersect (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_other), __pyx_ptype_7easyvec_8geometry_Rect, 1, "other", 0))) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_39is_intersect(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_other));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_39is_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("is_intersect", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_f_7easyvec_8geometry_4Rect_is_intersect(__pyx_v_self, __pyx_v_other, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.is_intersect", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":221
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect intersect(self, Rect other):             # <<<<<<<<<<<<<<
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_42intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx2;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny2;
+  struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  PyObject *__pyx_t_7 = NULL;
+  __Pyx_RefNannySetupContext("intersect", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_intersect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_42intersect)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_other)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_other));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 221, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":222
+ *     @cython.nonecheck(False)
+ *     cpdef Rect intersect(self, Rect other):
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):             # <<<<<<<<<<<<<<
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ */
+  __pyx_t_6 = (((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->is_null(__pyx_v_self, 0) != 0);
+  if (!__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_6 = (((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_other->__pyx_vtab)->is_null(__pyx_v_other, 0) != 0);
+  if (!__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_6 = ((!(((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->is_intersect(__pyx_v_self, __pyx_v_other, 0) != 0)) != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_5) {
+
+    /* "easyvec/geometry.pyx":223
+ *     cpdef Rect intersect(self, Rect other):
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):
+ *             return Rect(0.0, 0.0, 0.0, 0.0)             # <<<<<<<<<<<<<<
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ *         cdef real ny1 = fmax(self.y1, other.y1)
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_1);
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":222
+ *     @cython.nonecheck(False)
+ *     cpdef Rect intersect(self, Rect other):
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):             # <<<<<<<<<<<<<<
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ */
+  }
+
+  /* "easyvec/geometry.pyx":224
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ *         cdef real nx1 = fmax(self.x1, other.x1)             # <<<<<<<<<<<<<<
+ *         cdef real ny1 = fmax(self.y1, other.y1)
+ *         cdef real nx2 = fmin(self.x2, other.x2)
+ */
+  __pyx_v_nx1 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->x1, __pyx_v_other->x1, 0);
+
+  /* "easyvec/geometry.pyx":225
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ *         cdef real ny1 = fmax(self.y1, other.y1)             # <<<<<<<<<<<<<<
+ *         cdef real nx2 = fmin(self.x2, other.x2)
+ *         cdef real ny2 = fmin(self.y2, other.y2)
+ */
+  __pyx_v_ny1 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->y1, __pyx_v_other->y1, 0);
+
+  /* "easyvec/geometry.pyx":226
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ *         cdef real ny1 = fmax(self.y1, other.y1)
+ *         cdef real nx2 = fmin(self.x2, other.x2)             # <<<<<<<<<<<<<<
+ *         cdef real ny2 = fmin(self.y2, other.y2)
+ *         return Rect(nx1, ny1, nx2, ny2)
+ */
+  __pyx_v_nx2 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->x2, __pyx_v_other->x2, 0);
+
+  /* "easyvec/geometry.pyx":227
+ *         cdef real ny1 = fmax(self.y1, other.y1)
+ *         cdef real nx2 = fmin(self.x2, other.x2)
+ *         cdef real ny2 = fmin(self.y2, other.y2)             # <<<<<<<<<<<<<<
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ */
+  __pyx_v_ny2 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->y2, __pyx_v_other->y2, 0);
+
+  /* "easyvec/geometry.pyx":228
+ *         cdef real nx2 = fmin(self.x2, other.x2)
+ *         cdef real ny2 = fmin(self.y2, other.y2)
+ *         return Rect(nx1, ny1, nx2, ny2)             # <<<<<<<<<<<<<<
+ * 
+ *     def __mul__(r1, r2):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_nx1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_ny1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_nx2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ny2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_7 = PyTuple_New(4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_7, 3, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_4);
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":221
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect intersect(self, Rect other):             # <<<<<<<<<<<<<<
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):
+ *             return Rect(0.0, 0.0, 0.0, 0.0)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.intersect", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_42intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_41intersect[] = "Rect.intersect(self, Rect other) -> Rect";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_42intersect(PyObject *__pyx_v_self, PyObject *__pyx_v_other) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("intersect (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_other), __pyx_ptype_7easyvec_8geometry_Rect, 1, "other", 0))) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_41intersect(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_other));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_41intersect(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("intersect", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_intersect(__pyx_v_self, __pyx_v_other, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.intersect", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":230
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ *     def __mul__(r1, r2):             # <<<<<<<<<<<<<<
+ *         if isinstance(r1, Rect) and isinstance(r2, Rect):
+ *             return (<Rect>r1).intersect(<Rect>r2)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_44__mul__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_44__mul__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__mul__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_43__mul__(((PyObject *)__pyx_v_r1), ((PyObject *)__pyx_v_r2));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_43__mul__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  Py_ssize_t __pyx_t_5;
+  Py_UCS4 __pyx_t_6;
+  PyObject *__pyx_t_7 = NULL;
+  __Pyx_RefNannySetupContext("__mul__", 0);
+
+  /* "easyvec/geometry.pyx":231
+ * 
+ *     def __mul__(r1, r2):
+ *         if isinstance(r1, Rect) and isinstance(r2, Rect):             # <<<<<<<<<<<<<<
+ *             return (<Rect>r1).intersect(<Rect>r2)
+ *         else:
+ */
+  __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_r1, __pyx_ptype_7easyvec_8geometry_Rect); 
+  __pyx_t_3 = (__pyx_t_2 != 0);
+  if (__pyx_t_3) {
+  } else {
+    __pyx_t_1 = __pyx_t_3;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_TypeCheck(__pyx_v_r2, __pyx_ptype_7easyvec_8geometry_Rect); 
+  __pyx_t_2 = (__pyx_t_3 != 0);
+  __pyx_t_1 = __pyx_t_2;
+  __pyx_L4_bool_binop_done:;
+  if (likely(__pyx_t_1)) {
+
+    /* "easyvec/geometry.pyx":232
+ *     def __mul__(r1, r2):
+ *         if isinstance(r1, Rect) and isinstance(r2, Rect):
+ *             return (<Rect>r1).intersect(<Rect>r2)             # <<<<<<<<<<<<<<
+ *         else:
+ *             raise ValueError(f'   {r1}  {r2}')
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1)->__pyx_vtab)->intersect(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1), ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r2), 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_r = __pyx_t_4;
+    __pyx_t_4 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":231
+ * 
+ *     def __mul__(r1, r2):
+ *         if isinstance(r1, Rect) and isinstance(r2, Rect):             # <<<<<<<<<<<<<<
+ *             return (<Rect>r1).intersect(<Rect>r2)
+ *         else:
+ */
+  }
+
+  /* "easyvec/geometry.pyx":234
+ *             return (<Rect>r1).intersect(<Rect>r2)
+ *         else:
+ *             raise ValueError(f'   {r1}  {r2}')             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  /*else*/ {
+    __pyx_t_4 = PyTuple_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_5 = 0;
+    __pyx_t_6 = 127;
+    __Pyx_INCREF(__pyx_kp_u__5);
+    __pyx_t_6 = (65535 > __pyx_t_6) ? 65535 : __pyx_t_6;
+    __pyx_t_5 += 29;
+    __Pyx_GIVEREF(__pyx_kp_u__5);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_u__5);
+    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_r1, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __Pyx_INCREF(__pyx_kp_u__6);
+    __pyx_t_6 = (65535 > __pyx_t_6) ? 65535 : __pyx_t_6;
+    __pyx_t_5 += 3;
+    __Pyx_GIVEREF(__pyx_kp_u__6);
+    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_u__6);
+    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_r2, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_4, 4, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __PYX_ERR(0, 234, __pyx_L1_error)
+  }
+
+  /* "easyvec/geometry.pyx":230
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ *     def __mul__(r1, r2):             # <<<<<<<<<<<<<<
+ *         if isinstance(r1, Rect) and isinstance(r2, Rect):
+ *             return (<Rect>r1).intersect(<Rect>r2)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.__mul__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":237
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union(self, Rect other):             # <<<<<<<<<<<<<<
+ *         if other.is_null():
+ *             return self.copy()
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_46union(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx2;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny2;
+  struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
+  __Pyx_RefNannySetupContext("union", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_union); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_46union)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_other)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_other));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 237, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":238
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union(self, Rect other):
+ *         if other.is_null():             # <<<<<<<<<<<<<<
+ *             return self.copy()
+ *         if self.is_null():
+ */
+  __pyx_t_5 = (((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_other->__pyx_vtab)->is_null(__pyx_v_other, 0) != 0);
+  if (__pyx_t_5) {
+
+    /* "easyvec/geometry.pyx":239
+ *     cpdef Rect union(self, Rect other):
+ *         if other.is_null():
+ *             return self.copy()             # <<<<<<<<<<<<<<
+ *         if self.is_null():
+ *             return other.copy()
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->copy(__pyx_v_self, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_1);
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":238
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union(self, Rect other):
+ *         if other.is_null():             # <<<<<<<<<<<<<<
+ *             return self.copy()
+ *         if self.is_null():
+ */
+  }
+
+  /* "easyvec/geometry.pyx":240
+ *         if other.is_null():
+ *             return self.copy()
+ *         if self.is_null():             # <<<<<<<<<<<<<<
+ *             return other.copy()
+ * 
+ */
+  __pyx_t_5 = (((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->is_null(__pyx_v_self, 0) != 0);
+  if (__pyx_t_5) {
+
+    /* "easyvec/geometry.pyx":241
+ *             return self.copy()
+ *         if self.is_null():
+ *             return other.copy()             # <<<<<<<<<<<<<<
+ * 
+ *         cdef real nx1 = fmin(self.x1, other.x1)
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_other->__pyx_vtab)->copy(__pyx_v_other, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_1);
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":240
+ *         if other.is_null():
+ *             return self.copy()
+ *         if self.is_null():             # <<<<<<<<<<<<<<
+ *             return other.copy()
+ * 
+ */
+  }
+
+  /* "easyvec/geometry.pyx":243
+ *             return other.copy()
+ * 
+ *         cdef real nx1 = fmin(self.x1, other.x1)             # <<<<<<<<<<<<<<
+ *         cdef real ny1 = fmin(self.y1, other.y1)
+ *         cdef real nx2 = fmax(self.x2, other.x2)
+ */
+  __pyx_v_nx1 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->x1, __pyx_v_other->x1, 0);
+
+  /* "easyvec/geometry.pyx":244
+ * 
+ *         cdef real nx1 = fmin(self.x1, other.x1)
+ *         cdef real ny1 = fmin(self.y1, other.y1)             # <<<<<<<<<<<<<<
+ *         cdef real nx2 = fmax(self.x2, other.x2)
+ *         cdef real ny2 = fmax(self.y2, other.y2)
+ */
+  __pyx_v_ny1 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->y1, __pyx_v_other->y1, 0);
+
+  /* "easyvec/geometry.pyx":245
+ *         cdef real nx1 = fmin(self.x1, other.x1)
+ *         cdef real ny1 = fmin(self.y1, other.y1)
+ *         cdef real nx2 = fmax(self.x2, other.x2)             # <<<<<<<<<<<<<<
+ *         cdef real ny2 = fmax(self.y2, other.y2)
+ *         return Rect(nx1, ny1, nx2, ny2)
+ */
+  __pyx_v_nx2 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->x2, __pyx_v_other->x2, 0);
+
+  /* "easyvec/geometry.pyx":246
+ *         cdef real ny1 = fmin(self.y1, other.y1)
+ *         cdef real nx2 = fmax(self.x2, other.x2)
+ *         cdef real ny2 = fmax(self.y2, other.y2)             # <<<<<<<<<<<<<<
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ */
+  __pyx_v_ny2 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->y2, __pyx_v_other->y2, 0);
+
+  /* "easyvec/geometry.pyx":247
+ *         cdef real nx2 = fmax(self.x2, other.x2)
+ *         cdef real ny2 = fmax(self.y2, other.y2)
+ *         return Rect(nx1, ny1, nx2, ny2)             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_nx1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_ny1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_nx2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ny2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_6, 3, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_4);
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":237
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union(self, Rect other):             # <<<<<<<<<<<<<<
+ *         if other.is_null():
+ *             return self.copy()
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_46union(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_45union[] = "Rect.union(self, Rect other) -> Rect";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_46union(PyObject *__pyx_v_self, PyObject *__pyx_v_other) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("union (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_other), __pyx_ptype_7easyvec_8geometry_Rect, 1, "other", 0))) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_45union(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_other));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_45union(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_other) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("union", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_union(__pyx_v_self, __pyx_v_other, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":250
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_vec(self, Vec2 vec):             # <<<<<<<<<<<<<<
+ *         return self.union_point(vec.x, vec.y)
+ * 
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_48union_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union_vec(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("union_vec", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_union_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_48union_vec)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_vec)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_vec));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 250, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 250, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":251
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_vec(self, Vec2 vec):
+ *         return self.union_point(vec.x, vec.y)             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.nonecheck(False)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->union_point(__pyx_v_self, __pyx_v_vec->x, __pyx_v_vec->y, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_1);
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":250
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_vec(self, Vec2 vec):             # <<<<<<<<<<<<<<
+ *         return self.union_point(vec.x, vec.y)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union_vec", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_48union_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_47union_vec[] = "Rect.union_vec(self, Vec2 vec) -> Rect";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_48union_vec(PyObject *__pyx_v_self, PyObject *__pyx_v_vec) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("union_vec (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vec", 0))) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_47union_vec(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_vec));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_47union_vec(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("union_vec", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_union_vec(__pyx_v_self, __pyx_v_vec, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union_vec", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":254
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_point(self, real x, real y):             # <<<<<<<<<<<<<<
+ *         if self.is_null():
+ *             return Rect(x, y, x, y)
+ */
+
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_50union_point(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_f_7easyvec_8geometry_4Rect_union_point(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_skip_dispatch) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny1;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_nx2;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_ny2;
+  struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  int __pyx_t_9;
+  __Pyx_RefNannySetupContext("union_point", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_union_point); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_7easyvec_8geometry_4Rect_50union_point)) {
+        __Pyx_XDECREF(((PyObject *)__pyx_r));
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 254, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_y); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 254, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
+        __pyx_t_7 = 0;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
+          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+          if (likely(__pyx_t_6)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+            __Pyx_INCREF(__pyx_t_6);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_5, function);
+            __pyx_t_7 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (PyFunction_Check(__pyx_t_5)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        } else
+        #endif
+        {
+          __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 254, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_8);
+          if (__pyx_t_6) {
+            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          }
+          __Pyx_GIVEREF(__pyx_t_3);
+          PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+          __Pyx_GIVEREF(__pyx_t_4);
+          PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+          __pyx_t_3 = 0;
+          __pyx_t_4 = 0;
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        }
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7easyvec_8geometry_Rect))))) __PYX_ERR(0, 254, __pyx_L1_error)
+        __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "easyvec/geometry.pyx":255
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_point(self, real x, real y):
+ *         if self.is_null():             # <<<<<<<<<<<<<<
+ *             return Rect(x, y, x, y)
+ *         cdef real nx1 = fmin(self.x1, x)
+ */
+  __pyx_t_9 = (((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)__pyx_v_self->__pyx_vtab)->is_null(__pyx_v_self, 0) != 0);
+  if (__pyx_t_9) {
+
+    /* "easyvec/geometry.pyx":256
+ *     cpdef Rect union_point(self, real x, real y):
+ *         if self.is_null():
+ *             return Rect(x, y, x, y)             # <<<<<<<<<<<<<<
+ *         cdef real nx1 = fmin(self.x1, x)
+ *         cdef real ny1 = fmin(self.y1, y)
+ */
+    __Pyx_XDECREF(((PyObject *)__pyx_r));
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_8 = PyFloat_FromDouble(__pyx_v_y); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __pyx_t_4 = PyTuple_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
+    __Pyx_GIVEREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_8);
+    PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_8);
+    __pyx_t_1 = 0;
+    __pyx_t_2 = 0;
+    __pyx_t_5 = 0;
+    __pyx_t_8 = 0;
+    __pyx_t_8 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_4, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 256, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_8);
+    __pyx_t_8 = 0;
+    goto __pyx_L0;
+
+    /* "easyvec/geometry.pyx":255
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_point(self, real x, real y):
+ *         if self.is_null():             # <<<<<<<<<<<<<<
+ *             return Rect(x, y, x, y)
+ *         cdef real nx1 = fmin(self.x1, x)
+ */
+  }
+
+  /* "easyvec/geometry.pyx":257
+ *         if self.is_null():
+ *             return Rect(x, y, x, y)
+ *         cdef real nx1 = fmin(self.x1, x)             # <<<<<<<<<<<<<<
+ *         cdef real ny1 = fmin(self.y1, y)
+ *         cdef real nx2 = fmax(self.x2, x)
+ */
+  __pyx_v_nx1 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->x1, __pyx_v_x, 0);
+
+  /* "easyvec/geometry.pyx":258
+ *             return Rect(x, y, x, y)
+ *         cdef real nx1 = fmin(self.x1, x)
+ *         cdef real ny1 = fmin(self.y1, y)             # <<<<<<<<<<<<<<
+ *         cdef real nx2 = fmax(self.x2, x)
+ *         cdef real ny2 = fmax(self.y2, y)
+ */
+  __pyx_v_ny1 = __pyx_f_7easyvec_8geometry_fmin(__pyx_v_self->y1, __pyx_v_y, 0);
+
+  /* "easyvec/geometry.pyx":259
+ *         cdef real nx1 = fmin(self.x1, x)
+ *         cdef real ny1 = fmin(self.y1, y)
+ *         cdef real nx2 = fmax(self.x2, x)             # <<<<<<<<<<<<<<
+ *         cdef real ny2 = fmax(self.y2, y)
+ *         return Rect(nx1, ny1, nx2, ny2)
+ */
+  __pyx_v_nx2 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->x2, __pyx_v_x, 0);
+
+  /* "easyvec/geometry.pyx":260
+ *         cdef real ny1 = fmin(self.y1, y)
+ *         cdef real nx2 = fmax(self.x2, x)
+ *         cdef real ny2 = fmax(self.y2, y)             # <<<<<<<<<<<<<<
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ */
+  __pyx_v_ny2 = __pyx_f_7easyvec_8geometry_fmax(__pyx_v_self->y2, __pyx_v_y, 0);
+
+  /* "easyvec/geometry.pyx":261
+ *         cdef real nx2 = fmax(self.x2, x)
+ *         cdef real ny2 = fmax(self.y2, y)
+ *         return Rect(nx1, ny1, nx2, ny2)             # <<<<<<<<<<<<<<
+ * 
+ *     def __sum__(r1, r2):
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_nx1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ny1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_nx2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_ny2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_5);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_2);
+  __pyx_t_8 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_5 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_2);
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* "easyvec/geometry.pyx":254
+ * 
+ *     @cython.nonecheck(False)
+ *     cpdef Rect union_point(self, real x, real y):             # <<<<<<<<<<<<<<
+ *         if self.is_null():
+ *             return Rect(x, y, x, y)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union_point", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_50union_point(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_49union_point[] = "Rect.union_point(self, real x, real y) -> Rect";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_50union_point(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  __pyx_t_7easyvec_7vectors_real __pyx_v_x;
+  __pyx_t_7easyvec_7vectors_real __pyx_v_y;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("union_point (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_x,&__pyx_n_s_y,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_x)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("union_point", 1, 2, 2, 1); __PYX_ERR(0, 254, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "union_point") < 0)) __PYX_ERR(0, 254, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_x = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_x == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 254, __pyx_L3_error)
+    __pyx_v_y = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_y == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 254, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("union_point", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 254, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union_point", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_49union_point(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), __pyx_v_x, __pyx_v_y);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_49union_point(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("union_point", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_union_point(__pyx_v_self, __pyx_v_x, __pyx_v_y, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.union_point", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pyx":263
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ *     def __sum__(r1, r2):             # <<<<<<<<<<<<<<
+ *         if isinstance(r1, Rect):
+ *             if isinstance(r2, Rect):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_52__sum__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_51__sum__[] = "Rect.__sum__(r1, r2)";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_52__sum__(PyObject *__pyx_v_r1, PyObject *__pyx_v_r2) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__sum__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_51__sum__(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1), ((PyObject *)__pyx_v_r2));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_51__sum__(struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_r1, PyObject *__pyx_v_r2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_6;
+  __pyx_t_7easyvec_7vectors_real __pyx_t_7;
+  Py_ssize_t __pyx_t_8;
+  Py_UCS4 __pyx_t_9;
+  __Pyx_RefNannySetupContext("__sum__", 0);
+
+  /* "easyvec/geometry.pyx":264
+ * 
+ *     def __sum__(r1, r2):
+ *         if isinstance(r1, Rect):             # <<<<<<<<<<<<<<
+ *             if isinstance(r2, Rect):
+ *                 return (<Rect>r1).union(<Rect>r2)
+ */
+  __pyx_t_1 = __Pyx_TypeCheck(((PyObject *)__pyx_v_r1), __pyx_ptype_7easyvec_8geometry_Rect); 
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "easyvec/geometry.pyx":265
+ *     def __sum__(r1, r2):
+ *         if isinstance(r1, Rect):
+ *             if isinstance(r2, Rect):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union(<Rect>r2)
+ *             if isinstance(r2, Vec2):
+ */
+    __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_r2, __pyx_ptype_7easyvec_8geometry_Rect); 
+    __pyx_t_1 = (__pyx_t_2 != 0);
+    if (__pyx_t_1) {
+
+      /* "easyvec/geometry.pyx":266
+ *         if isinstance(r1, Rect):
+ *             if isinstance(r2, Rect):
+ *                 return (<Rect>r1).union(<Rect>r2)             # <<<<<<<<<<<<<<
+ *             if isinstance(r2, Vec2):
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1)->__pyx_vtab)->__pyx_union(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1), ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r2), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "easyvec/geometry.pyx":265
+ *     def __sum__(r1, r2):
+ *         if isinstance(r1, Rect):
+ *             if isinstance(r2, Rect):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union(<Rect>r2)
+ *             if isinstance(r2, Vec2):
+ */
+    }
+
+    /* "easyvec/geometry.pyx":267
+ *             if isinstance(r2, Rect):
+ *                 return (<Rect>r1).union(<Rect>r2)
+ *             if isinstance(r2, Vec2):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
+ */
+    __pyx_t_1 = __Pyx_TypeCheck(__pyx_v_r2, __pyx_ptype_7easyvec_7vectors_Vec2); 
+    __pyx_t_2 = (__pyx_t_1 != 0);
+    if (__pyx_t_2) {
+
+      /* "easyvec/geometry.pyx":268
+ *                 return (<Rect>r1).union(<Rect>r2)
+ *             if isinstance(r2, Vec2):
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)             # <<<<<<<<<<<<<<
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
+ *                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1)->__pyx_vtab)->union_vec(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_r2), 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 268, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "easyvec/geometry.pyx":267
+ *             if isinstance(r2, Rect):
+ *                 return (<Rect>r1).union(<Rect>r2)
+ *             if isinstance(r2, Vec2):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
+ */
+    }
+
+    /* "easyvec/geometry.pyx":269
+ *             if isinstance(r2, Vec2):
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))
+ *         raise ValueError(f'   {r1}  {r2}')
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_1 = PyObject_IsInstance(__pyx_v_r2, __pyx_t_4); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 269, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = (__pyx_t_1 != 0);
+    if (!__pyx_t_5) {
+    } else {
+      __pyx_t_2 = __pyx_t_5;
+      goto __pyx_L6_bool_binop_done;
+    }
+    __pyx_t_5 = PyTuple_Check(__pyx_v_r2); 
+    __pyx_t_1 = (__pyx_t_5 != 0);
+    if (!__pyx_t_1) {
+    } else {
+      __pyx_t_2 = __pyx_t_1;
+      goto __pyx_L6_bool_binop_done;
+    }
+    __pyx_t_1 = PyList_Check(__pyx_v_r2); 
+    __pyx_t_5 = (__pyx_t_1 != 0);
+    if (!__pyx_t_5) {
+    } else {
+      __pyx_t_2 = __pyx_t_5;
+      goto __pyx_L6_bool_binop_done;
+    }
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_memoryview); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_5 = PyObject_IsInstance(__pyx_v_r2, __pyx_t_4); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 269, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_1 = (__pyx_t_5 != 0);
+    __pyx_t_2 = __pyx_t_1;
+    __pyx_L6_bool_binop_done:;
+    if (__pyx_t_2) {
+
+      /* "easyvec/geometry.pyx":270
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
+ *                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))             # <<<<<<<<<<<<<<
+ *         raise ValueError(f'   {r1}  {r2}')
+ * 
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_r2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 270, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_r2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 270, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_8geometry_Rect *)((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1)->__pyx_vtab)->union_point(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_r1), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_6), ((__pyx_t_7easyvec_7vectors_real)__pyx_t_7), 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_r = __pyx_t_4;
+      __pyx_t_4 = 0;
+      goto __pyx_L0;
+
+      /* "easyvec/geometry.pyx":269
+ *             if isinstance(r2, Vec2):
+ *                 return (<Rect>r1).union_vec(<Vec2>r2)
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):             # <<<<<<<<<<<<<<
+ *                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))
+ *         raise ValueError(f'   {r1}  {r2}')
+ */
+    }
+
+    /* "easyvec/geometry.pyx":264
+ * 
+ *     def __sum__(r1, r2):
+ *         if isinstance(r1, Rect):             # <<<<<<<<<<<<<<
+ *             if isinstance(r2, Rect):
+ *                 return (<Rect>r1).union(<Rect>r2)
+ */
+  }
+
+  /* "easyvec/geometry.pyx":271
+ *             elif isinstance(r2, np.ndarray) or isinstance(r2, tuple) or isinstance(r2, list) or isinstance(r2, memoryview):
+ *                 return (<Rect>r1).union_point(<real>(r2[0]), <real>(r2[1]))
+ *         raise ValueError(f'   {r1}  {r2}')             # <<<<<<<<<<<<<<
+ * 
+ */
+  __pyx_t_4 = PyTuple_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_8 = 0;
+  __pyx_t_9 = 127;
+  __Pyx_INCREF(__pyx_kp_u__7);
+  __pyx_t_9 = (65535 > __pyx_t_9) ? 65535 : __pyx_t_9;
+  __pyx_t_8 += 31;
+  __Pyx_GIVEREF(__pyx_kp_u__7);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_u__7);
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(((PyObject *)__pyx_v_r1), __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_9;
+  __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __Pyx_INCREF(__pyx_kp_u__6);
+  __pyx_t_9 = (65535 > __pyx_t_9) ? 65535 : __pyx_t_9;
+  __pyx_t_8 += 3;
+  __Pyx_GIVEREF(__pyx_kp_u__6);
+  PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_u__6);
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_r2, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_9;
+  __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_4, 4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __PYX_ERR(0, 271, __pyx_L1_error)
+
+  /* "easyvec/geometry.pyx":263
+ *         return Rect(nx1, ny1, nx2, ny2)
+ * 
+ *     def __sum__(r1, r2):             # <<<<<<<<<<<<<<
+ *         if isinstance(r1, Rect):
+ *             if isinstance(r2, Rect):
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("easyvec.geometry.Rect.__sum__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "easyvec/geometry.pxd":16
  * 
  * cdef class Rect:
  *     cdef public real x1, x2, y1, y2             # <<<<<<<<<<<<<<
@@ -5004,7 +10696,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2x1___get__(struct __pyx_obj_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x1); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5039,7 +10731,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_2x1_2__set__(struct __pyx_obj_7easy
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 16, __pyx_L1_error)
   __pyx_v_self->x1 = __pyx_t_1;
 
   /* function exit code */
@@ -5072,7 +10764,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2x2___get__(struct __pyx_obj_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->x2); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5107,7 +10799,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_2x2_2__set__(struct __pyx_obj_7easy
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 16, __pyx_L1_error)
   __pyx_v_self->x2 = __pyx_t_1;
 
   /* function exit code */
@@ -5140,7 +10832,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2y1___get__(struct __pyx_obj_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y1); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5175,7 +10867,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_2y1_2__set__(struct __pyx_obj_7easy
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 16, __pyx_L1_error)
   __pyx_v_self->y1 = __pyx_t_1;
 
   /* function exit code */
@@ -5208,7 +10900,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_2y2___get__(struct __pyx_obj_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->y2); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5243,7 +10935,7 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_2y2_2__set__(struct __pyx_obj_7easy
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 4, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(2, 16, __pyx_L1_error)
   __pyx_v_self->y2 = __pyx_t_1;
 
   /* function exit code */
@@ -5264,20 +10956,20 @@ static int __pyx_pf_7easyvec_8geometry_4Rect_2y2_2__set__(struct __pyx_obj_7easy
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_26__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_4Rect_25__reduce_cython__[] = "Rect.__reduce_cython__(self)";
-static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_26__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_54__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_53__reduce_cython__[] = "Rect.__reduce_cython__(self)";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_54__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_25__reduce_cython__(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_53__reduce_cython__(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_53__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5289,7 +10981,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25__reduce_cython__(CYTHON_UN
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5319,20 +11011,20 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_25__reduce_cython__(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_28__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_4Rect_27__setstate_cython__[] = "Rect.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_28__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_56__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_4Rect_55__setstate_cython__[] = "Rect.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_7easyvec_8geometry_4Rect_56__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_27__setstate_cython__(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_7easyvec_8geometry_4Rect_55__setstate_cython__(((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_27__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_55__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_7easyvec_8geometry_Rect *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5343,7 +11035,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4Rect_27__setstate_cython__(CYTHON_
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5563,7 +11255,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5595,7 +11287,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5722,7 +11414,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5996,7 +11688,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -6237,7 +11929,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6953,7 +12645,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7006,7 +12698,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -8689,7 +14381,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -9722,7 +15414,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -10078,7 +15770,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10618,7 +16310,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10732,7 +16424,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__17, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__21, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -11737,7 +17429,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11790,7 +17482,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12141,9 +17833,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__20);
-            __Pyx_GIVEREF(__pyx_slice__20);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__20);
+            __Pyx_INCREF(__pyx_slice__24);
+            __Pyx_GIVEREF(__pyx_slice__24);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__24);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 682, __pyx_L1_error)
@@ -12176,7 +17868,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__20); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__24); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -12316,9 +18008,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__20);
-        __Pyx_GIVEREF(__pyx_slice__20);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__20);
+        __Pyx_INCREF(__pyx_slice__24);
+        __Pyx_GIVEREF(__pyx_slice__24);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__24);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 696, __pyx_L1_error)
@@ -12442,7 +18134,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -14605,7 +20297,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14658,7 +20350,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -18298,8 +23990,21 @@ static PyMethodDef __pyx_methods_7easyvec_8geometry_Rect[] = {
   {"as_tuple", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_13as_tuple, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_12as_tuple},
   {"keys", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_19keys, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_18keys},
   {"get_generator", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_23get_generator, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_22get_generator},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_26__reduce_cython__, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_25__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_28__setstate_cython__, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_27__setstate_cython__},
+  {"is_null", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_26is_null, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_25is_null},
+  {"is_in", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_28is_in, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_27is_in},
+  {"is_cross_seg", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_4Rect_30is_cross_seg, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_4Rect_29is_cross_seg},
+  {"is_cross_ray", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_4Rect_32is_cross_ray, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_4Rect_31is_cross_ray},
+  {"is_cross_line", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_4Rect_34is_cross_line, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_4Rect_33is_cross_line},
+  {"area", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_36area, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_35area},
+  {"perimeter", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_38perimeter, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_37perimeter},
+  {"is_intersect", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_40is_intersect, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_39is_intersect},
+  {"intersect", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_42intersect, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_41intersect},
+  {"union", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_46union, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_45union},
+  {"union_vec", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_48union_vec, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_47union_vec},
+  {"union_point", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_4Rect_50union_point, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_4Rect_49union_point},
+  {"__sum__", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_52__sum__, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_51__sum__},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_54__reduce_cython__, METH_NOARGS, __pyx_doc_7easyvec_8geometry_4Rect_53__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_7easyvec_8geometry_4Rect_56__setstate_cython__, METH_O, __pyx_doc_7easyvec_8geometry_4Rect_55__setstate_cython__},
   {0, 0, 0, 0}
 };
 
@@ -18309,6 +24014,68 @@ static struct PyGetSetDef __pyx_getsets_7easyvec_8geometry_Rect[] = {
   {(char *)"y1", __pyx_getprop_7easyvec_8geometry_4Rect_y1, __pyx_setprop_7easyvec_8geometry_4Rect_y1, (char *)"y1: 'real'", 0},
   {(char *)"y2", __pyx_getprop_7easyvec_8geometry_4Rect_y2, __pyx_setprop_7easyvec_8geometry_4Rect_y2, (char *)"y2: 'real'", 0},
   {0, 0, 0, 0, 0}
+};
+
+static PyNumberMethods __pyx_tp_as_number_Rect = {
+  0, /*nb_add*/
+  0, /*nb_subtract*/
+  __pyx_pw_7easyvec_8geometry_4Rect_44__mul__, /*nb_multiply*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_divide*/
+  #endif
+  0, /*nb_remainder*/
+  0, /*nb_divmod*/
+  0, /*nb_power*/
+  0, /*nb_negative*/
+  0, /*nb_positive*/
+  0, /*nb_absolute*/
+  0, /*nb_nonzero*/
+  0, /*nb_invert*/
+  0, /*nb_lshift*/
+  0, /*nb_rshift*/
+  0, /*nb_and*/
+  0, /*nb_xor*/
+  0, /*nb_or*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_coerce*/
+  #endif
+  0, /*nb_int*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*nb_long*/
+  #else
+  0, /*reserved*/
+  #endif
+  0, /*nb_float*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_oct*/
+  #endif
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_hex*/
+  #endif
+  0, /*nb_inplace_add*/
+  0, /*nb_inplace_subtract*/
+  0, /*nb_inplace_multiply*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_inplace_divide*/
+  #endif
+  0, /*nb_inplace_remainder*/
+  0, /*nb_inplace_power*/
+  0, /*nb_inplace_lshift*/
+  0, /*nb_inplace_rshift*/
+  0, /*nb_inplace_and*/
+  0, /*nb_inplace_xor*/
+  0, /*nb_inplace_or*/
+  0, /*nb_floor_divide*/
+  0, /*nb_true_divide*/
+  0, /*nb_inplace_floor_divide*/
+  0, /*nb_inplace_true_divide*/
+  0, /*nb_index*/
+  #if PY_VERSION_HEX >= 0x03050000
+  0, /*nb_matrix_multiply*/
+  #endif
+  #if PY_VERSION_HEX >= 0x03050000
+  0, /*nb_inplace_matrix_multiply*/
+  #endif
 };
 
 static PySequenceMethods __pyx_tp_as_sequence_Rect = {
@@ -18351,7 +24118,7 @@ static PyTypeObject __pyx_type_7easyvec_8geometry_Rect = {
   0, /*tp_as_async*/
   #endif
   __pyx_pw_7easyvec_8geometry_4Rect_5__repr__, /*tp_repr*/
-  0, /*tp_as_number*/
+  &__pyx_tp_as_number_Rect, /*tp_as_number*/
   &__pyx_tp_as_sequence_Rect, /*tp_as_sequence*/
   &__pyx_tp_as_mapping_Rect, /*tp_as_mapping*/
   0, /*tp_hash*/
@@ -19221,6 +24988,16 @@ static PyTypeObject __pyx_type___pyx_memoryviewslice = {
 };
 
 static PyMethodDef __pyx_methods[] = {
+  {"is_bbox_intersect", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_1is_bbox_intersect, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_is_bbox_intersect},
+  {"_intersect_ts", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_3_intersect_ts, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_2_intersect_ts},
+  {"intersect_lines", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_5intersect_lines, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_4intersect_lines},
+  {"intersect_segments", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_7intersect_segments, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_6intersect_segments},
+  {"intersect_rays", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_9intersect_rays, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_8intersect_rays},
+  {"intersect_ray_line", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_11intersect_ray_line, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_10intersect_ray_line},
+  {"intersect_ray_segment", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_13intersect_ray_segment, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_12intersect_ray_segment},
+  {"intersect_line_segment", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_15intersect_line_segment, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_14intersect_line_segment},
+  {"fmax", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_17fmax, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_16fmax},
+  {"fmin", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_7easyvec_8geometry_19fmin, METH_VARARGS|METH_KEYWORDS, __pyx_doc_7easyvec_8geometry_18fmin},
   {0, 0, 0, 0}
 };
 
@@ -19297,11 +25074,18 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
   {&__pyx_kp_u__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0, 0},
   {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
+  {&__pyx_kp_u__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 1, 0, 0},
+  {&__pyx_kp_u__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 1, 0, 0},
+  {&__pyx_kp_u__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 1, 0, 0},
+  {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
+  {&__pyx_n_s_add, __pyx_k_add, sizeof(__pyx_k_add), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
+  {&__pyx_n_s_area, __pyx_k_area, sizeof(__pyx_k_area), 0, 0, 1, 1},
   {&__pyx_n_s_args, __pyx_k_args, sizeof(__pyx_k_args), 0, 0, 1, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_as_np, __pyx_k_as_np, sizeof(__pyx_k_as_np), 0, 0, 1, 1},
   {&__pyx_n_s_as_tuple, __pyx_k_as_tuple, sizeof(__pyx_k_as_tuple), 0, 0, 1, 1},
+  {&__pyx_n_s_b, __pyx_k_b, sizeof(__pyx_k_b), 0, 0, 1, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
@@ -19327,21 +25111,34 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_intersect, __pyx_k_intersect, sizeof(__pyx_k_intersect), 0, 0, 1, 1},
+  {&__pyx_n_s_is_cross_line, __pyx_k_is_cross_line, sizeof(__pyx_k_is_cross_line), 0, 0, 1, 1},
+  {&__pyx_n_s_is_cross_ray, __pyx_k_is_cross_ray, sizeof(__pyx_k_is_cross_ray), 0, 0, 1, 1},
+  {&__pyx_n_s_is_cross_seg, __pyx_k_is_cross_seg, sizeof(__pyx_k_is_cross_seg), 0, 0, 1, 1},
+  {&__pyx_n_s_is_in, __pyx_k_is_in, sizeof(__pyx_k_is_in), 0, 0, 1, 1},
+  {&__pyx_n_s_is_intersect, __pyx_k_is_intersect, sizeof(__pyx_k_is_intersect), 0, 0, 1, 1},
+  {&__pyx_n_s_is_null, __pyx_k_is_null, sizeof(__pyx_k_is_null), 0, 0, 1, 1},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
   {&__pyx_n_s_keys, __pyx_k_keys, sizeof(__pyx_k_keys), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
+  {&__pyx_n_s_memoryview, __pyx_k_memoryview, sizeof(__pyx_k_memoryview), 0, 0, 1, 1},
   {&__pyx_n_s_memview, __pyx_k_memview, sizeof(__pyx_k_memview), 0, 0, 1, 1},
   {&__pyx_n_s_mode, __pyx_k_mode, sizeof(__pyx_k_mode), 0, 0, 1, 1},
+  {&__pyx_n_s_mul, __pyx_k_mul, sizeof(__pyx_k_mul), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_name_2, __pyx_k_name_2, sizeof(__pyx_k_name_2), 0, 0, 1, 1},
+  {&__pyx_n_s_ndarray, __pyx_k_ndarray, sizeof(__pyx_k_ndarray), 0, 0, 1, 1},
   {&__pyx_n_s_ndim, __pyx_k_ndim, sizeof(__pyx_k_ndim), 0, 0, 1, 1},
   {&__pyx_n_s_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 0, 1, 1},
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
+  {&__pyx_n_s_p1, __pyx_k_p1, sizeof(__pyx_k_p1), 0, 0, 1, 1},
+  {&__pyx_n_s_p2, __pyx_k_p2, sizeof(__pyx_k_p2), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
+  {&__pyx_n_s_perimeter, __pyx_k_perimeter, sizeof(__pyx_k_perimeter), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
@@ -19351,10 +25148,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pyx_type, __pyx_k_pyx_type, sizeof(__pyx_k_pyx_type), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_Enum, __pyx_k_pyx_unpickle_Enum, sizeof(__pyx_k_pyx_unpickle_Enum), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
+  {&__pyx_n_s_r1, __pyx_k_r1, sizeof(__pyx_k_r1), 0, 0, 1, 1},
+  {&__pyx_n_s_r2, __pyx_k_r2, sizeof(__pyx_k_r2), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
+  {&__pyx_n_s_rotate90, __pyx_k_rotate90, sizeof(__pyx_k_rotate90), 0, 0, 1, 1},
+  {&__pyx_n_s_s1, __pyx_k_s1, sizeof(__pyx_k_s1), 0, 0, 1, 1},
+  {&__pyx_n_s_s2, __pyx_k_s2, sizeof(__pyx_k_s2), 0, 0, 1, 1},
   {&__pyx_n_s_send, __pyx_k_send, sizeof(__pyx_k_send), 0, 0, 1, 1},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
@@ -19368,21 +25170,31 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_strided_and_indirect, __pyx_k_strided_and_indirect, sizeof(__pyx_k_strided_and_indirect), 0, 0, 1, 0},
   {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
   {&__pyx_n_s_struct, __pyx_k_struct, sizeof(__pyx_k_struct), 0, 0, 1, 1},
+  {&__pyx_n_s_sub, __pyx_k_sub, sizeof(__pyx_k_sub), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_throw, __pyx_k_throw, sizeof(__pyx_k_throw), 0, 0, 1, 1},
+  {&__pyx_n_s_u1, __pyx_k_u1, sizeof(__pyx_k_u1), 0, 0, 1, 1},
+  {&__pyx_n_s_u2, __pyx_k_u2, sizeof(__pyx_k_u2), 0, 0, 1, 1},
   {&__pyx_kp_s_unable_to_allocate_array_data, __pyx_k_unable_to_allocate_array_data, sizeof(__pyx_k_unable_to_allocate_array_data), 0, 0, 1, 0},
   {&__pyx_kp_s_unable_to_allocate_shape_and_str, __pyx_k_unable_to_allocate_shape_and_str, sizeof(__pyx_k_unable_to_allocate_shape_and_str), 0, 0, 1, 0},
+  {&__pyx_n_s_union, __pyx_k_union, sizeof(__pyx_k_union), 0, 0, 1, 1},
+  {&__pyx_n_s_union_point, __pyx_k_union_point, sizeof(__pyx_k_union_point), 0, 0, 1, 1},
+  {&__pyx_n_s_union_vec, __pyx_k_union_vec, sizeof(__pyx_k_union_vec), 0, 0, 1, 1},
   {&__pyx_n_s_unpack, __pyx_k_unpack, sizeof(__pyx_k_unpack), 0, 0, 1, 1},
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
+  {&__pyx_n_s_v1, __pyx_k_v1, sizeof(__pyx_k_v1), 0, 0, 1, 1},
+  {&__pyx_n_s_v2, __pyx_k_v2, sizeof(__pyx_k_v2), 0, 0, 1, 1},
+  {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
   {&__pyx_n_u_x1, __pyx_k_x1, sizeof(__pyx_k_x1), 0, 1, 0, 1},
   {&__pyx_n_u_x2, __pyx_k_x2, sizeof(__pyx_k_x2), 0, 1, 0, 1},
+  {&__pyx_n_s_y, __pyx_k_y, sizeof(__pyx_k_y), 0, 0, 1, 1},
   {&__pyx_n_u_y1, __pyx_k_y1, sizeof(__pyx_k_y1), 0, 1, 0, 1},
   {&__pyx_n_u_y2, __pyx_k_y2, sizeof(__pyx_k_y2), 0, 1, 0, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 16, __pyx_L1_error)
-  __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 158, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 148, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 151, __pyx_L1_error)
@@ -19398,24 +25210,35 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
+  /* "easyvec/geometry.pyx":223
+ *     cpdef Rect intersect(self, Rect other):
+ *         if self.is_null() or other.is_null() or (not self.is_intersect(other)):
+ *             return Rect(0.0, 0.0, 0.0, 0.0)             # <<<<<<<<<<<<<<
+ *         cdef real nx1 = fmax(self.x1, other.x1)
+ *         cdef real ny1 = fmax(self.y1, other.y1)
+ */
+  __pyx_tuple__4 = PyTuple_Pack(4, __pyx_float_0_0, __pyx_float_0_0, __pyx_float_0_0, __pyx_float_0_0); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
   /* "View.MemoryView":133
  * 
@@ -19424,9 +25247,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "View.MemoryView":136
  * 
@@ -19435,9 +25258,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(1, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "View.MemoryView":148
  * 
@@ -19446,9 +25269,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -19457,9 +25280,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -19468,9 +25291,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -19478,18 +25301,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -19498,9 +25321,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -19509,9 +25332,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -19520,9 +25343,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -19531,9 +25354,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -19542,52 +25365,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__17 = PyTuple_New(1); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
+  __pyx_tuple__21 = PyTuple_New(1); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__17, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__17);
-
-  /* "(tree fragment)":2
- * def __reduce_cython__(self):
- *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
- */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
-
-  /* "(tree fragment)":4
- *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
- */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
-
-  /* "View.MemoryView":682
- *         if item is Ellipsis:
- *             if not seen_ellipsis:
- *                 result.extend([slice(None)] * (ndim - len(tup) + 1))             # <<<<<<<<<<<<<<
- *                 seen_ellipsis = True
- *             else:
- */
-  __pyx_slice__20 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__20)) __PYX_ERR(1, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__20);
-  __Pyx_GIVEREF(__pyx_slice__20);
-
-  /* "View.MemoryView":703
- *     for suboffset in suboffsets[:ndim]:
- *         if suboffset >= 0:
- *             raise ValueError("Indirect dimensions not supported")             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 703, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
+  PyTuple_SET_ITEM(__pyx_tuple__21, 0, __pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "(tree fragment)":2
@@ -19609,6 +25391,47 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
+  /* "View.MemoryView":682
+ *         if item is Ellipsis:
+ *             if not seen_ellipsis:
+ *                 result.extend([slice(None)] * (ndim - len(tup) + 1))             # <<<<<<<<<<<<<<
+ *                 seen_ellipsis = True
+ *             else:
+ */
+  __pyx_slice__24 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__24)) __PYX_ERR(1, 682, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__24);
+  __Pyx_GIVEREF(__pyx_slice__24);
+
+  /* "View.MemoryView":703
+ *     for suboffset in suboffsets[:ndim]:
+ *         if suboffset >= 0:
+ *             raise ValueError("Indirect dimensions not supported")             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 703, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
+
+  /* "(tree fragment)":2
+ * def __reduce_cython__(self):
+ *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
+ */
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
+
+  /* "(tree fragment)":4
+ *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
+ */
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
+
   /* "View.MemoryView":286
  *         return self.name
  * 
@@ -19616,9 +25439,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "View.MemoryView":287
  * 
@@ -19627,9 +25450,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -19638,9 +25461,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "View.MemoryView":291
  * 
@@ -19649,9 +25472,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "View.MemoryView":292
  * 
@@ -19660,19 +25483,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__29 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__33 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -19682,6 +25505,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_float_0_0 = PyFloat_FromDouble(0.0); if (unlikely(!__pyx_float_0_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -19726,8 +25550,21 @@ static int __Pyx_modinit_function_export_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_function_export_code", 0);
   /*--- Function export code ---*/
+  if (__Pyx_ExportFunction("is_bbox_intersect", (void (*)(void))__pyx_f_7easyvec_8geometry_is_bbox_intersect, "int (struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("_intersect_ts", (void (*)(void))__pyx_f_7easyvec_8geometry__intersect_ts, "__pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc (struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_lines", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_lines, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_segments", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_segments, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_rays", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_rays, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_ray_line", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_ray_line, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_ray_segment", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_ray_segment, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("intersect_line_segment", (void (*)(void))__pyx_f_7easyvec_8geometry_intersect_line_segment, "struct __pyx_obj_7easyvec_7vectors_Vec2 *(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("fmax", (void (*)(void))__pyx_f_7easyvec_8geometry_fmax, "__pyx_t_7easyvec_7vectors_real (__pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("fmin", (void (*)(void))__pyx_f_7easyvec_8geometry_fmin, "__pyx_t_7easyvec_7vectors_real (__pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_modinit_type_init_code(void) {
@@ -19740,18 +25577,30 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_7easyvec_8geometry_Rect.as_np = (__Pyx_memviewslice (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_as_np;
   __pyx_vtable_7easyvec_8geometry_Rect.as_tuple = (PyObject *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_as_tuple;
   __pyx_vtable_7easyvec_8geometry_Rect.keys = (PyObject *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_keys;
-  if (PyType_Ready(&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_vtable_7easyvec_8geometry_Rect.is_null = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_null;
+  __pyx_vtable_7easyvec_8geometry_Rect.is_in = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_in;
+  __pyx_vtable_7easyvec_8geometry_Rect.is_cross_seg = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_cross_seg;
+  __pyx_vtable_7easyvec_8geometry_Rect.is_cross_ray = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_cross_ray;
+  __pyx_vtable_7easyvec_8geometry_Rect.is_cross_line = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_cross_line;
+  __pyx_vtable_7easyvec_8geometry_Rect.area = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_area;
+  __pyx_vtable_7easyvec_8geometry_Rect.perimeter = (__pyx_t_7easyvec_7vectors_real (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_perimeter;
+  __pyx_vtable_7easyvec_8geometry_Rect.is_intersect = (int (*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_is_intersect;
+  __pyx_vtable_7easyvec_8geometry_Rect.intersect = (struct __pyx_obj_7easyvec_8geometry_Rect *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_intersect;
+  __pyx_vtable_7easyvec_8geometry_Rect.__pyx_union = (struct __pyx_obj_7easyvec_8geometry_Rect *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_8geometry_Rect *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_union;
+  __pyx_vtable_7easyvec_8geometry_Rect.union_vec = (struct __pyx_obj_7easyvec_8geometry_Rect *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_union_vec;
+  __pyx_vtable_7easyvec_8geometry_Rect.union_point = (struct __pyx_obj_7easyvec_8geometry_Rect *(*)(struct __pyx_obj_7easyvec_8geometry_Rect *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch))__pyx_f_7easyvec_8geometry_4Rect_union_point;
+  if (PyType_Ready(&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7easyvec_8geometry_Rect.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_7easyvec_8geometry_Rect.tp_dictoffset && __pyx_type_7easyvec_8geometry_Rect.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_7easyvec_8geometry_Rect.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_7easyvec_8geometry_Rect.tp_dict, __pyx_vtabptr_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Rect_3, (PyObject *)&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_7easyvec_8geometry_Rect.tp_dict, __pyx_vtabptr_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Rect_3, (PyObject *)&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7easyvec_8geometry_Rect) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __pyx_ptype_7easyvec_8geometry_Rect = &__pyx_type_7easyvec_8geometry_Rect;
-  if (PyType_Ready(&__pyx_type_7easyvec_8geometry___pyx_scope_struct__get_generator) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7easyvec_8geometry___pyx_scope_struct__get_generator) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7easyvec_8geometry___pyx_scope_struct__get_generator.tp_print = 0;
   #endif
@@ -19828,7 +25677,7 @@ static int __Pyx_modinit_type_import_code(void) {
    if (!__pyx_ptype_7easyvec_7vectors_Vec2) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_vtabptr_7easyvec_7vectors_Vec2 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec2*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec2->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec2)) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_ptype_7easyvec_7vectors_Vec3 = __Pyx_ImportType(__pyx_t_1, "easyvec.vectors", "Vec3", sizeof(struct __pyx_obj_7easyvec_7vectors_Vec3), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 141, __pyx_L1_error)
+   if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -20050,7 +25899,7 @@ if (!__Pyx_RefNanny) {
   /*--- Global type/function init code ---*/
   (void)__Pyx_modinit_global_init_code();
   (void)__Pyx_modinit_variable_export_code();
-  (void)__Pyx_modinit_function_export_code();
+  if (unlikely(__Pyx_modinit_function_export_code() != 0)) goto __pyx_L1_error;
   if (unlikely(__Pyx_modinit_type_init_code() != 0)) goto __pyx_L1_error;
   if (unlikely(__Pyx_modinit_type_import_code() != 0)) goto __pyx_L1_error;
   if (unlikely(__Pyx_modinit_variable_import_code() != 0)) goto __pyx_L1_error;
@@ -20062,8 +25911,8 @@ if (!__Pyx_RefNanny) {
 
   /* "easyvec/geometry.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
- * 
- * cdef class Rect:
+ * from libc.math cimport fabs
+ * cimport cython
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -20101,7 +25950,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_1);
@@ -20115,7 +25964,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_1);
@@ -20129,7 +25978,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_1);
@@ -20143,7 +25992,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_1);
@@ -20157,7 +26006,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_1);
@@ -20304,34 +26153,135 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
     return result;
 }
 
-/* KeywordStringCheck */
-static int __Pyx_CheckKeywordStrings(
-    PyObject *kwdict,
-    const char* function_name,
-    int kw_allowed)
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
+    const char* func_name,
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
 {
-    PyObject* key = 0;
-    Py_ssize_t pos = 0;
-#if CYTHON_COMPILING_IN_PYPY
-    if (!kw_allowed && PyDict_Next(kwdict, &pos, &key, 0))
-        goto invalid_keyword;
-    return 1;
-#else
-    while (PyDict_Next(kwdict, &pos, &key, 0)) {
-        #if PY_MAJOR_VERSION < 3
-        if (unlikely(!PyString_Check(key)))
-        #endif
-            if (unlikely(!PyUnicode_Check(key)))
-                goto invalid_keyword_type;
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
     }
-    if ((!kw_allowed) && unlikely(key))
-        goto invalid_keyword;
-    return 1;
+    if (exact) {
+        more_or_less = "exactly";
+    }
+    PyErr_Format(PyExc_TypeError,
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
+}
+
+/* RaiseDoubleKeywords */
+static void __Pyx_RaiseDoubleKeywordsError(
+    const char* func_name,
+    PyObject* kw_name)
+{
+    PyErr_Format(PyExc_TypeError,
+        #if PY_MAJOR_VERSION >= 3
+        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
+        #else
+        "%s() got multiple values for keyword argument '%s'", func_name,
+        PyString_AsString(kw_name));
+        #endif
+}
+
+/* ParseKeywords */
+static int __Pyx_ParseOptionalKeywords(
+    PyObject *kwds,
+    PyObject **argnames[],
+    PyObject *kwds2,
+    PyObject *values[],
+    Py_ssize_t num_pos_args,
+    const char* function_name)
+{
+    PyObject *key = 0, *value = 0;
+    Py_ssize_t pos = 0;
+    PyObject*** name;
+    PyObject*** first_kw_arg = argnames + num_pos_args;
+    while (PyDict_Next(kwds, &pos, &key, &value)) {
+        name = first_kw_arg;
+        while (*name && (**name != key)) name++;
+        if (*name) {
+            values[name-argnames] = value;
+            continue;
+        }
+        name = first_kw_arg;
+        #if PY_MAJOR_VERSION < 3
+        if (likely(PyString_CheckExact(key)) || likely(PyString_Check(key))) {
+            while (*name) {
+                if ((CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**name) == PyString_GET_SIZE(key))
+                        && _PyString_Eq(**name, key)) {
+                    values[name-argnames] = value;
+                    break;
+                }
+                name++;
+            }
+            if (*name) continue;
+            else {
+                PyObject*** argname = argnames;
+                while (argname != first_kw_arg) {
+                    if ((**argname == key) || (
+                            (CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**argname) == PyString_GET_SIZE(key))
+                             && _PyString_Eq(**argname, key))) {
+                        goto arg_passed_twice;
+                    }
+                    argname++;
+                }
+            }
+        } else
+        #endif
+        if (likely(PyUnicode_Check(key))) {
+            while (*name) {
+                int cmp = (**name == key) ? 0 :
+                #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
+                    (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+                #endif
+                    PyUnicode_Compare(**name, key);
+                if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
+                if (cmp == 0) {
+                    values[name-argnames] = value;
+                    break;
+                }
+                name++;
+            }
+            if (*name) continue;
+            else {
+                PyObject*** argname = argnames;
+                while (argname != first_kw_arg) {
+                    int cmp = (**argname == key) ? 0 :
+                    #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
+                        (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+                    #endif
+                        PyUnicode_Compare(**argname, key);
+                    if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
+                    if (cmp == 0) goto arg_passed_twice;
+                    argname++;
+                }
+            }
+        } else
+            goto invalid_keyword_type;
+        if (kwds2) {
+            if (unlikely(PyDict_SetItem(kwds2, key, value))) goto bad;
+        } else {
+            goto invalid_keyword;
+        }
+    }
+    return 0;
+arg_passed_twice:
+    __Pyx_RaiseDoubleKeywordsError(function_name, key);
+    goto bad;
 invalid_keyword_type:
     PyErr_Format(PyExc_TypeError,
         "%.200s() keywords must be strings", function_name);
-    return 0;
-#endif
+    goto bad;
 invalid_keyword:
     PyErr_Format(PyExc_TypeError,
     #if PY_MAJOR_VERSION < 3
@@ -20341,94 +26291,29 @@ invalid_keyword:
         "%s() got an unexpected keyword argument '%U'",
         function_name, key);
     #endif
-    return 0;
+bad:
+    return -1;
 }
 
-/* GetItemInt */
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
-    PyObject *r;
-    if (!j) return NULL;
-    r = PyObject_GetItem(o, j);
-    Py_DECREF(j);
-    return r;
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyList_GET_SIZE(o);
+/* ArgTypeTest */
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
+{
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
     }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
-        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
+    else if (exact) {
+        #if PY_MAJOR_VERSION == 2
+        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
+        #endif
     }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyTuple_GET_SIZE(o);
+    else {
+        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
     }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
-        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
-                                                     CYTHON_NCP_UNUSED int wraparound,
-                                                     CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
-        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
-            PyObject *r = PyList_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    }
-    else if (PyTuple_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
-        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
-            PyObject *r = PyTuple_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    } else {
-        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
-        if (likely(m && m->sq_item)) {
-            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
-                Py_ssize_t l = m->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                        return NULL;
-                    PyErr_Clear();
-                }
-            }
-            return m->sq_item(o, i);
-        }
-    }
-#else
-    if (is_list || PySequence_Check(o)) {
-        return PySequence_GetItem(o, i);
-    }
-#endif
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+    PyErr_Format(PyExc_TypeError,
+        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
+        name, type->tp_name, Py_TYPE(obj)->tp_name);
+    return 0;
 }
 
 /* PyCFunctionFastCall */
@@ -20593,6 +26478,35 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg
 }
 #endif
 
+/* PyObjectCall2Args */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
+    PyObject *args, *result = NULL;
+    #if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyFunction_FastCall(function, args, 2);
+    }
+    #endif
+    #if CYTHON_FAST_PYCCALL
+    if (__Pyx_PyFastCFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyCFunction_FastCall(function, args, 2);
+    }
+    #endif
+    args = PyTuple_New(2);
+    if (unlikely(!args)) goto done;
+    Py_INCREF(arg1);
+    PyTuple_SET_ITEM(args, 0, arg1);
+    Py_INCREF(arg2);
+    PyTuple_SET_ITEM(args, 1, arg2);
+    Py_INCREF(function);
+    result = __Pyx_PyObject_Call(function, args, NULL);
+    Py_DECREF(args);
+    Py_DECREF(function);
+done:
+    return result;
+}
+
 /* PyObjectCallMethO */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
@@ -20653,6 +26567,41 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
 }
 #endif
 
+/* ExtTypeTest */
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
+    }
+    if (likely(__Pyx_TypeCheck(obj, type)))
+        return 1;
+    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
+                 Py_TYPE(obj)->tp_name, type->tp_name);
+    return 0;
+}
+
+/* PyObjectCallNoArg */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, NULL, 0);
+    }
+#endif
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
+#else
+    if (likely(PyCFunction_Check(func)))
+#endif
+    {
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
+            return __Pyx_PyObject_CallMethO(func, NULL);
+        }
+    }
+    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
+}
+#endif
+
 /* PyErrFetchRestore */
 #if CYTHON_FAST_THREAD_STATE
 static CYTHON_INLINE void __Pyx_ErrRestoreInState(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb) {
@@ -20676,6 +26625,175 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
     tstate->curexc_traceback = 0;
 }
 #endif
+
+/* WriteUnraisableException */
+static void __Pyx_WriteUnraisable(const char *name, CYTHON_UNUSED int clineno,
+                                  CYTHON_UNUSED int lineno, CYTHON_UNUSED const char *filename,
+                                  int full_traceback, CYTHON_UNUSED int nogil) {
+    PyObject *old_exc, *old_val, *old_tb;
+    PyObject *ctx;
+    __Pyx_PyThreadState_declare
+#ifdef WITH_THREAD
+    PyGILState_STATE state;
+    if (nogil)
+        state = PyGILState_Ensure();
+#ifdef _MSC_VER
+    else state = (PyGILState_STATE)-1;
+#endif
+#endif
+    __Pyx_PyThreadState_assign
+    __Pyx_ErrFetch(&old_exc, &old_val, &old_tb);
+    if (full_traceback) {
+        Py_XINCREF(old_exc);
+        Py_XINCREF(old_val);
+        Py_XINCREF(old_tb);
+        __Pyx_ErrRestore(old_exc, old_val, old_tb);
+        PyErr_PrintEx(1);
+    }
+    #if PY_MAJOR_VERSION < 3
+    ctx = PyString_FromString(name);
+    #else
+    ctx = PyUnicode_FromString(name);
+    #endif
+    __Pyx_ErrRestore(old_exc, old_val, old_tb);
+    if (!ctx) {
+        PyErr_WriteUnraisable(Py_None);
+    } else {
+        PyErr_WriteUnraisable(ctx);
+        Py_DECREF(ctx);
+    }
+#ifdef WITH_THREAD
+    if (nogil)
+        PyGILState_Release(state);
+#endif
+}
+
+/* KeywordStringCheck */
+static int __Pyx_CheckKeywordStrings(
+    PyObject *kwdict,
+    const char* function_name,
+    int kw_allowed)
+{
+    PyObject* key = 0;
+    Py_ssize_t pos = 0;
+#if CYTHON_COMPILING_IN_PYPY
+    if (!kw_allowed && PyDict_Next(kwdict, &pos, &key, 0))
+        goto invalid_keyword;
+    return 1;
+#else
+    while (PyDict_Next(kwdict, &pos, &key, 0)) {
+        #if PY_MAJOR_VERSION < 3
+        if (unlikely(!PyString_Check(key)))
+        #endif
+            if (unlikely(!PyUnicode_Check(key)))
+                goto invalid_keyword_type;
+    }
+    if ((!kw_allowed) && unlikely(key))
+        goto invalid_keyword;
+    return 1;
+invalid_keyword_type:
+    PyErr_Format(PyExc_TypeError,
+        "%.200s() keywords must be strings", function_name);
+    return 0;
+#endif
+invalid_keyword:
+    PyErr_Format(PyExc_TypeError,
+    #if PY_MAJOR_VERSION < 3
+        "%.200s() got an unexpected keyword argument '%.200s'",
+        function_name, PyString_AsString(key));
+    #else
+        "%s() got an unexpected keyword argument '%U'",
+        function_name, key);
+    #endif
+    return 0;
+}
+
+/* GetItemInt */
+static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
+    PyObject *r;
+    if (!j) return NULL;
+    r = PyObject_GetItem(o, j);
+    Py_DECREF(j);
+    return r;
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyList_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyTuple_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
+        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
+                                                     CYTHON_NCP_UNUSED int wraparound,
+                                                     CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
+    if (is_list || PyList_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
+        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
+            PyObject *r = PyList_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    }
+    else if (PyTuple_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
+        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
+            PyObject *r = PyTuple_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    } else {
+        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
+        if (likely(m && m->sq_item)) {
+            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
+                Py_ssize_t l = m->sq_length(o);
+                if (likely(l >= 0)) {
+                    i += l;
+                } else {
+                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+                        return NULL;
+                    PyErr_Clear();
+                }
+            }
+            return m->sq_item(o, i);
+        }
+    }
+#else
+    if (is_list || PySequence_Check(o)) {
+        return PySequence_GetItem(o, i);
+    }
+#endif
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+}
 
 /* RaiseException */
 #if PY_MAJOR_VERSION < 3
@@ -20960,41 +27078,6 @@ static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UIN
 }
 #endif
 
-/* PyObjectCallNoArg */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
-#if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(func)) {
-        return __Pyx_PyFunction_FastCall(func, NULL, 0);
-    }
-#endif
-#ifdef __Pyx_CyFunction_USED
-    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
-#else
-    if (likely(PyCFunction_Check(func)))
-#endif
-    {
-        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
-            return __Pyx_PyObject_CallMethO(func, NULL);
-        }
-    }
-    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
-}
-#endif
-
-/* ExtTypeTest */
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    if (likely(__Pyx_TypeCheck(obj, type)))
-        return 1;
-    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
-                 Py_TYPE(obj)->tp_name, type->tp_name);
-    return 0;
-}
-
 /* GetModuleGlobalName */
 #if CYTHON_USE_DICT_VERSIONS
 static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_version, PyObject **dict_cached_value)
@@ -21028,35 +27111,6 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
     PyErr_Clear();
 #endif
     return __Pyx_GetBuiltinName(name);
-}
-
-/* PyObjectCall2Args */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
-    PyObject *args, *result = NULL;
-    #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyFunction_FastCall(function, args, 2);
-    }
-    #endif
-    #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyCFunction_FastCall(function, args, 2);
-    }
-    #endif
-    args = PyTuple_New(2);
-    if (unlikely(!args)) goto done;
-    Py_INCREF(arg1);
-    PyTuple_SET_ITEM(args, 0, arg1);
-    Py_INCREF(arg2);
-    PyTuple_SET_ITEM(args, 1, arg2);
-    Py_INCREF(function);
-    result = __Pyx_PyObject_Call(function, args, NULL);
-    Py_DECREF(args);
-    Py_DECREF(function);
-done:
-    return result;
 }
 
 /* MemviewSliceInit */
@@ -21407,169 +27461,6 @@ return_ne:
     #endif
     return (equals == Py_NE);
 #endif
-}
-
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
-    }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
-}
-
-/* RaiseDoubleKeywords */
-static void __Pyx_RaiseDoubleKeywordsError(
-    const char* func_name,
-    PyObject* kw_name)
-{
-    PyErr_Format(PyExc_TypeError,
-        #if PY_MAJOR_VERSION >= 3
-        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
-        #else
-        "%s() got multiple values for keyword argument '%s'", func_name,
-        PyString_AsString(kw_name));
-        #endif
-}
-
-/* ParseKeywords */
-static int __Pyx_ParseOptionalKeywords(
-    PyObject *kwds,
-    PyObject **argnames[],
-    PyObject *kwds2,
-    PyObject *values[],
-    Py_ssize_t num_pos_args,
-    const char* function_name)
-{
-    PyObject *key = 0, *value = 0;
-    Py_ssize_t pos = 0;
-    PyObject*** name;
-    PyObject*** first_kw_arg = argnames + num_pos_args;
-    while (PyDict_Next(kwds, &pos, &key, &value)) {
-        name = first_kw_arg;
-        while (*name && (**name != key)) name++;
-        if (*name) {
-            values[name-argnames] = value;
-            continue;
-        }
-        name = first_kw_arg;
-        #if PY_MAJOR_VERSION < 3
-        if (likely(PyString_CheckExact(key)) || likely(PyString_Check(key))) {
-            while (*name) {
-                if ((CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**name) == PyString_GET_SIZE(key))
-                        && _PyString_Eq(**name, key)) {
-                    values[name-argnames] = value;
-                    break;
-                }
-                name++;
-            }
-            if (*name) continue;
-            else {
-                PyObject*** argname = argnames;
-                while (argname != first_kw_arg) {
-                    if ((**argname == key) || (
-                            (CYTHON_COMPILING_IN_PYPY || PyString_GET_SIZE(**argname) == PyString_GET_SIZE(key))
-                             && _PyString_Eq(**argname, key))) {
-                        goto arg_passed_twice;
-                    }
-                    argname++;
-                }
-            }
-        } else
-        #endif
-        if (likely(PyUnicode_Check(key))) {
-            while (*name) {
-                int cmp = (**name == key) ? 0 :
-                #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
-                    (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
-                #endif
-                    PyUnicode_Compare(**name, key);
-                if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
-                if (cmp == 0) {
-                    values[name-argnames] = value;
-                    break;
-                }
-                name++;
-            }
-            if (*name) continue;
-            else {
-                PyObject*** argname = argnames;
-                while (argname != first_kw_arg) {
-                    int cmp = (**argname == key) ? 0 :
-                    #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION >= 3
-                        (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
-                    #endif
-                        PyUnicode_Compare(**argname, key);
-                    if (cmp < 0 && unlikely(PyErr_Occurred())) goto bad;
-                    if (cmp == 0) goto arg_passed_twice;
-                    argname++;
-                }
-            }
-        } else
-            goto invalid_keyword_type;
-        if (kwds2) {
-            if (unlikely(PyDict_SetItem(kwds2, key, value))) goto bad;
-        } else {
-            goto invalid_keyword;
-        }
-    }
-    return 0;
-arg_passed_twice:
-    __Pyx_RaiseDoubleKeywordsError(function_name, key);
-    goto bad;
-invalid_keyword_type:
-    PyErr_Format(PyExc_TypeError,
-        "%.200s() keywords must be strings", function_name);
-    goto bad;
-invalid_keyword:
-    PyErr_Format(PyExc_TypeError,
-    #if PY_MAJOR_VERSION < 3
-        "%.200s() got an unexpected keyword argument '%.200s'",
-        function_name, PyString_AsString(key));
-    #else
-        "%s() got an unexpected keyword argument '%U'",
-        function_name, key);
-    #endif
-bad:
-    return -1;
-}
-
-/* ArgTypeTest */
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
-{
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    else if (exact) {
-        #if PY_MAJOR_VERSION == 2
-        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
-        #endif
-    }
-    else {
-        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
-    }
-    PyErr_Format(PyExc_TypeError,
-        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
-        name, type->tp_name, Py_TYPE(obj)->tp_name);
-    return 0;
 }
 
 /* None */
@@ -22735,6 +28626,27 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
     cobj = PyCObject_FromVoidPtr(p, NULL);
 #endif
     return cobj;
+}
+
+/* ToPyCTupleUtility */
+static PyObject* __pyx_convert__to_py___pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_ctuple_7b975__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc value) {
+    PyObject* item = NULL;
+    PyObject* result = PyTuple_New(3);
+    if (!result) goto bad;
+        item = __Pyx_PyBool_FromLong(value.f0);
+        if (!item) goto bad;
+        PyTuple_SET_ITEM(result, 0, item);
+        item = PyFloat_FromDouble(value.f1);
+        if (!item) goto bad;
+        PyTuple_SET_ITEM(result, 1, item);
+        item = PyFloat_FromDouble(value.f2);
+        if (!item) goto bad;
+        PyTuple_SET_ITEM(result, 2, item);
+    return result;
+bad:
+    Py_XDECREF(item);
+    Py_XDECREF(result);
+    return NULL;
 }
 
 /* CIntToPy */
@@ -25326,6 +31238,43 @@ static int __pyx_Generator_init(void) {
         return PyErr_WarnEx(NULL, message, 1);
     }
     return 0;
+}
+
+/* FunctionExport */
+  static int __Pyx_ExportFunction(const char *name, void (*f)(void), const char *sig) {
+    PyObject *d = 0;
+    PyObject *cobj = 0;
+    union {
+        void (*fp)(void);
+        void *p;
+    } tmp;
+    d = PyObject_GetAttrString(__pyx_m, (char *)"__pyx_capi__");
+    if (!d) {
+        PyErr_Clear();
+        d = PyDict_New();
+        if (!d)
+            goto bad;
+        Py_INCREF(d);
+        if (PyModule_AddObject(__pyx_m, (char *)"__pyx_capi__", d) < 0)
+            goto bad;
+    }
+    tmp.fp = f;
+#if PY_VERSION_HEX >= 0x02070000
+    cobj = PyCapsule_New(tmp.p, sig, 0);
+#else
+    cobj = PyCObject_FromVoidPtrAndDesc(tmp.p, (void *)sig, 0);
+#endif
+    if (!cobj)
+        goto bad;
+    if (PyDict_SetItemString(d, name, cobj) < 0)
+        goto bad;
+    Py_DECREF(cobj);
+    Py_DECREF(d);
+    return 0;
+bad:
+    Py_XDECREF(cobj);
+    Py_XDECREF(d);
+    return -1;
 }
 
 /* VoidPtrImport */

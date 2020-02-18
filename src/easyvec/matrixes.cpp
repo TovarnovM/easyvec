@@ -981,7 +981,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate;
 
-/* "vectors.pxd":117
+/* "vectors.pxd":118
  *     cpdef Vec2 norm_(self)
  *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -993,7 +993,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ {
   int ndigits;
 };
 
-/* "vectors.pxd":118
+/* "vectors.pxd":119
  *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1005,7 +1005,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round {
   int ndigits;
 };
 
-/* "vectors.pxd":119
+/* "vectors.pxd":120
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1017,7 +1017,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_ {
   int ndigits;
 };
 
-/* "vectors.pxd":120
+/* "vectors.pxd":121
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)
  *     cpdef Vec2 ceil(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1029,7 +1029,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil {
   int ndigits;
 };
 
-/* "vectors.pxd":121
+/* "vectors.pxd":122
  *     cpdef Vec2 ceil_(self, int ndigits=*)
  *     cpdef Vec2 ceil(self, int ndigits=*)
  *     cpdef Vec2 floor_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1041,7 +1041,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_floor_ {
   int ndigits;
 };
 
-/* "vectors.pxd":122
+/* "vectors.pxd":123
  *     cpdef Vec2 ceil(self, int ndigits=*)
  *     cpdef Vec2 floor_(self, int ndigits=*)
  *     cpdef Vec2 floor(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1053,7 +1053,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_floor {
   int ndigits;
 };
 
-/* "vectors.pxd":123
+/* "vectors.pxd":124
  *     cpdef Vec2 floor_(self, int ndigits=*)
  *     cpdef Vec2 floor(self, int ndigits=*)
  *     cpdef Vec2 trunc_(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1065,7 +1065,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc_ {
   int ndigits;
 };
 
-/* "vectors.pxd":124
+/* "vectors.pxd":125
  *     cpdef Vec2 floor(self, int ndigits=*)
  *     cpdef Vec2 trunc_(self, int ndigits=*)
  *     cpdef Vec2 trunc(self, int ndigits=*)             # <<<<<<<<<<<<<<
@@ -1077,7 +1077,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
   int ndigits;
 };
 
-/* "vectors.pxd":129
+/* "vectors.pxd":130
  *     cpdef real cross_xy(self, real x, real y)
  * 
  *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
@@ -1089,7 +1089,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int degree;
 };
 
-/* "vectors.pxd":130
+/* "vectors.pxd":131
  * 
  *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
  *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
@@ -1101,7 +1101,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int degree;
 };
 
-/* "vectors.pxd":137
+/* "vectors.pxd":138
  *     cpdef Vec2 rotate_minus90(self)
  * 
  *     cpdef Vec2 rotate_(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
@@ -1113,7 +1113,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_ {
   int degrees;
 };
 
-/* "vectors.pxd":138
+/* "vectors.pxd":139
  * 
  *     cpdef Vec2 rotate_(self, real angle, int degrees=*)
  *     cpdef Vec2 rotate(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
@@ -1140,7 +1140,7 @@ struct __pyx_obj_7easyvec_7vectors_Vec2 {
 };
 
 
-/* "vectors.pxd":141
+/* "vectors.pxd":142
  * 
  * 
  * cdef class Vec3:             # <<<<<<<<<<<<<<
@@ -1273,6 +1273,7 @@ struct __pyx_memoryviewslice_obj {
 struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*clone)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*copy)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  int (*is_eq)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_num_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_num)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*add_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
@@ -28849,7 +28850,7 @@ static int __Pyx_modinit_type_import_code(void) {
    if (!__pyx_ptype_7easyvec_7vectors_Vec2) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_vtabptr_7easyvec_7vectors_Vec2 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec2*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec2->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec2)) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_ptype_7easyvec_7vectors_Vec3 = __Pyx_ImportType(__pyx_t_1, "easyvec.vectors", "Vec3", sizeof(struct __pyx_obj_7easyvec_7vectors_Vec3), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 141, __pyx_L1_error)
+   if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
