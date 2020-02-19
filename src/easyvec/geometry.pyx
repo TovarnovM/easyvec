@@ -70,9 +70,6 @@ def intersect(*args, **kwargs):
             elif key2 in ray_set:
                 return intersect_rays(v1, v2, u1, u2)
     raise ValueError(f'Неправильные аргументы {args} {kwargs}')  
-            
-
-
 
 
 @cython.nonecheck(False)
@@ -171,6 +168,11 @@ cpdef real fmin(real a, real b):
     else:
         return b
 
+cpdef void _sortreduce(list lst, Vec2 close_to):
+    cdef int lst_len = len(lst)
+    if lst_len <= 1:
+        return
+    # TODO доделать функцию
 
 cdef class Rect:
     def __cinit__(self, *args):
@@ -267,16 +269,35 @@ cdef class Rect:
     cpdef bint is_in(self, Vec2 p):
         return (self.x1 <= p.x <= self.x2) and (self.y1 <= p.y <= self.y2)
 
-    cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2):
+    cpdef list cross_seg(self, Vec2 p1, Vec2 p2):
         pass
 
-    cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2):
+    cpdef list cross_ray(self, Vec2 p1, Vec2 p2):
         pass
     
-    cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2):
-        if p1.is_eq(p2):
-            return 0
-
+    cpdef list cross_line(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+        cdef list res = []
+        cdef:
+            Vec2 r1 = Vec2(self.x1, self.y1)
+            Vec2 r2 = Vec2(self.x1, self.y2)
+            Vec2 r3 = Vec2(self.x2, self.y2)
+            Vec2 r4 = Vec2(self.x2, self.y1)
+        cdef Vec2 cr_p1 = intersect_line_segment(p1, p2, r1, r2)
+        cdef Vec2 cr_p2 = intersect_line_segment(p1, p2, r2, r3)
+        cdef Vec2 cr_p3 = intersect_line_segment(p1, p2, r3, r4)
+        cdef Vec2 cr_p4 = intersect_line_segment(p1, p2, r4, r1)
+        if cr_p1 is not None:
+            res.append(cr_p1)
+        if cr_p2 is not None:
+            res.append(cr_p2)
+        if cr_p3 is not None:
+            res.append(cr_p3)
+        if cr_p4 is not None:
+            res.append(cr_p4)
+        if sortreduce:
+            self._sortreduce(res)
+        return res
+        
     cpdef real area(self):
         return (self.x2 - self.x1) * (self.y2 - self.y1)
 

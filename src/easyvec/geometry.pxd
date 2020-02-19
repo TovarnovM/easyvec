@@ -12,6 +12,7 @@ cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2)
 
 cpdef real fmax(real a, real b)
 cpdef real fmin(real a, real b)
+cpdef void _sortreduce(list lst, Vec2 close_to)
 
 cdef class Rect:
     cdef public real x1, x2, y1, y2
@@ -22,9 +23,9 @@ cdef class Rect:
     cpdef list keys(self)
     cpdef bint is_null(self)
     cpdef bint is_in(self, Vec2 p)
-    cpdef bint is_cross_seg(self, Vec2 p1, Vec2 p2)
-    cpdef bint is_cross_ray(self, Vec2 p1, Vec2 p2)
-    cpdef bint is_cross_line(self, Vec2 p1, Vec2 p2)
+    cpdef list cross_seg(self, Vec2 p1, Vec2 p2)
+    cpdef list cross_ray(self, Vec2 p1, Vec2 p2)
+    cpdef list cross_line(self, Vec2 p1, Vec2 p2,bint sortreduce=*)
     cpdef real area(self)
     cpdef real perimeter(self)
     cpdef bint is_intersect(self, Rect other)
