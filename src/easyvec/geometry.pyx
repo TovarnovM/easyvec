@@ -3,6 +3,12 @@ from libc.math cimport fabs
 cimport cython
 from .vectors cimport CMP_TOL
 
+def Vec2 intersect(u1=None, u2=None, v1=None, v2=None, line=None, l=None, line1=None, l1=None, line2=None,
+                l2=None, segment=None, s=None, s1=None, segment1=None, segment2=None, s2=None, ray=None, r=None,
+                ray1=None, ray2=None, r1=None, r2=None):
+    cdef Vec2 u1, u2, v1, v2
+    cdef int alen = len(args)
+    
 
 @cython.nonecheck(False)
 cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
