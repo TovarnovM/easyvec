@@ -65,6 +65,18 @@ cdef class Vec2:
         return self
 
     @cython.nonecheck(False)
+    cpdef Vec2 add(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.add_vec_(vec)
+        return result   
+
+    @cython.nonecheck(False)
+    cpdef Vec2 add_(self, Vec2 vec):
+        self.x += vec.x
+        self.y += vec.y
+        return self
+
+    @cython.nonecheck(False)
     cpdef Vec2 add_vec(self, Vec2 vec):
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_vec_(vec)
@@ -136,6 +148,11 @@ cdef class Vec2:
         self.x = -self.x
         self.y = -self.y
         return self
+
+    cpdef Vec2 neg(self):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.neg_()
+        return result
 
     def __neg__(self) -> Vec2:
         cdef Vec2 result = Vec2(self.x, self.y)
@@ -210,6 +227,18 @@ cdef class Vec2:
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_vec(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.sub_vec_(vec)
+        return result
+
+    @cython.nonecheck(False)
+    cpdef Vec2 sub_(self, Vec2 vec):
+        self.x -= vec.x
+        self.y -= vec.y
+        return self
+
+    @cython.nonecheck(False)
+    cpdef Vec2 sub(self, Vec2 vec):
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_vec_(vec)
         return result
@@ -304,6 +333,18 @@ cdef class Vec2:
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_vec(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.mul_vec_(vec)
+        return result
+
+    @cython.nonecheck(False)
+    cpdef Vec2 mul_(self, Vec2 vec):
+        self.x *= vec.x
+        self.y *= vec.y
+        return self
+
+    @cython.nonecheck(False)
+    cpdef Vec2 mul(self, Vec2 vec):
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_vec_(vec)
         return result
@@ -426,6 +467,20 @@ cdef class Vec2:
         result.div_vec_(vec)
         return result
 
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 div_(self, Vec2 vec):
+        self.x /= vec.x
+        self.y /= vec.y
+        return self
+
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 div(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.div_vec_(vec)
+        return result
+
     @cython.cdivision(True)
     cpdef Vec2 div_xy_(self, real x, real y):
         self.x /= x
@@ -533,6 +588,20 @@ cdef class Vec2:
         result.floordiv_vec_(vec)
         return result
 
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 floordiv_(self, Vec2 vec):
+        self.x //= vec.x
+        self.y //= vec.y
+        return self
+
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 floordiv(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.floordiv_vec_(vec)
+        return result
+
     @cython.cdivision(True)
     cpdef Vec2 floordiv_xy_(self, real x, real y):
         self.x //= x
@@ -636,6 +705,20 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_vec(self, Vec2 vec):
+        cdef Vec2 result = Vec2(self.x, self.y)
+        result.mod_vec_(vec)
+        return result
+
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 mod_(self, Vec2 vec):
+        self.x %= vec.x
+        self.y %= vec.y
+        return self
+
+    @cython.nonecheck(False)
+    @cython.cdivision(True)
+    cpdef Vec2 mod(self, Vec2 vec):
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_vec_(vec)
         return result

@@ -1,14 +1,79 @@
 import numpy as np
 from libc.math cimport fabs
 cimport cython
-from .vectors cimport CMP_TOL
+from .vectors cimport CMP_TOL, real, Vec2, rational
 
-def Vec2 intersect(u1=None, u2=None, v1=None, v2=None, line=None, l=None, line1=None, l1=None, line2=None,
-                l2=None, segment=None, s=None, s1=None, segment1=None, segment2=None, s2=None, ray=None, r=None,
-                ray1=None, ray2=None, r1=None, r2=None):
+cpdef Vec2 _convert(object candidate):
+    if isinstance(candidate, Vec2):
+        return <Vec2>(candidate)
+    else:
+        return Vec2(candidate[0], candidate[1])
+
+def intersect(*args, **kwargs):
     cdef Vec2 u1, u2, v1, v2
     cdef int alen = len(args)
+    cdef int klen = len(kwargs)
+    cdef str key1, key2
+    cdef object some1, some2
+    cdef set line_set = {'line', 'l', 'line1', 'l1', 'line2', 'l2'}
+    cdef set segment_set = {'segment', 's', 'segment1', 's1', 'segment2', 's2'}
+    cdef set ray_set = {'ray', 'r', 'ray1', 'r1', 'ray2', 'r2'}
     
+    if alen == 4 and klen == 0:
+        u1 = _convert(args[0])
+        u2 = _convert(args[1])
+        v1 = _convert(args[2])
+        v2 = _convert(args[3])
+        return intersect_segments(u1, u2, v1, v2)
+    if alen == 2 and klen == 1:
+        u1 = _convert(args[0])
+        u2 = _convert(args[1])
+
+        for k in kwargs:
+            v1 = _convert(kwargs[k][0])
+            v2 = _convert(kwargs[k][1])
+            if k in line_set:
+                return intersect_line_segment(v1, v2, u1, u2)
+            elif k in segment_set:
+                return intersect_segments(v1, v2, u1, u2)  
+            elif k in ray_set:
+                return intersect_ray_segment(v1, v2, u1, u2)            
+
+        raise ValueError(f'Неправильные аргументы {args} {kwargs}')
+         
+    elif alen == 0 and klen == 2:
+        key1, (some1, some2) = kwargs.popitem()
+        u1 = _convert(some1)
+        u2 = _convert(some2)
+        key2, (some1, some2) = kwargs.popitem()
+        v1 = _convert(some1)
+        v2 = _convert(some2)
+        if key1 in line_set:
+            if key2 in segment_set:
+                return intersect_line_segment(u1, u2, v1, v2)
+            elif key2 in line_set:
+                return intersect_lines(u1, u2, v1, v2)
+            elif key2 in ray_set:
+                return intersect_ray_line(v1, v2, u1, u2)
+        elif key1 in segment_set:
+            if key2 in segment_set:
+                return intersect_segments(u1, u2, v1, v2)
+            elif key2 in line_set:
+                return intersect_line_segment(v1, v2, u1, u2)
+            elif key2 in ray_set:
+                return intersect_ray_segment(v1, v2, u1, u2) 
+        elif key1 in ray_set:
+            if key2 in segment_set:
+                return intersect_ray_segment(u1, u2, v1, v2)
+            elif key2 in line_set:
+                return intersect_ray_line(u1, u2, v1, v2)
+            elif key2 in ray_set:
+                return intersect_rays(v1, v2, u1, u2)
+    raise ValueError(f'Неправильные аргументы {args} {kwargs}')  
+            
+
+
+
 
 @cython.nonecheck(False)
 cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
@@ -40,7 +105,7 @@ cpdef Vec2 intersect_lines(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
     if not suc:
         return None
-    return u1.add( u2.sub(u1).mul(t1) )
+    return u1.add( u2.sub(u1).mul_num(t1) )
 
 @cython.nonecheck(False)
 cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
@@ -52,7 +117,7 @@ cpdef Vec2 intersect_segments(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
     if (not suc) or t1 < 0.0 or t1 > 1.0 or t2 < 0.0 or t2 > 1.0 :
         return None
-    return u1.add( u2.sub(u1).mul(t1) )
+    return u1.add( u2.sub(u1).mul_num(t1) )
 
 @cython.nonecheck(False)
 cpdef Vec2 intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
@@ -62,7 +127,7 @@ cpdef Vec2 intersect_rays(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
     suc, t1, t2 = _intersect_ts(u1, u2, v1, v2)
     if (not suc) or t1 < 0.0 or t2 < 0.0 :
         return None
-    return u1.add( u2.sub(u1).mul(t1) )
+    return u1.add( u2.sub(u1).mul_num(t1) )
 
 @cython.nonecheck(False)
 cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
@@ -72,7 +137,7 @@ cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
     if (not suc) or t1 < 0.0:
         return None
-    return r1.add( r2.sub(r1).mul(t1) )    
+    return r1.add( r2.sub(r1).mul_num(t1) )    
 
 @cython.nonecheck(False)
 cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
@@ -82,7 +147,7 @@ cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2):
     suc, t1, t2 = _intersect_ts(r1, r2, v1, v2)
     if (not suc) or t1 < 0.0 or t2 < 0.0 or t2 > 1.0 :
         return None
-    return r1.add( r2.sub(r1).mul(t1) )   
+    return r1.add( r2.sub(r1).mul_num(t1) )   
 
 @cython.nonecheck(False)
 cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):
@@ -92,7 +157,7 @@ cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):
     suc, t1, t2 = _intersect_ts(u1, u2, s1, s2)
     if (not suc) or t2 < 0.0 or t2 > 1.0 :
         return None
-    return u1.add( u2.sub(u1).mul(t1) )
+    return u1.add( u2.sub(u1).mul_num(t1) )
 
 cpdef real fmax(real a, real b):
     if a > b:
