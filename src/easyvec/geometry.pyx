@@ -3,6 +3,7 @@ from libc.math cimport fabs
 cimport cython
 from .vectors cimport CMP_TOL, real, Vec2, rational
 
+
 cpdef Vec2 _convert(object candidate):
     if isinstance(candidate, Vec2):
         return <Vec2>(candidate)
@@ -156,23 +157,51 @@ cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2):
         return None
     return u1.add( u2.sub(u1).mul_num(t1) )
 
-cpdef real fmax(real a, real b):
+cpdef inline real fmax(real a, real b) nogil:
     if a > b:
         return a
     else:
         return b
 
-cpdef real fmin(real a, real b):
+cpdef inline real fmin(real a, real b) nogil:
     if a < b:
         return a
     else:
         return b
 
-cpdef void _sortreduce(list lst, Vec2 close_to):
-    cdef int lst_len = len(lst)
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+cpdef array.array _sortreduce(real[:] dists): 
+    cdef int lst_len = dists.shape[0]
     if lst_len <= 1:
-        return
-    # TODO доделать функцию
+        return array.array('i', [0])
+    cdef array.array int_array_template = array.array('i', [])
+    cdef array.array res = array.clone(int_array_template, lst_len, zero=False)
+    cdef array.array res2 = array.clone(int_array_template, lst_len, zero=False)
+    cdef int[:] ind_arr = res
+    cdef int[:] ind_arr2 = res2
+    cdef int i
+    for i in range(lst_len):
+        ind_arr[i] = i
+    cdef real bufferr
+    cdef int j, bufferi, i_min
+    for j in range(lst_len - 1):
+        i_min = j
+        for i in range(j + 1, lst_len):
+            if dists[i] < dists[i_min]:
+                i_min = i
+        ind_arr[j], ind_arr[i_min] = ind_arr[i_min], ind_arr[j]
+        dists[j], dists[i_min] = dists[i_min], dists[j]
+    ind_arr2[0] = ind_arr[0]
+    j = 0
+    for i in range(1, lst_len):
+        if fabs(dists[i] - dists[i-1]) > CMP_TOL:
+            j = j + 1
+            ind_arr2[j] = ind_arr[i]
+    if j+1 != lst_len:
+        array.resize(res2, j+1)
+    return res2        
 
 cdef class Rect:
     def __cinit__(self, *args):

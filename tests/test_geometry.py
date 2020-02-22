@@ -1,6 +1,31 @@
 from pytest import approx
 from easyvec import Vec2, intersect
 import numpy as np
+from easyvec.geometry import _sortreduce
+
+def test_sortreduce1():
+    for i in range(1000):
+        n = np.random.randint(1,13)
+        arr = np.random.uniform(-100, 100, n)
+        inds = _sortreduce(arr.copy())
+        assert len(np.unique(arr)) == len(inds)
+
+def test_sortreduce2():
+    for i in range(1000):
+        n = np.random.randint(1,13)
+        arr = np.random.randint(-3, 3, n)
+        arr2 = np.array(arr, dtype=np.double)
+        inds = _sortreduce(arr2)
+        arr3 = arr[inds]
+        assert len(np.unique(arr)) == len(inds)
+
+def test_sortreduce3():
+    for i in range(1000):
+        n = np.random.randint(1,13)
+        arr = np.random.uniform(-100, 100, n)
+        inds = _sortreduce(arr.copy())
+        inds_right = np.argsort(arr)
+        assert inds_right == approx(inds)
 
 def test_intersect1():
     def vp(x, y):

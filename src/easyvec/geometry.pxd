@@ -1,4 +1,6 @@
 from .vectors cimport Vec2, real, rational
+from cpython cimport array
+import array
 
 cpdef Vec2 _convert(object candidate)
 cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)
@@ -10,9 +12,9 @@ cpdef Vec2 intersect_ray_line(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2)
 cpdef Vec2 intersect_ray_segment(Vec2 r1, Vec2 r2, Vec2 v1, Vec2 v2)
 cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2)
 
-cpdef real fmax(real a, real b)
-cpdef real fmin(real a, real b)
-cpdef void _sortreduce(list lst, Vec2 close_to)
+cpdef real fmax(real a, real b) nogil
+cpdef real fmin(real a, real b) nogil
+cpdef array.array _sortreduce(real[:] dists)
 
 cdef class Rect:
     cdef public real x1, x2, y1, y2
