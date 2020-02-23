@@ -15,6 +15,7 @@ cpdef Vec2 intersect_line_segment(Vec2 u1, Vec2 u2, Vec2 s1, Vec2 s2)
 cpdef real fmax(real a, real b) nogil
 cpdef real fmin(real a, real b) nogil
 cpdef array.array _sortreduce(real[:] dists)
+cpdef list _sortreduce_by_distance(list vecs, Vec2 close_to_point)
 
 cdef class Rect:
     cdef public real x1, x2, y1, y2
@@ -39,3 +40,9 @@ cdef class Rect:
     cpdef Rect union_vec(self, Vec2 vec)
     cpdef Rect union_point(self, real x, real y)
     cpdef bint is_bbox_intersect(self, Vec2 p1, Vec2 p2)
+
+cdef class PolyLine:
+    cdef public list vecs
+    cdef public bint enclosed
+    cdef Rect bbox
+    cdef int vlen

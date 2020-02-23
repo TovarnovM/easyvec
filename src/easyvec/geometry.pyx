@@ -204,7 +204,28 @@ cpdef array.array _sortreduce(real[:] dists):
             ind_arr2[j] = ind_arr[i]
     if j+1 != lst_len:
         array.resize(res2, j+1)
-    return res2        
+    return res2       
+
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+cpdef list _sortreduce_by_distance(list vecs, Vec2 close_to_point):
+    cdef int vec_len = len(vecs)
+    if vec_len < 2:
+        return vecs
+    cdef list res2 = []
+    cdef array.array distances, inds
+    cdef real[:] dists
+
+    distances = array.clone(_double_array_template, vec_len, zero=False)
+    for i in range(vec_len):
+        distances[i] = (close_to_point.sub(<Vec2>(vecs[i]))).len_sqared()
+    dists = distances
+    inds = _sortreduce(dists)
+    for i in range(len(inds)):
+        res2.append(vecs[inds[i]])
+    return res2    
+
 
 @cython.final
 cdef class Rect:
@@ -215,6 +236,38 @@ cdef class Rect:
     @classmethod
     def from_dict(cls, dct: dict) -> Rect:
         return cls(dct['x1'], dct['y1'], dct['x2'], dct['y2'])
+
+    @classmethod
+    def bbox(cls, *args):
+        cdef int alen = len(args)
+        cdef int alen2, i 
+        cdef real x1, y1, x2, y2
+        cdef Vec2 v
+        if alen == 1:
+            alen2 = len(args[0])
+            if alen2 < 2:
+                return cls.null()
+            v = _convert(args[0][0])
+            x1, y1, x2, y2 = v.x, v.y, v.x, v.y
+            for i in range(1, alen2):
+                v = _convert(args[0][i])
+                x1 = fmin(x1, v.x)
+                y1 = fmin(y1, v.y)
+                x2 = fmax(x2, v.x)
+                y2 = fmax(y2, v.y)
+            return cls(x1, y1, x2, y2)
+        elif alen > 1:
+            v = _convert(args[0])
+            x1, y1, x2, y2 = v.x, v.y, v.x, v.y
+            for i in range(1, alen2):
+                v = _convert(args[i])
+                x1 = fmin(x1, v.x)
+                y1 = fmin(y1, v.y)
+                x2 = fmax(x2, v.x)
+                y2 = fmax(y2, v.y)
+            return cls(x1, y1, x2, y2)
+        else:
+            return cls.null()
 
     def __cinit__(self, *args):
         cdef int alen = len(args)
@@ -335,7 +388,6 @@ cdef class Rect:
             array.array distances
             array.array inds
             real[:] dists
-            int res_len = 0
             int i
         cdef Vec2 cr_p1 = intersect_segments(p1, p2, r1, r2)
         cdef Vec2 cr_p2 = intersect_segments(p1, p2, r2, r3)
@@ -343,25 +395,14 @@ cdef class Rect:
         cdef Vec2 cr_p4 = intersect_segments(p1, p2, r4, r1)
         if cr_p1 is not None:
             res.append(cr_p1)
-            res_len += 1
         if cr_p2 is not None:
             res.append(cr_p2)
-            res_len += 1
         if cr_p3 is not None:
             res.append(cr_p3)
-            res_len += 1
         if cr_p4 is not None:
             res.append(cr_p4)
-            res_len += 1
-        if sortreduce and res_len > 1:
-            distances = array.clone(_double_array_template, res_len, zero=False)
-            for i in range(res_len):
-                distances[i] = (p1.sub(<Vec2>(res[i]))).len_sqared()
-            dists = distances
-            inds = _sortreduce(dists)
-            for i in range(len(inds)):
-                res2.append(res[inds[i]])
-            return res2   
+        if sortreduce:
+            return _sortreduce_by_distance(res, p1)  
         return res
 
     @cython.nonecheck(False)
@@ -396,15 +437,8 @@ cdef class Rect:
         if cr_p4 is not None:
             res.append(cr_p4)
             res_len += 1
-        if sortreduce and res_len > 1:
-            distances = array.clone(_double_array_template, res_len, zero=False)
-            for i in range(res_len):
-                distances[i] = (p1.sub(<Vec2>(res[i]))).len_sqared()
-            dists = distances
-            inds = _sortreduce(dists)
-            for i in range(len(inds)):
-                res2.append(res[inds[i]])
-            return res2   
+        if sortreduce:
+            return _sortreduce_by_distance(res, p1)   
         return res
     
     @cython.nonecheck(False)
@@ -439,15 +473,8 @@ cdef class Rect:
         if cr_p4 is not None:
             res.append(cr_p4)
             res_len += 1
-        if sortreduce and res_len > 1:
-            distances = array.clone(_double_array_template, res_len, zero=False)
-            for i in range(res_len):
-                distances[i] = (p1.sub(<Vec2>(res[i]))).len_sqared()
-            dists = distances
-            inds = _sortreduce(dists)
-            for i in range(len(inds)):
-                res2.append(res[inds[i]])
-            return res2   
+        if sortreduce:
+            return _sortreduce_by_distance(res, p1)   
         return res
 
     @cython.nonecheck(False)
@@ -590,6 +617,9 @@ cdef class Rect:
                 or fabs((<Rect>r1).y2 - (<Rect>r2).y2) >= CMP_TOL 
         raise NotImplementedError("Такой тип сравнения не поддерживается")
 
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
     def intersect(self, *args, **kwargs):
         cdef int alen = len(args)
         if alen == 1:
@@ -624,7 +654,9 @@ cdef class Rect:
         else:
             raise  ValueError(f'Неправильные аргументы {args} {kwargs}')  
 
-        
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)    
     def is_intersect(self, *args, **kwargs) -> bool:
         cdef int alen = len(args)
         if alen == 1:
@@ -664,3 +696,88 @@ cdef class Rect:
         return (self.x1 <= fmax(p1.x, p2.x)) and (self.x2 >= fmin(p1.x, p2.x)) \
            and (self.y1 <= fmax(p1.y, p2.y)) and (self.y2 >= fmin(p1.y, p2.y))
  
+
+@cython.final
+cdef class PolyLine:
+    def __cinit__(self, vecs: list, enclosed=True, copy_data=False):
+        cdef int vec_len, i
+        if copy_data:
+            self.vecs = []
+            vec_len = len(vecs)
+            for i in range(vec_len):
+                self.vecs.append( (<Vec2>(vecs[i])).copy() )
+        else:
+            self.vecs = vecs
+        self.vlen = len(self.vecs)
+        if self.vlen < 2:
+            raise ValueError(f'Слишком мало точек для линии. Необходимо больше, чем 1')
+        self.enclosed = enclosed
+        self.bbox = Rect.bbox(self.vecs)
+
+    def __str__(self):
+        s = [f'({v.x:.2f}, {v.y:.2f})' for v in self.vecs]
+        s = ', '.join(s)
+        return f'PolyLine({s})'
+
+    def __repr__(self):
+        s = [f'({v.x}, {v.y})' for v in self.vecs]
+        s = ', '.join(s)
+        return f'PolyLine(vecs=[{s}], enclosed={self.enclosed})'
+
+    # @cython.nonecheck(False)
+    # @cython.boundscheck(False)
+    # @cython.wraparound(False)
+    # cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+    #     cdef list res = []
+    #     cdef int i
+    #     cdef Vec2 v1, v2, v_cr
+    #     v1 = <Vec2>(self.vecs[0])
+    #     for i in range(1, self.vlen):
+    #         v2 = <Vec2>(self.vecs[i])
+    #         v_cr = intersect_line_segment(p1, p2, v1, v2)
+    #         if v_cr is not None:
+    #             res.append(v_cr)
+    #         v1 = v2
+    #     if sortreduce:
+    #         return _sortreduce_by_distance(res, p1)  
+    #     return res
+
+    # @cython.nonecheck(False)
+    # @cython.boundscheck(False)
+    # @cython.wraparound(False)
+    # cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+    #     cdef list res = []
+    #     cdef int i
+    #     cdef Vec2 v1, v2, v_cr
+    #     v1 = <Vec2>(self.vecs[0])
+    #     for i in range(1, self.vlen):
+    #         v2 = <Vec2>(self.vecs[i])
+    #         v_cr = intersect_ray_segment(p1, p2, v1, v2)
+    #         if v_cr is not None:
+    #             res.append(v_cr)
+    #         v1 = v2
+    #     if sortreduce:
+    #         return _sortreduce_by_distance(res, p1)  
+    #     return res
+
+    # @cython.nonecheck(False)
+    # @cython.boundscheck(False)
+    # @cython.wraparound(False)
+    # cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+    #     cdef list res = []
+    #     if not self.bbox.is_bbox_intersect(p1, p2):
+    #         return res
+    #     cdef int i
+    #     cdef Vec2 v1, v2, v_cr
+    #     v1 = <Vec2>(self.vecs[0])
+    #     for i in range(1, self.vlen):
+    #         v2 = <Vec2>(self.vecs[i])
+    #         v_cr = intersect_segments(p1, p2, v1, v2)
+    #         if v_cr is not None:
+    #             res.append(v_cr)
+    #         v1 = v2
+    #     if sortreduce:
+    #         return _sortreduce_by_distance(res, p1)  
+        return res
+
+    
