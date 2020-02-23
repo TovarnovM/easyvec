@@ -9,6 +9,7 @@ CMP_TOL = 1e-8
 def get_CMP_TOL():
     return CMP_TOL
 
+@cython.final
 cdef class Vec2:
     @classmethod
     def from_list(cls, lst):
@@ -203,7 +204,7 @@ cdef class Vec2:
         yield self.x
         yield self.y
 
-    cpdef real[:] as_np(self):
+    def as_np(self):
         return np.array([self.x, self.y])
     
     cpdef tuple as_tuple(self):

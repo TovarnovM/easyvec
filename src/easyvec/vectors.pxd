@@ -50,7 +50,6 @@ cdef class Vec2:
     cpdef Vec2 sub_arr_(self, rational[:] arr)
     cpdef Vec2 sub_arr(self, rational[:] tup)
 
-    cpdef real[:] as_np(self)
     cpdef tuple as_tuple(self)
     cpdef list keys(self)
     cpdef Vec2 neg_(self)

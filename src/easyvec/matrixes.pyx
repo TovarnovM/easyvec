@@ -5,7 +5,7 @@ from cpython.object cimport Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE
 cimport cython
 
 
-
+@cython.final
 cdef class Mat2:
     @classmethod
     def from_xaxis(cls, xaxis):
