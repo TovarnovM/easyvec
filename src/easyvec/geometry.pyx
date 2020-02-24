@@ -259,7 +259,7 @@ cdef class Rect:
         elif alen > 1:
             v = _convert(args[0])
             x1, y1, x2, y2 = v.x, v.y, v.x, v.y
-            for i in range(1, alen2):
+            for i in range(1, alen):
                 v = _convert(args[i])
                 x1 = fmin(x1, v.x)
                 y1 = fmin(y1, v.y)
