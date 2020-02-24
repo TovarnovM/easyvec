@@ -6,8 +6,17 @@ import numpy as np
 
 
 CMP_TOL = 1e-8
+BIG_REAL = 1e33
+MINUS_BIG_REAL = -1e33
+
 def get_CMP_TOL():
     return CMP_TOL
+
+def get_BIG_REAL():
+    return BIG_REAL
+
+def get_MINUS_BIG_REAL():
+    return MINUS_BIG_REAL
 
 @cython.final
 cdef class Vec2:

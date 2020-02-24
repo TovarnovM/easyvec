@@ -9,7 +9,7 @@ ctypedef fused rational:
     cython.float
     cython.double
 
-cdef real CMP_TOL
+cdef real CMP_TOL, BIG_REAL, MINUS_BIG_REAL 
 
 
 cdef class Vec2:

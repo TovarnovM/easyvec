@@ -2387,6 +2387,10 @@ static PyTypeObject *__pyx_ptype_7easyvec_7vectors_Vec2 = 0;
 static PyTypeObject *__pyx_ptype_7easyvec_7vectors_Vec3 = 0;
 static __pyx_t_7easyvec_7vectors_real *__pyx_vp_7easyvec_7vectors_CMP_TOL = 0;
 #define __pyx_v_7easyvec_7vectors_CMP_TOL (*__pyx_vp_7easyvec_7vectors_CMP_TOL)
+static __pyx_t_7easyvec_7vectors_real *__pyx_vp_7easyvec_7vectors_BIG_REAL = 0;
+#define __pyx_v_7easyvec_7vectors_BIG_REAL (*__pyx_vp_7easyvec_7vectors_BIG_REAL)
+static __pyx_t_7easyvec_7vectors_real *__pyx_vp_7easyvec_7vectors_MINUS_BIG_REAL = 0;
+#define __pyx_v_7easyvec_7vectors_MINUS_BIG_REAL (*__pyx_vp_7easyvec_7vectors_MINUS_BIG_REAL)
 
 /* Module declarations from 'libc.math' */
 
@@ -27089,6 +27093,8 @@ static int __Pyx_modinit_variable_import_code(void) {
   /*--- Variable import code ---*/
   __pyx_t_1 = PyImport_ImportModule("easyvec.vectors"); if (!__pyx_t_1) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ImportVoidPtr(__pyx_t_1, "CMP_TOL", (void **)&__pyx_vp_7easyvec_7vectors_CMP_TOL, "__pyx_t_7easyvec_7vectors_real") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ImportVoidPtr(__pyx_t_1, "BIG_REAL", (void **)&__pyx_vp_7easyvec_7vectors_BIG_REAL, "__pyx_t_7easyvec_7vectors_real") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ImportVoidPtr(__pyx_t_1, "MINUS_BIG_REAL", (void **)&__pyx_vp_7easyvec_7vectors_MINUS_BIG_REAL, "__pyx_t_7easyvec_7vectors_real") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   Py_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;

@@ -40,57 +40,34 @@ def test_Rect_intersect3():
 
 def test_Rect_intersect4():
     r = Rect(1,1, 3,3)
-    points = r.intersect((0,2), (2,2))
-    assert points[0] == (1,2)
+    point = r.intersect((0,2), (2,2))
+    assert point == (1,2)
 
 def test_Rect_intersect5():
     r = Rect(1,1, 3,3)
-    points = r.intersect((0,2), (10,2))
-    assert points[0] == (1,2)
-    assert points[1] == (3,2)
+    point = r.intersect((0,2), (10,2))
+    assert point == (1,2)
 
 def test_Rect_intersect6():
     r = Rect(1,1, 3,3)
-    points = r.intersect((0,0), (4,4))
-    assert points[0] == (1,1)
-    assert points[1] == (3,3)
-    assert len(points) == 2
+    point = r.intersect((0,0), (4,4))
+    assert point == (1,1)
 
 def test_Rect_intersect7():
     r = Rect(1,1, 3,3)
-    points = r.intersect((0,3), (4,3))
-    assert points[0] == (1,3)
-    assert points[1] == (3,3)
-    assert len(points) == 2
+    point = r.intersect((0,3), (4,3))
+    assert point == (1,3)
 
 def test_Rect_intersect8():
     r = Rect(1,1, 3,3)
-    points = r.intersect((0,4), (4,0))
-    assert points[0] == (1,3)
-    assert points[1] == (3,1)
-    assert len(points) == 2
+    point = r.intersect((0,4), (4,0))
+    assert point == (1,3)
 
 def test_Rect_intersect9():
     r = Rect(1,1, 3,3)
-    points = r.intersect(r=((0,4), (4,0)))
-    assert points[0] == (1,3)
-    assert points[1] == (3,1)
-    assert len(points) == 2
+    point = r.intersect(r=((0,4), (4,0)))
+    assert point == (1,3)
 
-def test_Rect_intersect10():
-    r = Rect(1,1, 3,3)
-    points = r.intersect_ray(Vec2(0,4), Vec2(4,0), False)
-    assert len(points) == 4
-
-def test_Rect_is_intersect1():
-    r1 = Rect(0,0, 3,3)
-    r2 = Rect(-1,-3, 0,0)
-    assert r1.is_intersect(r2)
-
-def test_Rect_is_intersect2():
-    r1 = Rect(0,0, 3,3)
-    r2 = Rect(-1,-3, 0,-0.00001)
-    assert not r1.is_intersect(r2)
 
 def test_Rect_perimeter():
     for i in range(1000):

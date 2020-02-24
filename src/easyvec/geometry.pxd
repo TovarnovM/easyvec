@@ -25,12 +25,10 @@ cdef class Rect:
     cpdef list keys(self)
     cpdef bint is_null(self)
     cpdef bint is_in(self, Vec2 p)
-    cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
-    cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
-    cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
-    cpdef bint is_intersect_ray(self, Vec2 p1, Vec2 p2)
-    cpdef bint is_intersect_line(self, Vec2 p1, Vec2 p2)
-    cpdef bint is_intersect_segment(self, Vec2 p1, Vec2 p2)
+    cpdef Vec2 intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high,bint ret_closest=*)
+    cpdef Vec2 intersect_segment(self, Vec2 p1, Vec2 p2, bint ret_closest=*)
+    cpdef Vec2 intersect_ray(self, Vec2 p1, Vec2 p2, bint ret_closest=*)
+    cpdef Vec2 intersect_line(self, Vec2 p1, Vec2 p2, bint ret_closest=*)
     cpdef dict to_dict(self)
     cpdef real area(self)
     cpdef real perimeter(self)
@@ -46,3 +44,7 @@ cdef class PolyLine:
     cdef public bint enclosed
     cdef Rect bbox
     cdef int vlen
+    cpdef list intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high, bint sortreduce=*)
+    cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
+    cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
+    cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=*)

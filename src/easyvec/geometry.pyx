@@ -1,7 +1,7 @@
 import numpy as np
 from libc.math cimport fabs
 cimport cython
-from .vectors cimport CMP_TOL, real, Vec2, rational
+from .vectors cimport CMP_TOL, real, Vec2, rational, BIG_REAL, MINUS_BIG_REAL
 from cpython.object cimport Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE
 
 cdef array.array _int_array_template = array.array('i', [])
@@ -375,166 +375,60 @@ cdef class Rect:
     @cython.nonecheck(False)
     @cython.boundscheck(False)
     @cython.wraparound(False)
-    cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-        cdef list res = []
-        if not self.is_bbox_intersect(p1, p2):
-            return res
-        cdef list res2 = []
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-            array.array distances
-            array.array inds
-            real[:] dists
-            int i
-        cdef Vec2 cr_p1 = intersect_segments(p1, p2, r1, r2)
-        cdef Vec2 cr_p2 = intersect_segments(p1, p2, r2, r3)
-        cdef Vec2 cr_p3 = intersect_segments(p1, p2, r3, r4)
-        cdef Vec2 cr_p4 = intersect_segments(p1, p2, r4, r1)
-        if cr_p1 is not None:
-            res.append(cr_p1)
-        if cr_p2 is not None:
-            res.append(cr_p2)
-        if cr_p3 is not None:
-            res.append(cr_p3)
-        if cr_p4 is not None:
-            res.append(cr_p4)
-        if sortreduce:
-            return _sortreduce_by_distance(res, p1)  
-        return res
+    @cython.cdivision(True)
+    cpdef Vec2 intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high,bint ret_closest=True):
+        cdef real znam = p2.x - p1.x
+        cdef real f_dim_low, f_dim_high
+
+        # segm not parallel Ox
+        if fabs(znam) > CMP_TOL:
+            f_dim_low = (self.x1 - p1.x) / znam
+            f_dim_high= (self.x2 - p1.x) / znam     
+
+            if f_dim_high < f_dim_low:
+                f_dim_high, f_dim_low = f_dim_low, f_dim_high # Swap
+            
+            if f_dim_high < f_low or f_dim_low > f_high:
+                return None
+            f_low = fmax(f_dim_low, f_low)
+            f_high= fmin(f_dim_high, f_high)
+
+            if f_low > f_high:
+                return None
+        
+        znam = p2.y - p1.y
+        # segm not parallel Oy
+        if fabs(znam) > CMP_TOL:
+            f_dim_low = (self.y1 - p1.y) / znam
+            f_dim_high= (self.y2 - p1.y) / znam     
+
+            if f_dim_high < f_dim_low:
+                f_dim_high, f_dim_low = f_dim_low, f_dim_high # Swap
+            
+            if f_dim_high < f_low or f_dim_low > f_high:
+                return None
+            f_low = fmax(f_dim_low, f_low)
+            f_high= fmin(f_dim_high, f_high)
+
+            if f_low > f_high:
+                return None
+        
+        if ret_closest:
+            return p1.add( p2.sub(p1).mul_num(f_low) )
+        else:
+            return p1.add( p2.sub(p1).mul_num(f_high) )
 
     @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)
-    cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-        cdef list res = []
-        cdef list res2 = []
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-            array.array distances
-            array.array inds
-            real[:] dists
-            int res_len = 0
-            int i
-        cdef Vec2 cr_p1 = intersect_ray_segment(p1, p2, r1, r2)
-        cdef Vec2 cr_p2 = intersect_ray_segment(p1, p2, r2, r3)
-        cdef Vec2 cr_p3 = intersect_ray_segment(p1, p2, r3, r4)
-        cdef Vec2 cr_p4 = intersect_ray_segment(p1, p2, r4, r1)
-        if cr_p1 is not None:
-            res.append(cr_p1)
-            res_len += 1
-        if cr_p2 is not None:
-            res.append(cr_p2)
-            res_len += 1
-        if cr_p3 is not None:
-            res.append(cr_p3)
-            res_len += 1
-        if cr_p4 is not None:
-            res.append(cr_p4)
-            res_len += 1
-        if sortreduce:
-            return _sortreduce_by_distance(res, p1)   
-        return res
-    
-    @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)
-    cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-        cdef list res = []
-        cdef list res2 = []
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-            array.array distances
-            array.array inds
-            real[:] dists
-            int res_len = 0
-            int i
-        cdef Vec2 cr_p1 = intersect_line_segment(p1, p2, r1, r2)
-        cdef Vec2 cr_p2 = intersect_line_segment(p1, p2, r2, r3)
-        cdef Vec2 cr_p3 = intersect_line_segment(p1, p2, r3, r4)
-        cdef Vec2 cr_p4 = intersect_line_segment(p1, p2, r4, r1)
-        if cr_p1 is not None:
-            res.append(cr_p1)
-            res_len += 1
-        if cr_p2 is not None:
-            res.append(cr_p2)
-            res_len += 1
-        if cr_p3 is not None:
-            res.append(cr_p3)
-            res_len += 1
-        if cr_p4 is not None:
-            res.append(cr_p4)
-            res_len += 1
-        if sortreduce:
-            return _sortreduce_by_distance(res, p1)   
-        return res
+    cpdef Vec2 intersect_segment(self, Vec2 p1, Vec2 p2, bint ret_closest=True):
+        return self.intersect_general(p1, p2, 0.0, 1.0, ret_closest)
 
     @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)    
-    cpdef bint is_intersect_ray(self, Vec2 p1, Vec2 p2):
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-        if intersect_ray_segment(p1, p2, r1, r2) is not None:
-            return 1
-        if intersect_ray_segment(p1, p2, r2, r3) is not None:
-            return 1
-        if intersect_ray_segment(p1, p2, r3, r4) is not None:
-            return 1
-        if intersect_ray_segment(p1, p2, r4, r1) is not None:
-            return 1
-        return 0
-    
-    @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)    
-    cpdef bint is_intersect_line(self, Vec2 p1, Vec2 p2):
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-        if intersect_line_segment(p1, p2, r1, r2) is not None:
-            return 1
-        if intersect_line_segment(p1, p2, r2, r3) is not None:
-            return 1
-        if intersect_line_segment(p1, p2, r3, r4) is not None:
-            return 1
-        if intersect_line_segment(p1, p2, r4, r1) is not None:
-            return 1
-        return 0
+    cpdef Vec2 intersect_ray(self, Vec2 p1, Vec2 p2, bint ret_closest=True):
+        return self.intersect_general(p1, p2, 0.0, BIG_REAL, ret_closest)
 
     @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)    
-    cpdef bint is_intersect_segment(self, Vec2 p1, Vec2 p2):
-        if not self.is_bbox_intersect(p1, p2):
-            return 0
-        cdef:
-            Vec2 r1 = Vec2(self.x1, self.y1)
-            Vec2 r2 = Vec2(self.x1, self.y2)
-            Vec2 r3 = Vec2(self.x2, self.y2)
-            Vec2 r4 = Vec2(self.x2, self.y1)
-        if intersect_segments(p1, p2, r1, r2) is not None:
-            return 1
-        if intersect_segments(p1, p2, r2, r3) is not None:
-            return 1
-        if intersect_segments(p1, p2, r3, r4) is not None:
-            return 1
-        if intersect_segments(p1, p2, r4, r1) is not None:
-            return 1
-        return 0
+    cpdef Vec2 intersect_line(self, Vec2 p1, Vec2 p2, bint ret_closest=True):
+        return self.intersect_general(p1, p2, MINUS_BIG_REAL, BIG_REAL, ret_closest)
 
     cpdef real area(self):
         return (self.x2 - self.x1) * (self.y2 - self.y1)
@@ -653,43 +547,6 @@ cdef class Rect:
                 return self.intersect_segment(v1, v2)
         else:
             raise  ValueError(f'Неправильные аргументы {args} {kwargs}')  
-
-    @cython.nonecheck(False)
-    @cython.boundscheck(False)
-    @cython.wraparound(False)    
-    def is_intersect(self, *args, **kwargs) -> bool:
-        cdef int alen = len(args)
-        if alen == 1:
-            if isinstance(args[0], Rect):
-                return self.is_intersect_rect(args[0])
-            v1, v2 = args[0]
-            v1 = _convert(v1)
-            v2 = _convert(v2)
-            return self.is_intersect_segment(v1, v2)
-        elif alen == 2:
-            v1, v2 = args
-            v1 = _convert(v1)
-            v2 = _convert(v2)
-            return self.is_intersect_segment(v1, v2)
-        elif alen > 2:
-            raise  ValueError(f'Неправильные аргументы {args} {kwargs}')  
-        cdef int klen = len(kwargs)
-        cdef str key
-        if klen == 1:
-            key, tp = kwargs.popitem()
-            if key in {'rect', 'r' }:
-                return self.is_intersect_rect(tp)
-            v1, v2 = tp
-            v1 = _convert(v1)
-            v2 = _convert(v2)
-            if key in {'line', 'l' }:
-                return self.is_intersect_line(v1, v2)
-            if key in {'ray', 'r' }:
-                return self.is_intersect_ray(v1, v2)
-            if key in {'segment', 's' }:
-                return self.is_intersect_segment(v1, v2)
-        else:
-            raise  ValueError(f'Неправильные аргументы {args} {kwargs}')  
        
     @cython.nonecheck(False)
     cpdef bint is_bbox_intersect(self, Vec2 p1, Vec2 p2):
@@ -724,60 +581,41 @@ cdef class PolyLine:
         s = ', '.join(s)
         return f'PolyLine(vecs=[{s}], enclosed={self.enclosed})'
 
-    # @cython.nonecheck(False)
-    # @cython.boundscheck(False)
-    # @cython.wraparound(False)
-    # cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-    #     cdef list res = []
-    #     cdef int i
-    #     cdef Vec2 v1, v2, v_cr
-    #     v1 = <Vec2>(self.vecs[0])
-    #     for i in range(1, self.vlen):
-    #         v2 = <Vec2>(self.vecs[i])
-    #         v_cr = intersect_line_segment(p1, p2, v1, v2)
-    #         if v_cr is not None:
-    #             res.append(v_cr)
-    #         v1 = v2
-    #     if sortreduce:
-    #         return _sortreduce_by_distance(res, p1)  
-    #     return res
-
-    # @cython.nonecheck(False)
-    # @cython.boundscheck(False)
-    # @cython.wraparound(False)
-    # cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-    #     cdef list res = []
-    #     cdef int i
-    #     cdef Vec2 v1, v2, v_cr
-    #     v1 = <Vec2>(self.vecs[0])
-    #     for i in range(1, self.vlen):
-    #         v2 = <Vec2>(self.vecs[i])
-    #         v_cr = intersect_ray_segment(p1, p2, v1, v2)
-    #         if v_cr is not None:
-    #             res.append(v_cr)
-    #         v1 = v2
-    #     if sortreduce:
-    #         return _sortreduce_by_distance(res, p1)  
-    #     return res
-
-    # @cython.nonecheck(False)
-    # @cython.boundscheck(False)
-    # @cython.wraparound(False)
-    # cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
-    #     cdef list res = []
-    #     if not self.bbox.is_bbox_intersect(p1, p2):
-    #         return res
-    #     cdef int i
-    #     cdef Vec2 v1, v2, v_cr
-    #     v1 = <Vec2>(self.vecs[0])
-    #     for i in range(1, self.vlen):
-    #         v2 = <Vec2>(self.vecs[i])
-    #         v_cr = intersect_segments(p1, p2, v1, v2)
-    #         if v_cr is not None:
-    #             res.append(v_cr)
-    #         v1 = v2
-    #     if sortreduce:
-    #         return _sortreduce_by_distance(res, p1)  
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef list intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high, bint sortreduce=True):
+        cdef list res = []
+        if self.bbox.intersect_general(p1, p2, f_low, f_high) is None:
+            return res
+        cdef int i
+        cdef Vec2 v1, v2, v_cr
+        cdef bint inter
+        cdef real t1, t2
+        v1 = <Vec2>(self.vecs[0])
+        for i in range(1, self.vlen):
+            v2 = <Vec2>(self.vecs[i])
+            inter, t1, t2 = _intersect_ts(p1, p2, v1, v2)
+            if inter and (0.0 <= t2 <= 1.0) and (f_low <= t1 <= f_high):
+                v_cr = p1.add( p2.sub(p1).mul_num(t1) )
+                res.append(v_cr)
+            v1 = v2
+        if sortreduce:
+            return _sortreduce_by_distance(res, p1)  
         return res
+
+    @cython.nonecheck(False)
+    cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+        return self.intersect_general(p1, p2, MINUS_BIG_REAL, BIG_REAL, sortreduce)
+
+    @cython.nonecheck(False)
+    cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+        return self.intersect_general(p1, p2, 0.0, BIG_REAL, sortreduce)
+
+    @cython.nonecheck(False)
+    cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
+        return self.intersect_general(p1, p2, 0.0, 1.0, sortreduce)
+
+
 
     
