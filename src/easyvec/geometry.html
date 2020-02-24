@@ -370,10 +370,10 @@ body.cython { font-family: courier; font-size: 12; }
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_np, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_test, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_test, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">002</span>: <span class="k">from</span> <span class="nn">libc.math</span> <span class="k">cimport</span> <span class="n">fabs</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">003</span>: <span class="k">cimport</span> <span class="nn">cython</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">004</span>: <span class="k">from</span> <span class="nn">.vectors</span> <span class="k">cimport</span> <span class="n">CMP_TOL</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">,</span> <span class="n">rational</span><span class="p">,</span> <span class="n">BIG_REAL</span><span class="p">,</span> <span class="n">MINUS_BIG_REAL</span></pre>
@@ -1404,14 +1404,14 @@ static PyObject *__pyx_pf_7easyvec_8geometry_4is_bbox_intersect(CYTHON_UNUSED Py
 <pre class="cython line score-0">&#xA0;<span class="">086</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">cdivision</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span></pre>
 <pre class="cython line score-55" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">087</span>: <span class="k">cpdef</span> (<span class="nf">bint</span><span class="p">,</span> <span class="nf">real</span><span class="p">,</span> <span class="kt">real</span>) <span class="nf">_intersect_ts</span><span class="p">(</span><span class="n">Vec2</span> <span class="n">u1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">u2</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">v1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">v2</span><span class="p">):</span></pre>
 <pre class='cython code score-55 '>static PyObject *__pyx_pw_7easyvec_8geometry_7_intersect_ts(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static __pyx_ctuple_d78dc__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_8geometry__intersect_ts(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static __pyx_ctuple_acdc9__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_f_7easyvec_8geometry__intersect_ts(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_u2, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v2, CYTHON_UNUSED int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec1 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec2 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec3 = 0;
   __pyx_t_7easyvec_7vectors_real __pyx_v_dot;
   __pyx_t_7easyvec_7vectors_real __pyx_v_t1;
   __pyx_t_7easyvec_7vectors_real __pyx_v_t2;
-  __pyx_ctuple_d78dc__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_r;
+  __pyx_ctuple_acdc9__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("_intersect_ts", 0);
 /* … */
@@ -1526,7 +1526,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_6_intersect_ts(CYTHON_UNUSED PyObje
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("_intersect_ts", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_convert__to_py___pyx_ctuple_d78dc__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_convert__to_py___pyx_ctuple_acdc9__int__and___dunderpyx_t_7easyvec_7vectors_real__and___dunderpyx_t_7easyvec_7vectors_real__etc(__pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_u1, __pyx_v_u2, __pyx_v_v1, __pyx_v_v2, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7816,10 +7816,160 @@ static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_line(struct __py
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_ray(struct __pyx_obj_7easyvec_8geometry_PolyLine *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_ray *__pyx_optional_args);
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_segment(struct __pyx_obj_7easyvec_8geometry_PolyLine *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_segment *__pyx_optional_args);
 
-</pre><pre class="cython line score-33" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">559</span>:     <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">enclosed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">copy_data</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-14" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">559</span>:     <span class="nd">@classmethod</span></pre>
+<pre class='cython code score-14 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_Method_ClassMethod</span>(__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  if (<span class='py_c_api'>PyDict_SetItem</span>((PyObject *)__pyx_ptype_7easyvec_8geometry_PolyLine-&gt;tp_dict, __pyx_n_s_from_dict, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 560, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  <span class='py_c_api'>PyType_Modified</span>(__pyx_ptype_7easyvec_8geometry_PolyLine);
+</pre><pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">560</span>:     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span></pre>
+<pre class='cython code score-12 '>/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_1from_dict(PyObject *__pyx_v_cls, PyObject *__pyx_v_dct); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_from_dict[] = "PolyLine.from_dict(type cls, dct)";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_1from_dict(PyObject *__pyx_v_cls, PyObject *__pyx_v_dct) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("from_dict (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_from_dict(((PyTypeObject*)__pyx_v_cls), ((PyObject *)__pyx_v_dct));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_from_dict(PyTypeObject *__pyx_v_cls, PyObject *__pyx_v_dct) {
+  PyObject *__pyx_v_vecs = NULL;
+  PyObject *__pyx_v_enclosed = NULL;
+  PyObject *__pyx_7genexpr__pyx_v_vd = NULL;
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("from_dict", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_vecs);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_enclosed);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_vd);
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+/* … */
+  <span class='pyx_c_api'>__Pyx_GetNameInClass</span>(__pyx_t_2, (PyObject *)__pyx_ptype_7easyvec_8geometry_PolyLine, __pyx_n_s_from_dict);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 560, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+</pre><pre class="cython line score-72" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">561</span>:         <span class="n">vecs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Vec2</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">vd</span><span class="p">)</span> <span class="k">for</span> <span class="n">vd</span> <span class="ow">in</span> <span class="n">dct</span><span class="p">[</span><span class="s">&#39;vecs&#39;</span><span class="p">]]</span></pre>
+<pre class='cython code score-72 '>  { /* enter inner scope */
+    __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Dict_GetItem</span>(__pyx_v_dct, __pyx_n_u_vecs);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    if (likely(<span class='py_c_api'>PyList_CheckExact</span>(__pyx_t_2)) || <span class='py_c_api'>PyTuple_CheckExact</span>(__pyx_t_2)) {
+      __pyx_t_3 = __pyx_t_2; <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_3); __pyx_t_4 = 0;
+      __pyx_t_5 = NULL;
+    } else {
+      __pyx_t_4 = -1; __pyx_t_3 = <span class='py_c_api'>PyObject_GetIter</span>(__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+      __pyx_t_5 = Py_TYPE(__pyx_t_3)-&gt;tp_iternext;<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+    }
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    for (;;) {
+      if (likely(!__pyx_t_5)) {
+        if (likely(<span class='py_c_api'>PyList_CheckExact</span>(__pyx_t_3))) {
+          if (__pyx_t_4 &gt;= <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_3)) break;
+          #if CYTHON_ASSUME_SAFE_MACROS &amp;&amp; !CYTHON_AVOID_BORROWED_REFS
+          __pyx_t_2 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_3, __pyx_t_4); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_2); __pyx_t_4++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L5_error)</span>
+          #else
+          __pyx_t_2 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_3, __pyx_t_4); __pyx_t_4++;<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          #endif
+        } else {
+          if (__pyx_t_4 &gt;= <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_t_3)) break;
+          #if CYTHON_ASSUME_SAFE_MACROS &amp;&amp; !CYTHON_AVOID_BORROWED_REFS
+          __pyx_t_2 = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_t_3, __pyx_t_4); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_2); __pyx_t_4++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L5_error)</span>
+          #else
+          __pyx_t_2 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_3, __pyx_t_4); __pyx_t_4++;<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          #endif
+        }
+      } else {
+        __pyx_t_2 = __pyx_t_5(__pyx_t_3);
+        if (unlikely(!__pyx_t_2)) {
+          PyObject* exc_type = <span class='py_c_api'>PyErr_Occurred</span>();
+          if (exc_type) {
+            if (likely(<span class='pyx_c_api'>__Pyx_PyErr_GivenExceptionMatches</span>(exc_type, PyExc_StopIteration))) <span class='py_c_api'>PyErr_Clear</span>();
+            else <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L5_error)</span>
+          }
+          break;
+        }
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+      }
+      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_7genexpr__pyx_v_vd, __pyx_t_2);
+      __pyx_t_2 = 0;
+      __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_n_s_from_dict);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 561, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
+      __pyx_t_7 = NULL;
+      if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_6))) {
+        __pyx_t_7 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_6);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_6);
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_7);
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+          <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_6, function);
+        }
+      }
+      __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_7genexpr__pyx_v_vd) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_6, __pyx_7genexpr__pyx_v_vd);
+      <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
+      if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_1, (PyObject*)__pyx_t_2))) <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L5_error)</span>
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    }
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_vd); __pyx_7genexpr__pyx_v_vd = 0;
+    goto __pyx_L8_exit_scope;
+    __pyx_L5_error:;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_vd); __pyx_7genexpr__pyx_v_vd = 0;
+    goto __pyx_L1_error;
+    __pyx_L8_exit_scope:;
+  } /* exit inner scope */
+  __pyx_v_vecs = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">562</span>:         <span class="n">enclosed</span> <span class="o">=</span> <span class="n">dct</span><span class="p">[</span><span class="s">&#39;enclosed&#39;</span><span class="p">]</span></pre>
+<pre class='cython code score-2 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_Dict_GetItem</span>(__pyx_v_dct, __pyx_n_u_enclosed);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 562, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_v_enclosed = __pyx_t_1;
+  __pyx_t_1 = 0;
+</pre><pre class="cython line score-13" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">563</span>:         <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">vecs</span><span class="p">,</span> <span class="n">enclosed</span><span class="p">)</span></pre>
+<pre class='cython code score-13 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_vecs);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_vecs);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 0, __pyx_v_vecs);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_enclosed);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_enclosed);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 1, __pyx_v_enclosed);
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_v_cls), __pyx_t_1, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 563, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_3;
+  __pyx_t_3 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">564</span>: </pre>
+<pre class="cython line score-33" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">565</span>:     <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vecs</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">enclosed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">copy_data</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></pre>
 <pre class='cython code score-33 '>/* Python wrapper */
-static int __pyx_pw_7easyvec_8geometry_8PolyLine_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7easyvec_8geometry_8PolyLine_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_7easyvec_8geometry_8PolyLine_3__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_7easyvec_8geometry_8PolyLine_3__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_vecs = 0;
   PyObject *__pyx_v_enclosed = 0;
   PyObject *__pyx_v_copy_data = 0;
@@ -7863,7 +8013,7 @@ static int __pyx_pw_7easyvec_8geometry_8PolyLine_1__cinit__(PyObject *__pyx_v_se
         }
       }
       if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 559, __pyx_L3_error)</span>
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 565, __pyx_L3_error)</span>
       }
     } else {
       switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
@@ -7882,14 +8032,14 @@ static int __pyx_pw_7easyvec_8geometry_8PolyLine_1__cinit__(PyObject *__pyx_v_se
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__cinit__", 0, 1, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 559, __pyx_L3_error)</span>
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__cinit__", 0, 1, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 565, __pyx_L3_error)</span>
   __pyx_L3_error:;
   <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_vecs), (&amp;PyList_Type), 1, "vecs", 1))) <span class='error_goto'>__PYX_ERR(0, 559, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine___cinit__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_vecs, __pyx_v_enclosed, __pyx_v_copy_data);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_vecs), (&amp;PyList_Type), 1, "vecs", 1))) <span class='error_goto'>__PYX_ERR(0, 565, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_2__cinit__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_vecs, __pyx_v_enclosed, __pyx_v_copy_data);
 
   /* function exit code */
   goto __pyx_L0;
@@ -7900,7 +8050,7 @@ static int __pyx_pw_7easyvec_8geometry_8PolyLine_1__cinit__(PyObject *__pyx_v_se
   return __pyx_r;
 }
 
-static int __pyx_pf_7easyvec_8geometry_8PolyLine___cinit__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, PyObject *__pyx_v_vecs, PyObject *__pyx_v_enclosed, PyObject *__pyx_v_copy_data) {
+static int __pyx_pf_7easyvec_8geometry_8PolyLine_2__cinit__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, PyObject *__pyx_v_vecs, PyObject *__pyx_v_enclosed, PyObject *__pyx_v_copy_data) {
   int __pyx_v_vec_len;
   int __pyx_v_i;
   int __pyx_r;
@@ -7920,52 +8070,52 @@ static int __pyx_pf_7easyvec_8geometry_8PolyLine___cinit__(struct __pyx_obj_7eas
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-0">&#xA0;<span class="">560</span>:         <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">vec_len</span><span class="p">,</span> <span class="nf">i</span></pre>
-<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">561</span>:         <span class="k">if</span> <span class="n">copy_data</span><span class="p">:</span></pre>
-<pre class='cython code score-2 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_v_copy_data); if (unlikely(__pyx_t_1 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 561, __pyx_L1_error)</span>
+</pre><pre class="cython line score-0">&#xA0;<span class="">566</span>:         <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">vec_len</span><span class="p">,</span> <span class="nf">i</span></pre>
+<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">567</span>:         <span class="k">if</span> <span class="n">copy_data</span><span class="p">:</span></pre>
+<pre class='cython code score-2 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_v_copy_data); if (unlikely(__pyx_t_1 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 567, __pyx_L1_error)</span>
   if (__pyx_t_1) {
 /* … */
     goto __pyx_L3;
   }
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">562</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span> <span class="o">=</span> <span class="p">[]</span></pre>
-<pre class='cython code score-6 '>    __pyx_t_2 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 562, __pyx_L1_error)</span>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">568</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span> <span class="o">=</span> <span class="p">[]</span></pre>
+<pre class='cython code score-6 '>    __pyx_t_2 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
     <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_v_self-&gt;vecs);
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_v_self-&gt;vecs);
     __pyx_v_self-&gt;vecs = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">563</span>:             <span class="n">vec_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vecs</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">569</span>:             <span class="n">vec_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vecs</span><span class="p">)</span></pre>
 <pre class='cython code score-6 '>    if (unlikely(__pyx_v_vecs == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "object of type 'NoneType' has no len()");
-      <span class='error_goto'>__PYX_ERR(0, 563, __pyx_L1_error)</span>
+      <span class='error_goto'>__PYX_ERR(0, 569, __pyx_L1_error)</span>
     }
-    __pyx_t_3 = <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_v_vecs);<span class='error_goto'> if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 563, __pyx_L1_error)</span>
+    __pyx_t_3 = <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_v_vecs);<span class='error_goto'> if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 569, __pyx_L1_error)</span>
     __pyx_v_vec_len = __pyx_t_3;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">564</span>:             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vec_len</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">570</span>:             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vec_len</span><span class="p">):</span></pre>
 <pre class='cython code score-0 '>    __pyx_t_4 = __pyx_v_vec_len;
     __pyx_t_5 = __pyx_t_4;
     for (__pyx_t_6 = 0; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
-</pre><pre class="cython line score-16" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">565</span>:                 <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="n">vecs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="p">)</span></pre>
+</pre><pre class="cython line score-16" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">571</span>:                 <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="n">vecs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="p">)</span></pre>
 <pre class='cython code score-16 '>      if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
         <span class='py_c_api'>PyErr_Format</span>(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "append");
-        <span class='error_goto'>__PYX_ERR(0, 565, __pyx_L1_error)</span>
+        <span class='error_goto'>__PYX_ERR(0, 571, __pyx_L1_error)</span>
       }
       if (unlikely(__pyx_v_vecs == Py_None)) {
         <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        <span class='error_goto'>__PYX_ERR(0, 565, __pyx_L1_error)</span>
+        <span class='error_goto'>__PYX_ERR(0, 571, __pyx_L1_error)</span>
       }
-      __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt_List</span>(__pyx_v_vecs, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 565, __pyx_L1_error)</span>
+      __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt_List</span>(__pyx_v_vecs, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 571, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-      __pyx_t_7 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2)-&gt;__pyx_vtab)-&gt;copy(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2), 0));<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 565, __pyx_L1_error)</span>
+      __pyx_t_7 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2)-&gt;__pyx_vtab)-&gt;copy(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2), 0));<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 571, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_self-&gt;vecs, __pyx_t_7);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 565, __pyx_L1_error)</span>
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_self-&gt;vecs, __pyx_t_7);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 571, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
     }
-</pre><pre class="cython line score-0">&#xA0;<span class="">566</span>:         <span class="k">else</span><span class="p">:</span></pre>
-<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">567</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span> <span class="o">=</span> <span class="n">vecs</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">572</span>:         <span class="k">else</span><span class="p">:</span></pre>
+<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">573</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span> <span class="o">=</span> <span class="n">vecs</span></pre>
 <pre class='cython code score-2 '>  /*else*/ {
     <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_vecs);
     <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_vecs);
@@ -7974,36 +8124,36 @@ static int __pyx_pf_7easyvec_8geometry_8PolyLine___cinit__(struct __pyx_obj_7eas
     __pyx_v_self-&gt;vecs = __pyx_v_vecs;
   }
   __pyx_L3:;
-</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">568</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">574</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">)</span></pre>
 <pre class='cython code score-8 '>  __pyx_t_7 = __pyx_v_self-&gt;vecs;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_7);
   if (unlikely(__pyx_t_7 == Py_None)) {
     <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    <span class='error_goto'>__PYX_ERR(0, 568, __pyx_L1_error)</span>
+    <span class='error_goto'>__PYX_ERR(0, 574, __pyx_L1_error)</span>
   }
-  __pyx_t_3 = <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_7);<span class='error_goto'> if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 568, __pyx_L1_error)</span>
+  __pyx_t_3 = <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_7);<span class='error_goto'> if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 574, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_self-&gt;vlen = __pyx_t_3;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">569</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span> <span class="o">&lt;</span> <span class="mf">2</span><span class="p">:</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">575</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span> <span class="o">&lt;</span> <span class="mf">2</span><span class="p">:</span></pre>
 <pre class='cython code score-0 '>  __pyx_t_1 = ((__pyx_v_self-&gt;vlen &lt; 2) != 0);
   if (unlikely(__pyx_t_1)) {
 /* … */
   }
-</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">570</span>:             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s">&#39;Слишком мало точек для линии. Необходимо больше, чем 1&#39;</span><span class="p">)</span></pre>
-<pre class='cython code score-10 '>    __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_builtin_ValueError, __pyx_tuple__15, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 570, __pyx_L1_error)</span>
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">576</span>:             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s">&#39;Слишком мало точек для линии. Необходимо больше, чем 1&#39;</span><span class="p">)</span></pre>
+<pre class='cython code score-10 '>    __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_builtin_ValueError, __pyx_tuple__15, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 576, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
     <span class='pyx_c_api'>__Pyx_Raise</span>(__pyx_t_7, 0, 0, 0);
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
-    <span class='error_goto'>__PYX_ERR(0, 570, __pyx_L1_error)</span>
+    <span class='error_goto'>__PYX_ERR(0, 576, __pyx_L1_error)</span>
 /* … */
-  __pyx_tuple__15 = <span class='py_c_api'>PyTuple_Pack</span>(1, __pyx_kp_u_1);<span class='error_goto'> if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 570, __pyx_L1_error)</span>
+  __pyx_tuple__15 = <span class='py_c_api'>PyTuple_Pack</span>(1, __pyx_kp_u_1);<span class='error_goto'> if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 576, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple__15);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple__15);
-</pre><pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">571</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">enclosed</span> <span class="o">=</span> <span class="n">enclosed</span></pre>
-<pre class='cython code score-7 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_v_enclosed); if (unlikely((__pyx_t_1 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 571, __pyx_L1_error)</span>
+</pre><pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">577</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">enclosed</span> <span class="o">=</span> <span class="n">enclosed</span></pre>
+<pre class='cython code score-7 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_v_enclosed); if (unlikely((__pyx_t_1 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 577, __pyx_L1_error)</span>
   __pyx_v_self-&gt;enclosed = __pyx_t_1;
-</pre><pre class="cython line score-19" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">572</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span> <span class="o">=</span> <span class="n">Rect</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">)</span></pre>
-<pre class='cython code score-19 '>  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_n_s_bbox);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 572, __pyx_L1_error)</span>
+</pre><pre class="cython line score-19" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">578</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span> <span class="o">=</span> <span class="n">Rect</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">)</span></pre>
+<pre class='cython code score-19 '>  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_ptype_7easyvec_8geometry_Rect), __pyx_n_s_bbox);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 578, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   __pyx_t_9 = NULL;
   if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_2))) {
@@ -8017,33 +8167,134 @@ static int __pyx_pf_7easyvec_8geometry_8PolyLine___cinit__(struct __pyx_obj_7eas
   }
   __pyx_t_7 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_9, __pyx_v_self-&gt;vecs) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_2, __pyx_v_self-&gt;vecs);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
-  if (unlikely(!__pyx_t_7)) <span class='error_goto'>__PYX_ERR(0, 572, __pyx_L1_error)</span>
+  if (unlikely(!__pyx_t_7)) <span class='error_goto'>__PYX_ERR(0, 578, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_7) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_7, __pyx_ptype_7easyvec_8geometry_Rect))))) <span class='error_goto'>__PYX_ERR(0, 572, __pyx_L1_error)</span>
+  if (!(likely(((__pyx_t_7) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_7, __pyx_ptype_7easyvec_8geometry_Rect))))) <span class='error_goto'>__PYX_ERR(0, 578, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_7);
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_v_self-&gt;bbox);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(((PyObject *)__pyx_v_self-&gt;bbox));
   __pyx_v_self-&gt;bbox = ((struct __pyx_obj_7easyvec_8geometry_Rect *)__pyx_t_7);
   __pyx_t_7 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">573</span>: </pre>
-<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">574</span>:     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">579</span>: </pre>
+<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">580</span>:     <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
 <pre class='cython code score-9 '>/* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_3__str__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_3__str__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_5to_dict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_4to_dict[] = "PolyLine.to_dict(self)";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_5to_dict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
-  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__str__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self));
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_dict (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_4to_dict(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4to_dict(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self) {
+  PyObject *__pyx_8genexpr1__pyx_v_v = NULL;
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_dict", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v);
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">581</span>:         <span class="k">return</span> <span class="p">{</span></pre>
+<pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+</pre><pre class="cython line score-48" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">582</span>:             <span class="s">&#39;vecs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">],</span></pre>
+<pre class='cython code score-48 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 582, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  { /* enter inner scope */
+    __pyx_t_2 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 582, __pyx_L5_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
+      <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not iterable");
+      <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L5_error)</span>
+    }
+    __pyx_t_3 = __pyx_v_self-&gt;vecs; <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_3); __pyx_t_4 = 0;
+    for (;;) {
+      if (__pyx_t_4 &gt;= <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_3)) break;
+      #if CYTHON_ASSUME_SAFE_MACROS &amp;&amp; !CYTHON_AVOID_BORROWED_REFS
+      __pyx_t_5 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_3, __pyx_t_4); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5); __pyx_t_4++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L5_error)</span>
+      #else
+      __pyx_t_5 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_3, __pyx_t_4); __pyx_t_4++;<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 582, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+      #endif
+      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_8genexpr1__pyx_v_v, __pyx_t_5);
+      __pyx_t_5 = 0;
+      __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr1__pyx_v_v, __pyx_n_s_to_dict);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 582, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
+      __pyx_t_7 = NULL;
+      if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_6))) {
+        __pyx_t_7 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_6);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_6);
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_7);
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+          <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_6, function);
+        }
+      }
+      __pyx_t_5 = (__pyx_t_7) ? <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_6, __pyx_t_7) : <span class='pyx_c_api'>__Pyx_PyObject_CallNoArg</span>(__pyx_t_6);
+      <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
+      if (unlikely(!__pyx_t_5)) <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L5_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_2, (PyObject*)__pyx_t_5))) <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L5_error)</span>
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    }
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v); __pyx_8genexpr1__pyx_v_v = 0;
+    goto __pyx_L8_exit_scope;
+    __pyx_L5_error:;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v); __pyx_8genexpr1__pyx_v_v = 0;
+    goto __pyx_L1_error;
+    __pyx_L8_exit_scope:;
+  } /* exit inner scope */
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_vecs, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">583</span>:             <span class="s">&#39;enclosed&#39;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">enclosed</span><span class="p">)</span></pre>
+<pre class='cython code score-8 '>  __pyx_t_8 = __pyx_v_self-&gt;enclosed;
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyBool_FromLong</span>((!(!__pyx_t_8)));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 583, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_enclosed, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 582, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">584</span>:         <span class="p">}</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">585</span>: </pre>
+<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">586</span>:     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-9 '>/* Python wrapper */
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7__str__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7__str__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__str__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_6__str__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6__str__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self) {
   PyObject *__pyx_v_s = NULL;
-  PyObject *__pyx_7genexpr__pyx_v_v = NULL;
+  PyObject *__pyx_8genexpr2__pyx_v_v = NULL;
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__str__", 0);
@@ -8059,31 +8310,31 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
   __pyx_r = NULL;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_s);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_v);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr2__pyx_v_v);
   <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-60" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">575</span>:         <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="s">&#39;({v.x:.2f}, {v.y:.2f})&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-60" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">587</span>:         <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="s">&#39;({v.x:.2f}, {v.y:.2f})&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">]</span></pre>
 <pre class='cython code score-60 '>  { /* enter inner scope */
-    __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+    __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
     if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not iterable");
-      <span class='error_goto'>__PYX_ERR(0, 575, __pyx_L5_error)</span>
+      <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L5_error)</span>
     }
     __pyx_t_2 = __pyx_v_self-&gt;vecs; <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_2); __pyx_t_3 = 0;
     for (;;) {
       if (__pyx_t_3 &gt;= <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_2)) break;
       #if CYTHON_ASSUME_SAFE_MACROS &amp;&amp; !CYTHON_AVOID_BORROWED_REFS
-      __pyx_t_4 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_2, __pyx_t_3); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4); __pyx_t_3++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_2, __pyx_t_3); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4); __pyx_t_3++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L5_error)</span>
       #else
-      __pyx_t_4 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_2, __pyx_t_3); __pyx_t_3++;<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_2, __pyx_t_3); __pyx_t_3++;<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
       #endif
-      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_7genexpr__pyx_v_v, __pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_8genexpr2__pyx_v_v, __pyx_t_4);
       __pyx_t_4 = 0;
-      __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
       __pyx_t_5 = 0;
       __pyx_t_6 = 127;
@@ -8091,9 +8342,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
       __pyx_t_5 += 1;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__16);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_kp_u__16);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_7genexpr__pyx_v_v, __pyx_n_s_x);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr2__pyx_v_v, __pyx_n_s_x);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_Format</span>(__pyx_t_7, __pyx_kp_u_2f);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_Format</span>(__pyx_t_7, __pyx_kp_u_2f);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_8) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_8) : __pyx_t_6;
@@ -8105,9 +8356,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
       __pyx_t_5 += 2;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__4);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 2, __pyx_kp_u__4);
-      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_7genexpr__pyx_v_v, __pyx_n_s_y);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr2__pyx_v_v, __pyx_n_s_y);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_Format</span>(__pyx_t_8, __pyx_kp_u_2f);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_Format</span>(__pyx_t_8, __pyx_kp_u_2f);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_7) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_7) : __pyx_t_6;
@@ -8119,30 +8370,30 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
       __pyx_t_5 += 1;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__5);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 4, __pyx_kp_u__5);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 575, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_1, (PyObject*)__pyx_t_7))) <span class='error_goto'>__PYX_ERR(0, 575, __pyx_L5_error)</span>
+      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_1, (PyObject*)__pyx_t_7))) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L5_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
     }
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_v); __pyx_7genexpr__pyx_v_v = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr2__pyx_v_v); __pyx_8genexpr2__pyx_v_v = 0;
     goto __pyx_L8_exit_scope;
     __pyx_L5_error:;
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_v); __pyx_7genexpr__pyx_v_v = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr2__pyx_v_v); __pyx_8genexpr2__pyx_v_v = 0;
     goto __pyx_L1_error;
     __pyx_L8_exit_scope:;
   } /* exit inner scope */
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">576</span>:         <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></pre>
-<pre class='cython code score-6 '>  __pyx_t_1 = <span class='py_c_api'>PyUnicode_Join</span>(__pyx_kp_u__4, __pyx_v_s);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 576, __pyx_L1_error)</span>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">588</span>:         <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></pre>
+<pre class='cython code score-6 '>  __pyx_t_1 = <span class='py_c_api'>PyUnicode_Join</span>(__pyx_kp_u__4, __pyx_v_s);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_s, __pyx_t_1);
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">577</span>:         <span class="k">return</span> <span class="n">f</span><span class="s">&#39;PolyLine({s})&#39;</span></pre>
+</pre><pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">589</span>:         <span class="k">return</span> <span class="n">f</span><span class="s">&#39;PolyLine({s})&#39;</span></pre>
 <pre class='cython code score-22 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = <span class='py_c_api'>PyTuple_New</span>(3);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 577, __pyx_L1_error)</span>
+  __pyx_t_1 = <span class='py_c_api'>PyTuple_New</span>(3);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 589, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_t_3 = 0;
   __pyx_t_6 = 127;
@@ -8150,7 +8401,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
   __pyx_t_3 += 9;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u_PolyLine);
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 0, __pyx_kp_u_PolyLine);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_v_s, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 577, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_v_s, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 589, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_2) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_2) : __pyx_t_6;
   __pyx_t_3 += <span class='pyx_c_api'>__Pyx_PyUnicode_GET_LENGTH</span>(__pyx_t_2);
@@ -8161,30 +8412,30 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_2__str__(struct __pyx_obj
   __pyx_t_3 += 1;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__5);
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 2, __pyx_kp_u__5);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_1, 3, __pyx_t_3, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 577, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_1, 3, __pyx_t_3, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 589, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">578</span>: </pre>
-<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">579</span>:     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">590</span>: </pre>
+<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">591</span>:     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
 <pre class='cython code score-9 '>/* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_5__repr__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_5__repr__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9__repr__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9__repr__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__repr__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self));
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_8__repr__(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_8__repr__(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self) {
   PyObject *__pyx_v_s = NULL;
-  PyObject *__pyx_8genexpr1__pyx_v_v = NULL;
+  PyObject *__pyx_8genexpr3__pyx_v_v = NULL;
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__repr__", 0);
@@ -8200,31 +8451,31 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
   __pyx_r = NULL;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_s);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr3__pyx_v_v);
   <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-60" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">580</span>:         <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="s">&#39;({v.x}, {v.y})&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-60" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">592</span>:         <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="s">&#39;({v.x}, {v.y})&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">]</span></pre>
 <pre class='cython code score-60 '>  { /* enter inner scope */
-    __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+    __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
     if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not iterable");
-      <span class='error_goto'>__PYX_ERR(0, 580, __pyx_L5_error)</span>
+      <span class='error_goto'>__PYX_ERR(0, 592, __pyx_L5_error)</span>
     }
     __pyx_t_2 = __pyx_v_self-&gt;vecs; <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_2); __pyx_t_3 = 0;
     for (;;) {
       if (__pyx_t_3 &gt;= <span class='py_macro_api'>PyList_GET_SIZE</span>(__pyx_t_2)) break;
       #if CYTHON_ASSUME_SAFE_MACROS &amp;&amp; !CYTHON_AVOID_BORROWED_REFS
-      __pyx_t_4 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_2, __pyx_t_3); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4); __pyx_t_3++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_t_2, __pyx_t_3); <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4); __pyx_t_3++; if (unlikely(0 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 592, __pyx_L5_error)</span>
       #else
-      __pyx_t_4 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_2, __pyx_t_3); __pyx_t_3++;<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_macro_api'>PySequence_ITEM</span>(__pyx_t_2, __pyx_t_3); __pyx_t_3++;<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
       #endif
-      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_8genexpr1__pyx_v_v, __pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_8genexpr3__pyx_v_v, __pyx_t_4);
       __pyx_t_4 = 0;
-      __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
       __pyx_t_5 = 0;
       __pyx_t_6 = 127;
@@ -8232,9 +8483,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
       __pyx_t_5 += 1;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__16);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_kp_u__16);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr1__pyx_v_v, __pyx_n_s_x);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr3__pyx_v_v, __pyx_n_s_x);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_7, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_7, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_8) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_8) : __pyx_t_6;
@@ -8246,9 +8497,9 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
       __pyx_t_5 += 2;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__4);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 2, __pyx_kp_u__4);
-      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr1__pyx_v_v, __pyx_n_s_y);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_8genexpr3__pyx_v_v, __pyx_n_s_y);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_8, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_8, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_7) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_7) : __pyx_t_6;
@@ -8260,30 +8511,30 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
       __pyx_t_5 += 1;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__5);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 4, __pyx_kp_u__5);
-      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 580, __pyx_L5_error)</span>
+      __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_1, (PyObject*)__pyx_t_7))) <span class='error_goto'>__PYX_ERR(0, 580, __pyx_L5_error)</span>
+      if (unlikely(<span class='pyx_c_api'>__Pyx_ListComp_Append</span>(__pyx_t_1, (PyObject*)__pyx_t_7))) <span class='error_goto'>__PYX_ERR(0, 592, __pyx_L5_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
     }
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v); __pyx_8genexpr1__pyx_v_v = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr3__pyx_v_v); __pyx_8genexpr3__pyx_v_v = 0;
     goto __pyx_L8_exit_scope;
     __pyx_L5_error:;
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr1__pyx_v_v); __pyx_8genexpr1__pyx_v_v = 0;
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_8genexpr3__pyx_v_v); __pyx_8genexpr3__pyx_v_v = 0;
     goto __pyx_L1_error;
     __pyx_L8_exit_scope:;
   } /* exit inner scope */
   __pyx_v_s = __pyx_t_1;
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">581</span>:         <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></pre>
-<pre class='cython code score-6 '>  __pyx_t_1 = <span class='py_c_api'>PyUnicode_Join</span>(__pyx_kp_u__4, __pyx_v_s);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 581, __pyx_L1_error)</span>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">593</span>:         <span class="n">s</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></pre>
+<pre class='cython code score-6 '>  __pyx_t_1 = <span class='py_c_api'>PyUnicode_Join</span>(__pyx_kp_u__4, __pyx_v_s);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 593, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_s, __pyx_t_1);
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-29" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">582</span>:         <span class="k">return</span> <span class="n">f</span><span class="s">&#39;PolyLine(vecs=[{s}], enclosed={self.enclosed})&#39;</span></pre>
+</pre><pre class="cython line score-29" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">594</span>:         <span class="k">return</span> <span class="n">f</span><span class="s">&#39;PolyLine(vecs=[{s}], enclosed={self.enclosed})&#39;</span></pre>
 <pre class='cython code score-29 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 582, __pyx_L1_error)</span>
+  __pyx_t_1 = <span class='py_c_api'>PyTuple_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 594, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_t_3 = 0;
   __pyx_t_6 = 127;
@@ -8291,7 +8542,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
   __pyx_t_3 += 15;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u_PolyLine_vecs);
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 0, __pyx_kp_u_PolyLine_vecs);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_v_s, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 582, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_v_s, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 594, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   __pyx_t_6 = (<span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_2) &gt; __pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyUnicode_MAX_CHAR_VALUE</span>(__pyx_t_2) : __pyx_t_6;
   __pyx_t_3 += <span class='pyx_c_api'>__Pyx_PyUnicode_GET_LENGTH</span>(__pyx_t_2);
@@ -8302,7 +8553,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
   __pyx_t_3 += 12;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u_enclosed_2);
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 2, __pyx_kp_u_enclosed_2);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_FromBInt_int</span>(__pyx_v_self-&gt;enclosed);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 582, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_FromBInt_int</span>(__pyx_v_self-&gt;enclosed);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 594, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   __pyx_t_3 += <span class='pyx_c_api'>__Pyx_PyUnicode_GET_LENGTH</span>(__pyx_t_2);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
@@ -8312,18 +8563,18 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_4__repr__(struct __pyx_ob
   __pyx_t_3 += 1;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u__5);
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 4, __pyx_kp_u__5);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_1, 5, __pyx_t_3, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 582, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyUnicode_Join</span>(__pyx_t_1, 5, __pyx_t_3, __pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 594, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">583</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">584</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">585</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">boundscheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">586</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">wraparound</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-83" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">587</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_general</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">real</span> <span class="n">f_low</span><span class="p">,</span> <span class="n">real</span> <span class="n">f_high</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
-<pre class='cython code score-83 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+</pre><pre class="cython line score-0">&#xA0;<span class="">595</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">596</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">597</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">boundscheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">598</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">wraparound</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-83" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">599</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_general</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">real</span> <span class="n">f_low</span><span class="p">,</span> <span class="n">real</span> <span class="n">f_high</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
+<pre class='cython code score-83 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, __pyx_t_7easyvec_7vectors_real __pyx_v_f_low, __pyx_t_7easyvec_7vectors_real __pyx_v_f_high, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_general *__pyx_optional_args) {
   int __pyx_v_sortreduce = ((int)1);
   PyObject *__pyx_v_res = 0;
@@ -8360,9 +8611,9 @@ static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(struct _
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_8PolyLine_6intersect_general[] = "PolyLine.intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high, bool sortreduce=True) -&gt; list";
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_10intersect_general[] = "PolyLine.intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high, bool sortreduce=True) -&gt; list";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_general(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
   __pyx_t_7easyvec_7vectors_real __pyx_v_f_low;
@@ -8400,19 +8651,19 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObje
         case  1:
         if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 1); <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 1); <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_f_low)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 2); <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 2); <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_f_high)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 3); <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, 3); <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -8422,7 +8673,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObje
         }
       }
       if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_general") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_general") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
       }
     } else {
       switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
@@ -8438,25 +8689,25 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObje
     }
     __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
-    __pyx_v_f_low = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[2]); if (unlikely((__pyx_v_f_low == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
-    __pyx_v_f_high = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[3]); if (unlikely((__pyx_v_f_high == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+    __pyx_v_f_low = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[2]); if (unlikely((__pyx_v_f_low == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
+    __pyx_v_f_high = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[3]); if (unlikely((__pyx_v_f_high == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
     if (values[4]) {
-      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[4]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[4]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
     } else {
       __pyx_v_sortreduce = ((int)1);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L3_error)</span>
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_general", 0, 4, 5, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L3_error)</span>
   __pyx_L3_error:;
   <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.intersect_general", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L1_error)</span>
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 587, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, __pyx_v_sortreduce);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 599, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_10intersect_general(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, __pyx_v_sortreduce);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8467,14 +8718,14 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_7intersect_general(PyObje
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, __pyx_t_7easyvec_7vectors_real __pyx_v_f_low, __pyx_t_7easyvec_7vectors_real __pyx_v_f_high, int __pyx_v_sortreduce) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_10intersect_general(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, __pyx_t_7easyvec_7vectors_real __pyx_v_f_low, __pyx_t_7easyvec_7vectors_real __pyx_v_f_high, int __pyx_v_sortreduce) {
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("intersect_general", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 587, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 599, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8490,13 +8741,13 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">588</span>:         <span class="k">cdef</span> <span class="kt">list</span> <span class="nf">res</span> <span class="o">=</span> <span class="p">[]</span></pre>
-<pre class='cython code score-5 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)</span>
+</pre><pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">600</span>:         <span class="k">cdef</span> <span class="kt">list</span> <span class="nf">res</span> <span class="o">=</span> <span class="p">[]</span></pre>
+<pre class='cython code score-5 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 600, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_v_res = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">589</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">f_low</span><span class="p">,</span> <span class="n">f_high</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span></pre>
-<pre class='cython code score-1 '>  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_intersect_general(__pyx_v_self-&gt;bbox, __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 589, __pyx_L1_error)</span>
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">601</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">f_low</span><span class="p">,</span> <span class="n">f_high</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span></pre>
+<pre class='cython code score-1 '>  __pyx_t_1 = ((PyObject *)__pyx_f_7easyvec_8geometry_4Rect_intersect_general(__pyx_v_self-&gt;bbox, __pyx_v_p1, __pyx_v_p2, __pyx_v_f_low, __pyx_v_f_high, 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 601, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_t_2 = (__pyx_t_1 == Py_None);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
@@ -8504,39 +8755,39 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
   if (__pyx_t_3) {
 /* … */
   }
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">590</span>:             <span class="k">return</span> <span class="n">res</span></pre>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">602</span>:             <span class="k">return</span> <span class="n">res</span></pre>
 <pre class='cython code score-2 '>    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
     <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_res);
     __pyx_r = __pyx_v_res;
     goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">591</span>:         <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">i</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">592</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">v1</span><span class="p">,</span> <span class="nf">v2</span><span class="p">,</span> <span class="nf">v_cr</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">593</span>:         <span class="k">cdef</span> <span class="kt">bint</span> <span class="nf">inter</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">594</span>:         <span class="k">cdef</span> <span class="kt">real</span> <span class="nf">t1</span><span class="p">,</span> <span class="nf">t2</span></pre>
-<pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">595</span>:         <span class="n">v1</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">603</span>:         <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">i</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">604</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">v1</span><span class="p">,</span> <span class="nf">v2</span><span class="p">,</span> <span class="nf">v_cr</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">605</span>:         <span class="k">cdef</span> <span class="kt">bint</span> <span class="nf">inter</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">606</span>:         <span class="k">cdef</span> <span class="kt">real</span> <span class="nf">t1</span><span class="p">,</span> <span class="nf">t2</span></pre>
+<pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">607</span>:         <span class="n">v1</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span></pre>
 <pre class='cython code score-7 '>  if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
     <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    <span class='error_goto'>__PYX_ERR(0, 595, __pyx_L1_error)</span>
+    <span class='error_goto'>__PYX_ERR(0, 607, __pyx_L1_error)</span>
   }
   __pyx_t_1 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_v_self-&gt;vecs, 0);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
   __pyx_v_v1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">596</span>:         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">608</span>:         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vlen</span><span class="p">):</span></pre>
 <pre class='cython code score-0 '>  __pyx_t_4 = __pyx_v_self-&gt;vlen;
   __pyx_t_5 = __pyx_t_4;
   for (__pyx_t_6 = 1; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_i = __pyx_t_6;
-</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">597</span>:             <span class="n">v2</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></pre>
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">609</span>:             <span class="n">v2</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></pre>
 <pre class='cython code score-8 '>    if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      <span class='error_goto'>__PYX_ERR(0, 597, __pyx_L1_error)</span>
+      <span class='error_goto'>__PYX_ERR(0, 609, __pyx_L1_error)</span>
     }
     __pyx_t_1 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_v_self-&gt;vecs, __pyx_v_i);
     <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
     <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_v2, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
     __pyx_t_1 = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">598</span>:             <span class="n">inter</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">_intersect_ts</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">610</span>:             <span class="n">inter</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">_intersect_ts</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span></pre>
 <pre class='cython code score-0 '>    __pyx_t_7 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_p1, __pyx_v_p2, __pyx_v_v1, __pyx_v_v2, 0);
     __pyx_t_3 = __pyx_t_7.f0;
     __pyx_t_8 = __pyx_t_7.f1;
@@ -8544,7 +8795,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
     __pyx_v_inter = __pyx_t_3;
     __pyx_v_t1 = __pyx_t_8;
     __pyx_v_t2 = __pyx_t_9;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">599</span>:             <span class="k">if</span> <span class="n">inter</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">t2</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f_low</span> <span class="o">&lt;=</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">f_high</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">611</span>:             <span class="k">if</span> <span class="n">inter</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">t2</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f_low</span> <span class="o">&lt;=</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">f_high</span><span class="p">):</span></pre>
 <pre class='cython code score-0 '>    __pyx_t_2 = (__pyx_v_inter != 0);
     if (__pyx_t_2) {
     } else {
@@ -8571,38 +8822,38 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
     if (__pyx_t_3) {
 /* … */
     }
-</pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">600</span>:                 <span class="n">v_cr</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">p2</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">mul_num</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="p">)</span></pre>
-<pre class='cython code score-3 '>      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p2-&gt;__pyx_vtab)-&gt;sub(__pyx_v_p2, __pyx_v_p1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 600, __pyx_L1_error)</span>
+</pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">612</span>:                 <span class="n">v_cr</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">p2</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">mul_num</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="p">)</span></pre>
+<pre class='cython code score-3 '>      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p2-&gt;__pyx_vtab)-&gt;sub(__pyx_v_p2, __pyx_v_p1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 612, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-      __pyx_t_11 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;mul_num(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), __pyx_v_t1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 600, __pyx_L1_error)</span>
+      __pyx_t_11 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;mul_num(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), __pyx_v_t1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 612, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_11);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p1-&gt;__pyx_vtab)-&gt;add(__pyx_v_p1, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_11), 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 600, __pyx_L1_error)</span>
+      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p1-&gt;__pyx_vtab)-&gt;add(__pyx_v_p1, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_11), 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 612, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_11); __pyx_t_11 = 0;
       <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_v_cr, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
       __pyx_t_1 = 0;
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">601</span>:                 <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_cr</span><span class="p">)</span></pre>
-<pre class='cython code score-2 '>      __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_res, ((PyObject *)__pyx_v_v_cr));<span class='error_goto'> if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 601, __pyx_L1_error)</span>
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">602</span>:             <span class="n">v1</span> <span class="o">=</span> <span class="n">v2</span></pre>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">613</span>:                 <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_cr</span><span class="p">)</span></pre>
+<pre class='cython code score-2 '>      __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_res, ((PyObject *)__pyx_v_v_cr));<span class='error_goto'> if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 613, __pyx_L1_error)</span>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">614</span>:             <span class="n">v1</span> <span class="o">=</span> <span class="n">v2</span></pre>
 <pre class='cython code score-2 '>    <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_v2));
     <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_v1, __pyx_v_v2);
   }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">603</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enclosed</span><span class="p">:</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">615</span>:         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enclosed</span><span class="p">:</span></pre>
 <pre class='cython code score-0 '>  __pyx_t_3 = (__pyx_v_self-&gt;enclosed != 0);
   if (__pyx_t_3) {
 /* … */
   }
-</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">604</span>:             <span class="n">v2</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span></pre>
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">616</span>:             <span class="n">v2</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">Vec2</span><span class="p">&gt;(</span><span class="bp">self</span><span class="o">.</span><span class="n">vecs</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span></pre>
 <pre class='cython code score-8 '>    if (unlikely(__pyx_v_self-&gt;vecs == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      <span class='error_goto'>__PYX_ERR(0, 604, __pyx_L1_error)</span>
+      <span class='error_goto'>__PYX_ERR(0, 616, __pyx_L1_error)</span>
     }
     __pyx_t_1 = <span class='py_macro_api'>PyList_GET_ITEM</span>(__pyx_v_self-&gt;vecs, 0);
     <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
     <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_v2, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
     __pyx_t_1 = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">605</span>:             <span class="n">inter</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">_intersect_ts</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">617</span>:             <span class="n">inter</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">_intersect_ts</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span></pre>
 <pre class='cython code score-0 '>    __pyx_t_7 = __pyx_f_7easyvec_8geometry__intersect_ts(__pyx_v_p1, __pyx_v_p2, __pyx_v_v1, __pyx_v_v2, 0);
     __pyx_t_3 = __pyx_t_7.f0;
     __pyx_t_9 = __pyx_t_7.f1;
@@ -8610,7 +8861,7 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
     __pyx_v_inter = __pyx_t_3;
     __pyx_v_t1 = __pyx_t_9;
     __pyx_v_t2 = __pyx_t_8;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">606</span>:             <span class="k">if</span> <span class="n">inter</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">t2</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f_low</span> <span class="o">&lt;=</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">f_high</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">618</span>:             <span class="k">if</span> <span class="n">inter</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">t2</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f_low</span> <span class="o">&lt;=</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">f_high</span><span class="p">):</span></pre>
 <pre class='cython code score-0 '>    __pyx_t_2 = (__pyx_v_inter != 0);
     if (__pyx_t_2) {
     } else {
@@ -8637,40 +8888,40 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_6intersect_general(struct
     if (__pyx_t_3) {
 /* … */
     }
-</pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">607</span>:                 <span class="n">v_cr</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">p2</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">mul_num</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="p">)</span></pre>
-<pre class='cython code score-3 '>      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p2-&gt;__pyx_vtab)-&gt;sub(__pyx_v_p2, __pyx_v_p1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 607, __pyx_L1_error)</span>
+</pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">619</span>:                 <span class="n">v_cr</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">p2</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">mul_num</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="p">)</span></pre>
+<pre class='cython code score-3 '>      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p2-&gt;__pyx_vtab)-&gt;sub(__pyx_v_p2, __pyx_v_p1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 619, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-      __pyx_t_11 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;mul_num(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), __pyx_v_t1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 607, __pyx_L1_error)</span>
+      __pyx_t_11 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;mul_num(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), __pyx_v_t1, 0));<span class='error_goto'> if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 619, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_11);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p1-&gt;__pyx_vtab)-&gt;add(__pyx_v_p1, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_11), 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 607, __pyx_L1_error)</span>
+      __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_p1-&gt;__pyx_vtab)-&gt;add(__pyx_v_p1, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_11), 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 619, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_11); __pyx_t_11 = 0;
       <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_v_cr, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
       __pyx_t_1 = 0;
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">608</span>:                 <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_cr</span><span class="p">)</span></pre>
-<pre class='cython code score-2 '>      __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_res, ((PyObject *)__pyx_v_v_cr));<span class='error_goto'> if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 608, __pyx_L1_error)</span>
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">609</span>:         <span class="k">if</span> <span class="n">sortreduce</span><span class="p">:</span></pre>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">620</span>:                 <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_cr</span><span class="p">)</span></pre>
+<pre class='cython code score-2 '>      __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_res, ((PyObject *)__pyx_v_v_cr));<span class='error_goto'> if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 620, __pyx_L1_error)</span>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">621</span>:         <span class="k">if</span> <span class="n">sortreduce</span><span class="p">:</span></pre>
 <pre class='cython code score-0 '>  __pyx_t_3 = (__pyx_v_sortreduce != 0);
   if (__pyx_t_3) {
 /* … */
   }
-</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">610</span>:             <span class="k">return</span> <span class="n">_sortreduce_by_distance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">622</span>:             <span class="k">return</span> <span class="n">_sortreduce_by_distance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-    __pyx_t_1 = __pyx_f_7easyvec_8geometry__sortreduce_by_distance(__pyx_v_res, __pyx_v_p1, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 610, __pyx_L1_error)</span>
+    __pyx_t_1 = __pyx_f_7easyvec_8geometry__sortreduce_by_distance(__pyx_v_res, __pyx_v_p1, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 622, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
     __pyx_r = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">611</span>:         <span class="k">return</span> <span class="n">res</span></pre>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">623</span>:         <span class="k">return</span> <span class="n">res</span></pre>
 <pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_res);
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">612</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">613</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">614</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
-<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+</pre><pre class="cython line score-0">&#xA0;<span class="">624</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">625</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">626</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
+<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_line(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_line *__pyx_optional_args) {
   int __pyx_v_sortreduce = ((int)1);
   PyObject *__pyx_r = NULL;
@@ -8694,9 +8945,9 @@ static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_line(struct __py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_8PolyLine_8intersect_line[] = "PolyLine.intersect_line(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_12intersect_line[] = "PolyLine.intersect_line(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_line(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
   int __pyx_v_sortreduce;
@@ -8728,7 +8979,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject 
         case  1:
         if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_line", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_line", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -8738,7 +8989,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject 
         }
       }
       if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_line") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L3_error)</span>
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_line") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L3_error)</span>
       }
     } else {
       switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
@@ -8753,22 +9004,22 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject 
     __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     if (values[2]) {
-      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L3_error)</span>
+      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L3_error)</span>
     } else {
       __pyx_v_sortreduce = ((int)1);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_line", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L3_error)</span>
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_line", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L3_error)</span>
   __pyx_L3_error:;
   <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.intersect_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L1_error)</span>
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 614, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_8intersect_line(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 626, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_12intersect_line(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8779,14 +9030,14 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_9intersect_line(PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_8intersect_line(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_12intersect_line(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("intersect_line", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_line(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 614, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_line(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 626, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8802,19 +9053,19 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_8intersect_line(struct __
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">615</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">MINUS_BIG_REAL</span><span class="p">,</span> <span class="n">BIG_REAL</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">627</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">MINUS_BIG_REAL</span><span class="p">,</span> <span class="n">BIG_REAL</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, __pyx_v_7easyvec_7vectors_MINUS_BIG_REAL, __pyx_v_7easyvec_7vectors_BIG_REAL, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 615, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, __pyx_v_7easyvec_7vectors_MINUS_BIG_REAL, __pyx_v_7easyvec_7vectors_BIG_REAL, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 627, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">616</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">617</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">618</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_ray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
-<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+</pre><pre class="cython line score-0">&#xA0;<span class="">628</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">629</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">630</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_ray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
+<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_15intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_ray(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_ray *__pyx_optional_args) {
   int __pyx_v_sortreduce = ((int)1);
   PyObject *__pyx_r = NULL;
@@ -8838,9 +9089,9 @@ static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_ray(struct __pyx
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_8PolyLine_10intersect_ray[] = "PolyLine.intersect_ray(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_15intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_14intersect_ray[] = "PolyLine.intersect_ray(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_15intersect_ray(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
   int __pyx_v_sortreduce;
@@ -8872,7 +9123,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject 
         case  1:
         if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_ray", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_ray", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -8882,7 +9133,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject 
         }
       }
       if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_ray") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L3_error)</span>
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_ray") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L3_error)</span>
       }
     } else {
       switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
@@ -8897,22 +9148,22 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject 
     __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     if (values[2]) {
-      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L3_error)</span>
+      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L3_error)</span>
     } else {
       __pyx_v_sortreduce = ((int)1);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_ray", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L3_error)</span>
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_ray", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L3_error)</span>
   __pyx_L3_error:;
   <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.intersect_ray", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L1_error)</span>
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 618, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_10intersect_ray(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 630, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_14intersect_ray(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8923,14 +9174,14 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_11intersect_ray(PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_10intersect_ray(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_14intersect_ray(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("intersect_ray", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_ray(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 618, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_ray(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 630, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8946,19 +9197,19 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_10intersect_ray(struct __
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">619</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">BIG_REAL</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">631</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">BIG_REAL</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 0.0, __pyx_v_7easyvec_7vectors_BIG_REAL, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 619, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 0.0, __pyx_v_7easyvec_7vectors_BIG_REAL, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 631, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">620</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">621</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">622</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
-<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+</pre><pre class="cython line score-0">&#xA0;<span class="">632</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">633</span>:     <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
+<pre class="cython line score-46" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">634</span>:     <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">intersect_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">p2</span><span class="p">,</span> <span class="n">bint</span> <span class="n">sortreduce</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span></pre>
+<pre class='cython code score-46 '>static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_17intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_segment(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_8geometry_8PolyLine_intersect_segment *__pyx_optional_args) {
   int __pyx_v_sortreduce = ((int)1);
   PyObject *__pyx_r = NULL;
@@ -8982,9 +9233,9 @@ static PyObject *__pyx_f_7easyvec_8geometry_8PolyLine_intersect_segment(struct _
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_8geometry_8PolyLine_12intersect_segment[] = "PolyLine.intersect_segment(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
-static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_17intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_7easyvec_8geometry_8PolyLine_16intersect_segment[] = "PolyLine.intersect_segment(self, Vec2 p1, Vec2 p2, bool sortreduce=True) -&gt; list";
+static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_17intersect_segment(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1 = 0;
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2 = 0;
   int __pyx_v_sortreduce;
@@ -9016,7 +9267,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObj
         case  1:
         if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_segment", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L3_error)</span>
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_segment", 0, 2, 3, 1); <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L3_error)</span>
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -9026,7 +9277,7 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObj
         }
       }
       if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_segment") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L3_error)</span>
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "intersect_segment") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L3_error)</span>
       }
     } else {
       switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
@@ -9041,22 +9292,22 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObj
     __pyx_v_p1 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     __pyx_v_p2 = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     if (values[2]) {
-      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L3_error)</span>
+      __pyx_v_sortreduce = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(values[2]); if (unlikely((__pyx_v_sortreduce == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L3_error)</span>
     } else {
       __pyx_v_sortreduce = ((int)1);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_segment", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L3_error)</span>
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("intersect_segment", 0, 2, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L3_error)</span>
   __pyx_L3_error:;
   <span class='pyx_c_api'>__Pyx_AddTraceback</span>("easyvec.geometry.PolyLine.intersect_segment", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L1_error)</span>
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 622, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_12intersect_segment(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p1), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p1", 0))) <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_p2), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "p2", 0))) <span class='error_goto'>__PYX_ERR(0, 634, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_7easyvec_8geometry_8PolyLine_16intersect_segment(((struct __pyx_obj_7easyvec_8geometry_PolyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_sortreduce);
 
   /* function exit code */
   goto __pyx_L0;
@@ -9067,14 +9318,14 @@ static PyObject *__pyx_pw_7easyvec_8geometry_8PolyLine_13intersect_segment(PyObj
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_12intersect_segment(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
+static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_16intersect_segment(struct __pyx_obj_7easyvec_8geometry_PolyLine *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p1, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_p2, int __pyx_v_sortreduce) {
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("intersect_segment", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_segment(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 622, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_vtabptr_7easyvec_8geometry_PolyLine-&gt;intersect_segment(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 1, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 634, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9090,17 +9341,17 @@ static PyObject *__pyx_pf_7easyvec_8geometry_8PolyLine_12intersect_segment(struc
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">623</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">635</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_general</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">sortreduce</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sortreduce = __pyx_v_sortreduce;
-  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 0.0, 1.0, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 623, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_7easyvec_8geometry_8PolyLine_intersect_general(__pyx_v_self, __pyx_v_p1, __pyx_v_p2, 0.0, 1.0, 0, &amp;__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 635, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">624</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">625</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">626</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">627</span>: </pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">636</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">637</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">638</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">639</span>: </pre>
 </div></body></html>

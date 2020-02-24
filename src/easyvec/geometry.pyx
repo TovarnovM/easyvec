@@ -556,6 +556,12 @@ cdef class Rect:
 
 @cython.final
 cdef class PolyLine:
+    @classmethod
+    def from_dict(cls, dct):
+        vecs = [Vec2.from_dict(vd) for vd in dct['vecs']]
+        enclosed = dct['enclosed']
+        return cls(vecs, enclosed)
+
     def __cinit__(self, vecs: list, enclosed=True, copy_data=False):
         cdef int vec_len, i
         if copy_data:
@@ -570,6 +576,12 @@ cdef class PolyLine:
             raise ValueError(f'Слишком мало точек для линии. Необходимо больше, чем 1')
         self.enclosed = enclosed
         self.bbox = Rect.bbox(self.vecs)
+
+    def to_dict(self):
+        return {
+            'vecs': [v.to_dict() for v in self.vecs],
+            'enclosed': bool(self.enclosed)
+        }
 
     def __str__(self):
         s = [f'({v.x:.2f}, {v.y:.2f})' for v in self.vecs]
