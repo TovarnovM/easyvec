@@ -600,6 +600,12 @@ cdef class PolyLine:
                 v_cr = p1.add( p2.sub(p1).mul_num(t1) )
                 res.append(v_cr)
             v1 = v2
+        if self.enclosed:
+            v2 = <Vec2>(self.vecs[0])
+            inter, t1, t2 = _intersect_ts(p1, p2, v1, v2)
+            if inter and (0.0 <= t2 <= 1.0) and (f_low <= t1 <= f_high):
+                v_cr = p1.add( p2.sub(p1).mul_num(t1) )
+                res.append(v_cr)
         if sortreduce:
             return _sortreduce_by_distance(res, p1)  
         return res
