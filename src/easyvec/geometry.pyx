@@ -224,8 +224,30 @@ cpdef list _sortreduce_by_distance(list vecs, Vec2 close_to_point):
     inds = _sortreduce(dists)
     for i in range(len(inds)):
         res2.append(vecs[inds[i]])
-    return res2    
+    return res2 
 
+   
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.cdivision(True)
+cpdef bint is_in_polygon(Vec2 point, list polygon_points):
+    cdef Vec2 point1 = Vec2(point.x + 1e6, point.y)
+    cdef int plen = len(polygon_points)
+    cdef int i, n_intersect = 0
+    cdef Vec2 v1 = <Vec2>(polygon_points[0])
+    cdef Vec2 v2
+    for i in range(1, plen):
+        v2 = <Vec2>(polygon_points[1])
+        if intersect_segments(point, point1, v1, v2):
+            n_intersect += 1
+        v1 = v2
+    v2 = <Vec2>(polygon_points[0])
+    if intersect_segments(point, point1, v1, v2):
+        n_intersect += 1
+    if n_intersect > 0 and n_intersect % 2 != 0:
+        return True
+    return False
 
 @cython.final
 cdef class Rect:

@@ -16,6 +16,7 @@ cpdef real fmax(real a, real b) nogil
 cpdef real fmin(real a, real b) nogil
 cpdef array.array _sortreduce(real[:] dists)
 cpdef list _sortreduce_by_distance(list vecs, Vec2 close_to_point)
+cpdef bint is_in_polygon(Vec2 point, list polygon_points)
 
 cdef class Rect:
     cdef public real x1, x2, y1, y2
