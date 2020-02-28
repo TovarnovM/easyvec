@@ -249,6 +249,107 @@ cpdef bint is_in_polygon(Vec2 point, list polygon_points):
         return True
     return False
 
+@cython.nonecheck(False)
+@cython.cdivision(True)
+cpdef real _closest_point_t(Vec2 u1, Vec2 u2, Vec2 p):
+    cdef Vec2 u = u2.sub(u1)
+    cdef real znam = u.dot(u)
+    if fabs(znam) < CMP_TOL:
+        return 0.0
+    cdef Vec2 v = u1.sub(p)
+    return - u.dot(v) / znam
+
+@cython.nonecheck(False)
+cpdef Vec2 closest_on_line(Vec2 u1, Vec2 u2, Vec2 p):
+    cdef real t = _closest_point_t(u1, u2, p)
+    return (u1.mul_num(1 - t)).add(u2.mul_num(t))
+
+@cython.nonecheck(False)
+cpdef Vec2 closest_on_ray(Vec2 u1, Vec2 u2, Vec2 p):
+    cdef real t = _closest_point_t(u1, u2, p)
+    if t < 0:
+        t = 0
+    return (u1.mul_num(1 - t)).add(u2.mul_num(t))
+
+@cython.nonecheck(False)
+cpdef Vec2 closest_on_segment(Vec2 u1, Vec2 u2, Vec2 p):
+    cdef real t = _closest_point_t(u1, u2, p)
+    if t < 0:
+        t = 0
+    elif t > 1:
+        t = 1
+    return (u1.mul_num(1 - t)).add(u2.mul_num(t))
+
+def closest(*args, **kwargs):
+    cdef Vec2 u1, u2, p
+    cdef int alen = len(args)
+    cdef int klen = len(kwargs)
+    cdef str key1, key2
+    cdef object some1, some2
+    cdef set line_set = {'line', 'l', 'line1', 'l1', 'line2', 'l2'}
+    cdef set segment_set = {'segment', 's', 'segment1', 's1', 'segment2', 's2'}
+    cdef set ray_set = {'ray', 'r', 'ray1', 'r1', 'ray2', 'r2'}
+    cdef set point_set = {'point', 'p'}
+    
+    if alen == 3 and klen == 0:
+        u1 = _convert(args[0])
+        u2 = _convert(args[1])
+        p = _convert(args[2])
+        return closest_on_segment(u1, u2, p)
+    elif alen == 2 and klen == 1:
+        u1 = _convert(args[0])
+        u2 = _convert(args[1])
+        key1, some1 = kwargs.popitem()
+        p = _convert(some1)
+        if key1 in point_set:
+            return closest_on_segment(u1, u2, p)           
+
+        raise ValueError(f'Неправильные аргументы {args} {kwargs}')
+    elif alen == 1 and klen == 1:
+        p = _convert(args[0])
+        key1, (some1, some2) = kwargs.popitem()
+        u1 = _convert(some1)
+        u2 = _convert(some2)
+        if key1 in line_set:
+            return closest_on_line(u1, u2, p)
+        elif key1 in ray_set:
+            return closest_on_ray(u1, u2, p)
+        elif key1 in segment_set:
+            return closest_on_segment(u1, u2, p)
+         
+    elif alen == 0 and klen == 2:
+        key1, some1 = kwargs.popitem()
+        key2, some2 = kwargs.popitem()
+        if key1 in point_set:
+            p = _convert(some1)
+            u1 = _convert(some2[0])
+            u2 = _convert(some2[1])
+            if key2 in segment_set:
+                return closest_on_segment(u1, u2, p)
+            elif key2 in line_set:
+                return closest_on_line(u1, u2, p)
+            elif key2 in ray_set:
+                return closest_on_ray(u1, u2, p)
+        elif key1 in line_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
+            if key2 in point_set:
+                p = _convert(some2)
+                return closest_on_line(u1, u2, p)
+        elif key1 in ray_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
+            if key2 in point_set:
+                p = _convert(some2)
+                return closest_on_ray(u1, u2, p)
+        elif key1 in segment_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
+            if key2 in point_set:
+                p = _convert(some2)
+                return closest_on_segment(u1, u2, p)
+    raise ValueError(f'Неправильные аргументы {args} {kwargs}') 
+
 @cython.final
 cdef class Rect:
     @classmethod

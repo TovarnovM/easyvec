@@ -1,10 +1,32 @@
 from pytest import approx
-from easyvec import Vec2, intersect
+from easyvec import Vec2, intersect, closest
 import numpy as np
 from easyvec.geometry import _sortreduce, Rect
 
-def test_intersect1():
-    pass
+
+
+
+
+def test_closest_p1():
+    assert closest((2,0), (0,2), (0,0)) == (1,1)
+
+def test_closest_p2():
+    assert closest((2,0), (0,2), p=(0,0)) == (1,1)
+
+def test_closest_p3():
+    assert closest(line=((2,0), (0,2)), p=(0,0)) == (1,1)
+
+def test_closest_p4():
+    assert closest(segment=((2,0), (0,2)), p=(0,0)) == (1,1)
+
+def test_closest_p5():
+    assert closest(ray=((2,0), (0,2)), p=(0,0)) == (1,1)
+
+def test_closest_p6():
+    assert closest(ray=((2,0), (0,2)), p=(3,0)) == (2,0)
+
+def test_closest_p7():
+    assert closest(segment=((2,0), (0,2)), p=(0,3)) == (0,2)
 
 def test_Rect_union1():
     r1 = Rect(0,0, 3,3)

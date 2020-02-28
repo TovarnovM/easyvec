@@ -18,6 +18,11 @@ cpdef array.array _sortreduce(real[:] dists)
 cpdef list _sortreduce_by_distance(list vecs, Vec2 close_to_point)
 cpdef bint is_in_polygon(Vec2 point, list polygon_points)
 
+cpdef real _closest_point_t(Vec2 u1, Vec2 u2, Vec2 p)
+cpdef Vec2 closest_on_line(Vec2 u1, Vec2 u2, Vec2 p)
+cpdef Vec2 closest_on_ray(Vec2 u1, Vec2 u2, Vec2 p)
+cpdef Vec2 closest_on_segment(Vec2 u1, Vec2 u2, Vec2 p)
+
 cdef class Rect:
     cdef public real x1, x2, y1, y2
     cpdef Rect copy(self)
