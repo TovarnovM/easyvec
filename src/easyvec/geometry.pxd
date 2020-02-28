@@ -23,6 +23,15 @@ cpdef Vec2 closest_on_line(Vec2 u1, Vec2 u2, Vec2 p)
 cpdef Vec2 closest_on_ray(Vec2 u1, Vec2 u2, Vec2 p)
 cpdef Vec2 closest_on_segment(Vec2 u1, Vec2 u2, Vec2 p)
 
+cpdef (bint, real, real) _intersect_circle_line_ts(Vec2 center, real r, Vec2 u1, Vec2 u2)
+cdef real normalize_angle2pi(real angle) nogil
+cdef bint _angle_between(real start, real end, real mid) nogil
+cpdef bint angle_between(real start, real end, real mid)
+cpdef list intersect_arc_line(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2)
+cpdef list intersect_arc_ray(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2)
+cpdef list intersect_arc_segment(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2)
+
+
 cdef class Rect:
     cdef public real x1, x2, y1, y2
     cpdef Rect copy(self)

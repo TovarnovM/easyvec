@@ -1,5 +1,5 @@
 import numpy as np
-from libc.math cimport fabs
+from libc.math cimport fabs, sqrt, pi
 cimport cython
 from .vectors cimport CMP_TOL, real, Vec2, rational, BIG_REAL, MINUS_BIG_REAL
 from cpython.object cimport Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE
@@ -14,14 +14,16 @@ cpdef Vec2 _convert(object candidate):
         return Vec2(candidate[0], candidate[1])
 
 def intersect(*args, **kwargs):
-    cdef Vec2 u1, u2, v1, v2
+    cdef Vec2 u1, u2, v1, v2, center
+    cdef real r, start_angle, end_angle
     cdef int alen = len(args)
     cdef int klen = len(kwargs)
     cdef str key1, key2
-    cdef object some1, some2
+    cdef object some1, some2, tp1, tp2
     cdef set line_set = {'line', 'l', 'line1', 'l1', 'line2', 'l2'}
     cdef set segment_set = {'segment', 's', 'segment1', 's1', 'segment2', 's2'}
     cdef set ray_set = {'ray', 'r', 'ray1', 'r1', 'ray2', 'r2'}
+    cdef set arc_set = {'arc', 'a'}
     
     if alen == 4 and klen == 0:
         u1 = _convert(args[0])
@@ -34,45 +36,95 @@ def intersect(*args, **kwargs):
         u2 = _convert(args[1])
 
         for k in kwargs:
-            v1 = _convert(kwargs[k][0])
-            v2 = _convert(kwargs[k][1])
+            
             if k in line_set:
+                v1 = _convert(kwargs[k][0])
+                v2 = _convert(kwargs[k][1])
                 return intersect_line_segment(v1, v2, u1, u2)
             elif k in segment_set:
+                v1 = _convert(kwargs[k][0])
+                v2 = _convert(kwargs[k][1])
                 return intersect_segments(v1, v2, u1, u2)  
             elif k in ray_set:
-                return intersect_ray_segment(v1, v2, u1, u2)            
+                v1 = _convert(kwargs[k][0])
+                v2 = _convert(kwargs[k][1])
+                return intersect_ray_segment(v1, v2, u1, u2)  
+            elif k in arc_set:
+                center = _convert(kwargs[k][0])
+                r = <real>(kwargs[k][1])
+                start_angle = <real>(kwargs[k][2])
+                end_angle = <real>(kwargs[k][3])
+                return intersect_arc_segment(center, r, start_angle, end_angle, u1, u2)
+
 
         raise ValueError(f'Неправильные аргументы {args} {kwargs}')
          
     elif alen == 0 and klen == 2:
-        key1, (some1, some2) = kwargs.popitem()
-        u1 = _convert(some1)
-        u2 = _convert(some2)
-        key2, (some1, some2) = kwargs.popitem()
-        v1 = _convert(some1)
-        v2 = _convert(some2)
+        key1, some1= kwargs.popitem()
+        key2, some2 = kwargs.popitem()
         if key1 in line_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
             if key2 in segment_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_line_segment(u1, u2, v1, v2)
             elif key2 in line_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_lines(u1, u2, v1, v2)
             elif key2 in ray_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_ray_line(v1, v2, u1, u2)
+            elif key2 in arc_set:
+                center = _convert(some2[0])
+                r = <real>(some2[1])
+                start_angle = <real>(some2[2])
+                end_angle = <real>(some2[3])
+                return intersect_arc_line(center, r, start_angle, end_angle, u1, u2)
         elif key1 in segment_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
             if key2 in segment_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_segments(u1, u2, v1, v2)
             elif key2 in line_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_line_segment(v1, v2, u1, u2)
             elif key2 in ray_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_ray_segment(v1, v2, u1, u2) 
+            elif key2 in arc_set:
+                center = _convert(some2[0])
+                r = <real>(some2[1])
+                start_angle = <real>(some2[2])
+                end_angle = <real>(some2[3])
+                return intersect_arc_segment(center, r, start_angle, end_angle, u1, u2)
         elif key1 in ray_set:
+            u1 = _convert(some1[0])
+            u2 = _convert(some1[1])
             if key2 in segment_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_ray_segment(u1, u2, v1, v2)
             elif key2 in line_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_ray_line(u1, u2, v1, v2)
             elif key2 in ray_set:
+                v1 = _convert(some2[0])
+                v2 = _convert(some2[1])
                 return intersect_rays(v1, v2, u1, u2)
+            elif key2 in arc_set:
+                center = _convert(some2[0])
+                r = <real>(some2[1])
+                start_angle = <real>(some2[2])
+                end_angle = <real>(some2[3])
+                return intersect_arc_ray(center, r, start_angle, end_angle, u1, u2)
     raise ValueError(f'Неправильные аргументы {args} {kwargs}')  
 
 
@@ -349,6 +401,145 @@ def closest(*args, **kwargs):
                 p = _convert(some2)
                 return closest_on_segment(u1, u2, p)
     raise ValueError(f'Неправильные аргументы {args} {kwargs}') 
+
+
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.cdivision(True)
+cpdef (bint, real, real) _intersect_circle_line_ts(Vec2 center, real r, Vec2 u1, Vec2 u2):
+    cdef Vec2 v = u2.sub(u1)
+    cdef real a = v.len_sqared() # a * x^2 + b * x + c
+    if a < CMP_TOL:
+        return (False, 0, 0)
+    cdef Vec2 u = u1.sub(center)
+    cdef real b = 2 * u.dot(v)
+    cdef real c = u.len_sqared() - r * r
+    cdef real D = b*b - 4*a*c  # determenant
+    cdef real t1, t2
+    if D < 0:
+        return (False, 0, 0)
+    elif D < CMP_TOL:
+        t1 = -b/(2*a) 
+        t2 = t1
+        return (True, t1, t2)
+    else:
+        D = sqrt(D)
+        t1 = (-b + D)/(2*a)
+        t2 = (-b - D)/(2*a)
+        return (True, t1, t2)
+
+@cython.nonecheck(False)
+cdef inline real normalize_angle2pi(real angle) nogil:
+    while angle >= 2*pi:
+        angle -= 2*pi
+    while angle < 0:
+        angle += 2*pi
+    return angle
+
+
+@cython.nonecheck(False)
+cdef inline bint _angle_between(real start, real end, real mid) nogil:
+    start = normalize_angle2pi(start)
+    end   = normalize_angle2pi(end)
+    end = end - start + 2*pi if (end - start) < 0 else end - start
+    mid = normalize_angle2pi(mid)
+    mid = mid - start + 2*pi if (mid - start) < 0 else mid - start
+    return mid <= end
+
+
+@cython.nonecheck(False)
+cpdef bint angle_between(real start, real end, real mid):
+    return _angle_between(start, end, mid)
+        
+
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.cdivision(True)
+cpdef list intersect_arc_line(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2):
+    cdef list res = []
+    cdef bint is_intersect
+    cdef real t1, t2, angle_t1, angle_t2
+    cdef Vec2 p1, p2
+    is_intersect, t1, t2 = _intersect_circle_line_ts(center, r, u1, u2)
+    if not is_intersect:
+        return res
+    p1 = (u1.mul_num(1 - t1)).add(u2.mul_num(t1))
+    angle_t1 = (p1.sub(center)).angle_to_xy(1, 0)
+    
+    if _angle_between(start_angle, end_angle, angle_t1):
+        res.append(p1)
+
+    if fabs(t1 - t2) < CMP_TOL:
+        return res
+
+    p2 = (u1.mul_num(1 - t2)).add(u2.mul_num(t2))
+    angle_t2 = (p2.sub(center)).angle_to_xy(1, 0)
+    if _angle_between(start_angle, end_angle, angle_t2):
+        res.append(p2)
+    return res
+
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.cdivision(True)
+cpdef list intersect_arc_ray(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2):
+    cdef list res = []
+    cdef bint is_intersect
+    cdef real t1, t2, angle_t1, angle_t2
+    cdef Vec2 p1, p2
+    is_intersect, t1, t2 = _intersect_circle_line_ts(center, r, u1, u2)
+    if not is_intersect:
+        return res
+
+    if t1 >= 0:
+        p1 = (u1.mul_num(1 - t1)).add(u2.mul_num(t1))
+        angle_t1 = (p1.sub(center)).angle_to_xy(1, 0)
+        
+        if _angle_between(start_angle, end_angle, angle_t1):
+            res.append(p1)
+
+    if fabs(t1 - t2) < CMP_TOL:
+        return res
+
+    if t2 >= 0:
+        p2 = (u1.mul_num(1 - t2)).add(u2.mul_num(t2))
+        angle_t2 = (p2.sub(center)).angle_to_xy(1, 0)
+        if _angle_between(start_angle, end_angle, angle_t2):
+            res.append(p2)
+    return res    
+
+@cython.nonecheck(False)
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.cdivision(True)
+cpdef list intersect_arc_segment(Vec2 center, real r, real start_angle, real end_angle, Vec2 u1, Vec2 u2):
+    cdef list res = []
+    cdef bint is_intersect
+    cdef real t1, t2, angle_t1, angle_t2
+    cdef Vec2 p1, p2
+    is_intersect, t1, t2 = _intersect_circle_line_ts(center, r, u1, u2)
+    if not is_intersect:
+        return res
+
+    if 0 <= t1 <= 1:
+        p1 = (u1.mul_num(1 - t1)).add(u2.mul_num(t1))
+        angle_t1 = (p1.sub(center)).angle_to_xy(1, 0)
+        
+        if _angle_between(start_angle, end_angle, angle_t1):
+            res.append(p1)
+
+    if fabs(t1 - t2) < CMP_TOL:
+        return res
+
+    if 0 <= t2 <= 1:
+        p2 = (u1.mul_num(1 - t2)).add(u2.mul_num(t2))
+        angle_t2 = (p2.sub(center)).angle_to_xy(1, 0)
+        if _angle_between(start_angle, end_angle, angle_t2):
+            res.append(p2)
+    return res 
+
 
 @cython.final
 cdef class Rect:

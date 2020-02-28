@@ -5,7 +5,7 @@ from easyvec.geometry import _sortreduce, Rect
 
 
 
-
+# TODO add test for arcs
 
 def test_closest_p1():
     assert closest((2,0), (0,2), (0,0)) == (1,1)
