@@ -4,6 +4,7 @@ cimport cython
 from .vectors cimport CMP_TOL, real, Vec2, rational, BIG_REAL, MINUS_BIG_REAL
 from cpython.object cimport Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE
 
+
 cdef array.array _int_array_template = array.array('i', [])
 cdef array.array _double_array_template = array.array('d', [])
 
@@ -132,6 +133,7 @@ def intersect(*args, **kwargs):
 cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2):
     return (fmin(u1.x, u2.x) <= fmax(v1.x, v2.x)) and (fmax(u1.x, u2.x) >= fmin(v1.x, v2.x)) \
        and (fmin(u1.y, u2.y) <= fmax(v1.y, v2.y)) and (fmax(u1.y, u2.y) >= fmin(v1.y, v2.y))    
+
 
 
 @cython.nonecheck(False)
@@ -866,7 +868,7 @@ cdef class Rect:
     cpdef bint is_bbox_intersect(self, Vec2 p1, Vec2 p2):
         return (self.x1 <= fmax(p1.x, p2.x)) and (self.x2 >= fmin(p1.x, p2.x)) \
            and (self.y1 <= fmax(p1.y, p2.y)) and (self.y2 >= fmin(p1.y, p2.y))
- 
+
 
 @cython.final
 cdef class PolyLine:
@@ -878,11 +880,16 @@ cdef class PolyLine:
 
     def __cinit__(self, vecs: list, enclosed=True, copy_data=False):
         cdef int vec_len, i
+        cdef Vec2 tmp
         if copy_data:
             self.vecs = []
             vec_len = len(vecs)
             for i in range(vec_len):
-                self.vecs.append( (<Vec2>(vecs[i])).copy() )
+                if isinstance(vecs[i], Vec2):
+                    tmp = (<Vec2>(vecs[i])).copy()
+                else:
+                    tmp = Vec2(vecs[i][0], vecs[i][1])
+                self.vecs.append( tmp )
         else:
             self.vecs = vecs
         self.vlen = len(self.vecs)
@@ -890,6 +897,14 @@ cdef class PolyLine:
             raise ValueError(f'Слишком мало точек для линии. Необходимо больше, чем 1')
         self.enclosed = enclosed
         self.bbox = Rect.bbox(self.vecs)
+
+    @cython.nonecheck(False)
+    cpdef PolyLine copy(self):
+        return PolyLine(self.vecs, self.enclosed, copy_data=True)
+
+    @cython.nonecheck(False)
+    cpdef PolyLine clone(self):
+        return PolyLine(self.vecs, self.enclosed, copy_data=True)
 
     def to_dict(self):
         return {
@@ -948,6 +963,32 @@ cdef class PolyLine:
     cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=True):
         return self.intersect_general(p1, p2, 0.0, 1.0, sortreduce)
 
+    @cython.nonecheck(False)
+    cpdef bint is_in(self, Vec2 point):
+        if not self.bbox.is_in(point):
+            return False
+        return is_in_polygon(point, self.vecs)
 
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef PolyLine transform(self, Mat2 m):
+        cdef list vecs = []
+        cdef int i
 
-    
+        for i in range(self.vlen):
+            vecs.append(m.mul_vec(<Vec2>(self.vecs[i])))
+
+        return PolyLine(vecs, self.enclosed, copy_data=False)
+
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef PolyLine add_vec(self, Vec2 v):
+        cdef list vecs = []
+        cdef int i
+
+        for i in range(self.vlen):
+            vecs.append(v.add_vec(<Vec2>(self.vecs[i])))
+
+        return PolyLine(vecs, self.enclosed, copy_data=False)

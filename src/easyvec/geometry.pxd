@@ -1,6 +1,7 @@
 from .vectors cimport Vec2, real, rational
 from cpython cimport array
 import array
+from .matrixes cimport Mat2
 
 cpdef Vec2 _convert(object candidate)
 cpdef bint is_bbox_intersect(Vec2 u1, Vec2 u2, Vec2 v1, Vec2 v2)
@@ -59,7 +60,12 @@ cdef class PolyLine:
     cdef public bint enclosed
     cdef Rect bbox
     cdef int vlen
+    cpdef PolyLine copy(self)
+    cpdef PolyLine clone(self)
     cpdef list intersect_general(self, Vec2 p1, Vec2 p2, real f_low, real f_high, bint sortreduce=*)
     cpdef list intersect_line(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
     cpdef list intersect_ray(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
     cpdef list intersect_segment(self, Vec2 p1, Vec2 p2, bint sortreduce=*)
+    cpdef bint is_in(self, Vec2 point)
+    cpdef PolyLine transform(self, Mat2 m)
+    cpdef PolyLine add_vec(self, Vec2 v)
