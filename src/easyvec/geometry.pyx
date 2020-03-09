@@ -292,7 +292,7 @@ cpdef bint is_in_polygon(Vec2 point, list polygon_points):
     cdef Vec2 v1 = <Vec2>(polygon_points[0])
     cdef Vec2 v2
     for i in range(1, plen):
-        v2 = <Vec2>(polygon_points[1])
+        v2 = <Vec2>(polygon_points[i])
         if intersect_segments(point, point1, v1, v2):
             n_intersect += 1
         v1 = v2

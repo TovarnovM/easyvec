@@ -1,11 +1,22 @@
 from pytest import approx
 from easyvec import Vec2, intersect, closest
 import numpy as np
-from easyvec.geometry import _sortreduce, Rect
+from easyvec.geometry import _sortreduce, Rect, PolyLine, is_in_polygon
 
 
 
 # TODO add test for arcs
+
+def test_is_in_polygon():
+    assert is_in_polygon(Vec2(0.1, 0.1), [Vec2(0,0), Vec2(1,0), Vec2(0,1)])
+
+def test_rect_is_in():
+    r = Rect(0,0,3,2)
+    assert r.is_in(Vec2(1,1))
+
+def test_PolyLine_is_in():
+    pl = PolyLine([(0,0), (1,0), (0,1)], copy_data=True)
+    assert pl.is_in(Vec2(0.5, 0.1))
 
 def test_closest_p1():
     assert closest((2,0), (0,2), (0,0)) == (1,1)
