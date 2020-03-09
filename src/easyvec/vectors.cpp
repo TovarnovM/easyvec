@@ -1078,25 +1078,25 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
 /* "easyvec/vectors.pxd":142
  *     cpdef real cross_xy(self, real x, real y)
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "easyvec/vectors.pxd":143
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 rotate90_(self)
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "easyvec/vectors.pxd":150
@@ -2874,7 +2874,6 @@ static const char __pyx_k_strip[] = "strip";
 static const char __pyx_k_throw[] = "throw";
 static const char __pyx_k_Vec2_2[] = "Vec2";
 static const char __pyx_k_Vec3_2[] = "Vec3";
-static const char __pyx_k_degree[] = "degree";
 static const char __pyx_k_double[] = "double";
 static const char __pyx_k_encode[] = "encode";
 static const char __pyx_k_format[] = "format";
@@ -3260,7 +3259,6 @@ static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
 static PyObject *__pyx_n_s_defaults;
-static PyObject *__pyx_n_s_degree;
 static PyObject *__pyx_n_s_degrees;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_div_arr;
@@ -3645,8 +3643,8 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_271trunc(struct __pyx_obj_7eas
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_273cross(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_right); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_275cross_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_277__and__(PyObject *__pyx_v_left, PyObject *__pyx_v_right); /* proto */
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_v_degree); /* proto */
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_v_degree); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_v_degrees); /* proto */
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_v_degrees); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_283rotate90_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_285rotate90(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_287rotate_minus90_(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self); /* proto */
@@ -43281,14 +43279,14 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_277__and__(PyObject *__pyx_v_l
 /* "easyvec/vectors.pyx":939
  * 
  *     @cython.cdivision(True)
- *     cpdef real angle_to_xy(self, real x, real y, int degree=0):             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=0):             # <<<<<<<<<<<<<<
  *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:
  */
 
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy *__pyx_optional_args) {
-  int __pyx_v_degree = ((int)0);
+  int __pyx_v_degrees = ((int)0);
   __pyx_t_7easyvec_7vectors_real __pyx_v_angle;
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -43296,13 +43294,13 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   __Pyx_RefNannySetupContext("angle_to_xy", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
-      __pyx_v_degree = __pyx_optional_args->degree;
+      __pyx_v_degrees = __pyx_optional_args->degrees;
     }
   }
 
   /* "easyvec/vectors.pyx":940
  *     @cython.cdivision(True)
- *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=0):
  *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)             # <<<<<<<<<<<<<<
  *         if angle > pi:
  *             angle -= 2*pi
@@ -43310,7 +43308,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   __pyx_v_angle = (atan2(__pyx_v_y, __pyx_v_x) - atan2(__pyx_v_self->y, __pyx_v_self->x));
 
   /* "easyvec/vectors.pyx":941
- *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=0):
  *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:             # <<<<<<<<<<<<<<
  *             angle -= 2*pi
@@ -43329,7 +43327,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
     __pyx_v_angle = (__pyx_v_angle - (2.0 * M_PI));
 
     /* "easyvec/vectors.pyx":941
- *     cpdef real angle_to_xy(self, real x, real y, int degree=0):
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=0):
  *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:             # <<<<<<<<<<<<<<
  *             angle -= 2*pi
@@ -43343,7 +43341,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
  *             angle -= 2*pi
  *         elif angle <= -pi:             # <<<<<<<<<<<<<<
  *             angle += 2*pi
- *         if degree != 0:
+ *         if degrees != 0:
  */
   __pyx_t_1 = ((__pyx_v_angle <= (-M_PI)) != 0);
   if (__pyx_t_1) {
@@ -43352,7 +43350,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
  *             angle -= 2*pi
  *         elif angle <= -pi:
  *             angle += 2*pi             # <<<<<<<<<<<<<<
- *         if degree != 0:
+ *         if degrees != 0:
  *             angle *= 180.0/pi
  */
     __pyx_v_angle = (__pyx_v_angle + (2.0 * M_PI));
@@ -43362,7 +43360,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
  *             angle -= 2*pi
  *         elif angle <= -pi:             # <<<<<<<<<<<<<<
  *             angle += 2*pi
- *         if degree != 0:
+ *         if degrees != 0:
  */
   }
   __pyx_L3:;
@@ -43370,16 +43368,16 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   /* "easyvec/vectors.pyx":945
  *         elif angle <= -pi:
  *             angle += 2*pi
- *         if degree != 0:             # <<<<<<<<<<<<<<
+ *         if degrees != 0:             # <<<<<<<<<<<<<<
  *             angle *= 180.0/pi
  *         return angle
  */
-  __pyx_t_1 = ((__pyx_v_degree != 0) != 0);
+  __pyx_t_1 = ((__pyx_v_degrees != 0) != 0);
   if (__pyx_t_1) {
 
     /* "easyvec/vectors.pyx":946
  *             angle += 2*pi
- *         if degree != 0:
+ *         if degrees != 0:
  *             angle *= 180.0/pi             # <<<<<<<<<<<<<<
  *         return angle
  * 
@@ -43389,14 +43387,14 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
     /* "easyvec/vectors.pyx":945
  *         elif angle <= -pi:
  *             angle += 2*pi
- *         if degree != 0:             # <<<<<<<<<<<<<<
+ *         if degrees != 0:             # <<<<<<<<<<<<<<
  *             angle *= 180.0/pi
  *         return angle
  */
   }
 
   /* "easyvec/vectors.pyx":947
- *         if degree != 0:
+ *         if degrees != 0:
  *             angle *= 180.0/pi
  *         return angle             # <<<<<<<<<<<<<<
  * 
@@ -43408,7 +43406,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
   /* "easyvec/vectors.pyx":939
  * 
  *     @cython.cdivision(True)
- *     cpdef real angle_to_xy(self, real x, real y, int degree=0):             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=0):             # <<<<<<<<<<<<<<
  *         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
  *         if angle > pi:
  */
@@ -43421,16 +43419,16 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to_x
 
 /* Python wrapper */
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_7vectors_4Vec2_279angle_to_xy[] = "Vec2.angle_to_xy(self, real x, real y, int degree=0) -> real";
+static char __pyx_doc_7easyvec_7vectors_4Vec2_279angle_to_xy[] = "Vec2.angle_to_xy(self, real x, real y, int degrees=0) -> real";
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   __pyx_t_7easyvec_7vectors_real __pyx_v_x;
   __pyx_t_7easyvec_7vectors_real __pyx_v_y;
-  int __pyx_v_degree;
+  int __pyx_v_degrees;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("angle_to_xy (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_x,&__pyx_n_s_y,&__pyx_n_s_degree,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_x,&__pyx_n_s_y,&__pyx_n_s_degrees,0};
     PyObject* values[3] = {0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -43459,7 +43457,7 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_degree);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_degrees);
           if (value) { values[2] = value; kw_args--; }
         }
       }
@@ -43479,9 +43477,9 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx
     __pyx_v_x = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_x == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 939, __pyx_L3_error)
     __pyx_v_y = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_y == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 939, __pyx_L3_error)
     if (values[2]) {
-      __pyx_v_degree = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 939, __pyx_L3_error)
+      __pyx_v_degrees = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_degrees == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 939, __pyx_L3_error)
     } else {
-      __pyx_v_degree = ((int)0);
+      __pyx_v_degrees = ((int)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -43492,14 +43490,14 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_280angle_to_xy(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_degree);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self), __pyx_v_x, __pyx_v_y, __pyx_v_degrees);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_v_degree) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, __pyx_t_7easyvec_7vectors_real __pyx_v_x, __pyx_t_7easyvec_7vectors_real __pyx_v_y, int __pyx_v_degrees) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
@@ -43508,7 +43506,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_ob
   __Pyx_RefNannySetupContext("angle_to_xy", 0);
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.degree = __pyx_v_degree;
+  __pyx_t_2.degrees = __pyx_v_degrees;
   __pyx_t_1 = __pyx_vtabptr_7easyvec_7vectors_Vec2->angle_to_xy(__pyx_v_self, __pyx_v_x, __pyx_v_y, 1, &__pyx_t_2); 
   __pyx_t_3 = PyFloat_FromDouble(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 939, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -43530,14 +43528,14 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_279angle_to_xy(struct __pyx_ob
 /* "easyvec/vectors.pyx":950
  * 
  *     @cython.nonecheck(False)
- *     cpdef real angle_to(self, Vec2 vec, int degree=0):             # <<<<<<<<<<<<<<
- *         return self.angle_to_xy(vec.x, vec.y, degree)
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=0):             # <<<<<<<<<<<<<<
+ *         return self.angle_to_xy(vec.x, vec.y, degrees)
  * 
  */
 
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to *__pyx_optional_args) {
-  int __pyx_v_degree = ((int)0);
+  int __pyx_v_degrees = ((int)0);
   __pyx_t_7easyvec_7vectors_real __pyx_r;
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
@@ -43545,19 +43543,19 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to(s
   __Pyx_RefNannySetupContext("angle_to", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
-      __pyx_v_degree = __pyx_optional_args->degree;
+      __pyx_v_degrees = __pyx_optional_args->degrees;
     }
   }
 
   /* "easyvec/vectors.pyx":951
  *     @cython.nonecheck(False)
- *     cpdef real angle_to(self, Vec2 vec, int degree=0):
- *         return self.angle_to_xy(vec.x, vec.y, degree)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=0):
+ *         return self.angle_to_xy(vec.x, vec.y, degrees)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 rotate90_(self):
  */
   __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.degree = __pyx_v_degree;
+  __pyx_t_2.degrees = __pyx_v_degrees;
   __pyx_t_1 = __pyx_f_7easyvec_7vectors_4Vec2_angle_to_xy(__pyx_v_self, __pyx_v_vec->x, __pyx_v_vec->y, 0, &__pyx_t_2); 
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
@@ -43565,8 +43563,8 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to(s
   /* "easyvec/vectors.pyx":950
  * 
  *     @cython.nonecheck(False)
- *     cpdef real angle_to(self, Vec2 vec, int degree=0):             # <<<<<<<<<<<<<<
- *         return self.angle_to_xy(vec.x, vec.y, degree)
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=0):             # <<<<<<<<<<<<<<
+ *         return self.angle_to_xy(vec.x, vec.y, degrees)
  * 
  */
 
@@ -43578,15 +43576,15 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_7easyvec_7vectors_4Vec2_angle_to(s
 
 /* Python wrapper */
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7easyvec_7vectors_4Vec2_281angle_to[] = "Vec2.angle_to(self, Vec2 vec, int degree=0) -> real";
+static char __pyx_doc_7easyvec_7vectors_4Vec2_281angle_to[] = "Vec2.angle_to(self, Vec2 vec, int degrees=0) -> real";
 static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec = 0;
-  int __pyx_v_degree;
+  int __pyx_v_degrees;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("angle_to (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_vec,&__pyx_n_s_degree,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_vec,&__pyx_n_s_degrees,0};
     PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -43607,7 +43605,7 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_degree);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_degrees);
           if (value) { values[1] = value; kw_args--; }
         }
       }
@@ -43625,9 +43623,9 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_
     }
     __pyx_v_vec = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     if (values[1]) {
-      __pyx_v_degree = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 950, __pyx_L3_error)
+      __pyx_v_degrees = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_degrees == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 950, __pyx_L3_error)
     } else {
-      __pyx_v_degree = ((int)0);
+      __pyx_v_degrees = ((int)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -43639,7 +43637,7 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vec", 0))) __PYX_ERR(0, 950, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self), __pyx_v_vec, __pyx_v_degree);
+  __pyx_r = __pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_self), __pyx_v_vec, __pyx_v_degrees);
 
   /* function exit code */
   goto __pyx_L0;
@@ -43650,7 +43648,7 @@ static PyObject *__pyx_pw_7easyvec_7vectors_4Vec2_282angle_to(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_v_degree) {
+static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vec, int __pyx_v_degrees) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __pyx_t_7easyvec_7vectors_real __pyx_t_1;
@@ -43659,7 +43657,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7
   __Pyx_RefNannySetupContext("angle_to", 0);
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.degree = __pyx_v_degree;
+  __pyx_t_2.degrees = __pyx_v_degrees;
   __pyx_t_1 = __pyx_vtabptr_7easyvec_7vectors_Vec2->angle_to(__pyx_v_self, __pyx_v_vec, 1, &__pyx_t_2); 
   __pyx_t_3 = PyFloat_FromDouble(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 950, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -43679,7 +43677,7 @@ static PyObject *__pyx_pf_7easyvec_7vectors_4Vec2_281angle_to(struct __pyx_obj_7
 }
 
 /* "easyvec/vectors.pyx":953
- *         return self.angle_to_xy(vec.x, vec.y, degree)
+ *         return self.angle_to_xy(vec.x, vec.y, degrees)
  * 
  *     cpdef Vec2 rotate90_(self):             # <<<<<<<<<<<<<<
  *         cdef real buf = self.x
@@ -43735,7 +43733,7 @@ static struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_f_7easyvec_7vectors_4Vec2_
   goto __pyx_L0;
 
   /* "easyvec/vectors.pyx":953
- *         return self.angle_to_xy(vec.x, vec.y, degree)
+ *         return self.angle_to_xy(vec.x, vec.y, degrees)
  * 
  *     cpdef Vec2 rotate90_(self):             # <<<<<<<<<<<<<<
  *         cdef real buf = self.x
@@ -59539,7 +59537,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
   {&__pyx_n_s_defaults, __pyx_k_defaults, sizeof(__pyx_k_defaults), 0, 0, 1, 1},
-  {&__pyx_n_s_degree, __pyx_k_degree, sizeof(__pyx_k_degree), 0, 0, 1, 1},
   {&__pyx_n_s_degrees, __pyx_k_degrees, sizeof(__pyx_k_degrees), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_div_arr, __pyx_k_div_arr, sizeof(__pyx_k_div_arr), 0, 0, 1, 1},

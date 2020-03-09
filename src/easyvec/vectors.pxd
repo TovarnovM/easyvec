@@ -139,8 +139,8 @@ cdef class Vec2:
     cpdef real cross(self, Vec2 right)
     cpdef real cross_xy(self, real x, real y)
 
-    cpdef real angle_to_xy(self, real x, real y, int degree=*)
-    cpdef real angle_to(self, Vec2 vec, int degree=*)
+    cpdef real angle_to_xy(self, real x, real y, int degrees=*)
+    cpdef real angle_to(self, Vec2 vec, int degrees=*)
 
     cpdef Vec2 rotate90_(self)
     cpdef Vec2 rotate90(self)

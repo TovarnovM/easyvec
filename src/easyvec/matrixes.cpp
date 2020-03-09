@@ -1080,25 +1080,25 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
 /* "vectors.pxd":142
  *     cpdef real cross_xy(self, real x, real y)
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "vectors.pxd":143
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 rotate90_(self)
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "vectors.pxd":150

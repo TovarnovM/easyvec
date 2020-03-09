@@ -936,19 +936,19 @@ cdef class Vec2:
         raise NotImplementedError(f"Векторно перемножить нельзя left={left}, right={right}")
 
     @cython.cdivision(True)
-    cpdef real angle_to_xy(self, real x, real y, int degree=0):
+    cpdef real angle_to_xy(self, real x, real y, int degrees=0):
         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
         if angle > pi:
             angle -= 2*pi
         elif angle <= -pi:
             angle += 2*pi
-        if degree != 0:
+        if degrees != 0:
             angle *= 180.0/pi
         return angle
 
     @cython.nonecheck(False)
-    cpdef real angle_to(self, Vec2 vec, int degree=0):
-        return self.angle_to_xy(vec.x, vec.y, degree)
+    cpdef real angle_to(self, Vec2 vec, int degrees=0):
+        return self.angle_to_xy(vec.x, vec.y, degrees)
 
     cpdef Vec2 rotate90_(self):
         cdef real buf = self.x
