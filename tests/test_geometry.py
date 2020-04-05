@@ -1,11 +1,55 @@
 from pytest import approx
-from easyvec import Vec2, intersect, closest
+from easyvec import Vec2, intersect, closest, Mat2
 import numpy as np
 from easyvec.geometry import _sortreduce, Rect, PolyLine, is_in_polygon
 
 
-
 # TODO add test for arcs
+
+def test_polyline_is_selfintersect1():
+    pl = PolyLine([(0,3), (10,3), (10,0), (0,0)], copy_data=True)
+    assert not pl.is_selfintersect()
+
+def test_polyline_is_selfintersect2():
+    pl = PolyLine([(0,3), (10,3), (0,0), (10,0)], copy_data=True)
+    assert pl.is_selfintersect()
+
+def test_polyline_get_Iz():
+    pl = PolyLine([(0,3), (10,3), (10,0), (0,0)], copy_data=True)
+    for angle in np.random.uniform(-180,180,1000):
+        pl1 = pl.add_vec(Vec2(10,20))
+        plt = pl1.transform(Mat2.from_angle(angle, True))
+        cm = plt.get_center_mass()
+        assert plt.get_Iz(cm) == approx((10**2 + 3**2)/12)
+
+def test_plyline_get_center_mass1():
+    a = 1000 
+    pl = PolyLine([(1+a,2+a), (11+a,2+a), (10+a,0+a), (0+a,0+a)], copy_data=True)
+    assert pl.get_center_mass() == (5.5+a, 1+a)
+
+def test_polyline_area1():  
+    pl = PolyLine([(0,0), (10,0), (11,2), (1,2)], copy_data=True)
+    assert pl.get_area() == approx(20)
+
+def test_polyline_area2():  
+    pl = PolyLine([(1,2), (11,2), (10,0), (0,0)], copy_data=True)
+    assert pl.get_area() == approx(20)
+
+def test_polyline_area3(): 
+    a = 1000 
+    pl = PolyLine([(1+a,2+a), (11+a,2+a), (10+a,0+a), (0+a,0+a)], copy_data=True)
+    assert pl.get_area() == approx(20)
+
+def test_polyline_area4():  
+    pl = PolyLine([(1,2), (11,2), (10,0), (0,0)], copy_data=True)
+    for angle in np.random.uniform(-180,180,1000):
+        pl1 = pl.add_vec(Vec2(10,20))
+        plt = pl1.transform(Mat2.from_angle(angle, True))
+        assert plt.get_area() == approx(20)
+
+def test_polyline_area5():  
+    pl = PolyLine([(1,1), (2,1), (1,3)], copy_data=True)
+    assert pl.get_area() == approx(1)
 
 def test_is_in_polygon():
     assert is_in_polygon(Vec2(0.1, 0.1), [Vec2(0,0), Vec2(1,0), Vec2(0,1)])

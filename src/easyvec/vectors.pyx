@@ -28,6 +28,16 @@ cdef class Vec2:
     def from_dict(cls, dct):
         return cls(dct['x'], dct['y'])
 
+    @classmethod
+    def random(cls, p1, p2):
+        x1 = min(p1[0], p2[0])
+        x2 = max(p1[0], p2[0])
+        y1 = min(p1[1], p2[1])
+        y2 = max(p1[1], p2[1])
+        x = np.random.uniform(x1,x2)
+        y = np.random.uniform(y1,y2)
+        return cls(x, y)
+
     def __cinit__(self, real x, real y):
         self.x = x
         self.y = y

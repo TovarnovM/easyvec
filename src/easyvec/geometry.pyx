@@ -992,3 +992,87 @@ cdef class PolyLine:
             vecs.append(v.add_vec(<Vec2>(self.vecs[i])))
 
         return PolyLine(vecs, self.enclosed, copy_data=False)
+
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef real get_area(self, bint always_positive=True):
+        cdef:
+            real res = 0
+            int i
+            Vec2 vi, vi1
+
+        vi = self.vecs[self.vlen-1]
+        for i in range(self.vlen):
+            vi1 = self.vecs[i]
+            res += vi.cross(vi1)
+            vi = vi1
+        if always_positive:
+            res = fabs(res)
+        return res/2
+
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef Vec2 get_center_mass(self):
+        cdef:
+            real a = 0
+            int i
+            Vec2 vi, vi1
+            real cx=0, cy=0
+            real cross
+        vi = self.vecs[self.vlen-1]
+        for i in range(self.vlen):
+            vi1 = self.vecs[i]
+            cross = vi.cross(vi1)
+            cx += (vi.x + vi1.x) * cross
+            cy += (vi.y + vi1.y) * cross
+            a += cross
+            vi = vi1
+        a /= 2
+        cx /= 6*a
+        cy /= 6*a
+        return Vec2(cx, cy)
+
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef real get_Iz(self, Vec2 z_point):
+        cdef:
+            real znam = 0
+            int i
+            Vec2 vi, vi1
+            real chisl=0
+            real cross
+        vi = (self.vecs[self.vlen-1]).sub(z_point)
+        for i in range(self.vlen):
+            vi1 = (self.vecs[i]).sub(z_point)
+            cross = fabs(vi.cross(vi1))
+            znam += cross
+            chisl += cross * (vi.len_sqared() + vi.dot(vi1) + vi1.len_sqared())
+            vi = vi1
+        return chisl / (6*znam)
+    
+    @cython.nonecheck(False)
+    @cython.boundscheck(False)
+    @cython.wraparound(False)
+    cpdef bint is_selfintersect(self):
+        cdef:
+            int i, j
+            Vec2 u1, u2, v1, v2
+            bint inter
+            real t1, t2
+
+        u1 = self.vecs[self.vlen-1]
+        u2 = self.vecs[0]
+        for i in range(self.vlen-1):
+            for j in range(i+1, self.vlen-1):
+                v1 = self.vecs[j]
+                v2 = self.vecs[j+1]
+                inter, t1, t2 = _intersect_ts(u1, u2, v1, v2)
+                if inter and (0<t1<1) and (0<t2<1):
+                    return True
+            u1, u2 = self.vecs[i], self.vecs[i+1]
+        return False
+
+                

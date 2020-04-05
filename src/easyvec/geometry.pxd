@@ -69,3 +69,7 @@ cdef class PolyLine:
     cpdef bint is_in(self, Vec2 point)
     cpdef PolyLine transform(self, Mat2 m)
     cpdef PolyLine add_vec(self, Vec2 v)
+    cpdef real get_area(self, bint always_positive=*)
+    cpdef Vec2 get_center_mass(self)
+    cpdef real get_Iz(self, Vec2 z_point)
+    cpdef bint is_selfintersect(self)
