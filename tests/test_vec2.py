@@ -72,7 +72,7 @@ def test_add7():
 
 def test_add8():
     import numpy as np
-    assert np.array([3,2]) + Vec2(2,3).as_np() == Vec2(5,5)
+    assert Vec2(5,5) == np.array([3,2]) + Vec2(2,3).as_np() 
 
 def test_add9():
     assert 3 + Vec2(2,3) == Vec2(5,6)
