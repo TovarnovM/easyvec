@@ -289,16 +289,18 @@ cpdef bint is_in_polygon(Vec2 point, list polygon_points):
     cdef Vec2 point1 = Vec2(point.x + 1e6, point.y)
     cdef int plen = len(polygon_points)
     cdef int i, n_intersect = 0
-    cdef Vec2 v1 = <Vec2>(polygon_points[0])
+    cdef Vec2 v1 = <Vec2>(polygon_points[plen-1])
     cdef Vec2 v2
-    for i in range(1, plen):
+    cdef:
+        bint suc
+        real t1, t2
+    for i in range(plen):
         v2 = <Vec2>(polygon_points[i])
-        if intersect_segments(point, point1, v1, v2):
-            n_intersect += 1
+        if is_bbox_intersect(point, point1, v1, v2):
+            suc, t1, t2 = _intersect_ts(point, point1, v1, v2)
+            if suc and t1 >= 0.0 and t1 < 1.0 and t2 >= 0.0 and t2 < 1.0 :
+                n_intersect += 1
         v1 = v2
-    v2 = <Vec2>(polygon_points[0])
-    if intersect_segments(point, point1, v1, v2):
-        n_intersect += 1
     if n_intersect > 0 and n_intersect % 2 != 0:
         return True
     return False

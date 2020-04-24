@@ -62,6 +62,10 @@ def test_PolyLine_is_in():
     pl = PolyLine([(0,0), (1,0), (0,1)], copy_data=True)
     assert pl.is_in(Vec2(0.5, 0.1))
 
+def test_PolyLine_is_in2():
+    pl = PolyLine([(-10,1), (1,0), (-10,-1)], copy_data=True)
+    assert pl.is_in(Vec2(0, 0))
+
 def test_closest_p1():
     assert closest((2,0), (0,2), (0,0)) == (1,1)
 
