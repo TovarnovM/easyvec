@@ -10,26 +10,51 @@ BIG_REAL = 1e33
 MINUS_BIG_REAL = -1e33
 
 def get_CMP_TOL():
+    """
+    Получить точность для провделения сравнения (CMP_TOL). Если abs(float1 - float2) < CMP_TOL, то числа считаются равными
+    """
     return CMP_TOL
 
 def get_BIG_REAL():
+    """
+    Получить большое число (используется для функций, использующих лучи)
+    """
     return BIG_REAL
 
 def get_MINUS_BIG_REAL():
+    """
+    Получить отрицательное большое число (используется для функций, использующих лучи)
+    """
     return MINUS_BIG_REAL
 
 @cython.final
 cdef class Vec2:
+    """
+    Класс, представляющий вектор на плоскости
+    """
     @classmethod
     def from_list(cls, lst, start_ind=0):
+        """
+        Получить экземпляр вектора из списка.
+        например v = Vec2.from_list([1,2]) # => Vec2(1,2)
+                 v = Vec2.from_list([1,2,3,4,5], start_ind=2) # => Vec2(3,4)
+        """
         return cls(lst[start_ind], lst[start_ind+1])
 
     @classmethod
     def from_dict(cls, dct):
+        """
+        Получить экземпляр вектора из словаря, в котором есть элементы с ключами 'x' и 'y'.
+        например v = Vec2.from_dict({'x':1, 'y': 2, 'some': 'data'}) # => Vec2(1,2)
+        """
         return cls(dct['x'], dct['y'])
 
     @classmethod
     def random(cls, p1, p2):
+        """
+        Получить случайный экземпляр вектора с равномерно распределенными компонентами в отрезках p1 и p2.
+        например v = Vec2.random((1,2), (3,4)) # => Vec2(1.249, 3.512)
+        """ 
         x1 = min(p1[0], p2[0])
         x2 = max(p1[0], p2[0])
         y1 = min(p1[1], p2[1])
@@ -39,26 +64,50 @@ cdef class Vec2:
         return cls(x, y)
 
     def __cinit__(self, real x, real y):
+        """
+        Конструктор класса.
+        например v = Vec2(1, 2) # => Vec2(1, 2)
+        """
         self.x = x
         self.y = y
 
     cpdef Vec2 clone(self):
+        """
+        Получить копию вектора
+        """
         return Vec2(self.x, self.y)
 
     cpdef Vec2 copy(self):
+        """
+        Получить копию вектора
+        """
         return Vec2(self.x, self.y)
 
     def to_dict(self) -> dict:
+        """
+        Получить словарь из вектора. В словаре будет 2 элемента с ключами 'x' и 'y' 
+        """
         return {k: self[k] for k in self.keys()}
 
     def __str__(self):
+        """
+        Получить строковое представление векора
+        будет что-то типа '(1.23, 4.56)'' 
+        """
         return f'({self.x:.2f}, {self.y:.2f})'
 
     def __repr__(self):
+        """
+        Получить представление векора
+        будет что-то типа 'Vec2(1.2345346, 4.56123123)'' 
+        """
         return f'Vec2({self.x}, {self.y})'
 
     @cython.nonecheck(False)
     def __richcmp__(v1, v2, int op):
+        """
+        Функция сравнения вектора с другим вектором/кортежем/списком/массивом. С любой сцщностью, которая поддерживает индексацию obj[0] obj[1]
+        """
         if op == Py_EQ:
             return fabs(v1[0] - v2[0]) < CMP_TOL and fabs(v1[1] - v2[1]) < CMP_TOL 
         elif op == Py_NE:
@@ -66,84 +115,129 @@ cdef class Vec2:
         raise NotImplementedError("Такой тип сравнения не поддерживается")
 
     cpdef bint is_eq(self, Vec2 other):
+        """
+        Быстря функция сравнения 2х векторов
+        """
         return fabs(self.x - other.x) < CMP_TOL and fabs(self.y - other.y) < CMP_TOL
 
     cpdef Vec2 add_num_(self, real num):
+        """
+        Добавить к компонентам вектора число. Сам вектор при этом изменяется
+        """
         self.x += num
         self.y += num
         return self
     
     cpdef Vec2 add_num(self, real num):
+        """
+        Добавить к компонентам вектора число. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_num_(num)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 add_vec_(self, Vec2 vec):
+        """
+        Добавить к компонентам вектора компоненты другого вектора. Сам вектор при этом изменяется
+        """
         self.x += vec.x
         self.y += vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 add(self, Vec2 vec):
+        """
+        Добавить к компонентам вектора компоненты другого вектора. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_vec_(vec)
         return result   
 
     @cython.nonecheck(False)
     cpdef Vec2 add_(self, Vec2 vec):
+        """
+        Добавить к компонентам вектора компоненты другого вектора. Сам вектор при этом изменяется
+        """
         self.x += vec.x
         self.y += vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 add_vec(self, Vec2 vec):
+        """
+        Добавить к компонентам вектора компоненты другого вектора. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_vec_(vec)
         return result
 
     cpdef Vec2 add_xy_(self, real x, real y):
+        """
+        Добавить к компонентам вектора компоненты x y. Сам вектор при этом изменяется
+        """
         self.x += x
         self.y += y
         return self
 
     cpdef Vec2 add_xy(self, real x, real y):
+        """
+        Добавить к компонентам вектора компоненты x y. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_xy_(x, y)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 add_tup_(self, tuple tup):
+        """
+        Добавить к компонентам вектора компоненты кортежа. Сам вектор при этом изменяется
+        """
         self.x += <real>(tup[0])
         self.y += <real>(tup[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 add_tup(self, tuple tup):
+        """
+        Добавить к компонентам вектора компоненты кортежа. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_tup_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 add_list_(self, list tup):
+        """
+        Добавить к компонентам вектора компоненты списка. Сам вектор при этом изменяется
+        """
         self.x += <real>(tup[0])
         self.y += <real>(tup[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 add_list(self, list tup):
+        """
+        Добавить к компонентам вектора компоненты списка. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_list_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 add_arr_(self, rational[:] arr):
+        """
+        Добавить к компонентам вектора компоненты массива. Сам вектор при этом изменяется
+        """
         self.x += <real>(arr[0])
         self.y += <real>(arr[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 add_arr(self, rational[:] tup):
+        """
+        Добавить к компонентам вектора компоненты массива. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.add_arr_(tup)
         return result
@@ -165,11 +259,17 @@ cdef class Vec2:
         raise NotImplementedError(f"Складывать данные сущности нельзя left={left}, right={right}")
 
     cpdef Vec2 neg_(self):
+        """
+        Изменить вектор на противоположный. Сам вектор при этом становтися противоположным
+        """
         self.x = -self.x
         self.y = -self.y
         return self
 
     cpdef Vec2 neg(self):
+        """
+        Получить противоположный вектор. Сам вектор при этом остается неизмененным
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.neg_()
         return result
@@ -214,97 +314,153 @@ cdef class Vec2:
             raise IndexError(f'Невозможно получить компонент вектора по индексу {key}')
     
     cpdef list keys(self):
+        """
+        Получить возможные ключи для обращения к компонентам вектора 
+        return ['x', 'y'] 
+        """
         return ['x', 'y'] 
 
     def __iter__(self):
         return self.get_generator()
 
     def get_generator(self):
+        """
+        yield self.x
+        yield self.y
+        """
         yield self.x
         yield self.y
 
     def as_np(self):
+        """
+        return np.array([self.x, self.y])
+        """
         return np.array([self.x, self.y])
     
     cpdef tuple as_tuple(self):
+        """
+        return (self.x, self.y)
+        """
         return (self.x, self.y)
 
     cpdef Vec2 sub_num_(self, real num):
+        """
+        Вычесть из компонентов вектора число. Сам вектор при этом изменяется
+        """
         self.x -= num
         self.y -= num
         return self
 
     cpdef Vec2 sub_num(self, real num):
+        """
+        Вычесть из компонентов вектора число. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_num_(num)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_vec_(self, Vec2 vec):
+        """
+        Вычесть из компонентов вектора компоненты вектора vec. Сам вектор при этом изменяется
+        """
         self.x -= vec.x
         self.y -= vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_vec(self, Vec2 vec):
+        """
+        Вычесть из компонентов вектора компоненты вектора vec. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_vec_(vec)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_(self, Vec2 vec):
+        """
+        Вычесть из компонентов вектора компоненты вектора vec. Сам вектор при этом изменяется
+        """
         self.x -= vec.x
         self.y -= vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 sub(self, Vec2 vec):
+        """
+        Вычесть из компонентов вектора компоненты вектора vec. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_vec_(vec)
         return result
 
     cpdef Vec2 sub_xy_(self, real x, real y):
+        """
+        Вычесть из компонентов вектора компоненты x y. Сам вектор при этом изменяется
+        """
         self.x -= x
         self.y -= y
         return self
 
     cpdef Vec2 sub_xy(self, real x, real y):
+        """
+        Вычесть из компонентов вектора компоненты x y. Сам вектор при этом YT изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_xy_(x, y)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_tup_(self, tuple tup):
+        """
+        Вычесть из компонентов вектора компоненты кортежа (x, y). Сам вектор при этом изменяется
+        """
         self.x -= <real>(tup[0])
         self.y -= <real>(tup[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_tup(self, tuple tup):
+        """
+        Вычесть из компонентов вектора компоненты кортежа (x, y). Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_tup_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_list_(self, list tup):
+        """
+        Вычесть из компонентов вектора компоненты списка. Сам вектор при этом изменяется
+        """
         self.x -= <real>(tup[0])
         self.y -= <real>(tup[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_list(self, list tup):
+        """
+        Вычесть из компонентов вектора компоненты списка. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_list_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_arr_(self, rational[:] arr):
+        """
+        Вычесть из компонентов вектора компоненты вектора. Сам вектор при этом изменяется
+        """
         self.x -= <real>(arr[0])
         self.y -= <real>(arr[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 sub_arr(self, rational[:] tup):
+        """
+        Вычесть из компонентов вектора компоненты вектора. Сам вектор при этом НЕ изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.sub_arr_(tup)
         return result
@@ -336,6 +492,9 @@ cdef class Vec2:
             raise NotImplementedError(f"Вычитать данные сущности нельзя  other={other}")
 
     cpdef Vec2 mul_num_(self, real num):
+        """
+        Вычесть из компонентов вектора компоненты вектора. Сам вектор при этом изменяется
+        """
         self.x *= num
         self.y *= num
         return self
