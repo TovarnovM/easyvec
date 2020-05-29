@@ -39,7 +39,7 @@ CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0)))
 
 if CYTHONIZE:
     from Cython.Build import cythonize
-    compiler_directives = {"language_level": 3, "embedsignature": True}
+    compiler_directives = {"language_level": 3}
     extensions = cythonize(extensions, compiler_directives=compiler_directives, annotate=False)
 else:
     extensions = no_cythonize(extensions)

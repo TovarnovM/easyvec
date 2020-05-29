@@ -31,6 +31,20 @@ def get_MINUS_BIG_REAL():
 cdef class Vec2:
     """
     Класс, представляющий вектор на плоскости
+    Имеет два поля 'x' и 'y'.
+
+    Примеры создания вектора с x=1, y=2:
+        >>> v = Vec2(1,2)
+        >>> v = Vec2.from_list([1,2])
+        >>> v = Vec2.from_list([0,-100,1,2,100], start_ind=2)
+        >>> v = Vec2.from_dict({'x':1, 'y': 2})
+        >>> v = Vec2.from_dict({'x':1, 'y': 2, 'some': 'data'})
+        >>> v = Vec2(100,200) / 100
+        >>> v = Vec2(100,200) - (99,198)
+        >>> v = Vec2(0,1) + 1
+        >>> v = _convert((1,2))
+
+    Класс поддерживает все алгебраические опереаторы и операторы сравнения, а также многие вспомогательные методы
     """
     @classmethod
     def from_list(cls, lst, start_ind=0):
@@ -493,104 +507,161 @@ cdef class Vec2:
 
     cpdef Vec2 mul_num_(self, real num):
         """
-        Вычесть из компонентов вектора компоненты вектора. Сам вектор при этом изменяется
+        Умножить компоненты вектора на число. Сам вектор при этом изменяется
         """
         self.x *= num
         self.y *= num
         return self
 
     cpdef Vec2 mul_num(self, real num):
+        """
+        Умножить компоненты вектора на число. Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_num_(num)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_vec_(self, Vec2 vec):
+        """
+        Умножить компоненты вектора на компоненты другого вектора. Сам вектор при этом изменяется
+        self.x *= vec.x
+        self.y *= vec.y
+        """
         self.x *= vec.x
         self.y *= vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_vec(self, Vec2 vec):
+        """
+        Умножить компоненты вектора на компоненты другого вектора. Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_vec_(vec)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_(self, Vec2 vec):
+        """
+        Умножить компоненты вектора на компоненты другого вектора. Сам вектор при этом изменяется
+
+        """
         self.x *= vec.x
         self.y *= vec.y
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 mul(self, Vec2 vec):
+        """
+        Умножить компоненты вектора на компоненты другого вектора. Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_vec_(vec)
         return result
 
     cpdef Vec2 mul_xy_(self, real x, real y):
+        """
+        Умножить компоненты вектора на компоненты x и y Сам вектор при этом изменяется
+        """
         self.x *= x
         self.y *= y
         return self
 
     cpdef Vec2 mul_xy(self, real x, real y):
+        """
+        Умножить компоненты вектора на компоненты x и y Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_xy_(x, y)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_tup_(self, tuple vec):
+        """
+        Умножить компоненты вектора на компоненты кортежа (x, y). Сам вектор при этом изменяется
+        """
         self.x *= <real>(vec[0])
         self.y *= <real>(vec[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_tup(self, tuple vec):
+        """
+        Умножить компоненты вектора на компоненты кортежа (x, y). Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_tup_(vec)
         return result   
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_list_(self, list tup):
+        """
+        Умножить компоненты вектора на компоненты списка [x, y]. Сам вектор при этом изменяется
+        """
         self.x *= <real>(tup[0])
         self.y *= <real>(tup[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_list(self, list tup):
+        """
+        Умножить компоненты вектора на компоненты списка [x, y]. Сам вектор при этом не изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_list_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_arr_(self, rational[:] arr):
+        """
+        Умножить компоненты вектора на компоненты массива [x, y]. Сам вектор при этом изменяется
+        """
         self.x *= <real>(arr[0])
         self.y *= <real>(arr[1])
         return self
 
     @cython.nonecheck(False)
     cpdef Vec2 mul_arr(self, rational[:] tup):
+        """
+        Умножить компоненты вектора на компоненты массива [x, y]. Сам вектор при этом изменяется
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mul_arr_(tup)
         return result
 
     @cython.nonecheck(False)
     cpdef real dot(self, Vec2 vec):
+        """
+        скалярное произведение векторов. Сам вектор при этом не изменяется
+        """
         return self.x * vec.x + self.y * vec.y
     
     cpdef real dot_xy(self, real x, real y):
+        """
+        скалярное произведение векторов. Сам вектор при этом не изменяется
+        """
         return self.x * x + self.y * y
 
     @cython.nonecheck(False)
     cpdef real dot_tup(self, tuple tup):
+        """
+        скалярное произведение векторов. Сам вектор при этом не изменяется
+        """
         return self.x * <real>(tup[0]) + self.y * <real>(tup[1])
 
     @cython.nonecheck(False)
     cpdef real dot_list(self, list tup):
+        """
+        скалярное произведение векторов. Сам вектор при этом не изменяется
+        """
         return self.x * <real>(tup[0]) + self.y * <real>(tup[1])
 
     @cython.nonecheck(False)
     cpdef real dot_arr(self, rational[:] tup):
+        """
+        скалярное произведение векторов. Сам вектор при этом не изменяется
+        """
         return self.x * <real>(tup[0]) + self.y * <real>(tup[1])
 
     def __mul__(left, right):
@@ -622,12 +693,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 div_num_(self, real num):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= num
         self.y /= num
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 div_num(self, real num):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_num_(num)
         return result
@@ -635,6 +712,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_vec_(self, Vec2 vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= vec.x
         self.y /= vec.y
         return self
@@ -642,6 +722,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_vec(self, Vec2 vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_vec_(vec)
         return result
@@ -649,6 +732,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_(self, Vec2 vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= vec.x
         self.y /= vec.y
         return self
@@ -656,18 +742,27 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div(self, Vec2 vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_vec_(vec)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 div_xy_(self, real x, real y):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= x
         self.y /= y
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 div_xy(self, real x, real y):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_xy_(x, y)
         return result
@@ -675,6 +770,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_tup_(self, tuple vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= <real>(vec[0])
         self.y /= <real>(vec[1])
         return self
@@ -682,6 +780,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_tup(self, tuple vec):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_tup_(vec)
         return result   
@@ -689,6 +790,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_list_(self, list tup):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= <real>(tup[0])
         self.y /= <real>(tup[1])
         return self
@@ -696,6 +800,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_list(self, list tup):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_list_(tup)
         return result
@@ -703,6 +810,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_arr_(self, rational[:] arr):
+        """
+        Поделить компоненты вектора на ...
+        """
         self.x /= <real>(arr[0])
         self.y /= <real>(arr[1])
         return self
@@ -710,6 +820,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 div_arr(self, rational[:] tup):
+        """
+        Поделить компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.div_arr_(tup)
         return result
@@ -743,12 +856,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 floordiv_num_(self, real num):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= num
         self.y //= num
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 floordiv_num(self, real num):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_num_(num)
         return result
@@ -756,6 +875,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_vec_(self, Vec2 vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= vec.x
         self.y //= vec.y
         return self
@@ -763,6 +885,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_vec(self, Vec2 vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_vec_(vec)
         return result
@@ -770,6 +895,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_(self, Vec2 vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= vec.x
         self.y //= vec.y
         return self
@@ -777,18 +905,27 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv(self, Vec2 vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_vec_(vec)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 floordiv_xy_(self, real x, real y):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= x
         self.y //= y
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 floordiv_xy(self, real x, real y):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_xy_(x, y)
         return result
@@ -796,6 +933,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_tup_(self, tuple vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= <real>(vec[0])
         self.y //= <real>(vec[1])
         return self
@@ -803,6 +943,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_tup(self, tuple vec):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_tup_(vec)
         return result   
@@ -810,6 +953,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_list_(self, list tup):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= <real>(tup[0])
         self.y //= <real>(tup[1])
         return self
@@ -817,6 +963,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_list(self, list tup):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_list_(tup)
         return result
@@ -824,6 +973,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_arr_(self, rational[:] arr):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         self.x //= <real>(arr[0])
         self.y //= <real>(arr[1])
         return self
@@ -831,6 +983,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 floordiv_arr(self, rational[:] tup):
+        """
+        Поделить нацело компоненты вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floordiv_arr_(tup)
         return result
@@ -864,12 +1019,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 mod_num_(self, real num):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= num
         self.y %= num
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 mod_num(self, real num):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_num_(num)
         return result
@@ -877,6 +1038,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_vec_(self, Vec2 vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= vec.x
         self.y %= vec.y
         return self
@@ -884,6 +1048,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_vec(self, Vec2 vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_vec_(vec)
         return result
@@ -891,6 +1058,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_(self, Vec2 vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= vec.x
         self.y %= vec.y
         return self
@@ -898,18 +1068,27 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod(self, Vec2 vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_vec_(vec)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 mod_xy_(self, real x, real y):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= x
         self.y %= y
         return self
 
     @cython.cdivision(True)
     cpdef Vec2 mod_xy(self, real x, real y):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_xy_(x, y)
         return result
@@ -917,6 +1096,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_tup_(self, tuple vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= <real>(vec[0])
         self.y %= <real>(vec[1])
         return self
@@ -924,6 +1106,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_tup(self, tuple vec):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_tup_(vec)
         return result   
@@ -931,6 +1116,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_list_(self, list tup):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= <real>(tup[0])
         self.y %= <real>(tup[1])
         return self
@@ -938,6 +1126,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_list(self, list tup):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_list_(tup)
         return result
@@ -945,6 +1136,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_arr_(self, rational[:] arr):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         self.x %= <real>(arr[0])
         self.y %= <real>(arr[1])
         return self
@@ -952,6 +1146,9 @@ cdef class Vec2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Vec2 mod_arr(self, rational[:] tup):
+        """
+        Остаток от деления компонентов вектора на ...
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.mod_arr_(tup)
         return result
@@ -983,16 +1180,31 @@ cdef class Vec2:
             raise NotImplementedError(f"Поделить на данную сущность нельзя  other={other}")
 
     cpdef real len(self):
+        """
+        Получить длину вектора 
+        return sqrt(self.x*self.x + self.y*self.y)
+        """
         return sqrt(self.x*self.x + self.y*self.y)
 
     cpdef real len_sqared(self):
+        """
+        Получить длину вектора в квадрате
+        return self.x*self.x + self.y*self.y
+        """
         return self.x*self.x + self.y*self.y
 
     cpdef Vec2 abs_(self):
+        """
+        Изменить вектор. Компоненты вектора становятся положительными
+        """
         self.x = fabs(self.x)
         self.y = fabs(self.y)
+        return self
 
     cpdef Vec2 abs(self):
+        """
+        Возвращает вектор с положительными компонентами
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.abs_()
         return result
@@ -1002,6 +1214,9 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 norm_(self, bint raise_zero_len_error=False):
+        """
+        Изменить вектор. Сделать его единичным (с длиной == 1)
+        """
         cdef real length = self.len()
         if length > CMP_TOL:
             self.x /= length
@@ -1015,12 +1230,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 norm(self, bint raise_zero_len_error=False):
+        """
+        Возвратить единичный вектор
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.norm_(raise_zero_len_error)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 round_(self, int ndigits=0):
+        """
+        Изменить вектор. Округлить компоненты вектора до десчтичныого знака ndigits
+        """
         if ndigits == 0:
             self.x = round(self.x)
             self.y = round(self.y)    
@@ -1033,12 +1254,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 round(self, int ndigits=0):
+        """
+        Возвращает вектор с компонентами, округленными до десчтичныого знака ndigits
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.round_(ndigits)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 ceil_(self, int ndigits=0):
+        """
+        Изменить вектор. Округлить компоненты вектора до десчтичныого знака ndigits
+        """
         if ndigits == 0:
             self.x = ceil(self.x)
             self.y = ceil(self.y)    
@@ -1051,12 +1278,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 ceil(self, int ndigits=0):
+        """
+        Возвращает вектор с компонентами, округленными до десчтичныого знака ndigits
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.ceil_(ndigits)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 floor_(self, int ndigits=0):
+        """
+        Изменить вектор. Округлить компоненты вектора до десчтичныого знака ndigits
+        """
         if ndigits == 0:
             self.x = floor(self.x)
             self.y = floor(self.y)    
@@ -1069,12 +1302,18 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 floor(self, int ndigits=0):
+        """
+        Возвращает вектор с компонентами, округленными до десчтичныого знака ndigits
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.floor_(ndigits)
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 trunc_(self, int ndigits=0):
+        """
+        Изменить вектор. Округлить компоненты вектора до десчтичныого знака ndigits
+        """
         if ndigits == 0:
             self.x = trunc(self.x)
             self.y = trunc(self.y)    
@@ -1087,15 +1326,26 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef Vec2 trunc(self, int ndigits=0):
+        """
+        Возвращает вектор с компонентами, округленными до десчтичныого знака ndigits
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.trunc_(ndigits)
         return result
 
     @cython.nonecheck(False)
     cpdef real cross(self, Vec2 right):
+        """
+        Векторное произведение 
+        return self.x * right.y - self.y * right.x
+        """
         return self.x * right.y - self.y * right.x
 
     cpdef real cross_xy(self, real x, real y):
+        """
+        Векторное произведение 
+        return self.x * y - self.y * x
+        """
         return self.x * y - self.y * x
 
     def __and__(left, right):
@@ -1113,6 +1363,9 @@ cdef class Vec2:
 
     @cython.cdivision(True)
     cpdef real angle_to_xy(self, real x, real y, int degrees=0):
+        """
+        Возвращает угол между ветором и вектором Vec2(x, y), если degrees=True, то ответ будет в градусах
+        """
         cdef real angle = atan2(y, x) - atan2(self.y, self.x)
         if angle > pi:
             angle -= 2*pi
@@ -1124,32 +1377,50 @@ cdef class Vec2:
 
     @cython.nonecheck(False)
     cpdef real angle_to(self, Vec2 vec, int degrees=0):
+        """
+        Возвращает угол между ветором и вектором vec, если degrees=True, то ответ будет в градусах
+        """
         return self.angle_to_xy(vec.x, vec.y, degrees)
 
     cpdef Vec2 rotate90_(self):
+        """
+        Изменяет вектор. Вращает его на 90 градусов против часовой стрелки.
+        """
         cdef real buf = self.x
         self.x = -self.y
         self.y = buf
         return self
 
     cpdef Vec2 rotate90(self):
+        """
+        Возвращает повернутый на 90 градусов против часовой стрелки вектор.
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.rotate90_()
         return result
 
     cpdef Vec2 rotate_minus90_(self):
+        """
+        Изменяет вектор. Вращает его на 90 градусов по часовой стрелке.
+        """
         cdef real buf = self.x
         self.x = self.y
         self.y = -buf
         return self
 
     cpdef Vec2 rotate_minus90(self):
+        """
+        Возвращает повернутый на 90 градусов по часовой стрелке вектор.
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.rotate_minus90_()
         return result
 
     @cython.cdivision(True)
     cpdef Vec2 rotate_(self, real angle, int degrees=0):
+        """
+        Изменяет вектор. Вращает его на угол angle.
+        """
         if degrees != 0:
             angle /= 180.0/pi
         cdef real s = sin(angle)
@@ -1161,6 +1432,9 @@ cdef class Vec2:
         return self
 
     cpdef Vec2 rotate(self, real angle, int degrees=0):
+        """
+        Возвращает повернутый на angle вектор.
+        """
         cdef Vec2 result = Vec2(self.x, self.y)
         result.rotate_(angle, degrees)
         return result

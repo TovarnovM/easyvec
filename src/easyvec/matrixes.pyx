@@ -12,8 +12,40 @@ cpdef Vec3 _convert(object candidate):
 
 @cython.final
 cdef class Mat2:
+    """
+    Класс представляющий матрицу 2х2
+    Служит для афинных преобразований векторов Vec2 
+
+    Поля:
+        |m11 m12|
+        |m21 m22|
+
+    Примеры создания матрицы
+        |1 2|
+        |3 4|
+        >>> Mat2(1,2,3,4)
+        >>> Mat2((1,2),(3,4))
+        >>> Mat2(Vec2(1,2), Vec2(3,4))
+        >>> Mat2(Vec2(1,2),(3,4))
+
+    Пример создания матрицы
+        |0 0|
+        |0 0|
+    >>> Mat2(0,0,0,0)
+    >>> Mat2.zeros()
+    >>> Mat2()
+
+    Пример создания матрицы
+        |1 0|
+        |0 1|
+    >>> Mat2(1,0,0,1)
+    >>> Mat2.eye()
+    """
     @classmethod
     def from_xaxis(cls, xaxis):
+        """
+        Создать матрицу повернутой системы координат, ось Ox которой имеет координаты xaxis в глобальной
+        """
         if not isinstance(xaxis, Vec2):
             if isinstance(xaxis, dict):
                 xaxis = Vec2.from_dict(xaxis)
@@ -25,6 +57,9 @@ cdef class Mat2:
 
     @classmethod
     def from_yaxis(cls, yaxis):
+        """
+        Создать матрицу повернутой системы координат, ось Oy которой имеет координаты yaxis в глобальной
+        """
         if not isinstance(yaxis, Vec2):
             if isinstance(yaxis, dict):
                 yaxis = Vec2.from_dict(yaxis)
@@ -36,6 +71,9 @@ cdef class Mat2:
 
     @classmethod
     def from_angle(cls, angle, degrees=0):
+        """
+        Создать матрицу повернутой системы координат, оси которой поверуты на угол angle
+        """
         if degrees:
             angle /= 180/pi
         cdef real s = sin(angle)
@@ -44,13 +82,26 @@ cdef class Mat2:
 
     @classmethod
     def eye(cls):
+        """
+        Создать единичную матрицу
+        |1 0|
+        |0 1|
+        """
         return cls(1,0,0,1)
 
     @classmethod
     def zeros(cls):
+        """
+        Создать нулевую матрицу
+        |0 0|
+        |0 0|
+        """
         return cls(0,0,0,0)
 
     def __cinit__(self, *args):
+        """
+        Конструктор
+        """
         cdef int alen = len(args)
         cdef int alen2
         
@@ -111,33 +162,60 @@ cdef class Mat2:
         return f'Mat2([[{self.m11}, {self.m12}], [{self.m21}, {self.m22}]])'
 
     cpdef real[:,:] as_np(self):
+        """
+        return np.array([[self.m11, self.m12], [self.m21, self.m22]])
+        """
         return np.array([[self.m11, self.m12], [self.m21, self.m22]])
 
     cpdef Vec2 i_axis(self):
+        """
+        return Vec2(self.m11, self.m12)
+        """
         return Vec2(self.m11, self.m12)
 
     cpdef Vec2 j_axis(self):
+        """
+        return Vec2(self.m21, self.m22)
+        """
         return Vec2(self.m21, self.m22)
 
     cpdef Vec2 x_axis(self):
+        """
+        return Vec2(self.m11, self.m12)
+        """
         return Vec2(self.m11, self.m12)
 
     cpdef Vec2 y_axis(self):
+        """
+        return Vec2(self.m21, self.m22)
+        """
         return Vec2(self.m21, self.m22)
 
     cpdef Mat2 transpose(self):
+        """
+        Возвращает транспонированную матрицу
+        """
         return Mat2(self.m11, self.m21, self.m12, self.m22)
     
     @property
     def T(self) -> Mat2:
+        """
+        Возвращает транспонированную матрицу
+        """
         return self.transpose()
 
     cpdef real det(self):
+        """
+        Возвращает определитель матрицы
+        """
         return self.m11*self.m22 - self.m12*self.m21
 
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Mat2 inverse(self):
+        """
+        Возвращает обратную матрицу
+        """
         cdef real det = self.det()
         if fabs(det) - 1.0 < CMP_TOL:
             return self.transpose()
@@ -150,10 +228,16 @@ cdef class Mat2:
 
     @property
     def _1(self) -> Mat2:
+        """
+        Возвращает обратную матрицу
+        """
         return self.inverse()
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_mat_elements_(self, Mat2 right):
+        """
+        Изменяет матрицу. Поэлементно перемножает с другой матрицей
+        """
         self.m11 *= right.m11
         self.m12 *= right.m12
         self.m21 *= right.m21
@@ -162,6 +246,9 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_mat_elements(self, Mat2 right):
+        """
+        Возвращает матрицу с поэлементно перемножиными компонентами
+        """
         return Mat2(
             self.m11 * right.m11,
             self.m12 * right.m12,
@@ -171,6 +258,16 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_mat_(self, Mat2 right):
+        """
+        Изменяет матрицу. Производит матричное произведение на другую матрицу
+
+        Mat2(
+            self.m11 * right.m11 + self.m12 * right.m21,
+            self.m11 * right.m12 + self.m12 * right.m22,
+            self.m11 * right.m12 + self.m12 * right.m22,
+            self.m21 * right.m12 + self.m22 * right.m22
+        )
+        """
         cdef real m11 = self.m11 * right.m11 + self.m12 * right.m21
         cdef real m12 = self.m11 * right.m12 + self.m12 * right.m22
         cdef real m21 = self.m11 * right.m12 + self.m12 * right.m22
@@ -183,6 +280,16 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_mat(self, Mat2 right):
+        """
+        Возвращает матричное произведение с другой матрицей
+
+        return Mat2(
+            self.m11 * right.m11 + self.m12 * right.m21,
+            self.m11 * right.m12 + self.m12 * right.m22,
+            self.m11 * right.m12 + self.m12 * right.m22,
+            self.m21 * right.m12 + self.m22 * right.m22
+        )
+        """
         return Mat2(
             self.m11 * right.m11 + self.m12 * right.m21,
             self.m11 * right.m12 + self.m12 * right.m22,
@@ -192,6 +299,14 @@ cdef class Mat2:
     
     @cython.nonecheck(False)
     cpdef Vec2 mul_vec(self, Vec2 vec):
+        """
+        Возвращает матричное произведение с другим вектором
+
+        return Vec2(
+            self.m11 * vec.x + self.m12 * vec.y,
+			self.m21 * vec.x + self.m22 * vec.y
+        )
+        """
         return Vec2(
             self.m11 * vec.x + self.m12 * vec.y,
 			self.m21 * vec.x + self.m22 * vec.y
@@ -199,6 +314,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_num_(self, real num):
+        """
+        Изменяет матрицу. Производит поэлементное произведение на число
+
+        self.m11 *= num
+        self.m12 *= num
+        self.m21 *= num
+        self.m22 *= num
+        """
         self.m11 *= num
         self.m12 *= num
         self.m21 *= num
@@ -207,6 +330,16 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 mul_num(self, real num):
+        """
+        Возвращает матрицу с элементами, умножиными на число
+
+        return Mat2(
+            self.m11 * num,
+            self.m12 * num,
+            self.m21 * num,
+            self.m22 * num
+        )
+        """    
         return Mat2(
             self.m11 * num,
             self.m12 * num,
@@ -238,6 +371,12 @@ cdef class Mat2:
     
     @cython.nonecheck(False)
     cpdef Mat2 add_num_(self, real num):
+        """
+        self.m11 += num
+        self.m12 += num
+        self.m21 += num
+        self.m22 += num
+        """
         self.m11 += num
         self.m12 += num
         self.m21 += num
@@ -246,6 +385,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 add_num(self, real num):
+        """
+        return Mat2(
+            self.m11 + num,
+            self.m12 + num,
+            self.m21 + num,
+            self.m22 + num
+        )
+        """
         return Mat2(
             self.m11 + num,
             self.m12 + num,
@@ -256,6 +403,12 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 add_mat_(self, Mat2 mat):
+        """
+        self.m11 += mat.m11
+        self.m12 += mat.m12 
+        self.m21 += mat.m21
+        self.m22 += mat.m22
+        """
         self.m11 += mat.m11
         self.m12 += mat.m12 
         self.m21 += mat.m21
@@ -264,6 +417,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 add_mat(self, Mat2 mat):
+        """
+        return Mat2(
+            self.m11 + mat.m11,
+            self.m12 + mat.m12, 
+            self.m21 + mat.m21,
+            self.m22 + mat.m22
+        )
+        """
         return Mat2(
             self.m11 + mat.m11,
             self.m12 + mat.m12, 
@@ -290,6 +451,12 @@ cdef class Mat2:
   
     @cython.nonecheck(False)
     cpdef Mat2 neg_(self):
+        """
+        self.m11 = -self.m11
+        self.m12 = -self.m12 
+        self.m21 = -self.m21
+        self.m22 = -self.m22
+        """
         self.m11 = -self.m11
         self.m12 = -self.m12 
         self.m21 = -self.m21
@@ -298,6 +465,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 neg(self):
+        """
+        return Mat2(
+            -self.m11,
+            -self.m12, 
+            -self.m21,
+            -self.m22
+        )
+        """
         return Mat2(
             -self.m11,
             -self.m12, 
@@ -344,6 +519,9 @@ cdef class Mat2:
         raise KeyError(f'Неправильный индекс {key}')
 
     cpdef list keys(self):
+        """
+        return ['m11', 'm12', 'm21', 'm22']
+        """
         return ['m11', 'm12', 'm21', 'm22']
 
     def __iter__(self):
@@ -355,10 +533,19 @@ cdef class Mat2:
 
     
     cpdef tuple as_tuple(self):
+        """
+        return ((self.m11, self.m12), (self.m21, self.m22)) 
+        """
         return ((self.m11, self.m12), (self.m21, self.m22))     
     
     @cython.nonecheck(False)
     cpdef Mat2 sub_num_(self, real num):
+        """
+        self.m11 -= num
+        self.m12 -= num
+        self.m21 -= num
+        self.m22 -= num
+        """
         self.m11 -= num
         self.m12 -= num
         self.m21 -= num
@@ -367,6 +554,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 sub_num(self, real num):
+        """
+        return Mat2(
+            self.m11 - num,
+            self.m12 - num,
+            self.m21 - num,
+            self.m22 - num
+        )
+        """
         return Mat2(
             self.m11 - num,
             self.m12 - num,
@@ -385,6 +580,14 @@ cdef class Mat2:
 
     @cython.nonecheck(False)
     cpdef Mat2 sub_mat(self, Mat2 mat):
+        """
+        return Mat2(
+            self.m11 - mat.m11,
+            self.m12 - mat.m12, 
+            self.m21 - mat.m21,
+            self.m22 - mat.m22
+        )  
+        """
         return Mat2(
             self.m11 - mat.m11,
             self.m12 - mat.m12, 
@@ -412,6 +615,12 @@ cdef class Mat2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Mat2 div_num_(self, real num):
+        """
+        self.m11 /= num
+        self.m12 /= num
+        self.m21 /= num
+        self.m22 /= num
+        """
         self.m11 /= num
         self.m12 /= num
         self.m21 /= num
@@ -421,6 +630,14 @@ cdef class Mat2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Mat2 div_num(self, real num):
+        """
+        return Mat2(
+            self.m11 / num,
+            self.m12 / num,
+            self.m21 / num,
+            self.m22 / num
+        )
+        """
         return Mat2(
             self.m11 / num,
             self.m12 / num,
@@ -432,6 +649,12 @@ cdef class Mat2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Mat2 div_mat_(self, Mat2 mat):
+        """
+        self.m11 /= mat.m11
+        self.m12 /= mat.m12 
+        self.m21 /= mat.m21
+        self.m22 /= mat.m22
+        """
         self.m11 /= mat.m11
         self.m12 /= mat.m12 
         self.m21 /= mat.m21
@@ -441,6 +664,14 @@ cdef class Mat2:
     @cython.nonecheck(False)
     @cython.cdivision(True)
     cpdef Mat2 div_mat(self, Mat2 mat):
+        """
+        return Mat2(
+            self.m11 / mat.m11,
+            self.m12 / mat.m12, 
+            self.m21 / mat.m21,
+            self.m22 / mat.m22
+        )  
+        """
         return Mat2(
             self.m11 / mat.m11,
             self.m12 / mat.m12, 
