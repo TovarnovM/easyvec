@@ -26,12 +26,7 @@ pip install easyvec --upgrade
 ### Вектор/точка ```Vec2```
 
 Поля объекта
-$$
-\left(\begin{array}{cc} 
-x \\
-y 
-\end{array}\right)
-$$ 
+![equation](https://latex.codecogs.com/svg.latex?%20\left(\begin{array}{cc}%20x%20\%20y%20\end{array}\right))
 Пример импорта и создания
 ```python
 from easyvec import Vec2
@@ -110,21 +105,10 @@ print(v1.angle_to(v2, degrees=True)) # -10.30... угол между векто�
 Класс представляющий матрицу 2х2. Служит для афинных преобразований векторов ```Vec2```
 
 Поля объекта соответствуют положениям элементов:
-$$
-\left(\begin{array}{cc} 
-m11 & m12\\
-m21 & m22
-\end{array}\right)
-$$ 
-
+![equation](https://latex.codecogs.com/svg.latex?\left(\begin{array}{cc}%20m11%20&%20m12\\m21%20&%20m22\end{array}\right))
 Примеры импорта и создания матрицы
 
-$$
-\left(\begin{array}{cc} 
-1 & 2\\
-3 & 4
-\end{array}\right)
-$$ 
+![equation](https://latex.codecogs.com/svg.latex?\left(\begin{array}{cc}%201%20&%202\\3%20&%204\end{array}\right))
 
 ```python
 from easyvec import Mat2
