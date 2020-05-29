@@ -26,7 +26,7 @@ pip install easyvec --upgrade
 ### Вектор/точка ```Vec2```
 
 Поля объекта
-![equation](https://latex.codecogs.com/svg.latex?%20\left(\begin{array}{cc}%20x%20\%20y%20\end{array}\right))
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{pmatrix}&space;x\\&space;y&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;x\\&space;y&space;\end{pmatrix}" title="\begin{pmatrix} x\\ y \end{pmatrix}" /></a>
 Пример импорта и создания
 ```python
 from easyvec import Vec2
@@ -108,7 +108,7 @@ print(v1.angle_to(v2, degrees=True)) # -10.30... угол между векто�
 <a href="https://www.codecogs.com/eqnedit.php?latex=\begin{pmatrix}&space;m11&space;&&space;m12\\&space;m21&space;&&space;m22&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;m11&space;&&space;m12\\&space;m21&space;&&space;m22&space;\end{pmatrix}" title="\begin{pmatrix} m11 & m12\\ m21 & m22 \end{pmatrix}" /></a>
 Примеры импорта и создания матрицы
 
-![equation](https://latex.codecogs.com/svg.latex?\left(\begin{array}{cc}%201%20&%202\\3%20&%204\end{array}\right))
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{pmatrix}&space;1&&space;2\\&space;3&&space;4&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&&space;2\\&space;3&&space;4&space;\end{pmatrix}" title="\begin{pmatrix} 1& 2\\ 3& 4 \end{pmatrix}" /></a>
 
 ```python
 from easyvec import Mat2
