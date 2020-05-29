@@ -105,7 +105,10 @@ print(v1.angle_to(v2, degrees=True)) # -10.30... угол между векто�
 Класс представляющий матрицу 2х2. Служит для афинных преобразований векторов ```Vec2```
 
 Поля объекта соответствуют положениям элементов:
-![equation](https://latex.codecogs.com/svg.latex?\left(\begin{array}{cc}%20m11%20&%20m12\\m21%20&%20m22\end{array}\right))
+<img src="https://render.githubusercontent.com/render/math?math=\left(\begin{array}{cc} 
+m11 & m12\\
+m21 & m22
+\end{array}\right)">
 Примеры импорта и создания матрицы
 
 ![equation](https://latex.codecogs.com/svg.latex?\left(\begin{array}{cc}%201%20&%202\\3%20&%204\end{array}\right))
