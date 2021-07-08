@@ -771,7 +771,7 @@ cdef class Mat3:
         return Vec3(self.m31, self.m32, self.m33)    
 
     cpdef Mat3 transpose(self):
-        return Mat2(self.m11, self.m21, self.m31, \
+        return Mat3(self.m11, self.m21, self.m31, \
                     self.m12, self.m22, self.m32, \
                     self.m13, self.m23, self.m33)
 
