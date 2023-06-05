@@ -1559,7 +1559,7 @@ cdef class Vec3:
 
     @cython.nonecheck(False)
     cpdef Vec3 add_tup(self, tuple tup):
-        cdef Vec3 result = Vec2(self.x, self.y, self.z)
+        cdef Vec3 result = Vec3(self.x, self.y, self.z)
         result.add_tup_(tup)
         return result
 
@@ -2460,17 +2460,18 @@ cdef class Vec3:
         cdef real len1 = self.len()
         if len1 < CMP_TOL:
             return 0
-        cdef len2 = vec.len()
+        cdef real len2 = vec.len()
         if len2 < CMP_TOL:
             return 0
         cdef real dot = self.dot(vec) / len1 / len2
-        cdef angle = acos(dot)
+        cdef real angle = acos(dot)
         if degrees:
             angle *= 180.0/pi
         return angle
 
     @cython.cdivision(True)
     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=0):
+        
         if degrees != 0:
             angle /= 180.0/pi
         cdef real s = sin(angle)
@@ -2482,7 +2483,7 @@ cdef class Vec3:
         return self
 
     cpdef Vec3 rotate(self, real angle, int degrees=0):
-        cdef Vec3 result = Vec3(self.x, self.y)
+        cdef Vec3 result = Vec3(self.x, self.y, self.z)
         result.rotate_(angle, degrees)
         return result
 
