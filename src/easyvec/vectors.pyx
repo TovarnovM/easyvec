@@ -3,6 +3,8 @@ from libc.math cimport fabs, sqrt, round, ceil, floor, trunc, pi, atan2, sin, co
 from cpython.object cimport Py_LT, Py_LE, Py_EQ, Py_GE, Py_GT, Py_NE
 cimport cython
 import numpy as np
+cimport numpy as np
+np.import_array()
 
 
 CMP_TOL = 1e-8
@@ -1444,6 +1446,7 @@ cdef class Vec2:
 
 @cython.final
 cdef class Vec3:
+
     @classmethod
     def from_list(cls, lst, start_ind=0):
         return cls(lst[start_ind], lst[start_ind+1], lst[start_ind+2])
@@ -2485,3 +2488,9 @@ cdef class Vec3:
 
     def __len__(self):
         return 3
+
+
+@cython.nonecheck(False)
+cpdef Vec3 np2vec(np.ndarray arr):
+    cdef real[:] m = arr
+    return Vec3(m[0], m[1], m[2])

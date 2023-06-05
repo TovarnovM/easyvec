@@ -10,7 +10,7 @@
 
 import os
 from setuptools import setup, find_packages, Extension
-
+import numpy
 
 # https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#distributing-cython-modules
 def no_cythonize(extensions, **_ignore):
@@ -40,7 +40,7 @@ CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0)))
 if CYTHONIZE:
     from Cython.Build import cythonize
     compiler_directives = {"language_level": 3}
-    extensions = cythonize(extensions, compiler_directives=compiler_directives, annotate=False)
+    extensions = cythonize(extensions, compiler_directives=compiler_directives, annotate=True)
 else:
     extensions = no_cythonize(extensions)
 
@@ -57,5 +57,6 @@ setup(
         "dev": dev_requires,
         "docs": ["sphinx", "sphinx-rtd-theme"]
     },
-    include_package_data=True
+    include_package_data=True,
+    include_dirs = [numpy.get_include()]
 )

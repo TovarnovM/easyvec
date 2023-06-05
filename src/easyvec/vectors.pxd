@@ -1,4 +1,5 @@
 cimport cython
+cimport numpy as np
 
 ctypedef double real
 
@@ -269,3 +270,4 @@ cdef class Vec3:
     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)
     cpdef Vec3 rotate(self, real angle, int degrees=*)
 
+cpdef Vec3 np2vec(np.ndarray arr)
